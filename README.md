@@ -6,7 +6,7 @@
 <img width="325"  src="static/logo.png">
 </p>
 
-### latest release: [cosi-data-challenge-2](cosi-data-challenge-2)
+### latest release: [cosi-data-challenge-3](cosi-data-challenge-3)
 
 <div align="left">
 
