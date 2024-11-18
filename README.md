@@ -12,9 +12,11 @@
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
-- [Backgrounds](#backgrounds)
 - [System Requirements](#system-requirements)
 - [Getting Help](#getting-help)
+- [Backgrounds](#backgrounds)
+- [Earth Occultation](#earth-occultation)
+- [Polarization](#polarization)
 - [Releases](#releases)
 - [Computing Resources](#computing-resources)
 - [Simulation Tools](#simulation-tools)
@@ -43,22 +45,26 @@ The input models and challenges for DC3 were provided by the COSI science teams.
 
 In summary, to get started with DC3, install cosipy, familiarize yourself with the data products, and then start working through the data challenges, as described below. 
 
-## Backgrounds
-In general, observations in the MeV band are hindered by high backgrounds (both instrumental and astrophysical). In order to ensure that COSI accomplishes its main science goals, it is therefore crucial to have a firm understanding of these backgrounds. Although we are still in the early stages of development, with DC2 we have made significant progress in characterizing the background emission for COSI. Further details can be found in the [backgrounds](backgrounds) directory. 
-
-For analyzing data in DC2, the backgrounds are modeled using the actual injected backgrounds themselves. This is the ideal case, where the backgrounds are perfectly known, which of course is not very realistic. In future data challenges we will be developing tools for estimating backgrounds when they are not perfectly known, as will be the case for the actual observations. 
-
 ## System Requirements
 One of our goals in developing cosipy is to make it easily accesible to all users. **All of the data challenges starting with DC2 should be doable on a laptop with at least 16 GB of RAM**. We are still working on optimizing the code, and so please let us know if you are running into memory issues.
 
 ## Getting Help
 Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) git repository if you have issues with the code. If you have general feedback, or need further assistance, please reach out to the COSI Data Challenge team lead, Chris Karwin ([christopher.m.karwin@nasa.gov](mailto:christopher.m.karwin@nasa.gov)), the cosipy implementation lead, Israel Martinez-Castellanos ([israel.martinezcastellanos@nasa.gov](israel.martinezcastellanos@nasa.gov)), and the pipeline development lead Carolyn Kierans ([carolyn.a.kierans@nasa.gov](carolyn.a.kierans@nasa.gov)).
 
+## Backgrounds
+In general, observations in the MeV band are hindered by high backgrounds (both instrumental and astrophysical). In order to ensure that COSI accomplishes its main science goals, it is therefore crucial to have a firm understanding of these backgrounds. Although we are still in the early stages of development, with DC2 we have made significant progress in characterizing the background emission for COSI. Further details can be found in the [backgrounds](backgrounds) directory. 
+
+For analyzing data in DC2, the backgrounds are modeled using the actual injected backgrounds themselves. This is the ideal case, where the backgrounds are perfectly known, which of course is not very realistic. In future data challenges we will be developing tools for estimating backgrounds when they are not perfectly known, as will be the case for the actual observations. 
+
+## Earth Occultation
+
+## Polarization
+
 ## Releases
 
 - Data challenge 1, March 2023: [cosi-data-challenge-1](https://github.com/cositools/cosi-data-challenge-1)
 - Data challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenge-2)
-- Data challenge 3, March 2025: cosi-data-challenge-3 (latest release)
+- Data challenge 3, March 2025: **cosi-data-challenge-3 (latest release)**
 - Data challenge 4: Planned for March 2026
 - Data challenge 5: Planned for March 2027 (final challenge before launch :rocket:!)
 
@@ -73,7 +79,7 @@ The simulations for the COSI data challenges are ran on high performance computi
 The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective data challenge directory. Model inputs for the simulations and the corresponding data challenges come from the COSI science team. All of the models used for past data challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim)).   
 
 ## Executive Summary of Current and Past Challenges 
-- **[Data Challenge 1](cosi-data-challenge-1):**
+- **[Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1):**
   - Focused on the 2016 COSI Balloon flight.
   - Release includes real flight data for the Crab.
   - Main goal is to learn the fundamentals of analyzing Compton data with COSI.
@@ -100,7 +106,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - 511 spectral fit
     - Crab imaging
     - 511 imaging
-- **[Data Challenge 3](cosi-data-challenge-3):**
+- **Data Challenge 3**
   - Focused on COSI SMEX mission.
   - Data challenges for all the main science groups (including dark matter and solar), covering all of COSI's primary science objectives. 
   - All models and challenges provided by respective COSI science teams.
@@ -120,14 +126,9 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - Refinements and further developments of imaging class.
     - New Extended source response class.
 ## Useful Reference Guides
-- **General Introduction to analyzing data from a Compton telescopes and the Compton data space:**
-  - See main README from [cosi-data-challenge-1](cosi-data-challenge-1)
-- **Analysis of data from the 2016 COSI balloon flight:**
-  - [cosi-data-challenge-1/cosi_2016_balloon_data](cosi-data-challenge-1/cosi_2016_balloon_data)
-- **General Introduction to cosipy:**
-  - [cosi-data-challenge-2/cosipy-intro](cosi-data-challenge-2/cosipy-intro)
- - **Summary of the background simulations from data challenge 2:**
-   - [cosi-data-challenge-2/backgrounds](cosi-data-challenge-2/backgrounds) 
+- **[Introduction to Compton telescope data analysis](Intro-to-Compton-telescope-data-analysis](Intro-to-Compton-telescope-data-analysis):**
+- **[Introduction to cosipy](cosipy-intro)** 
+- **[Summary of background simulations](backgrounds)** 
 
 ## Data Challenges
 We have created example jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below: <br /> 
