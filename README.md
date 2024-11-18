@@ -20,8 +20,9 @@
 - [Simulation Tools](#simulation-tools)
 - [Executive Summary of Current and Past Challenges](#executive-summary-of-current-and-past-challenges)
 - [Useful Reference Guides](#useful-reference-guides)
+- [Data Challenges](#data-challenges)
+- [Known Caveats](#known-caveats)
 - [Citing](#citing)
-- [Data Challenges](#Data Challenges)
 
 ## Introduction
 Welcome to the third COSI data challenge (DC3)! The COSI data challenges are released on a yearly basis in preparation for the launch of the COSI Small Explorer (SMEX) class mission in 2027 ([Tomsick+23](https://ui.adsabs.harvard.edu/abs/2023arXiv230812362T/abstract)). They are based on simulated data, which is intended to closely mimic the real flight data. Every year the data challenges have increasingly more realistic source and background models, and they are analyzed with increasingly complete and matured analysis tools. In general there are two main goals of the data challenges:
@@ -38,7 +39,7 @@ The only software requirement for DC3 is [cosipy](https://github.com/cositools/c
 
 This year's data challenge is based on 3 months of exposure time, for an equatorial orbit at an altitude of 550 km, with a zenith pointing. The simulated data products are provided in fits file format, and are hosted on wasabi. Details of the simulations, simulated data, and information for accessing the data products can be found in the [data-products](https://github.com/cositools/cosi-data-challenge-2/tree/main/data-products) directory. 
 
-The input models and challenges for DC3 were provided by the COSI science teams. There are challenges for the different science groups: GRBs, Positrons, Nucleosynthesis, Galactic, and Extragalactic. These are described in detail in the **Data Challenges** section below.  
+The input models and challenges for DC3 were provided by the COSI science teams. There are challenges for the different science groups: GRBs, Positrons, Nucleosynthesis, Galactic, and Extragalactic. These are described in detail in the [Data Challenges](#data-challenges) section below.  
 
 In summary, to get started with DC3, install cosipy, familiarize yourself with the data products, and then start working through the data challenges, as described below. 
 
@@ -128,10 +129,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
  - **Summary of the background simulations from data challenge 2:**
    - [cosi-data-challenge-2/backgrounds](cosi-data-challenge-2/backgrounds) 
 
-## Citing 
-If you make use of any of the data products from the COSI data challenges in a publication, please provide a link to this page. 
-
-## Data Challanges
+## Data Challenges
 We have created example jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below: <br /> 
 
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) <br />
@@ -467,4 +465,7 @@ These challenges will require developing new fundamental tools, which should fit
 5) Minimize memory usage. 
 
 ## Known Caveats 
-1) As can be seen in the spectral fit tutorials, we are not able to perfectly recover the input models (e.g. the Crab spectrum), although the results are very close. This is the case even though we are using an ideal background. We think that this may be due to the fact that our response currently uses a coarse pixelation. Another possibility is that it may be related to a poorly characterized response for high off-axis angles. This is something that still needs to be investigated further. **NB: Our current response only uses 0.5% of the statistics that will be used for the actual analysis with the satellite data**. 
+1) As can be seen in the spectral fit tutorials, we are not able to perfectly recover the input models (e.g. the Crab spectrum), although the results are very close. This is the case even though we are using an ideal background. We think that this may be due to the fact that our response currently uses a coarse pixelation. Another possibility is that it may be related to a poorly characterized response for high off-axis angles. This is something that still needs to be investigated further. **NB: Our current response only uses 0.5% of the statistics that will be used for the actual analysis with the satellite data**.
+
+## Citing 
+If you make use of any of the data products from the COSI data challenges in a publication, please provide a link to this page. 
