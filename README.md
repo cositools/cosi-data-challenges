@@ -128,7 +128,9 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
 ## Useful Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro)**
 - **[Introduction to cosipy](cosipy-intro)** 
-- **[Summary of background simulations](backgrounds)** 
+- **[Summary of background simulations](backgrounds)**
+- **[Dealing with Earth Occultation](earth-occultation)** 
+- **[Introduction to Polarization](polarization)** 
 
 ## Data Challenges
 We have created example jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below: <br /> 
