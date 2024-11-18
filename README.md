@@ -63,7 +63,7 @@ For analyzing data in DC2, the backgrounds are modeled using the actual injected
 ## Releases
 
 - Data challenge 1, March 2023: [cosi-data-challenge-1](https://github.com/cositools/cosi-data-challenge-1)
-- Data challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenge-2)
+- Data challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0)
 - Data challenge 3, March 2025: **cosi-data-challenge-3 (latest release)**
 - Data challenge 4: Planned for March 2026
 - Data challenge 5: Planned for March 2027 (final challenge before launch :rocket:!)
@@ -89,7 +89,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - Extracting energy spectra from the Crab, Cen A, Cygnus X-1, and Vela.
     - Imaging bright point sources, such as the Crab and Cygnus X-1.
     - Imaging diffuse emission from the positron-electron annihilation 511 keV and Al-26 1.8 MeV gamma-ray lines.
-- **[Data Challenge 2](cosi-data-challenge-2):**
+- **[Data Challenge 2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0):**
   - Focused on COSI SMEX mission.
   - First (alpha) release of cosipy. 
   - Data challenges for all the main science groups (none for dark matter and solar).
