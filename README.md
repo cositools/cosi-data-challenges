@@ -126,7 +126,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - Refinements and further developments of imaging class.
     - New Extended source response class.
 ## Useful Reference Guides
-- **[Introduction to Compton telescope data analysis](Compton_telescope_data_analysis_intro)**
+- **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro)**
 - **[Introduction to cosipy](cosipy-intro)** 
 - **[Summary of background simulations](backgrounds)** 
 
