@@ -20,7 +20,7 @@
 - [Releases](#releases)
 - [Computing Resources](#computing-resources)
 - [Simulation Tools](#simulation-tools)
-- [Executive Summary of Current and Past Challenges](#executive-summary-of-current-and-past-challenges)
+- [Summary of Current and Past Challenges](#summary-of-current-and-past-challenges)
 - [Useful Reference Guides](#useful-reference-guides)
 - [Data Challenges](#data-challenges)
   - [GRBs](#grbs)
@@ -84,7 +84,7 @@ The simulations for the COSI data challenges are ran on high performance computi
 ## Simulation Tools
 The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective data challenge directory. Model inputs for the simulations and the corresponding data challenges come from the COSI science team. All of the models used for past data challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim)).   
 
-## Executive Summary of Current and Past Challenges 
+## Summary of Current and Past Challenges 
 - **[Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1):**
   - Focused on the 2016 COSI Balloon flight.
   - Release includes real flight data for the Crab.
