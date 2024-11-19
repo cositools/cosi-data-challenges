@@ -23,6 +23,12 @@
 - [Executive Summary of Current and Past Challenges](#executive-summary-of-current-and-past-challenges)
 - [Useful Reference Guides](#useful-reference-guides)
 - [Data Challenges](#data-challenges)
+  - [GRBs](#grbs)
+  - [Positrons](#positrons)
+  - [Nucleosynthesis](#nucleosynthesis)
+  - [Galactic](#galactic)
+  - [Extragalactic](#extragalactic)
+  - [Extra Challenges](#extra-challenges)
 - [Known Caveats](#known-caveats)
 - [Citing](#citing)
 
