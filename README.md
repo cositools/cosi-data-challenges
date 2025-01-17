@@ -180,9 +180,9 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 Note: binned data products are also available for the 511 components. The file names are the same as listed above, but with "binned" instead of "unbinnned" and ".hdf5" instead of ".fits.gz". The binning matches the detector response, and has a time bin size of 7202.125 seconds. 
 
 ### Extragalactic Sources (LMC, M31, Virgo)
-Internal ToDo (Sophie): 
-1. Proofread/check content.
-2. Provide links to cites papers. 
+Internal ToDo (Sophie):
+1. Proofread/check content
+2. Provide links to cited papers
 
 **Data Files:** <br />
 LMC_Gaussian_511_3months_unbinned_data.fits.gz <br />
