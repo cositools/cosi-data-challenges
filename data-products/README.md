@@ -5,7 +5,7 @@
 We simulated 3 months of exposure for an equatorial orbit at 530 km. The simulations mimic the actual time-dependence of the instrument's pointing on the sky. The instrument rocks between $\pm 22^\circ$ from the Earth zenith every 12 hours, with a slew time of 8 minutes. This is similar to the pointing strategy for the actual satellite mission, with the exception that the solar panels may need to be rotated based on the exposure to the Sun, which will effect the slew time (expected to be between $\sim 4 - 12$ minutes). This pointing strategy will allow COSI to observe the entire sky every day. The figure below shows the pointing of the instrument's z-axis as a function of time, in Galactic coordinates. 
 
 <p align="center">
-<img width="400"  src="images/telescope_pointing.png">
+<img width="700"  src="images/telescope_pointing_DC3.png">
 </p>
 
 The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) (*main* and *feature/dee2022* branches) via the COSI simulation pipepline ([cosi-data-challenges](https://github.com/cositools/cosi-data-challenges)), using version 12 of the COSI-SMEX mass model. This is a simplified version of the mass model, and we are currently working on a more detailed one which will be implemented in future data challenges. The far left image below shows the mass model plotted with MEGAlib's *geomega*. Note that in addition to the payload, the satellite mass is also included, below the payload interface board. For comparison, we also show a schematic of the mass model (middle) and the prototype germanium detectors (right) from [Tomsick+23](https://ui.adsabs.harvard.edu/abs/2023arXiv230812362T/abstract).
