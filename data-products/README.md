@@ -2,7 +2,7 @@
 
 ### Simulated Data
 
-We simulated 3 months of exposure time for an equatorial orbit at 550 km with a zenith pointing. The simulations mimic the actual time-dependence of the instrument's pointing on the sky. The figure below shows the pointing of the instrument's z-axis as a function of time, in Galactic coordinates. 
+We simulated 3 months of exposure for an equatorial orbit at 530 km. The simulations mimic the actual time-dependence of the instrument's pointing on the sky. The instrument rocks between $\pm 22^\circ$ from the Earth zenith every 12 hours, with a slew time of 8 minutes. This is similar to the pointing strategy for the actual satellite mission, with the exception that the solar panels may need to be rotated based on the exposure to the Sun, which will effect the slew time (expected to be between $\sim 4 - 12$ minutes). This pointing strategy will allow COSI to observe the entire sky every day. The figure below shows the pointing of the instrument's z-axis as a function of time, in Galactic coordinates. 
 
 <p align="center">
 <img width="400"  src="images/telescope_pointing.png">
