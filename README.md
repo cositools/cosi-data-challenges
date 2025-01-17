@@ -177,16 +177,33 @@ The burst time for each GRB is specified with the data file. This is the minimum
 ## Positrons
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
-**Data Files:** <br />
-
-
 Note: binned data products are also available for the 511 components. The file names are the same as listed above, but with "binned" instead of "unbinnned" and ".hdf5" instead of ".fits.gz". The binning matches the detector response, and has a time bin size of 7202.125 seconds. 
 
-**Input Models:** 
+### Extragalactic Sources (LMC, M31, Virgo)
+Internal ToDo (Sophie): 
+1. Proofread/check content.
+2. Provide links to cites papers. 
 
+**Data Files:** <br />
+LMC_Gaussian_511_3months_unbinned_data.fits.gz <br />
+LMC_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
+M31_Gaussian_511_3months_unbinned_data.fits.gz <br />
+M31_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
+Virgo_Gaussian_511_3months_unbinned_data.fits.gz <br /> 
+Virgo_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
+
+**Input Models:** 
+Fluxes are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of a source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph / cm^{-2} \ s^{-1}}$ (Siegert et al 2016) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ (McMillan et al 2016), we scale the 511 keV flux of each extragalactic source based on the 511 keV flux assumed to be associated with the stellar mass in the Milky Way.
+
+The stellar masses are: <br />
+LMC: $1 \times 10^{10} \ M_\odot\$ (Erkal et al 2019) <br />
+M31: $1.25 \times 10^{11} \ M_\odot\$ (Tamm et al 2012) <br />
+Virgo: $1.2 \times 10^{14} \ M_\odot\$ (Fouque et al 2001) <br />
+
+We also include each source at 100x the nominal flux, in order to ensure that they are above COSI's 511 keV line sensitivity.
 
 **Goals:**
-
+1. Determine COSI's sensitivity for detecting these potential extragalactic 511 keV sources. 
 
 ## Nucleosynthesis 
 
