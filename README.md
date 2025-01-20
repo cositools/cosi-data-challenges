@@ -45,7 +45,7 @@ Welcome to the third COSI data challenge (DC3)! The COSI data challenges are rel
 ## Getting Started 
 The only software requirement for DC3 is [cosipy](https://github.com/cositools/cosipy). A general introduction into cosipy, including installation instructions, can be found in the [cosipy-intro](cosipy-intro) directory. For a general introduction into analyzing data from Compton telescopes see [Compton-telescope-data-analysis-intro](Compton-telescope-data-analysis-intro). Note that cosipy is part of the larger COSITools, which is a broad collection of COSI data analysis tools, documentation, and verification data sets. COSITools can be installed by following the installation instructions [here](https://github.com/cositools/cosi-setup). This also includes MEGAlib, which is the main software program used for running simulations. However, unless you need MEGAlib and/or COSITools for other reasons, it's highly recommended to just install cosipy.    
 
-This year's data challenge is based on 3 months of exposure time, for an equatorial orbit at an altitude of 550 km, with a zenith pointing. The simulated data products are provided in fits file format, and are hosted on wasabi. Details of the simulations, simulated data, and information for accessing the data products can be found in the [data-products](data-products) directory. 
+This year's data challenge is based on 3 months of exposure time, for an equatorial orbit at an altitude of 530 km, with a pointing that rocks between $\pm 20^\circ$ from the Earth zenith. The simulated data products are provided in fits file format, and are hosted on wasabi. Details of the simulations, simulated data, and information for accessing the data products can be found in the [data-products](data-products) directory. 
 
 The input models and challenges for DC3 were provided by the COSI science teams. There are challenges for the different science groups: GRBs, Positrons, Nucleosynthesis, Galactic, Extragalactic, Solar, and Dark Matter. These are described in detail in the [Data Challenges](#data-challenges) section below.  
 
@@ -70,7 +70,7 @@ For analyzing data in DC2, the backgrounds are modeled using the actual injected
 
 - Data challenge 1, March 2023: [cosi-data-challenge-1](https://github.com/cositools/cosi-data-challenge-1)
 - Data challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0)
-- Data challenge 3, March 2025: **cosi-data-challenge-3 (latest release)**
+- Data challenge 3, April 2025: **cosi-data-challenge-3 (latest release)**
 - Data challenge 4: Planned for March 2026
 - Data challenge 5: Planned for March 2027 (final challenge before launch :rocket:!)
 
@@ -117,7 +117,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
   - Data challenges for all the main science groups (including dark matter and solar), covering all of COSI's primary science objectives. 
   - All models and challenges provided by respective COSI science teams.
   - Used 3 months of observations, for an equatorial orbit at 530 km.
-  - Simulations include rocking of instruement:
+  - Simulations include rocking of instrument:
     - Pointing changes between +/- 22 degrees every 12 hrs, with 8 minute transition time. 
   - Used detailed COSI SMEX mass model.
   - Simulated all background components in low-Earth orbit, including variability from geomagnetic cutoff, long-term buildup, and full SAA passage.
