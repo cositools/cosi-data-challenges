@@ -18,7 +18,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) (*develop-
 For the source simulations (with *cosima*) we use the COSISMEX.sim.geo.setup version of the mass model. This has a high strip pitch for charge sharing. For the event reconstruction (with *revan*) we use the COSISMEX.analysis.geo.setup version of the mass model. This implements the detector effects engine. We simulate energies between 100 keV - 10 MeV. Note that COSI's nominal energy range is 200 keV - 5 MeV, but we used an upper bound of 10 MeV in order to account for energy dispersion. Earth occultation is accounted for in the simulations by blocking all photons with arrival directions beyond $\mathrm{113^\circ}$ of the zenith (see [here](https://github.com/cositools/cosi-data-challenges/tree/develop/earth-occultation) for more details). We only select photons corresponding to Compton events. The full configuration files used for the event reconstruction (with *revan*) and extracting the data (with *mimrec*) can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Input_Files/Configuration_Files/Data_Challenges/Data_Challenge_3).
 
 ### Data Format
-The data is provided in fits file format, which contains all of the photon information for each reconstructed event. If you are unfamiliar with analysis of Compton data, we highly recommend reading the [DC1](https://github.com/cositools/cosi-data-challenge-1) introduction page, which covers some of the fundamental topics. In short, the data for each reconstructed photon event is decribed in terms of four axes: energy, time, Compton scattering angle (&phi;), and event circle axis (&psi; &chi;). For Compton data, photons occupy what is known as the Compton data space, which is a 3-dimensional space defined by the axes &phi;, &psi;, and &chi;, where &psi; and &chi; are the angles defining the vector that points from the location of the second detector hit to the location of the first detector hit. A reconstructed photon event corresponds to a so-called event circle on the sky, where the axis of the circle is given by the &psi; &chi; vector, and the radius of the circle is given by the Compton scattering angle &phi;. For the actual data analysis, &psi; and &chi; are defined using a healpix grid, allowing us to reduce this to a single dimension (&psi; &chi;), i.e. the healpix pixel number.  
+The data is provided in fits file format, which contains all of the photon information for each reconstructed event. If you are unfamiliar with analysis of Compton data, we highly recommend reading the introduction page [here](https://github.com/cositools/cosi-data-challenges/tree/develop/Compton-telescope-data-analysis-intro), which covers some of the fundamental topics. In short, the data for each reconstructed photon event is decribed in terms of four axes: energy, time, Compton scattering angle (&phi;), and event circle axis (&psi; &chi;). For Compton data, photons occupy what is known as the Compton data space, which is a 3-dimensional space defined by the axes &phi;, &psi;, and &chi;, where &psi; and &chi; are the angles defining the vector that points from the location of the second detector hit to the location of the first detector hit. A reconstructed photon event corresponds to a so-called event circle on the sky, where the axis of the circle is given by the &psi; &chi; vector, and the radius of the circle is given by the Compton scattering angle &phi;. For the actual data analysis, &psi; and &chi; are defined using a healpix grid, allowing us to reduce this to a single dimension (&psi; &chi;), i.e. the healpix pixel number.  
 
 There are fits files for each individual component, for both sources and backgrounds. Each data challenge specifies the specific source files that you'll need. In order to create the dataset for a given data challenge, you will need to combine the source data with the background data. Instructions on how to do this are provided in the [DataIO example](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) in cosipy, as well as some of the DC2 example jupyter notebooks. There are 12 individual background components that need to be combined in order to obtain the total background. Alternatively, a file with the total background already combined is also available. 
 
@@ -47,115 +47,36 @@ fetch_wasabi_file('full/path/wasabi/file')
 Note that an error will be thrown if the file already exists. To overwrite the existing file, the keyword ``override=True`` can be passed.   
 
 **Orientation File:** <br />
-wasabi path and file: COSI-SMEX/DC2/Data/Orientation/20280301_3_month.ori <br />
+wasabi path and file: COSI-SMEX/DC3/Data/Orientation/X.ori <br />
 
 **Response Files:** <br />
-wasabi path: COSI-SMEX/DC2/Responses <br />
+wasabi path: COSI-SMEX/DC3/Responses <br />
 
 Detector Response Files: <br />
-SMEXv12.511keV.HEALPixO4.binnedimaging.imagingresponse.nonsparse_nside16.area.h5 <br />
-SMEXv12.1809keV.HEALPixO4.binnedimaging.imagingresponse.nonsparse_nside16.area.h5 <br />
-SMEXv12.44Ti.HEALPix04.E_1150_1164keV.binnedimaging.imagingresponse.nonsparse_nside16.area.h5 <br />
-SMEXv12.Continuum.HEALPixO3_10bins_log_flat.binnedimaging.imagingresponse.nonsparse_nside8.area.good_chunks_unzip.h5.zip <br />
+
 
 Point Source Response Files (in Responses/PointSourceReponse): <br />
-psr_gal_511_DC2.h5.gz <br />
-psr_gal_Al26_DC2.h5.gz <br />
-psr_gal_Ti44_E_1143_1171keV_DC2.h5.gz <br />
-psr_gal_Ti44_E_1150_1164keV_DC2.h5.gz <br />
-psr_gal_continuum_DC2.h5.zip <br />
+
 
 **Background Files:** <br />
 
-wasabi path: COSI-SMEX/DC2/Data/Backgrounds <br />
+wasabi path: COSI-SMEX/DC3/Data/Backgrounds <br />
 
 Unbinned Files: <br />
-total_bg_3months_unbinned_data.fits.gz <br />
-cosmic_photons_3months_unbinned_data.fits.gz <br />
-albedo_photons_3months_unbinned_data.fits.gz <br />
-primary_protons_prompt_3months_unbinned_data.fits.gz <br />
-primary_protons_decay_3months_unbinned_data.fits.gz <br />
-primary_alphas_prompt_3months_unbinned_data.fits.gz <br />
-primary_alpha_delayed_3months_unbinned_data.fits.gz <br />
-primary_electrons_3months_unbinned_data.fits.gz <br />
-primary_positrons_3months_unbinned_data.fits.gz <br />
-NeutronAtm_prompt_3months_unbinned_data.fits.gz <br />
-NeutronAtm_decay_3months_unbinned_data.fits.gz <br />
-secondary_protons_prompt_3months_unbinned_data.fits.gz <br />
-secondary_protons_delayed_3months_unbinned_data.fits.gz <br />
+
 
 Binned Files: <br />
-total_bg_3months_binned_for_511.hdf5 <br />
-total_bg_3months_binned_for_Al26.hdf5 <br />
-total_bg_3months_binned_for_Ti44_E_1143_1171keV.hdf5 <br />
-total_bg_3months_binned_for_Ti44_E_1150_1164keV.hdf5 <br />
-total_bg_3months_binned_for_continuum.hdf5 <br />
+
 
 **Source Files:** <br />
 
-wasabi path: COSI-SMEX/DC2/Data/Sources <br />
+wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
-For DC2 we simulated 30 unique sources, running 49 different simulations in total (using multiple models for some of the sources). 
+For DC3 we simulated x unique sources, running X different simulations in total (using multiple models for some of the sources). 
 
 Unbinned Files: <br />
-GRB101216721_unbinned_data.fits.gz <br />
-GRB081122614_unbinned_data.fits.gz <br />
-GRB090206620_unbinned_data.fits.gz <br />
-GRB090227772_unbinned_data.fits.gz <br />
-GRB090228204_unbinned_data.fits.gz <br />
-GRB130425327_unbinned_data.fits.gz <br />
-GRB080723557_unbinned_data.fits.gz <br />
-GRB080725541_unbinned_data.fits.gz <br />
-GRB081101491_unbinned_data.fits.gz <br />
-GRB081223419_unbinned_data.fits.gz <br />
-GRB180128215_unbinned_data.fits.gz <br />
-GRB200415A_unbinned_data.fits.gz <br />
-511_thin_diskx10_3months_unbinned_data.fits.gz <br />
-511_thin_disk_3months_unbinned_data.fits.gz <br />
-511_thick_disk10x_3months_unbinned_data.fits.gz <br />
-511_thick_disk_3months_unbinned_data.fits.gz <br />
-511_Testing_3months_unbinned_data.fits.gz <br />
-Al26_R5000_z1000_M60_3months_10xflux_unbinned_data.fits.gz <br />
-Al26_R5000_z1000_M60_3months_unbinned_data.fits.gz <br />
-Al26_R5000_z0200_M30_10xflux_3months_unbinned_data.fits.gz <br />
-Al26_R5000_z0200_M30_3months_unbinned_data.fits.gz <br />
-Ti44_SNsurprise_x50_3months_unbinned_data.fits.gz <br />
-Ti44_SN1987A_x50_3months_unbinned_data.fits.gz <br />
-Ti44_SNsurprise_3months_unbinned_data.fits.gz <br />
-Ti44_SN1987A_3months_unbinned_data.fits.gz <br />
-Ti44_G1903_3months_unbinned_data.fits.gz <br />
-Ti44_G1903_x10_3months_unbinned_data.fits.gz <br />
-Ti44_CasA_x50_3months_unbinned_data.fits.gz <br />
-Ti44_CasA_3months_unbinned_data.fits.gz <br />
-cygX3_FSXR_54percent-transition_46percent_3months_unbinned_data.fits.gz <br />
-cygX3_transition_3months_unbinned_data.fits.gz <br />
-cygX3_FSXR_3months_unbinned_data.fits.gz <br />
-cygX1_hard-soft_3months_unbinned_data.fits.gz <br />
-cygX1_soft_3months_unbinned_data.fits.gz <br />
-cygX1_hard_3months_unbinned_data.fits.gz <br />
-crab_3months_unbinned_data.fits.gz <br />
-Crab_DC2_3months_unbinned_data.fits.gz <br />
-crab_no_Earth_occultation_3months_unbinned_data.fits.gz <br />
-PSRJ1846_3months_unbinned_data.fits.gz <br />
-PSRB1509_3months_unbinned_data.fits.gz <br />
-GRS1758_3months_unbinned_data.fits.gz <br />
-1E1740_two_components_3months_unbinned_data.fits.gz <br />
-1E1740_compton-powerlaw_3months_unbinned_data.fits.gz <br />
-3C279_low100_3months_unbinned_data.fits.gz <br />
-3C279_high100_3months_unbinned_data.fits.gz <br />
-4C21p35_3months_unbinned_data.fits.gz <br />
-3C273_10xFlux_3months_unbinned_data.fits.gz <br />
-3C273_3months_unbinned_data.fits.gz <br />
-cenA_3months_unbinned_data.fits.gz <br />
+
 
 Binned Files: <br />
-511_thin_diskx10_3months_binned_data.hdf5 <br />
-511_thin_disk_3months_binned_data.hdf5 <br />
-511_thick_disk10x_3months_binned_data.hdf5 <br />
-511_thick_disk_3months_binned_data.hdf5 <br />
-511_Testing_3months_binned_data.hdf5 <br />
-Al26_R5000_z1000_M60_3months_10xflux_binned_data.hdf5 <br />
-Al26_R5000_z1000_M60_3months_binned_data.hdf5 <br />
-Al26_R5000_z0200_M30_10xflux_3months_binned_data.hdf5 <br />
-Al26_R5000_z0200_M30_3months_binned_data.hdf5 <br />
+
