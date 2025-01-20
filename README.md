@@ -63,6 +63,7 @@ In general, observations in the MeV band are hindered by high backgrounds (both 
 For analyzing data in DC2, the backgrounds are modeled using the actual injected backgrounds themselves. This is the ideal case, where the backgrounds are perfectly known, which of course is not very realistic. In future data challenges we will be developing tools for estimating backgrounds when they are not perfectly known, as will be the case for the actual observations. 
 
 ## Earth Occultation
+The Earth blocks a significant portion of the sky for satellites in low-Earth orbit, referred to as Earth occultation. It is important to account for this when simulating observations and performing data analysis. In order to implement this for the DC3 simulations we needed  to add new functionality to MEGAlib, as detailed in the [earth-occultation](earth-occultation) directory. **These new methods now allow for simulating instruments with non-zenith pointings.** We also added new methods in cosipy to account for Earth occultation in the data analysis. 
 
 ## Polarization
 
