@@ -206,6 +206,24 @@ We also include each source at 100x the nominal flux, in order to ensure that th
 **Goals:**
 1. Determine COSI's sensitivity for detecting these potential extragalactic 511 keV sources. 
 
+### Globular Clusters (Tuc 47, Omega_Cen, NGC 6121, NGC_6397)
+Internal ToDo (Saurabh):
+1. Clarify and provide a bit more information regarding how the 511 flux was estimated. 
+2. Proofread/check content
+3. Provide links to cited papers
+
+**Data Files:** <br />
+Globular_Cluster_Tuc_47_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_Omega_Cen_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_NGC_6397_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_NGC_6121_3months_unbinned_data.fits.gz <br />
+
+**Input Models:** 
+The 511 keV photon flux for the brightest 4 globular clusters is presented here. The flux is estimated based on the 0.1 - 100 GeV luminosity from the Globular clusters, nuclear bulge emission, and boxy bulge emission in the Milky Way (Bartels+2017). The GeV luminosity of the Bulge is compared to the 511 keV luminosity of the bulge to estimate the 511 keV flux of the globular clusters. The flux values shown here are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit.
+
+**Goals:**
+1. Determine COSI's sensitivity for detecting 511 keV emission from Globular clusters.
+   
 ## Nucleosynthesis 
 
 ### Al26
