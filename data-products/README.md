@@ -53,7 +53,7 @@ wasabi path and file: COSI-SMEX/DC3/Data/Orientation/X.ori <br />
 wasabi path: COSI-SMEX/DC3/Responses <br />
 
 Detector Response Files: <br />
-
+Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.rsp.gz
 
 Point Source Response Files (in Responses/PointSourceReponse): <br />
 
