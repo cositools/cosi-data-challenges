@@ -178,7 +178,8 @@ The burst time for each GRB is specified with the data file. This is the minimum
 ## Positrons
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
-Note: binned data products are also available for the 511 components. The file names are the same as listed above, but with "binned" instead of "unbinnned" and ".hdf5" instead of ".fits.gz". The binning matches the detector response, and has a time bin size of 7202.125 seconds. 
+**All challenges should use the same detector response file:** 
+Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.rsp.gz
 
 ### Extragalactic Sources (LMC, M31, Virgo)
 Internal ToDo (Sophie):
