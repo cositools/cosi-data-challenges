@@ -82,6 +82,10 @@ M31_Gaussian_511_3months_unbinned_data.fits.gz <br />
 M31_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
 Virgo_Gaussian_511_3months_unbinned_data.fits.gz <br /> 
 Virgo_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_Tuc_47_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_Omega_Cen_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_NGC_6397_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_NGC_6121_3months_unbinned_data.fits.gz <br />
 
 Binned Files: <br />
 
