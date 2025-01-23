@@ -194,7 +194,7 @@ M31_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
 Virgo_Gaussian_511_3months_unbinned_data.fits.gz <br /> 
 Virgo_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
 
-**Input Models:** 
+**Input Models:**  <br />
 Fluxes are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of a source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ (Siegert et al 2016) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ (McMillan et al 2016), we scale the 511 keV flux of each extragalactic source based on the 511 keV flux assumed to be associated with the stellar mass in the Milky Way.
 
 The stellar masses are: <br />
@@ -219,10 +219,10 @@ Globular_Cluster_Omega_Cen_3months_unbinned_data.fits.gz <br />
 Globular_Cluster_NGC_6397_3months_unbinned_data.fits.gz <br />
 Globular_Cluster_NGC_6121_3months_unbinned_data.fits.gz <br />
 
-**Input Models:** 
+**Input Models:**  <br />
 The 511 keV photon flux for the brightest 4 globular clusters is presented here. The flux is estimated based on the 0.1 - 100 GeV luminosity from the Globular clusters, nuclear bulge emission, and boxy bulge emission in the Milky Way (Bartels+2017). The GeV luminosity of the Bulge is compared to the 511 keV luminosity of the bulge to estimate the 511 keV flux of the globular clusters. The flux values shown here are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit.
 
-**Goals:**
+**Goals:** <br />
 1. Determine COSI's sensitivity for detecting 511 keV emission from Globular clusters.
    
 ## Nucleosynthesis
@@ -242,7 +242,7 @@ described in Martin+09. The source is modeled with a 3deg width (standard deviat
 at l = 81 deg, b = 1 deg. The line flux is 3.9e-5 ph/s/cm2. It is centered at 1808.8 keV and its width is 1.6 keV (FWHM)
 due to the interstellar turbulence.
 
-**Goals:**
+**Goals:** <br />
 1. Make detection taking into account the Galactic diffuse continuum background at 1809 keV emission.
 2. Measure width of the gamma-ray line.
 3. Recover 60Fe/26Al ratio (see 60Fe_Cyg_Region)
@@ -265,7 +265,6 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 
 **All challenges should use the same detector response file:**
 
-
 ### CygX1
 
 **Data Files:** <br />
@@ -275,82 +274,6 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 
 
 **Goals:** <br />
-
-
-### CygX3
-
-**Data Files:** <br />
-
-
-**Input Models:**  <br />
- 
-**Goals:** <br />
-
-
-### 1E1740.7-2942
-
-**Data Files:** <br />
-
-
-**Input Models:**  <br />
-
-
-**Goals:** <br />
-
-
-### GRS 1758-258
-
-**Data Files:** <br />
-
-
-**Input Models:**  <br />
-
-
-**Goals:** <br />
- 
-
-### PSR J1513-5908 (B1509-58)
-
-**Data Files:** <br />
-
-
-**Input Models:**  <br />
-
-
-**Goals:** <br />
-
-
-### PSR J1846-0258
-
-**Data Files:** <br />
-
-
-**Input Models:**  <br />
-
-
-**Goals:** <br />
-
-
-### Crab DC2
-
-**Data Files:** <br />
-
-
-**Input Models:**  <br />
-
-
-**Goals:** <br />
-
-### Crab DC1
-
-**Data Files:** <br />
-
-
-**Input Models:**  <br />
-
-
-**Goals:** <br />
-
 
 ## Extragalactic
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) notebook.
