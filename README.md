@@ -348,40 +348,45 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) notebook.
 
 **All challenges should use the same detector response file:**
-SMEXv12.Continuum.HEALPixO3_10bins_log_flat.binnedimaging.imagingresponse.nonsparse_nside8.area.good_chunks_unzip.h5
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1945.nonsparse.binnedimaging.imagingresponse.rsp.gz
 
-### 3C 273
+### NGC 1068
+Internal ToDo (Lea):
+1. Proofread/check content
+2. Provide links to cited papers
 
 **Data Files:** <br /> 
-
+NGC_1068_3months_unbinned_data.fits.gz
 
 **Input Models:**  <br />
-
+The baseline model is a powerlaw with exponential cut-off from Bauer+2015: <br />
+Gamma=1.92, Ecut=200 keV; intrinsic flux 2-10 keV = 8.9e-10 erg/cm2/s
 
 **Goals:** <br />
+1. Determine flux in the COSI band, and coronal cut-off energy. 
 
-
-### 3C 279
+### NGC 4151
+Internal ToDo (Lea):
+1. Proofread/check content
+2. Provide links to cited papers
 
 **Data Files:** <br />
-
-
-**Input Models:**  <br />
-
-
-**Goals:** <br />
-
-
-### 4C+21.35
-
-**Data Files:** <br />
-
+NGC_4151_bright_3months_unbinned_data.fits.gz <br />
+NGC_4151_EC200_3months_unbinned_data.fits.gz <br />
+NGC_4151_EC1000_3months_unbinned_data.fits.gz <br />
+NGC_4151_faint_3months_unbinned_data.fits.gz <br />
 
 **Input Models:**  <br />
+The baseline model is a powerlaw with exponential cut-off. <br />
 
+NGC_4151_ec200: flux in the 20-30 keV calibrated from NuSTAR observations; Gamma=1.75, Ecut=200 keV <br />
+NGC_4151_ec1000: flux in the 20-30 keV calibrated from NuSTAR observations; Gamma=1.75, Ecut=1000 keV <br />
+
+NGC_4151_bright: bright state flux calibrated from INTEGRAL observation of Lubinski+2010; Gamma=1.71, Ecut=264 keV <br />
+NGC_4151_faint: faint state flux calibrated from INTEGRAL observation of Lubinski+2010; Gamma=1.81, Ecut=1000 keV <br />
 
 **Goals:** <br />
-
+1. Determine flux in the COSI band, and coronal cut-off energy. <br />
 
 ## Extra Challenges
 Below we provide more advanced data challenges for interested users. The ultimate goal of these challenges would be to eventually integrate the methods and tools into the cosipy source code. 
