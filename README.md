@@ -225,19 +225,20 @@ The 511 keV photon flux for the brightest 4 globular clusters is presented here.
 **Goals:**
 1. Determine COSI's sensitivity for detecting 511 keV emission from Globular clusters.
    
-## Nucleosynthesis 
-
-### Al26
+## Nucleosynthesis
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
+### Al26 Cygnus Region
+Internal ToDo (Pierre):
+1. Proofread/check content
+2. Provide links to cited papers
+   
 **Data Files:** <br /> 
 26Al_Cyg_Region_3months_unbinned_data.fits.gz
 
 **Input Models:**  <br />
 The characteristics of the emission were obtained from the analyses of INTEGRAL/SPI observations
-described in [Martin et al. 2009](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M/abstract).
-
-The source is modeled with a 3deg width (standard deviation) Gaussian shape emission centered
+described in Martin+09. The source is modeled with a 3deg width (standard deviation) Gaussian shape emission centered
 at l = 81 deg, b = 1 deg. The line flux is 3.9e-5 ph/s/cm2. It is centered at 1808.8 keV and its width is 1.6 keV (FWHM)
 due to the interstellar turbulence.
 
