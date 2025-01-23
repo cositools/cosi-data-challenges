@@ -53,7 +53,8 @@ wasabi path and file: COSI-SMEX/DC3/Data/Orientation/X.ori <br />
 wasabi path: COSI-SMEX/DC3/Responses <br />
 
 Detector Response Files: <br />
-Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.rsp.gz
+Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1945.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
 
 Point Source Response Files (in Responses/PointSourceReponse): <br />
 
@@ -86,6 +87,11 @@ Globular_Cluster_Tuc_47_3months_unbinned_data.fits.gz <br />
 Globular_Cluster_Omega_Cen_3months_unbinned_data.fits.gz <br />
 Globular_Cluster_NGC_6397_3months_unbinned_data.fits.gz <br />
 Globular_Cluster_NGC_6121_3months_unbinned_data.fits.gz <br />
+NGC_4151_bright_3months_unbinned_data.fits.gz <br />
+NGC_4151_EC200_3months_unbinned_data.fits.gz <br />
+NGC_4151_EC1000_3months_unbinned_data.fits.gz <br />
+NGC_4151_faint_3months_unbinned_data.fits.gz <br />
+NGC_1068_3months_unbinned_data.fits.gz
 
 Binned Files: <br />
 
