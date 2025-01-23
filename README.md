@@ -231,13 +231,20 @@ The 511 keV photon flux for the brightest 4 globular clusters is presented here.
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 **Data Files:** <br /> 
-
-
-Note: binned data products are also available for the Al26 components. The file names are the same as listed above, but with "binned" instead of "unbinnned" and ".hdf5" instead of ".fits.gz". The binning matches the detector response, and has a time bin size of 7202.125 seconds. 
+26Al_Cyg_Region_3months_unbinned_data.fits.gz
 
 **Input Models:**  <br />
+The characteristics of the emission were obtained from the analyses of INTEGRAL/SPI observations
+described in [Martin et al. 2009](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M/abstract).
+
+The source is modeled with a 3deg width (standard deviation) Gaussian shape emission centered
+at l = 81 deg, b = 1 deg. The line flux is 3.9e-5 ph/s/cm2. It is centered at 1808.8 keV and its width is 1.6 keV (FWHM)
+due to the interstellar turbulence.
 
 **Goals:**
+1. Make detection taking into account the Galactic diffuse continuum background at 1809 keV emission.
+2. Measure width of the gamma-ray line.
+3. Recover 60Fe/26Al ratio (see 60Fe_Cyg_Region)
 
 ### Ti44
 The tools needed to complete these challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
