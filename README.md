@@ -379,11 +379,13 @@ NGC_4151_faint_3months_unbinned_data.fits.gz <br />
 **Input Models:**  <br />
 The baseline model is a powerlaw with exponential cut-off. <br />
 
-NGC_4151_ec200: flux in the 20-30 keV calibrated from NuSTAR observations; Gamma=1.75, Ecut=200 keV <br />
-NGC_4151_ec1000: flux in the 20-30 keV calibrated from NuSTAR observations; Gamma=1.75, Ecut=1000 keV <br />
+flux in the 20-30 keV calibrated from NuSTAR observations: <br />
+NGC_4151_ec200: Gamma=1.75, Ecut=200 keV <br />
+NGC_4151_ec1000: Gamma=1.75, Ecut=1000 keV <br />
 
-NGC_4151_bright: bright state flux calibrated from INTEGRAL observation of Lubinski+2010; Gamma=1.71, Ecut=264 keV <br />
-NGC_4151_faint: faint state flux calibrated from INTEGRAL observation of Lubinski+2010; Gamma=1.81, Ecut=1000 keV <br />
+flux calibrated from INTEGRAL observation of Lubinski+2010: <br />
+NGC_4151_bright: Gamma=1.71, Ecut=264 keV <br />
+NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 
 **Goals:** <br />
 1. Determine flux in the COSI band, and coronal cut-off energy. <br />
