@@ -28,6 +28,7 @@
   - [Nucleosynthesis](#nucleosynthesis)
   - [Galactic](#galactic)
   - [Extragalactic](#extragalactic)
+  - [Dark Matter](#dark-matter)
   - [Extra Challenges](#extra-challenges)
 - [Known Caveats](#known-caveats)
 - [Citing](#citing)
