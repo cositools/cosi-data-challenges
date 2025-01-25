@@ -325,13 +325,15 @@ NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 Internal ToDo (Yu):
 1. Provide more info about models.
 2. Proofread/check content
-   
+
+The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
+ 
 **Data Files:** <br />
-eeg_ISO_3months_unbinned_data.fits.gz
-eeg_Bur_3months_unbinned_data.fits.gz
-eeg_NFW_3months_unbinned_data.fits.gz
-gg_ISO_3months_unbinned_data.fits.gz
-gg_Bur_3months_unbinned_data.fits.gz
+eeg_ISO_3months_unbinned_data.fits.gz <br />
+eeg_Bur_3months_unbinned_data.fits.gz <br />
+eeg_NFW_3months_unbinned_data.fits.gz <br />
+gg_ISO_3months_unbinned_data.fits.gz <br />
+gg_Bur_3months_unbinned_data.fits.gz <br />
 gg_NFW_3months_unbinned_data.fits.gz
 
 **Input Models:**  <br />
