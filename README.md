@@ -321,6 +321,27 @@ NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 **Goals:** <br />
 1. Determine flux in the COSI band, and coronal cut-off energy. <br />
 
+## Dark Matter
+Internal ToDo (Yu):
+1. Provide more info about models.
+2. Proofread/check content
+   
+**Data Files:** <br />
+eeg_ISO_3months_unbinned_data.fits.gz
+eeg_Bur_3months_unbinned_data.fits.gz
+eeg_NFW_3months_unbinned_data.fits.gz
+gg_ISO_3months_unbinned_data.fits.gz
+gg_Bur_3months_unbinned_data.fits.gz
+gg_NFW_3months_unbinned_data.fits.gz
+
+**Input Models:**  <br />
+Files for DM annihilating into gamma-gamma or e-e-gamma, assuming NFW or Burkert profile. <br />
+m_DM = 3 MeV and <sigma v> = 1e-30 cm3/s. Other parameters are detailed in our slides. <br />
+
+**Goals:** <br />
+1. Calculate the gamma-ray spectra from the annihilating MeV DM.
+2. Compare the spectra from DM and background, and determine COSI’s detectability for attractive DM candidates.
+   
 ## Extra Challenges
 Below we provide more advanced data challenges for interested users. The ultimate goal of these challenges would be to eventually integrate the methods and tools into the cosipy source code. 
 
