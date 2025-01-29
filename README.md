@@ -251,16 +251,43 @@ due to the interstellar turbulence.
 ### Ti44
 The tools needed to complete these challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
 
+Internal ToDo (Anaya):
+1. Clarify and provide a bit more information regarding the models.
+2. State the goals of the data challenge.
+3. Proofread/check content
+4. Provide links to cited papers.
+   
 **Data Files:** <br /> 
-
-Note: There are two different response files with a slightly different width of the energy bin (one being more broad than the other). An additional goal of this data challenge is to determine which response file works better in the analysis.   
+CasApartiallyresolved_3months_unbinned_data.fits.gz <br />
+CasAfullyresolved_3months_unbinned_data.fits.gz <br />
+CasAG16distribution_3months_unbinned_data.fits.gz <br />
+CasAunresolved_3months_unbinned_data.fits.gz <br />
+CasAsymmetric_3months_unbinned_data.fits.gz <br />
 
 **Input Models:**  <br />
+In all 4 scenarios, bulk centre of motion is at rest. Doppler broadening is limited to 1000 km/s, as otherwise, when combined with the Doppler shifts of clumps, the signal will fall quite outside the DC2 simulated response region of 1143-1171 keV.
 
+In asymmetric scenarios, Clump 1: Contains 2/3 of total 44Ti yield Doppler shifted towards from the observer (blueshifted). Has peak energy higher than 1157 keV. Clump 2: Contains 1/3 of total 44Ti yield Doppler shifted away from the observer (redshifted). Has peak energy lower than 1157 keV.
+
+All spectra follow simple Gaussian distributions. The flux is taken as the value between 2.1 x 10^-5 in Grefenstette et al 2015 and 3.5 x 10^-5 ph/cm^2/s in Siegert et al 2015.
 
 **Goals:** <br />
+1. What are the goals?
 
+### Fe60 Cygnus Region
 
+**Data Files:** <br /> 
+60Fe_Cyg_Region_3months_unbinned_data.fits.gz
+
+**Input Models:**  <br />
+The flux of the 60Fe lines is derived from the calculation of Martin+10. The spatial extent of this diffuse emission is the same as the one of the 1809 keV line emission that were obtained from the analyses of SPI/INTEGRAL observations
+described in Martin+09. The source is modeled with a 3deg width (standard deviation) Gaussian shape emission centered at l = 81 deg, b = 1 deg. The line fluxes are 2.7e-6 ph/s/cm2 for the both line. The line energies are 1173.3 keV and 1332.6 keV and their width are 1.04 keV and 1.18 keV (FWHM), respectively (broadening due to the interstellar turbulence).
+
+**Goals:** <br />
+1. Make detection taking into account the Galactic diffuse continuum background at 1173 keV and 1332 keV.
+2. Measure width of the gamma-ray line.
+3. Recover 60Fe/26Al ratio (see 26Al_Cyg_Region)
+   
 ## Galactic 
 The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
 
