@@ -97,6 +97,12 @@ NGC_4151_EC1000_3months_unbinned_data.fits.gz <br />
 NGC_4151_faint_3months_unbinned_data.fits.gz <br />
 NGC_1068_3months_unbinned_data.fits.gz <br />
 26Al_Cyg_Region_3months_unbinned_data.fits.gz <br />
+60Fe_Cyg_Region_3months_unbinned_data.fits.gz <br />
+CasApartiallyresolved_3months_unbinned_data.fits.gz <br />
+CasAfullyresolved_3months_unbinned_data.fits.gz <br />
+CasAG16distribution_3months_unbinned_data.fits.gz <br />
+CasAunresolved_3months_unbinned_data.fits.gz <br />
+CasAsymmetric_3months_unbinned_data.fits.gz <br />
 eeg_ISO_3months_unbinned_data.fits.gz <br />
 eeg_Bur_3months_unbinned_data.fits.gz <br />
 eeg_NFW_3months_unbinned_data.fits.gz <br />
