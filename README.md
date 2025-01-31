@@ -423,6 +423,28 @@ NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 **Goals:** <br />
 1. Determine flux in the COSI band, and coronal cut-off energy. <br />
 
+### 4C+21.35
+Internal ToDo (Michela):
+1. Give gaol of challenge
+2. Provide description of model
+3. Proofread/check content
+
+**Data Files:** <br />
+4C21p35_noflare_3months_unbinned_data.fits.gz <br />
+4C21p35_flare_3months_unbinned_data.fits.gz <br />
+
+**Input Models:**  <br />
+We present a lightcurve showing 2 states: a flaring state and a quiescent state. The Flaring state is defined every time in which the average flux is 3 times greater than the 16-years average flux (given by Fermi).
+
+The two states come with two different spectra: both powerlaws with different indices:
+1. noflare = 1.6
+2. flare = 2.5
+
+The normalization is derived from the integrated flux in COSI energy band derived from the extrapolation of the Fermi-LAT log parabola function. 
+
+**Goals:** <br />
+1. What are the goals of this challenge. <br />
+
 ## Dark Matter
 Internal ToDo (Yu):
 1. Provide more info about models.
