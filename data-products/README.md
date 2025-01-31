@@ -100,6 +100,8 @@ NGC_4151_EC200_3months_unbinned_data.fits.gz <br />
 NGC_4151_EC1000_3months_unbinned_data.fits.gz <br />
 NGC_4151_faint_3months_unbinned_data.fits.gz <br />
 NGC_1068_3months_unbinned_data.fits.gz <br />
+4C21p35_noflare_3months_unbinned_data.fits.gz <br />
+4C21p35_flare_3months_unbinned_data.fits.gz <br />
 26Al_Cyg_Region_3months_unbinned_data.fits.gz <br />
 26Al_NE2001_3months_unbinned_data.fits.gz <br />
 60Fe_Cyg_Region_3months_unbinned_data.fits.gz <br />
