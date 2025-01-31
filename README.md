@@ -284,6 +284,26 @@ due to the interstellar turbulence.
 2. Measure width of the gamma-ray line.
 3. Recover 60Fe/26Al ratio (see 60Fe_Cyg_Region)
 
+### Al26 NE2001
+Internal ToDo (Pierre):
+1. Proofread/check content
+2. Provide links to cited papers
+   
+**Data Files:** <br /> 
+26Al_NE2001_3months_unbinned_data.fits.gz
+
+**Input Models:**  <br />
+This is the description of the model of the 1809 keV line diffuse emission due decay of 26Al in our Galaxy. The spatial distribution is derived from the model NE2001 of Cordes & Lazio 2002 that fits
+the distribution of massive stars in our Galaxy. The fraction of 26Al in the bulge is 2%. This value is a compromise between SPI observations and results of studies of star formation rate in this region.
+The shape of the line in each spatial bin takes into account the turbulence of the interstellar medium and the Galactic rotation using the model of Fich, Blitz and Stark 1989 for R > 3 kpc and a solid rotation model for R < 3 kpc.
+
+**Goals:** <br />
+1. Detection of the diffuse emission.
+2. Detection of the Doppler shift in the disk.
+3. Detection of the spectral shape.
+4. Correlation with the emission of the galactic positron annihilations
+5. Extract F(26Al)/F(60Fe) ratio and its uncertainty
+   
 ### Ti44
 The tools needed to complete these challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
 
@@ -311,7 +331,10 @@ All spectra follow simple Gaussian distributions. The flux is taken as the value
 1. What are the goals?
 
 ### Fe60 Cygnus Region
-
+Internal ToDo (Pierre):
+1. Proofread/check content
+2. Provide links to cited papers
+   
 **Data Files:** <br /> 
 60Fe_Cyg_Region_3months_unbinned_data.fits.gz
 
@@ -323,6 +346,21 @@ described in Martin+09. The source is modeled with a 3deg width (standard deviat
 1. Make detection taking into account the Galactic diffuse continuum background at 1173 keV and 1332 keV.
 2. Measure width of the gamma-ray line.
 3. Recover 60Fe/26Al ratio (see 26Al_Cyg_Region)
+
+ ### Fe60 NE2001
+Internal ToDo (Pierre):
+1. Proofread/check content
+2. Provide links to cited papers
+   
+**Data Files:** <br /> 
+60Fe_NE2001_3months_unbinned_data.fits.gz
+
+**Input Models:**  <br />
+This is the description of the model of the diffuse emission of the 1173 keV and 1332 keV lines due decay of 60Fe in our Galaxy. The spatial distribution is derived from the model NE2001 of Cordes & Lazio 2002 that fits the distribution of massive stars in our Galaxy. The fraction of 60Fe in the bulge is 2%. This value is the same as the one of the 26Al, which is a compromise between SPI observations and results of studies of star formation rate in this region. The flux is computed assuming a total mass of 60Fe of 3.5 M_sol in our Galaxy (see Wang et al., 2020 and Siegert et al. 2023). The shape of the line in each spatial bin takes into account the turbulence of the interstellar medium and the Galactic rotation using the model of Fich, Blitz and Stark (1989 for R > 3 kpc and a solid rotation model for R < 3 kpc.
+
+**Goals:** <br />
+1. Detection of the diffuse emission.
+2. Extraction of the F(26Al)/F(60Fe) ratio and its uncertainty.
    
 ## Galactic 
 The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
