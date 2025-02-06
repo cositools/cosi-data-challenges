@@ -367,6 +367,18 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 
 **All challenges should use the same detector response file:**
 
+### Galactic diffuse continuum
+
+**Data Files:** <br />
+GalTotal_SA100_F98_3months_unbinned_data.fits.gz
+
+**Input Models:**  <br />
+The Galactic diffuse continuum emission is modeled using the v57 release of the GALPROP cosmic ray (CR) propagation and interstellar emissions framework [(Porter+22)](https://iopscience.iop.org/article/10.3847/1538-4365/ac80f6). The release includes a set of steady-state emission models that reproduce the latest CR data. There are six models in total, categorized according to the CR source and interstellar radioation field (ISRF) model used for the prediction. There are 3 CR source models (SA0, SA50, SA100) and two ISRF models (R12, F98). The CR source density models are based on the distribution of injected CR power, with SA0 describing an axisymmetric disk (following the radial distribution of pulsars), SA50 describing a 50/50% split of the injected CR luminosity between disk-like and spiral arms, and SA100 describing pure spiral arms. All models have the same exponential scale height of 200 pc. The two ISRF models employ different spatial densities for both the stars and the dust but produce intensities very similar to those of the data for near- to far-infrared wavelengths at the location of the solar system (see [Porter+17](https://iopscience.iop.org/article/10.3847/1538-4357/aa844d) and references therein). For the neutral gas distributions (atomic and molecular), a 3D model from [Johannesson+18](https://iopscience.iop.org/article/10.3847/1538-4357/aab26e) is employed. Note that these GALPROP models include the total emission, which is dominated by inverse Compton radiation, but also has a small contribution from Bremsstrahlung towards the upper energy bound. As our representative case for DC3 we use the SA100-F98 model.  
+
+**Goals:** <br />
+1. Recover input spectrum
+2. Make image
+   
 ### CygX1
 
 **Data Files:** <br />
