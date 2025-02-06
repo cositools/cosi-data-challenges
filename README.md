@@ -462,6 +462,17 @@ The normalization is derived from the integrated flux in COSI energy band derive
 **Goals:** <br />
 1. What are the goals of this challenge. <br />
 
+### 3C 279
+
+**Data Files:** <br />
+3C279_3months_unbinned_data.fits.gz
+
+**Input Models:**  <br />
+The spectral data is for 3C 279 high, which represent the high state of the source, and the flux is increased by 100x its nominal value. The source is polarized with a polarization fraction of 19.62%, and a randomly chosen polarization angle of 45 degrees (in IAU convention). 
+
+**Goals:** <br />
+1. Measure the polarization fraction and angle. 
+
 ## Dark Matter
 Internal ToDo (Yu):
 1. Provide more info about models.
