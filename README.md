@@ -384,16 +384,21 @@ This is the first data challenge to include the Galactic diffuse continuum, and 
 2. Image the Galactic diffuse continuum emission in the COSI energy band.
 3. Characterize how the the Galactic diffuse continuum emission impacts the sensitivity for point sources in the Galactic plane. 
    
-### CygX1
-
+### Gamma-ray Binary PSR B1259-63
+Internal ToDo (Hiroki):
+1. Proofread/check content
+   
 **Data Files:** <br />
-
+PSRB1259_3months_unbinned_data.fits.gz <br />
+PSRB1259_10x_3months_unbinned_data.fits.gz <br />
 
 **Input Models:**  <br />
-
+PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The system has a highly eccentric orbit, with an orbital period of 3.4 years. Gamma-ray emission occurs during its periastron passage, as interactions between the outflows of the two objects trigger particle acceleration. The next periastron passage will be November 19th, 2027, making this prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see model 1 in the bottom of Figure 5). For the DC3 simulations, the following features are assumed: 1) Constant emission for 30 days. 2) Two flux scenarios: the nominal value from Abdo+11, as well as a 10x enhanced flux. Note that in general the flux and duration vary for each periastron passage, and in COSI's energy band they are not well understood.
 
 **Goals:** <br />
-
+1. Measure MeV gamma-ray flux during the flare event.
+2. Determine the duration of flare periods.
+   
 ## Extragalactic
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) notebook.
 
