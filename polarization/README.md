@@ -10,17 +10,17 @@ Compton telescopes are inherently sensitive to polarization because photons are 
 $$\frac{d\sigma}{d\Omega} = \frac{r_0^2}{2} \left( \frac{E^\prime}{E_\gamma} \right)^2 \left( \frac{E_\gamma}{E^\prime} + \frac{E^\prime}{E_\gamma} - 2\sin^2{\phi}cos^2{\eta} \right)$$        
 demonstrates this, where $r_0$ is the classical electron radius, $E_\gamma$ is the energy of the incoming photon, $E^\prime$ is the energy of the Compton-scattered photon, $\phi$ is the Compton scattering angle, and $\eta$ is the azimuthal scattering angle, or the angle at which the photon scatters measured with respect to the incoming photon's electric field vector. The cross-section is maximized when the azimuthal scattering angle is perpendicular to the photon's electric field vector ($\eta=90^\circ$) and minimized when the azimuthal scattering angle is parallel to the electric field vector ($\eta=0^\circ$).   
 
-![Compton and azimuthal scattering angles](images/scattering-angles.png "Compton and azimuthal scattering angles")
-*The Compton scattering angle, $\phi$, is shown in red. The azimuthal scattering angle, $\eta$, is measured with respect to a reference axis, $\vec{\xi}$, in a plane perpendicular to the incoming photon direction. In the Klein-Nishina equation, the reference axis is the direction of the photon's electric field vector.*        
+![Compton and azimuthal scattering angles](images/scattering-angles.png "Compton and azimuthal scattering angles")        
+*The Compton scattering angle, ϕ, is the angle between the incoming and scattered photon directions. The azimuthal scattering angle, η, is measured with respect to a reference axis, ξ, in a plane perpendicular to the incoming photon direction. In the Klein-Nishina equation, the reference axis is the direction of the photon's electric field vector.*          
 
 This makes it possible to determine the polarization using the measured distribution of azimuthal scattering angles. The probability distribution function that follows from the Klein-Nishina equation is of the form       
-$$f(x) = A - (B \Cos{(2 (\eta - C))})$$         
+$$f(x) = A - (B \cos{(2 (\eta - C))})$$         
 where $\frac{B}{A}$ is proportional to the polarization fraction and $C$ is the polarization angle. When a source is polarized, the distribution of azimuthal scattering angles is expected to be sinusoidal, with the peaks corresponding to directions perpendicular to the incoming photon's electric field vector. For an unpolarized source, the azimuthal scattering directions are random, producing a uniform distribution. This allows the polarization to be determined by fitting $A$, $B$, and $C$ to the distribution of azimuthal scattering angles. However, a realistic detector is not perfectly symmetric, and some scattering directions are suppressed or enhanced due to the instrument geometry. Therefore, the distributions of azimuthal scattering angle for polarized and unpolarized sources will not be perfectly sinusoidal and uniform, respectively. This makes it important to have a very good understanding of the instrument response in order to accurately measure polarization.        
 
 A polarization measurement is defined by the polarization fraction, which is sometimes called polarization level or polarization degree, and the polarization angle. The polarization fraction is the fraction of photons from a source that are polarized, where 100% polarization corresponds to all photons having their electric field vectors aligned in the same direction. The polarization angle describes the direction of the photons' electric field vector, and we typically use the standard [IAU convention](https://lambda.gsfc.nasa.gov/product/about/pol_convention.html) to define this angle. *cosipy*'s polarization tools include methods for transforming between different conventions, including the spacecraft frame conventions used in MEGAlib.         
 
 The minimum detectable polarization (MDP) describes the minimum polarization fraction for which significant detection can be made by a particular instrument for a given source. The 99% confidence MDP is given by       
-$$ \text{MDP_{99\%}} = \frac{4.29}{\mu_{100}} \frac{\sqrt{N_s + N_b}}{N_s}$$       
+$$\text{MDP_{99\%}} = \frac{4.29}{\mu_{100}} \frac{\sqrt{N_s + N_b}}{N_s}$$       
 where 4.29 is the coefficient corresponding to 99% confidence, and $N_s$ and $N_b$ are the number of source and background counts, respectively. A source with a fitted polarization fraction greater than its MDP has measurable polarization. However, only an upper limit can be placed on the polarization of a source with a fitted polarization fraction smaller than its MDP, and its polarization angle cannot be constrained. 
 
 ## Azimuthal Scattering Angle Distribution Method       
@@ -31,23 +31,23 @@ To find the polarization fraction and angle, the effects of the background and d
 
 To produce the background-subtracted ASAD, an ASAD for a model of the background is created, and subtracted from the total measured ASAD. 
 
-![Source ASAD](images/source-asad.png "Source ASAD")
+![Source ASAD](images/source-asad.png "Source ASAD")       
 *Raw background-subtracted ASAD*        
 
 ASADs are then created for simulations of unpolarized and 100% polarized versions of the source being analyzed, with the same flux, sky position, and spectrum. These are used to account for instrumental effects and characterize the instrument's sensitivity to the source's polarization. 
 
-![Unpolarized ASAD](images/unpolarized-asad.png "Unpolarized ASAD")
+![Unpolarized ASAD](images/unpolarized-asad.png "Unpolarized ASAD")       
 *ASAD of unpolarized source*       
 
-![100% polarized ASAD](images/100%-polarized-asad.png "100% polarized ASAD")
+![100% polarized ASAD](images/100-percent-polarized-asad.png "100% polarized ASAD")       
 *ASAD of 100% polarized source*       
 
 The measured source ASAD and simulated 100% polarized ASAD are both divided by the simulated unpolarized ASAD to correct for effects of the detector geometry.        
 
-![Corrected 100% polarized ASAD](images/corrected-100%-polarized-asad.png "Corrected 100% polarized ASAD")
+![Corrected 100% polarized ASAD](images/corrected-100-percent-polarized-asad.png "Corrected 100% polarized ASAD")      
 *ASAD of 100% polarized source divided by ASAD of unpolarized source with sinusoidal fit*       
 
-![Corrected source ASAD](images/corrected--source-asad.png "Corrected source ASAD")
+![Corrected source ASAD](images/corrected-source-asad.png "Corrected source ASAD")         
 *Background-subtracted ASAD divided by ASAD of unpolarized source with sinusoidal fit*       
 
 Both corrected ASADs are fit with the above probability distribution function. The modulation of the 100% polarized ASAD, which is used to convert the amplitude of the sinusoidal fit of the source's ASAD to a polarization fraction, is given by        
