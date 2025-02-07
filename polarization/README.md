@@ -51,9 +51,8 @@ The measured source ASAD and simulated 100% polarized ASAD are both divided by t
 *Background-subtracted ASAD divided by ASAD of unpolarized source with sinusoidal fit*       
 
 Both corrected ASADs are fit with the above probability distribution function. The modulation of the 100% polarized ASAD, which is used to convert the amplitude of the sinusoidal fit of the source's ASAD to a polarization fraction, is given by        
-$$\mu_{100} = \frac{\hat{B_{100}}}{\hat{A}}$$         
-$$\mu_{100} = \frac{\hat{B}_{100}}{\hat{A}_{100}}$$         
-where $\hat{A}_{100}$ and $\hat{B}_{100}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization fraction of the source is        
+$$\mu_{100} = \frac{\hat{B_{100}}}{\hat{A_{100}}}$$               
+where $\hat{A_{100}}$ and $\hat{B_{100}}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization fraction of the source is        
 $$\Pi = \frac{1}{\mu_{100}} \frac{\hat{B}}{\hat{A}}$$        
 and the polarization angle is         
 $$\eta_0 = \hat{C}$$       
