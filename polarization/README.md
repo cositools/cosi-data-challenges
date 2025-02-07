@@ -20,7 +20,7 @@ where $\frac{B}{A}$ is proportional to the polarization fraction and $C$ is the 
 A polarization measurement is defined by the polarization fraction, which is sometimes called polarization level or polarization degree, and the polarization angle. The polarization fraction is the fraction of photons from a source that are polarized, where 100% polarization corresponds to all photons having their electric field vectors aligned in the same direction. The polarization angle describes the direction of the photons' electric field vector, and we typically use the standard [IAU convention](https://lambda.gsfc.nasa.gov/product/about/pol_convention.html) to define this angle. *cosipy*'s polarization tools include methods for transforming between different conventions, including the spacecraft frame conventions used in MEGAlib.         
 
 The minimum detectable polarization (MDP) describes the minimum polarization fraction for which significant detection can be made by a particular instrument for a given source. The 99% confidence MDP is given by       
-$$\text{MDP}_{99\%} = \frac{4.29}{\mu_{100}} \frac{\sqrt{N_s + N_b}}{N_s}$$      
+$$x = \frac{4.29}{\mu_{100}} \frac{\sqrt{N_s + N_b}}{N_s}$$      
 where 4.29 is the coefficient corresponding to 99% confidence, and $N_s$ and $N_b$ are the number of source and background counts, respectively. A source with a fitted polarization fraction greater than its MDP has measurable polarization. However, only an upper limit can be placed on the polarization of a source with a fitted polarization fraction smaller than its MDP, and its polarization angle cannot be constrained. 
 
 ## Azimuthal Scattering Angle Distribution Method       
