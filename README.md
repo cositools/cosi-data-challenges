@@ -423,6 +423,22 @@ The two spectral models for Cyg X1 are best fit eqpair  models of time averaged 
 1. Check detection sensitivty in soft state.
 2. Test how well COSI can monitor for spectral transitions. 
 
+### 1E1740.7-2942
+
+**Data Files:** <br />
+1E1740_compow_3months_unbinned_data.fits.gz <br />
+1E1740_twocompt_3months_unbinned_data.fits.gz <br />
+
+**Input Models:**  <br />
+The 2 spectral models for 1E1740.7-2942 (also know as great annihilator) are the best fit models
+ of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf):
+ - compow: thermal comptonization + power law
+ - twocompt: two components of thermal comptonization with different temperatures
+Both models represent the INTEGRAL data well but strongly differ at the highest energies. 
+
+**Goals:** <br />
+1. Test whether COSI would be able to distinguish between the two models.
+   
 ### Name
 Internal ToDo (Hiroki):
 1. Proofread/check content
