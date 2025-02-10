@@ -398,7 +398,38 @@ PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a mas
 **Goals:** <br />
 1. Measure MeV gamma-ray flux during the flare event.
 2. Determine the duration of flare periods.
+
+### GRS 1758-258
+
+**Data Files:** <br />
+GRS175_3months_unbinned_data.fits.gz
+
+**Input Models:**  <br />
+Best fit comptonization model of epoch2 of [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf).
+
+**Goals:** <br />
+1. A simple test of spectral measurement for this galactic center source.
    
+### Cygnus X1
+
+**Data Files:** <br />
+cygX1_soft_3months_unbinned_data.fits.gz <br />
+cygX1_hard_3months_unbinned_data.fits.gz <br />
+
+**Input Models:**  <br />
+The two spectral models for Cyg X1 are best fit eqpair  models of time averaged INTEGRAL data [Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract) given for hard and soft states respectively. Polarization is also included. The hard state model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. The soft spectral state assumes an energy-independent polarization of 20% (same angle).  
+
+**Goals:** <br />
+1. Check detection sensitivty in soft state.
+2. Test how well COSI can monitor for spectral transitions. 
+
+### Name
+Internal ToDo (Hiroki):
+1. Proofread/check content
+**Data Files:** <br />
+**Input Models:**  <br />
+**Goals:** <br />
+
 ## Extragalactic
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) notebook.
 
