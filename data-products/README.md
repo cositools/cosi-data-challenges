@@ -106,6 +106,11 @@ NGC_1068_3months_unbinned_data.fits.gz <br />
 GalTotal_SA100_F98_3months_unbinned_data.fits.gz <br />
 PSRB1259_3months_unbinned_data.fits.gz <br />
 PSRB1259_10x_3months_unbinned_data.fits.gz <br />
+1E1740_compow_3months_unbinned_data.fits.gz <br />
+1E1740_twocompt_3months_unbinned_data.fits.gz <br />
+cygX1_soft_3months_unbinned_data.fits.gz <br />
+cygX1_hard_3months_unbinned_data.fits.gz <br />
+GRS175_3months_unbinned_data.fits.gz <br />
 26Al_Cyg_Region_3months_unbinned_data.fits.gz <br />
 26Al_NE2001_3months_unbinned_data.fits.gz <br />
 60Fe_Cyg_Region_3months_unbinned_data.fits.gz <br />
