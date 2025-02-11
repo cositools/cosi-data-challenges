@@ -6,15 +6,15 @@ The polarization analysis tools will be made more sensitive and comprehensive in
 
 ## Compton Polarimetry       
 
-Compton telescopes are inherently sensitive to polarization because photons are more likely to Compton scatter in a direction perpendicular to their electric field vector. Therefore, measuring the scattering direction of photons probes the orientation of their electric field vectors. The Klein-Nishina equation, which describes the differential cross-section, or likelihood, of photons scattering with free electrons               
-$$\frac{d\sigma}{d\Omega} = \frac{r_0^2}{2} \left( \frac{E^\prime}{E_\gamma} \right)^2 \left( \frac{E_\gamma}{E^\prime} + \frac{E^\prime}{E_\gamma} - 2\sin^2{\phi}cos^2{\eta} \right)$$        
-demonstrates this, where $r_0$ is the classical electron radius, $E_\gamma$ is the energy of the incoming photon, $E^\prime$ is the energy of the Compton-scattered photon, $\phi$ is the Compton scattering angle, and $\eta$ is the azimuthal scattering angle, or the angle at which the photon scatters measured with respect to the incoming photon's electric field vector. The cross-section is maximized when the azimuthal scattering angle is perpendicular to the photon's electric field vector ($\eta=90^\circ$) and minimized when the azimuthal scattering angle is parallel to the electric field vector ($\eta=0^\circ$).   
+Compton telescopes are inherently sensitive to polarization because photons are more likely to Compton scatter in a direction perpendicular to their electric field vector. Therefore, measuring the scattering direction of photons probes the orientation of their electric field vectors. The Klein-Nishina equation, which describes the differential cross-section, or likelihood, of photons scattering with free electrons demonstrates this               
+$$\frac{d\sigma}{d\Omega} = \frac{r_0^2}{2} \left( \frac{E^\prime}{E_\gamma} \right)^2 \left( \frac{E_\gamma}{E^\prime} + \frac{E^\prime}{E_\gamma} - 2\sin^2{\phi}cos^2{\eta} \right)$$,        
+where $\Large r_0$ is the classical electron radius, $E_\gamma$ is the energy of the incoming photon, $E^\prime$ is the energy of the Compton-scattered photon, $\phi$ is the Compton scattering angle, and $\eta$ is the azimuthal scattering angle, or the angle at which the photon scatters measured with respect to the incoming photon's electric field vector. The cross-section is maximized when the azimuthal scattering angle is perpendicular to the photon's electric field vector ($\eta=90^\circ$) and minimized when the azimuthal scattering angle is parallel to the electric field vector ($\eta=0^\circ$).   
 
 ![Compton and azimuthal scattering angles](images/scattering-angles.png "Compton and azimuthal scattering angles")        
-*The Compton scattering angle, ϕ, is the angle between the incoming and scattered photon directions. The azimuthal scattering angle, η, is measured with respect to a reference axis, ξ, in a plane perpendicular to the incoming photon direction. In the Klein-Nishina equation, the reference axis is the direction of the photon's electric field vector.*          
+***Figure 1:** The Compton scattering angle, ϕ, is the angle between the incoming and scattered photon directions. The azimuthal scattering angle, η, is measured with respect to a reference axis, ξ, in a plane perpendicular to the incoming photon direction. In the Klein-Nishina equation, the reference axis is the direction of the photon's electric field vector.*          
 
 This makes it possible to determine the polarization using the measured distribution of azimuthal scattering angles. The probability distribution function that follows from the Klein-Nishina equation is of the form       
-$$f(x) = A - B \cos{(2 (\eta - C))}$$         
+$$\Large f(x) = A - B \cos{(2 (\eta - C))}$$         
 where $\frac{B}{A}$ is proportional to the polarization fraction and $C$ is the polarization angle. When a source is polarized, the distribution of azimuthal scattering angles is expected to be sinusoidal, with the peaks corresponding to directions perpendicular to the incoming photon's electric field vector. For an unpolarized source, the azimuthal scattering directions are random, producing a uniform distribution. This allows the polarization to be determined by fitting $A$, $B$, and $C$ to the distribution of azimuthal scattering angles. However, a realistic detector is not perfectly symmetric, and some scattering directions are suppressed or enhanced due to the instrument geometry. Therefore, the distributions of azimuthal scattering angle for polarized and unpolarized sources will not be perfectly sinusoidal and uniform, respectively. This makes it important to have a very good understanding of the instrument response in order to accurately measure polarization.        
 
 A polarization measurement is defined by the polarization fraction, which is sometimes called polarization level or polarization degree, and the polarization angle. The polarization fraction is the fraction of photons from a source that are polarized, where 100% polarization corresponds to all photons having their electric field vectors aligned in the same direction. The polarization angle describes the direction of the photons' electric field vector, and we typically use the standard [IAU convention](https://lambda.gsfc.nasa.gov/product/about/pol_convention.html) to define this angle. *cosipy*'s polarization tools include methods for transforming between different conventions, including the spacecraft frame conventions used in MEGAlib.         
@@ -25,31 +25,30 @@ where 4.29 is the coefficient corresponding to 99% confidence, and $N_s$ and $N_
 
 ## Azimuthal Scattering Angle Distribution Method       
 
-The simplest, and most intuitive, way to measure polarization is directly through the distribution of azimuthal scattering angles. *COSI* measures the scattered photon direction of each photon it detects. Because the direction of the incoming photon's electric field vector isn't known, a reference axis in the plane of the electric field vector is chosen. The angle between the scattered photon direction and reference axis is calculated for each photon. This measured azimuthal scattering angle ($\eta'$) relates to the azmimuthal scattering angle in the Klein-Nishina equation above via $\eta' = \eta + D$, where $D$, which is unknown, is the angle between the chosen reference axis and photon's electric field vector. The azimuthal scattering angles of the data are binned to produce a raw azimuthal scattering angle distribution (ASAD).      
+The simplest, and most intuitive, way to measure polarization is directly through the distribution of azimuthal scattering angles. *COSI* measures the scattered photon direction of each photon it detects. Because the direction of the incoming photon's electric field vector isn't known, a reference axis that is perpendicular to the incoming photon direction from the source location is chosen, which is in the plane of the photon's electric field vector. The angle between the scattered photon direction and reference axis is calculated for each photon. This measured azimuthal scattering angle ($\eta'$) relates to the azmimuthal scattering angle in the Klein-Nishina equation above via $\eta' = \eta + D$, where $D$, which is unknown, is the angle between the chosen reference axis and the photon's electric field vector. The azimuthal scattering angles of the data are binned to produce a raw azimuthal scattering angle distribution (ASAD).      
 
 To find the polarization fraction and angle, the effects of the background and detector geometry need to be taken into account, and we rely heavily on simulations to do this. We create a background-subtracted ASAD, and then scale the distribution with a simulation of an unpolarized source to correct for detector effects. Then, this corrected ASAD is fit with the probability distribution function above to determine the polarization.           
 
 To produce the background-subtracted ASAD, an ASAD for a model of the background is created, and subtracted from the total measured ASAD. 
 
 ![Source ASAD](images/source-asad.png "Source ASAD")       
-*Raw background-subtracted ASAD*        
+***Figure 2:** The raw background-subtracted ASAD doesn’t obviously show the expected sinusoidal response of a polarized source since we haven’t accounted for the effects of the detector geometry.*        
 
-ASADs are then created for simulations of unpolarized and 100% polarized versions of the source being analyzed, with the same flux, sky position, and spectrum. These are used to account for instrumental effects and characterize the instrument's sensitivity to the source's polarization. 
+Using the detector response, ASADs are then created for simulations of unpolarized and 100% polarized versions of the source being analyzed, with the same flux, sky position, and spectrum. These are used to account for instrumental effects and characterize the instrument's sensitivity to the source's polarization. 
 
 ![Unpolarized ASAD](images/unpolarized-asad.png "Unpolarized ASAD")       
-*ASAD of unpolarized source*       
+***Figure 3:** A simulation of an unpolarized source, with the same spectrum and location, is used to account for instrumental effects.*       
 
 ![100% polarized ASAD](images/100-percent-polarized-asad.png "100% polarized ASAD")       
-*ASAD of 100% polarized source*       
+***Figure 4:** A simulation of a 100% polarized source, with the same spectrum and location, is used to understand the polarization sensitivity of the instrument for this particular observation.*       
 
 The measured source ASAD and simulated 100% polarized ASAD are both divided by the simulated unpolarized ASAD to correct for effects of the detector geometry.        
 
-![Corrected 100% polarized ASAD](images/corrected-100-percent-polarized-asad.png "Corrected 100% polarized ASAD")      
-*ASAD of 100% polarized source divided by ASAD of unpolarized source with sinusoidal fit*       
-
 ![Corrected source ASAD](images/corrected-source-asad.png "Corrected source ASAD")         
-*Background-subtracted ASAD divided by ASAD of unpolarized source with sinusoidal fit*       
+***Figure 5:** The background-subtracted measured ASAD is divided by the ASAD of the simulated unpolarized source to get the final corrected ASAD for the observation. The ASAD is fit with a sinusoid ($f(x) = A - B \cos{(2 (\eta - C))}$) to determine the polarization angle and fraction.*       
 
+![Corrected 100% polarized ASAD](images/corrected-100-percent-polarized-asad.png "Corrected 100% polarized ASAD")      
+***Figure 6:** The ASAD of the simulated 100% polarized source is divided by ASAD of the simulated unpolarized source and fit with a sinusoid in order to determine the modulation of the 100% polarized source.*       
 Both corrected ASADs are fit with the above probability distribution function. The modulation of the 100% polarized ASAD, which is used to convert the amplitude of the sinusoidal fit of the source's ASAD to a polarization fraction, is given by        
 $$\mu_{100} = \frac{\hat{B_{100}}}{\hat{A_{100}}}$$               
 where $\hat{A_{100}}$ and $\hat{B_{100}}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization fraction of the source is        
