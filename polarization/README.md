@@ -100,7 +100,7 @@ $$q_i = 2 cos(2\phi_i) ~~~~~~ u_i = 2 sin(2\phi_i)$$
 
 ### Visualizing Polarization with Q-U Charts
 
-A useful way to **visualize** the linear polarization state is to plot $U$ versus $Q$. In such a **Q-U chart**, each point represents a measurement of the Stokes parameters $Q/I$ and $U/I$ (with $-1 \ leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the ** polarization degree**, while the **angle** it makes with the $Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
+A useful way to **visualize** the linear polarization state is to plot $U$ versus $Q$. In such a **Q-U chart**, each point represents a measurement of the Stokes parameters $Q/I$ and $U/I$ (with $-1 \leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the ** polarization degree**, while the **angle** it makes with the $Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
 
 - **Radius and Polarization Fraction**  
   The distance from the origin in the $Q-U$ plane is $\sqrt{\frac{Q}{I}^2 + \frac{U}{I}^2}$. This quantity yields the polarization fraction $\Pi$.
@@ -109,11 +109,11 @@ A useful way to **visualize** the linear polarization state is to plot $U$ versu
   The position angle of the point in $Q-U$ space is defined relative to the $Q>0$ axis and  chosen reference axis (e.g., the IAU convention).
 
 - **Uncertainties and Confidence Regions**  
-  When uncertainties in $Q$ and $U$ are accounted for, they can be displayed as **error ellipses** (specifically circles since Q/I and U/I uncertainties are equal and Gaussian distributed). The size and shape of these ellipses provide a visual sense of the confidence level for the measured polarization state. 
+  When uncertainties in $Q$ and $U$ are accounted for, they can be displayed as **error ellipses** (specifically circles since $Q/I$ and $U/I$ uncertainties are equal and Gaussian distributed). The size and shape of these ellipses provide a visual sense of the confidence level for the measured polarization state. 
 
 - **Physical Interpretation**  
   - A measurement lying far from the origin indicates a high linear polarization fraction.
   - A point lying close to the origin indicates weak (or zero) linear polarization.
-  - To consider a measurement a detection, a 99% C.L. (a (Q/I, U/I) point ~2.575 sigma distance from (0,0)) is required.
+  - To consider a measurement a detection, a 99% C.L. (a ($Q/I$, $U/I$) point ~2.575 sigma distance from (0,0)) is required.
 
-In practice, Q-U charts are especially helpful for rapidly assessing the **direction** and **degree** of polarization in an observation, and for comparing different datasets (e.g., source vs. background, or different energy bands) in a straightforward 2D representation.
+In practice, $Q-U$ charts are especially helpful for rapidly assessing the **direction** and **degree** of polarization in an observation, and for comparing different datasets (e.g., source vs. background, or different energy bands) in a straightforward 2D representation.
