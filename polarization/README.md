@@ -62,3 +62,58 @@ The sensitivity of the ASAD method is limited because only the scattered photon 
 
 ## Stokes Parameters Method      
 
+The Stokes parameters are a convenient and powerful way to characterize the polarization state of electromagnetic radiation, particularly for linear polarization. By definition, they describe the intensity and polarization of a beam through four quantities: I, Q, U, and V. For linear polarization, the parameters Q and U contain the essential information about the polarization direction and fraction, while V captures the circular polarization component (which is often negligible in many astrophysical scenarios).
+
+### Linear Polarization in Terms of Stokes Parameters
+
+The Stokes parameters ($I$, $Q$, $U$, $V$) offer a convenient way to describe the polarization state of electromagnetic radiation:
+
+- $I$ is the total intensity (i.e., the sum of the intensities over all polarization states).
+- $Q$ and $U$ describe linear polarization.
+- $V$ describes circular polarization (often negligible in many astrophysical scenarios).
+
+A 100% linearly polarized beam can be visualized as the sum of electric field vectors oscillating in a single plane, and the relevant Stokes parameters for such a beam are $I$, $Q$, and $U$. The polarization fraction ($\Pi$) and polarization angle ($\eta_0$) (with respect to some reference axis) can be extracted from $Q$ and $U$ by:
+
+$$\Pi = \frac{\sqrt{Q^2 + U^2}}{I}, \quad \eta_0 = \frac{1}{2} \tan_2^{-1}\left(\frac{U}{Q}\right)$$
+
+Here, $\eta_0$ may be defined according to the [IAU convention](https://lambda.gsfc.nasa.gov/product/about/pol_convention.html) or another specified reference system; $tan_2^{-1}$ is the arctan2 is the angle (in radians), with $-\pi <\eta \leq \pi$, defined from the the positive x-axis ($Q>0$).
+
+### Superposition principle 
+The superposition principle states that when multiple waves overlap, the resulting wave is the sum of the individual contributions. In the context of linear polarization, this principle applies to the Stokes parameters I, Q, and U. When studying a polarized source over an unpolarized background, the superposition principle allows us to separate the polarized signal from the unpolarized contributions, as the background adds only to I, and not to Q or U.
+
+This principle is particularly important when addressing spurious polarization introduced by instrumental effects. Instruments can induce false polarization signals, even when observing unpolarized sources. To correct for this, we can simulate the detector’s response to an unpolarized source under identical exposure conditions as the real observation. By applying the superposition principle, the simulated spurious Q and U components can be subtracted from the observed data, effectively isolating the true polarization of the astrophysical source. This correction is critical for ensuring the accuracy of polarization measurements, particularly when considering short exposure which are more affected by the orientation of the spacecraft at that time.
+
+$$Q_{src} = Q_{obs} - Q_{sim}, ~~~~ U_{src} = U_{obs} - Q_{sim},$$
+
+### Photon-based pseudo-Stokes parameters
+In implementing this pipeline, we adopt the formalism outlined in [Kislat et al, 2015](https://arxiv.org/abs/1409.6214) and follow the computational framework provided by the _ixpeobssim_ software, as described in ([Baldini et al 2023](https://arxiv.org/abs/2203.06384)).
+
+The Stokes parameters I, Q, and U, which are derived from the measured azimuthal scattering angles $\eta'$ of incoming photons. The modulation curve, representing the distribution of these angles, is described by:
+$$N(\eta') = A[1+\mu cos(2(\eta'-\eta_0))]$$
+where $A$ is the mean count rate and $\mu$ is the modulation factor. The Stokes parameters are computed as:
+
+$$Q = \sum_{i=1}^N q_i ~~~~~~ U = \sum_{i=1}^N u_i$$
+
+where N is the total number of photons, and $q_i$ and $u_i$ are the pseudo Stokes parameters defined photon-by-photon as:
+
+$$q_i = 2 cos(2\phi_i) ~~~~~~ u_i = 2 sin(2\phi_i)$$
+
+### Visualizing Polarization with Q-U Charts
+
+A useful way to **visualize** the linear polarization state is to plot $U$ versus $Q$. In such a **Q-U chart**, each point represents a measurement of the Stokes parameters $Q/I$ and $U/I$ (with $-1 \ leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the ** polarization degree**, while the **angle** it makes with the $Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
+
+- **Radius and Polarization Fraction**  
+  The distance from the origin in the $Q-U$ plane is $\sqrt{\frac{Q}{I}^2 + \frac{U}{I}^2}$. This quantity yields the polarization fraction $\Pi$.
+  
+- **Quadrant location and Polarization Angle**  
+  The position angle of the point in $Q-U$ space is defined relative to the $Q>0$ axis and  chosen reference axis (e.g., the IAU convention).
+
+- **Uncertainties and Confidence Regions**  
+  When uncertainties in $Q$ and $U$ are accounted for, they can be displayed as **error ellipses** (specifically circles since Q/I and U/I uncertainties are equal and Gaussian distributed). The size and shape of these ellipses provide a visual sense of the confidence level for the measured polarization state. 
+
+- **Physical Interpretation**  
+  - A measurement lying far from the origin indicates a high linear polarization fraction.
+  - A point lying close to the origin indicates weak (or zero) linear polarization.
+  - To consider a measurement a detection, a 99% C.L. (a (Q/I, U/I) point ~2.575 sigma distance from (0,0)) is required.
+
+In practice, Q-U charts are especially helpful for rapidly assessing the **direction** and **degree** of polarization in an observation, and for comparing different datasets (e.g., source vs. background, or different energy bands) in a straightforward 2D representation.
