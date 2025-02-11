@@ -34,7 +34,7 @@ To produce the background-subtracted ASAD, an ASAD for a model of the background
 ![Source ASAD](images/source-asad.png "Source ASAD")       
 ***Figure 2:** The raw background-subtracted ASAD doesn’t obviously show the expected sinusoidal response of a polarized source since we haven’t accounted for the effects of the detector geometry.*        
 
-Using the detector response, ASADs are then created for simulations of unpolarized and 100% polarized versions of the source being analyzed, with the same flux, sky position, and spectrum. These are used to account for instrumental effects and characterize the instrument's sensitivity to the source's polarization. 
+Using the detector response, ASADs are then created for simulations of unpolarized and 100% polarized versions of the source being analyzed, with the same flux, sky position, and spectrum. These are used to account for instrumental effects and characterize the instrument's sensitivity to the source's polarization.         
 
 ![Unpolarized ASAD](images/unpolarized-asad.png "Unpolarized ASAD")       
 ***Figure 3:** A simulation of an unpolarized source, with the same spectrum and location, is used to account for instrumental effects.*       
@@ -99,7 +99,7 @@ $$\large q_i = 2 cos(2\phi_i) ~~~~~~ u_i = 2 sin(2\phi_i)$$
 
 ### Visualizing Polarization with Q-U Charts
 
-A useful way to **visualize** the linear polarization state is to plot $\large U$ versus $\large Q$. In such a **$\large Q-U$ chart**, each point represents a measurement of the Stokes parameters $\large Q/I$ and $\large U/I$ (with $\large -1 \leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the **polarization degree**, while the **angle** it makes with the $\large Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
+A useful way to **visualize** the linear polarization state is to plot $\large U$ versus $\large Q$. In such a **Q-U chart**, each point represents a measurement of the Stokes parameters $\large Q/I$ and $\large U/I$ (with $\large -1 \leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the **polarization degree**, while the **angle** it makes with the $\large Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
 
 - **Radius and Polarization Fraction**  
   The distance from the origin in the $\large Q-U$ plane is $\large \sqrt{\frac{Q}{I}^2 + \frac{U}{I}^2}$. This quantity yields the polarization fraction $\large \Pi$.
