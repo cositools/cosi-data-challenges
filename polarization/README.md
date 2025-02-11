@@ -25,7 +25,7 @@ where 4.29 is the coefficient corresponding to 99% confidence, and $\large N_s$ 
 
 ## Azimuthal Scattering Angle Distribution Method       
 
-The simplest, and most intuitive, way to measure polarization is directly through the distribution of azimuthal scattering angles. *COSI* measures the scattered photon direction of each photon it detects. Because the direction of the incoming photon's electric field vector isn't known, a reference axis that is perpendicular to the incoming photon direction from the source location is chosen, which is in the plane of the photon's electric field vector. The angle between the scattered photon direction and reference axis is calculated for each photon. This measured azimuthal scattering angle ($\large \eta'$) relates to the azmimuthal scattering angle in the Klein-Nishina equation above via $\large \eta' = \eta + D$, where $D$, which is unknown, is the angle between the chosen reference axis and the photon's electric field vector. The azimuthal scattering angles of the data are binned to produce a raw azimuthal scattering angle distribution (ASAD).      
+The simplest, and most intuitive, way to measure polarization is directly through the distribution of azimuthal scattering angles. *COSI* measures the scattered photon direction of each photon it detects. Because the direction of the incoming photon's electric field vector isn't known, a reference axis that is perpendicular to the incoming photon direction from the source location is chosen, which is in the plane of the photon's electric field vector. The angle between the scattered photon direction and reference axis is calculated for each photon. This measured azimuthal scattering angle ($\large \eta'$) relates to the azmimuthal scattering angle in the Klein-Nishina equation above via $\large \eta' = \eta + D$, where $\large D$, which is unknown, is the angle between the chosen reference axis and the photon's electric field vector. The azimuthal scattering angles of the data are binned to produce a raw azimuthal scattering angle distribution (ASAD).      
 
 To find the polarization fraction and angle, the effects of the background and detector geometry need to be taken into account, and we rely heavily on simulations to do this. We create a background-subtracted ASAD, and then scale the distribution with a simulation of an unpolarized source to correct for detector effects. Then, this corrected ASAD is fit with the probability distribution function above to determine the polarization.           
 
@@ -48,10 +48,10 @@ The measured source ASAD and simulated 100% polarized ASAD are both divided by t
 ***Figure 5:** The background-subtracted measured ASAD is divided by the ASAD of the simulated unpolarized source to get the final corrected ASAD for the observation. The ASAD is fit with a sinusoid (the probability distribution function above) to determine the polarization angle and fraction.*       
 
 ![Corrected 100% polarized ASAD](images/corrected-100-percent-polarized-asad.png "Corrected 100% polarized ASAD")      
-***Figure 6:** The ASAD of the simulated 100% polarized source is divided by ASAD of the simulated unpolarized source and fit with a sinusoid in order to determine the modulation of the 100% polarized source.*       
+***Figure 6:** The ASAD of the simulated 100% polarized source is divided by ASAD of the simulated unpolarized source and fit with a sinusoid in order to determine the modulation of the 100% polarized source.*          
 Both corrected ASADs are fit with the above probability distribution function. The modulation of the 100% polarized ASAD, which is used to convert the amplitude of the sinusoidal fit of the source's ASAD to a polarization fraction, is given by        
 $$\large \mu_{100} = \frac{\hat{B_{100}}}{\hat{A_{100}}}$$               
-where $\hat{A_{100}}$ and $\hat{B_{100}}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization fraction of the source is        
+where $\large \hat{A_{100}}$ and $\large \hat{B_{100}}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization fraction of the source is        
 $$\large \Pi = \frac{1}{\mu_{100}} \frac{\hat{B}}{\hat{A}}$$        
 and the polarization angle is         
 $$\large \eta_0 = \hat{C}$$       
@@ -71,7 +71,7 @@ The Stokes parameters ($\large I$, $\large Q$, $\large U$, $\large V$) offer a c
 - $\large Q$ and $\large U$ describe linear polarization.
 - $\large V$ describes circular polarization (often negligible in many astrophysical scenarios).
 
-A 100% linearly polarized beam can be visualized as the sum of electric field vectors oscillating in a single plane, and the relevant Stokes parameters for such a beam are $\large I$, $\large Q$, and $\large U$. The polarization fraction ($\Pi$) and polarization angle ($\eta_0$) (with respect to some reference axis) can be extracted from $Q$ and $U$ by:
+A 100% linearly polarized beam can be visualized as the sum of electric field vectors oscillating in a single plane, and the relevant Stokes parameters for such a beam are $\large I$, $\large Q$, and $\large U$. The polarization fraction ($\large \Pi$) and polarization angle ($\large \eta_0$) (with respect to some reference axis) can be extracted from $\large Q$ and $\large U$ by:
 
 $$\large \Pi = \frac{\sqrt{Q^2 + U^2}}{I}, \quad \eta_0 = \frac{1}{2} \tan_2^{-1}\left(\frac{U}{Q}\right)$$
 
@@ -89,7 +89,7 @@ In implementing this pipeline, we adopt the formalism outlined in [Kislat et al,
 
 The Stokes parameters $\large I$, $\large Q$, and $\large U$ are derived from the measured azimuthal scattering angles $\large \eta'$ of incoming photons. The modulation curve, representing the distribution of these angles, is described by
 $$\large N(\eta') = A[1+\mu cos(2(\eta'-\eta_0))]$$
-where $A$ is the mean count rate and $\large \mu$ is the modulation factor. The Stokes parameters are computed as:
+where $\large A$ is the mean count rate and $\large \mu$ is the modulation factor. The Stokes parameters are computed as:
 
 $$\large Q = \sum_{i=1}^N q_i ~~~~~~ U = \sum_{i=1}^N u_i$$
 
@@ -99,13 +99,13 @@ $$\large q_i = 2 cos(2\phi_i) ~~~~~~ u_i = 2 sin(2\phi_i)$$
 
 ### Visualizing Polarization with Q-U Charts
 
-A useful way to **visualize** the linear polarization state is to plot $\large U$ versus $\large Q$. In such a **Q-U chart**, each point represents a measurement of the Stokes parameters $\large Q/I$ and $\large U/I$ (with $\large -1 \leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the ** polarization degree**, while the **angle** it makes with the $\large Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
+A useful way to **visualize** the linear polarization state is to plot $\large U$ versus $\large Q$. In such a **$\large Q-U$ chart**, each point represents a measurement of the Stokes parameters $\large Q/I$ and $\large U/I$ (with $\large -1 \leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the **polarization degree**, while the **angle** it makes with the $\large Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
 
 - **Radius and Polarization Fraction**  
   The distance from the origin in the $\large Q-U$ plane is $\large \sqrt{\frac{Q}{I}^2 + \frac{U}{I}^2}$. This quantity yields the polarization fraction $\large \Pi$.
   
 - **Quadrant location and Polarization Angle**  
-  The position angle of the point in $Q-U$ space is defined relative to the $\large Q>0$ axis and  chosen reference axis (e.g., the IAU convention).
+  The position angle of the point in $\large Q-U$ space is defined relative to the $\large Q>0$ axis and  chosen reference axis (e.g., the IAU convention).
 
 - **Uncertainties and Confidence Regions**  
   When uncertainties in $\large Q$ and $\large U$ are accounted for, they can be displayed as **error ellipses** (specifically circles since $\large Q/I$ and $\large U/I$ uncertainties are equal and Gaussian distributed). The size and shape of these ellipses provide a visual sense of the confidence level for the measured polarization state. 
