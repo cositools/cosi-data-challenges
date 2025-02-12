@@ -47,7 +47,11 @@ fetch_wasabi_file('full/path/wasabi/file')
 Note that an error will be thrown if the file already exists. To overwrite the existing file, the keyword ``override=True`` can be passed.   
 
 **Orientation File:** <br />
-wasabi path and file: COSI-SMEX/DC3/Data/Orientation/X.ori <br />
+wasabi path: COSI-SMEX/DC3/Data/Orientation <br />
+
+files: <br />
+DC3_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.ori <br />
+DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br />
 
 **Response Files:** <br />
 wasabi path: COSI-SMEX/DC3/Responses <br />
