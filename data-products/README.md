@@ -82,13 +82,13 @@ Binned Files: <br />
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
-
+For DC2 we simulated 40 unique sources, running 59 different simulations in total (using multiple models for some of the sources). 
 
 Unbinned Files: <br />
 511_testing_point_src_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-511_test_extended_3months.fits.gz <br />
+511_extended_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 crab_standard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-crab_flat_spectrum_3months.fits.gz <br />
+Crab_Flat_Spectrum_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 LMC_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 LMC_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 M31_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
