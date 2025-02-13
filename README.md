@@ -16,7 +16,8 @@ This is the COSI internal release. The public release is planned for April 1, 20
 - **No binned data products have been provided.** Binning the data is part of the standard analysis procedure. However, in some cases, binning the data may require lots of RAM, making it difficult for standard laptops (as was found for DC2). Please let us know if you are running into related difficulties, and we can see if we need to provide some binned data products.
 - **A small number of the source simulations have not been completed**. Generally, these are input models that require a bit of extra work to implement in the simulation pipeline. We will be working to complete the remaining models before the public release. If you notice that your model is missing and were planning to test it in the near future, please let us know and we will prioritize it. 
 - **The polarization response is not available.** This will be coming soon.
-- **The polarization analysis tools do not yet account for the instrument orientation.** Consequently, only GRB polarization on short time scales can be analyzed at the moment. This is a top priority that we are working on updating.  
+- **The polarization analysis tools do not yet account for the instrument orientation.** Consequently, only GRB polarization on short time scales can be analyzed at the moment. This is a top priority that we are working on updating.
+- **The source injector only works for point sources, and it doesn't account for Earth occultation.** The Earth occultation will be implemented soon, and we are also updating the code to allow for injecting extended sources. Both of these should be ready by the public release. 
 
 
 ## Table of Contents
