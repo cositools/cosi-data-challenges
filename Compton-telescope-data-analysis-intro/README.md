@@ -53,11 +53,9 @@ If we don’t know what the source should look like, instead of providing a sky 
 
 <img width="482" alt="Screen Shot 2022-10-16 at 11 08 00 PM" src="https://user-images.githubusercontent.com/33991471/196080950-0a042af0-0bd8-4360-9f7f-898edcd81ee1.png">
 
-Since the response is non-invertible, we must use iterative deconvolutions to reveal the sky distribution. In COSIpy-classic, we introduce you to a modified Richardson-Lucy algorithm, which is a special case of the expectation maximization algorithm developed for COMPTEL’s images of diffuse gamma-ray emission ([Knödlseder et al. 1999](https://ui.adsabs.harvard.edu/abs/1999A%26A...345..813K/abstract)). The Richardson-Lucy algorithm starts from an initial isotropic (i.e. unbiased) image, and iteratively compares the data in the CDS to the sky distribution convolved with the transpose of the response matrix R:
+Since the response is non-invertible, we must use iterative deconvolutions to reveal the sky distribution. One common approach for this is to use a modified Richardson-Lucy algorithm, which is a special case of the expectation maximization algorithm developed for COMPTEL’s images of diffuse gamma-ray emission ([Knödlseder et al. 1999](https://ui.adsabs.harvard.edu/abs/1999A%26A...345..813K/abstract)). The Richardson-Lucy algorithm starts from an initial isotropic (i.e. unbiased) image, and iteratively compares the data in the CDS to the sky distribution convolved with the transpose of the response matrix R:
 
 <img width="257" alt="Screen Shot 2022-10-16 at 11 08 28 PM" src="https://user-images.githubusercontent.com/33991471/196080993-a258bd27-9df9-4996-924c-ec3bc7222aa8.png">
-
-This will evolve into the maximum likelihood solution. There are other image deconvolution techniques that will be used for COSI imaging, and those will be introduced in subsequent Data Challenges.
 
 In order to gain intuition for how to interpret this equation, consider that we are trying to find the number of photons in an image pixel given our model expectation $M = R \cdot S + B$. Here, $M$ are the model counts, calculated from a linear combination of the instrumental background $B$ and the sky morphology $S$, to which the image response function $R$ is applied to convert from image space to data space.<br>
 In such a counting experiment, the measured data $D$ given the model expectation $M$ follows a Poisson distribution, so that the likelihood of measuring $D$ photons is given by $P(D|M) = \prod \frac{\exp(-M)M^D}{D!}$. The product here is taken over all sky pixels.<br>
