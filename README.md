@@ -564,7 +564,7 @@ The spectral data is for 3C 279 high, which represent the high state of the sour
 1. Measure the polarization fraction and angle. 
 
 ## Dark Matter
-Internal ToDo (Yu):
+⚠️ Internal ToDo (Yu):
 1. Provide more info about models.
 2. Proofread/check content
 
