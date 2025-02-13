@@ -10,7 +10,7 @@ Compton telescopes are inherently sensitive to polarization because photons are 
 $$\large \frac{d\sigma}{d\Omega} = \frac{r_0^2}{2} \left( \frac{E^\prime}{E_\gamma} \right)^2 \left( \frac{E_\gamma}{E^\prime} + \frac{E^\prime}{E_\gamma} - 2\sin^2{\phi}cos^2{\eta} \right)$$,        
 where $\large r_0$ is the classical electron radius, $\large E_\gamma$ is the energy of the incoming photon, $\large E^\prime$ is the energy of the Compton-scattered photon, $\large \phi$ is the Compton scattering angle, and $\large \eta$ is the azimuthal scattering angle, or the angle at which the photon scatters measured with respect to the incoming photon's electric field vector. The cross-section is maximized when the azimuthal scattering angle is perpendicular to the photon's electric field vector ($\large \eta=90^\circ$) and minimized when the azimuthal scattering angle is parallel to the electric field vector ($\large \eta=0^\circ$).   
 
-<img src="images/scattering-angles.png" alt="Compton and azimuthal scattering angles" width="200"/>         
+<img src="images/scattering-angles.png" alt="Compton and azimuthal scattering angles" width="500"/>         
 ***Figure 1:** The Compton scattering angle, ϕ, is the angle between the incoming and scattered photon directions. The azimuthal scattering angle, η, is measured with respect to a reference axis, ξ, in a plane perpendicular to the incoming photon direction. In the Klein-Nishina equation, the reference axis is the direction of the photon's electric field vector.*          
 
 This makes it possible to determine the polarization using the measured distribution of azimuthal scattering angles. The probability distribution function that follows from the Klein-Nishina equation is of the form       
