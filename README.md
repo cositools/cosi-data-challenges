@@ -41,19 +41,18 @@ This is the COSI internal release. The public release is planned for April 1, 20
   - [Galactic](#galactic)
   - [Extragalactic](#extragalactic)
   - [Dark Matter](#dark-matter)
-  - [Extra Challenges](#extra-challenges)
-- [Known Caveats](#known-caveats)
+- [Known Caveats and Limitations](#known-caveats-and-limitations)
 - [Citing](#citing)
 
 ## Introduction
-Welcome to the third COSI data challenge (DC3)! The COSI data challenges are released on a yearly basis in preparation for the launch of the COSI Small Explorer (SMEX) class mission in 2027 ([Tomsick+23](https://ui.adsabs.harvard.edu/abs/2023arXiv230812362T/abstract)). They are based on simulated data, which is intended to closely mimic the real flight data. Every year the data challenges have increasingly more realistic source and background models, and they are analyzed with increasingly complete and matured analysis tools. In general there are two main goals of the data challenges:
+Welcome to the third COSI Data Challenge (DC3)! The COSI Data Challenges are released on a yearly basis in preparation for the launch of the COSI Small Explorer (SMEX) class mission in 2027 ([Tomsick+23](https://ui.adsabs.harvard.edu/abs/2023arXiv230812362T/abstract)). They are based on simulated data, which is intended to closely mimic the real flight data. Every year the Data Challenges have increasingly more realistic source and background models, and they are analyzed with increasingly complete and matured analysis tools. In general there are two main goals of the Data Challenges:
 
-1. Facilitate development of the COSI data pipeline and analysis tools.
-   - With routine feedback from scientists. 
-   - Alongside development of the expected source models by the science team. 
-2. Provide resources to the astrophysics community to become familiar with COSI data.
-   - Excellent training for science team in preparation for first analyses after launch.
-   - Public releases help with community building before COSI data is released. 
+1. Facilitate development of the COSI data pipeline and analysis tools
+   - With routine feedback from scientists
+   - Alongside development of the expected source models by the science team 
+2. Provide resources to the astrophysics community to become familiar with COSI data
+   - Excellent training for science team in preparation for first analyses after launch
+   - Public releases help with community building before COSI data is released
 
 ## Getting Started 
 The only software requirement for DC3 is [cosipy](https://github.com/cositools/cosipy). A general introduction into cosipy, including installation instructions, can be found in the [cosipy-intro](cosipy-intro) directory. For a general introduction into analyzing data from Compton telescopes see [Compton-telescope-data-analysis-intro](Compton-telescope-data-analysis-intro). Note that cosipy is part of the larger COSITools, which is a broad collection of COSI data analysis tools, documentation, and verification data sets. COSITools can be installed by following the installation instructions [here](https://github.com/cositools/cosi-setup). This also includes MEGAlib, which is the main software program used for running simulations. However, unless you need MEGAlib and/or COSITools for other reasons, it's highly recommended to just install cosipy.    
