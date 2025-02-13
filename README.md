@@ -95,10 +95,10 @@ Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release
 <img width="1050"  src="static/clusters.png">
 <div align="left">
   
-The simulations for the COSI data challenges are ran on high performance computing clusters. Most notably, we have made extensive use of NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover), the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz, and Clemson University's [Palmetto](https://docs.rcd.clemson.edu/palmetto/) cluster. 
+The simulations for the COSI Data Challenges are run on high performance computing clusters. Most notably, we have made extensive use of NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover), the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz, and Clemson University's [Palmetto](https://docs.rcd.clemson.edu/palmetto/) cluster. 
 
 ## Simulation Tools
-The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective data challenge directory. Model inputs for the simulations and the corresponding data challenges come from the COSI science team. All of the models used for past data challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).   
+The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective Data Challenge directory. Model inputs for the simulations and the corresponding Data Challenges come from the COSI science team. All of the models used for past Data Challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).   
 
 ## Summary of Current and Past Challenges 
 - **[Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1):**
@@ -130,7 +130,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - 511 imaging
 - **Data Challenge 3**
   - Focused on COSI SMEX mission.
-  - Data challenges for all the main science groups (including dark matter and solar), covering all of COSI's primary science objectives. 
+  - Data challenges for all the main science groups (including dark matter), covering all of COSI's primary science objectives. 
   - All models and challenges provided by respective COSI science teams.
   - Used 3 months of observations, for an equatorial orbit at 530 km.
   - Simulations include rocking of instrument:
@@ -144,7 +144,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - First version of source injector.
     - New implementation of Earth occultation in detector response.
     - First polarization tools.
-    - New methods to estimate the background for continuum sources, line sources, and transient sources.
+    - New methods to estimate the background for continuum sources and line sources.
     - Refinements and further developments of imaging class.
     - New Extended source response class.
 ## Useful Reference Guides
