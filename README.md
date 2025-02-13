@@ -595,8 +595,13 @@ Below we provide more advanced data challenges for interested users. The ultimat
 ### Advanced
 
 
-## Known Caveats 
-
+## Known Caveats and Limitations
+The items listed here are some of the priorities for DC4 development.
+- **It is not currently possible to simultaneously fit continuum and line components.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
+  - Creating a single response for all components 
+  - Creating a class that automatically matches an input model with the corresponding response 
+  - Reparameterizing the response in such a way that prevents this issue 
+- **The background estimation tools need to be further tested and developed.** With DC3 we have provided first versions for estimating continuum and line backgrounds. These methods need to be tested, stressed, and further developed. Additionally, we still need background estimation tools for transient sources. 
 
 ## Citing 
 If you make use of any of the data products from the COSI data challenges in a publication, please provide a link to this page. 
