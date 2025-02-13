@@ -179,7 +179,7 @@ background file:
 ## GRBs
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) examples. 
 
-Internal ToDo (Eliza, Aaron):
+⚠️ Internal ToDo (Eliza, Aaron):
 1. Provide a bit more information abou the input spectral models.
 2. Do we need to provide burst times like we did for DC2?
 3. Check/refine descriptions and challenges.
@@ -223,7 +223,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.rsp.gz
 
 ### Extragalactic Sources (LMC, M31, Virgo)
-Internal ToDo (Sophie):
+⚠️ Internal ToDo (Sophie):
 1. Proofread/check content
 2. Provide links to cited papers
 
@@ -249,7 +249,7 @@ We also include each source at 100x the nominal flux, in order to ensure that th
 1. Determine COSI's sensitivity for detecting these potential extragalactic 511 keV sources. 
 
 ### Globular Clusters (Tuc 47, Omega_Cen, NGC 6121, NGC_6397)
-Internal ToDo (Saurabh):
+⚠️ Internal ToDo (Saurabh):
 1. Clarify and provide a bit more information regarding how the 511 flux was estimated. 
 2. Proofread/check content
 3. Provide links to cited papers
@@ -267,7 +267,7 @@ The 511 keV photon flux for the brightest 4 globular clusters is presented here.
 1. Determine COSI's sensitivity for detecting 511 keV emission from Globular clusters.
 
 ### Positrons from 26Al
-Internal ToDo (Pierre):
+⚠️ Internal ToDo (Pierre):
 1. Proofread/check content
 
 **Data Files:** <br />
@@ -284,7 +284,7 @@ This is the description of the model of the diffuse emission due to the steady s
 4. Correlation with the 26Al map (1809 keV emission).
 
 ### Positrons from 44Ti
-Internal ToDo (Pierre):
+⚠️ Internal ToDo (Pierre):
 1. Proofread/check content
 
 **Data Files:** <br />
@@ -304,7 +304,7 @@ The spectral distribution takes into account the annihilation line and the ortho
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 ### Al26 Cygnus Region
-Internal ToDo (Pierre):
+⚠️ Internal ToDo (Pierre):
 1. Proofread/check content
 2. Provide links to cited papers
    
@@ -323,7 +323,7 @@ due to the interstellar turbulence.
 3. Recover 60Fe/26Al ratio (see 60Fe_Cyg_Region)
 
 ### Al26 NE2001
-Internal ToDo (Pierre):
+⚠️ Internal ToDo (Pierre):
 1. Proofread/check content
 2. Provide links to cited papers
    
@@ -369,7 +369,7 @@ All spectra follow simple Gaussian distributions. The flux is taken as the value
 1. What are the goals?
 
 ### Fe60 Cygnus Region
-Internal ToDo (Pierre):
+⚠️ Internal ToDo (Pierre):
 1. Proofread/check content
 2. Provide links to cited papers
    
@@ -423,7 +423,7 @@ This is the first data challenge to include the Galactic diffuse continuum, and 
 3. Characterize how the the Galactic diffuse continuum emission impacts the sensitivity for point sources in the Galactic plane. 
    
 ### Gamma-ray Binary PSR B1259-63
-Internal ToDo (Hiroki):
+⚠️ Internal ToDo (Hiroki):
 1. Proofread/check content
    
 **Data Files:** <br />
@@ -478,7 +478,7 @@ Both models represent the INTEGRAL data well but strongly differ at the highest 
 1. Test whether COSI would be able to distinguish between the two models.
    
 ### Name
-Internal ToDo (Hiroki):
+⚠️ Internal ToDo (Hiroki):
 1. Proofread/check content
 **Data Files:** <br />
 **Input Models:**  <br />
@@ -491,7 +491,7 @@ The tools needed to complete the Extragalactic challenges are demonstrated in th
 ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1945.nonsparse.binnedimaging.imagingresponse.rsp.gz
 
 ### NGC 1068
-Internal ToDo (Lea):
+⚠️ Internal ToDo (Lea):
 1. Proofread/check content
 2. Provide links to cited papers
 
@@ -506,7 +506,7 @@ Gamma=1.92, Ecut=200 keV; intrinsic flux 2-10 keV = 8.9e-10 erg/cm2/s
 1. Determine flux in the COSI band, and coronal cut-off energy. 
 
 ### NGC 4151
-Internal ToDo (Lea):
+⚠️ Internal ToDo (Lea):
 1. Proofread/check content
 2. Provide links to cited papers
 
@@ -531,7 +531,7 @@ NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 1. Determine flux in the COSI band, and coronal cut-off energy. <br />
 
 ### 4C+21.35
-Internal ToDo (Michela):
+⚠️ Internal ToDo (Michela):
 1. Give gaol of challenge
 2. Provide description of model
 3. Proofread/check content
