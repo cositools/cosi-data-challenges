@@ -8,6 +8,17 @@
 
 <div align="left">
 
+## ⚠️ Notice
+
+This is the COSI internal release. The public release is planned for April 1, 2025. Some things are still missing or incomplete, as specified below:
+- **The SAA background component is not available.** It is highly computationally intensive (requiring ~2,739 CPU years!), and we are currently working on completing this using both the Mainz and NASA Discover clusters. Correspondingly, the page describing the background simulations for DC3 is incomplete.
+- **The precomputed point source response files are not available.** In principle, anyone can compute these using cosipy, but they may take a while (1 or 2 days depending on the component). For convenience, we will provide these files for continuum, 511, Al26, Ti44, and Fe60.
+- **No binned data products have been provided.** Binning the data is part of the standard analysis procedure. However, in some cases, binning the data may require lots of RAM, making it difficult for standard laptops (as was found for DC2). Please let us know if you are running into related difficulties, and we can see if we need to provide some binned data products.
+- **A small number of the source simulations have not been completed**. Generally, these are input models that require a bit of extra work to implement in the simulation pipeline. We will be working to complete the remaining models before the public release. If you notice that your model is missing and were planning to test it in the near future, please let us know and we will prioritize it. 
+- **The polarization response is not available.** This will be coming soon.
+- **The polarization analysis tools do not yet account for the instrument orientation.** Consequently, only GRB polarization on short time scales can be analyzed at the moment. This is a top priority that we are working on updating.  
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
