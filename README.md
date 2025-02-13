@@ -586,23 +586,16 @@ m_DM = 3 MeV and <sigma v> = 1e-30 cm3/s. Other parameters are detailed in our s
 1. Calculate the gamma-ray spectra from the annihilating MeV DM.
 2. Compare the spectra from DM and background, and determine COSI’s detectability for attractive DM candidates.
    
-## Extra Challenges
-Below we provide more advanced data challenges for interested users. The ultimate goal of these challenges would be to eventually integrate the methods and tools into the cosipy source code. 
-
-### Extended 
-
-
-### Advanced
-
-
 ## Known Caveats and Limitations
-The items listed here are some of the priorities for DC4 development.
+The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work them, with the ultimate goal of implementing the software solutions into cosipy. 
+
 - **It is not currently possible to simultaneously fit continuum and line components.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
   - Creating a single response for all components 
   - Creating a class that automatically matches an input model with the corresponding response 
   - Reparameterizing the response in such a way that prevents this issue 
 - **The background estimation tools need to be further tested and developed.** With DC3 we have provided first versions for estimating continuum and line backgrounds. These methods need to be tested, stressed, and further developed. Additionally, we still need background estimation tools for transient sources.
 - **The tools still need to be stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.  
-
+- **The way in which parameters are configured needs to be refined, and callable scripts need to be added.** By callable scripts we are referring to command-line options that will perform common task, such as producing a light curve.  
+  
 ## Citing 
 If you make use of any of the data products from the COSI data challenges in a publication, please provide a link to this page. 
