@@ -198,15 +198,16 @@ The tools needed to complete these challenges are demonstrated in the [GRB spect
 7. Check/refine descriptions and challenges.
    
 **Data Files:** <br />
-GRB_bn081207680_3months_unbinned_data.fits.gz <br />
-GRB_bn090424592_3months_unbinned_data.fits.gz <br />
-GRB_bn100612726_3months_unbinned_data.fits.gz <br />
-GRB_bn110605183_3months_unbinned_data.fits.gz <br />
-GRB_bn131122490_3months_unbinned_data.fits.gz <br />
-GRB_MGF051103_3months_unbinned_data.fits.gz <br />
-GRB_MGF070201_3months_unbinned_data.fits.gz <br />
-GRB_MGF070222_3months_unbinned_data.fits.gz <br />
-GRB_MGF180128A_3months_unbinned_data.fits.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn110605183_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn131122490_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF051103_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF070201_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF070222_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF180128A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:** <br />
 The GRBs occur randomly within the orientation file, with their positions chosen such that they have incidence angles under $60^\circ$. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. 
@@ -239,12 +240,12 @@ Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.r
 2. Provide links to cited papers
 
 **Data Files:** <br />
-LMC_Gaussian_511_3months_unbinned_data.fits.gz <br />
-LMC_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
-M31_Gaussian_511_3months_unbinned_data.fits.gz <br />
-M31_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
-Virgo_Gaussian_511_3months_unbinned_data.fits.gz <br /> 
-Virgo_Gaussian_511_x100_3months_unbinned_data.fits.gz <br />
+LMC_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+LMC_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+M31_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+M31_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Virgo_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
+Virgo_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
 Fluxes are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of a source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ (Siegert et al 2016) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ (McMillan et al 2016), we scale the 511 keV flux of each extragalactic source based on the 511 keV flux assumed to be associated with the stellar mass in the Milky Way.
@@ -266,10 +267,10 @@ We also include each source at 100x the nominal flux, in order to ensure that th
 3. Provide links to cited papers
 
 **Data Files:** <br />
-Globular_Cluster_Tuc_47_3months_unbinned_data.fits.gz <br />
-Globular_Cluster_Omega_Cen_3months_unbinned_data.fits.gz <br />
-Globular_Cluster_NGC_6397_3months_unbinned_data.fits.gz <br />
-Globular_Cluster_NGC_6121_3months_unbinned_data.fits.gz <br />
+Globular_Cluster_Tuc_47_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Globular_Cluster_Omega_Cen_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Globular_Cluster_NGC_6397_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Globular_Cluster_NGC_6121_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
 The 511 keV photon flux for the brightest 4 globular clusters is presented here. The flux is estimated based on the 0.1 - 100 GeV luminosity from the Globular clusters, nuclear bulge emission, and boxy bulge emission in the Milky Way (Bartels+2017). The GeV luminosity of the Bulge is compared to the 511 keV luminosity of the bulge to estimate the 511 keV flux of the globular clusters. The flux values shown here are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit.
