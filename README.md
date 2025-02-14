@@ -173,7 +173,7 @@ Example 12: [Line background estimation](https://github.com/cositools/cosipy/blo
 
 If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md).
 
-As a very first step, try working through some of the example notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in getting more involved in the cosipy development, see the **Known Caveats and Limitations** section at the bottom of this page, which outlines some of the prioritiy areas for the next stages of development. 
+As a very first step, try working through some of the example notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, which outlines some of the prioritiy areas for the next stages of development. 
 
 All input models used for the simulations can be found in the DC3 source library of the COSI simulation pipeline, available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3). This includes all the information about the injected sources, and it can be used for checking the results of the data challenges. 
 
@@ -187,14 +187,15 @@ The 1 second binning may be optimal for analyzing transients on short time scale
 There are a few different options for modeling the background. The staring point is to use the ideal case, where the background model in the analysis is the same as the simulated background. We have provided a file with the total background, as well as files for the individual background components. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. Cosmic photons), and then move on to the total background after everything is working. A more realistic estimate of the uncertainty on the background modeling can be achieved by using one of the background estimation tools. However, we caution that these tools are in thier very early stages, and they still require further testing and development.  
 
 ## GRBs
-The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) examples. 
+The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 ⚠️ Internal ToDo (Eliza, Aaron):
-1. Provide a bit more information abou the input spectral models.
-2. Do we need to provide burst times like we did for DC2?
-3. Check/refine descriptions and challenges.
-4. Should we separate challenges for MGFs and other GRBs?
-5. What are the goals for the MGFs?
+1. Provide a bit more information about the input spectral models.
+2. Do we need to provide burst times like we did for DC2 (I think yes)?
+4. Should we separate challenges for MGFs and GRBs or can we keep them together?
+5. Should we provide the same model information for MGFs as is given for GRBs below? 
+6. What are the goals for the MGFs?
+7. Check/refine descriptions and challenges.
    
 **Data Files:** <br />
 GRB_bn081207680_3months_unbinned_data.fits.gz <br />
@@ -208,19 +209,19 @@ GRB_MGF070222_3months_unbinned_data.fits.gz <br />
 GRB_MGF180128A_3months_unbinned_data.fits.gz <br />
 
 **Input Models:** <br />
-The GRBs occur randomly within the orientation file, with their positions chosen such that they have incidence angles under 60 degrees. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. 
+The GRBs occur randomly within the orientation file, with their positions chosen such that they have incidence angles under $60^\circ$. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. 
 
-Included models are specified below, with PA given in IAU convention:
-- bn081207680: zenith = 5°, azimuth = 15°, flux = 0.0785 ph/cm2/s, PF = 0, PA = 0°
-- bn090424592: zenith = 20°, azimuth = 185°, flux = 244.8000 ph/cm2/s, PF = 0.1, PA = 110°
-- bn100612726: zenith = 23°, azimuth = 295°, flux = 1.0236 ph/cm2/s, PF = 0.2, PA = 35°
-- bn110605183: zenith = 40°, azimuth = 315°, flux = 1.5570 ph/cm2/s, PF = 0.3, PA = 50°
-- bn131122490: zenith = 0°, azimuth = 346°, flux = 0.9651 ph/cm2/s, PF = 0.4, PA = 175°
-- bn140329295: zenith = 8°, azimuth = 95°, flux = 0.2418 ph/cm2/s, PF = 0.5, PA = 95°
-- bn161004964: zenith = 15°, azimuth = 84°, flux = 0.8569 ph/cm2/s, PF = 0.6, PA = 10°
-- bn170405777: zenith = 60°, azimuth = 20°, flux = 0.5760 ph/cm2/s, PF = 0.7, PA = 160°
-- bn180504136: zenith = 12°, azimuth = 213°, flux = 0.4181 ph/cm2/s, PF = 0.8, PA = 45°
-- bn180703876: zenith = 25°, azimuth = 156°, flux = 0.3540 ph/cm2/s, PF = 0.9, PA = 25°
+The models are specified below, including the position in detector coordinates, the flux, the polarization fraction (PF), and the polarization angle (PA) given in IAU convention:
+- bn081207680: zenith = $5^\circ$, azimuth = $15^\circ$, flux = 0.0785 ph/cm2/s, PF = 0, PA = $0^\circ$
+- bn090424592: zenith = $20^\circ$, azimuth = $185^\circ$, flux = 244.8000 ph/cm2/s, PF = 0.1, PA = $110^\circ$
+- bn100612726: zenith = $23^\circ$, azimuth = $295^\circ$, flux = 1.0236 ph/cm2/s, PF = 0.2, PA = $35^\circ$
+- bn110605183: zenith = $40^\circ$, azimuth = $315^\circ$, flux = 1.5570 ph/cm2/s, PF = 0.3, PA = $50^\circ$
+- bn131122490: zenith = $0^\circ$, azimuth = $346^\circ$, flux = 0.9651 ph/cm2/s, PF = 0.4, PA = $175^\circ$
+- bn140329295: zenith = $8^\circ$, azimuth = $95^\circ$, flux = 0.2418 ph/cm2/s, PF = 0.5, PA = $95^\circ$
+- bn161004964: zenith = $15^\circ$, azimuth = $84^\circ$, flux = 0.8569 ph/cm2/s, PF = 0.6, PA = $10^\circ$
+- bn170405777: zenith = $60^\circ$, azimuth = $20^\circ$, flux = 0.5760 ph/cm2/s, PF = 0.7, PA = $160^\circ$
+- bn180504136: zenith = $12^\circ$, azimuth = $213^\circ$, flux = 0.4181 ph/cm2/s, PF = 0.8, PA = $45^\circ$
+- bn180703876: zenith = $25^\circ$, azimuth = $156^\circ$, flux = 0.3540 ph/cm2/s, PF = 0.9, PA = $25^\circ$
 
 **Goals:**
 1. Detect GRB
