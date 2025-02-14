@@ -173,7 +173,7 @@ Example 12: [Line background estimation](https://github.com/cositools/cosipy/blo
 
 If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md).
 
-As a very first step, try working through some of the example notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, which outlines some of the prioritiy areas for the next stages of development. 
+As a very first step, try working through some of the example notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in exploring other models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, which outlines some of the prioritiy areas for the next stages of development. 
 
 All input models used for the simulations can be found in the DC3 source library of the COSI simulation pipeline, available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3). This includes all the information about the injected sources, and it can be used for checking the results of the data challenges. 
 
@@ -184,7 +184,7 @@ DC3_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.ori  <br />
 The 1 second binning may be optimal for analyzing transients on short time scales, but generally the 15 second binning should be sufficient and is considered the default. 
 
 **Background Files:** <br />
-There are a few different options for modeling the background. The staring point is to use the ideal case, where the background model in the analysis is the same as the simulated background. We have provided a file with the total background, as well as files for the individual background components. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. Cosmic photons), and then move on to the total background after everything is working. A more realistic estimate of the uncertainty on the background modeling can be achieved by using one of the background estimation tools. However, we caution that these tools are in thier very early stages, and they still require further testing and development.  
+There are a few different options for modeling the background. The staring point is to use the ideal case, where the background model in the analysis is the same as the simulated background. We have provided a file with the total background, as well as files for the individual background components. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. Cosmic photons), and then move on to the total background after everything is working. A more realistic estimate of the uncertainty on the background modeling can be achieved by using one of the background estimation tools (see the [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) and [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) examples). However, we caution that these tools are in thier very early stages, and they still require further testing and development.  
 
 ## GRBs
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
@@ -419,9 +419,10 @@ This is the description of the model of the diffuse emission of the 1173 keV and
 2. Extraction of the F(26Al)/F(60Fe) ratio and its uncertainty.
    
 ## Galactic 
-The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
+The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
-**All challenges should use the same detector response file:**
+**All challenges should use the same detector response file:** <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
 
 ### Galactic diffuse continuum
 
