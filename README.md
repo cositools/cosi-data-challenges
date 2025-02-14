@@ -231,8 +231,11 @@ The models are specified below, including the position in detector coordinates, 
 ## Positrons
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
-**All challenges should use the same detector response file:** 
+**All challenges should use the same detector response files:** 
 Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.rsp.gz
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+
+The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. 
 
 ### Extragalactic Sources (LMC, M31, Virgo)
 ⚠️ Internal ToDo (Sophie):
@@ -283,29 +286,29 @@ The 511 keV photon flux for the brightest 4 globular clusters is presented here.
 1. Proofread/check content
 
 **Data Files:** <br />
-Positrons_from_26Al_line_3months_unbinned_data.fits.gz <br />
-Positrons_from_26Al_cont_3months_unbinned_data.fits.gz <br />
+Positrons_from_26Al_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Positrons_from_26Al_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-This is the description of the model of the diffuse emission due to the steady state annihilation of positrons produced by 26Al decay in our Galaxy. The spatial distribution is derived from the calculation of the propagation of positrons in our Galaxy. The initial positions of positrons follow the model NE2001 of Cordes & Lazio 2002 that fits the distribution of massive stars in our Galaxy, with a fraction of 26Al in the bulge of 2%. The positron propagation method is described in Alexis et al. 2014.The spectral distribution takes into account the annihilation line and the orthopositronium continuum. It was obtained from the model of Guessoum et al 2005 that compute a spectrum for each phase of the interstellar medium. The spectral model was corrected by the Galactic rotation using the model of Fich, Blitz and Stark 1989 for R > 3 kpc and a solid rotation model for R < 3 kpc.
+This is the description of the model of the diffuse emission due to the steady state annihilation of positrons produced by 26Al decay in our Galaxy. The spatial distribution is derived from the calculation of the propagation of positrons in our Galaxy. The initial positions of positrons follow the model NE2001 of [Cordes & Lazio 2002](https://arxiv.org/abs/astro-ph/0207156) that fits the distribution of massive stars in our Galaxy, with a fraction of 26Al in the bulge of 2%. The positron propagation method is described in [Alexis et al. 2014](https://ui.adsabs.harvard.edu/abs/2014A%26A...564A.108A/abstract). The spectral distribution takes into account the annihilation line and the orthopositronium continuum. It was obtained from the model of [Guessoum et al 2005](https://ui.adsabs.harvard.edu/abs/2005A%26A...436..171G/abstract) that compute a spectrum for each phase of the interstellar medium. The spectral model was corrected by the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc.
 
 **Goals:** <br />
 1. Detection of the diffuse line and continuum emissions
 2. Detection of the Doppler shift in the disk
 3. Detection of the spectral shape
-4. Correlation with the 26Al map (1809 keV emission).
+4. Correlation with the 26Al map (1809 keV emission)
 
 ### Positrons from 44Ti
 ⚠️ Internal ToDo (Pierre):
 1. Proofread/check content
 
 **Data Files:** <br />
-Positrons_from_44Ti_line_3months_unbinned_data.fits.gz <br />
-Positrons_from_44Ti_cont_3months_unbinned_data.fits.gz <br />
+Positrons_from_44Ti_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Positrons_from_44Ti_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-This is the description of the model of the diffuse emission due to the steady state annihilation of positrons produced by 44Ti decay in our Galaxy. The spatial distribution is derived from the calculation of the propagation of positrons in our Galaxy. The initial positions of positrons follow the model NE2001 of Cordes & Lazio 2002 that fits the distribution of massive stars in our Galaxy, with a fraction of 44Ti in the bulge of 2%, which corresponds to the fraction of massive stars also used for the 26Al. The positron propagation method is described in Alexis et al. 2014. The positron rate due to 44Ti decay is ~3 x 10^42 e+/s (see section 2.3 of Alexis et al. 2014).
-The spectral distribution takes into account the annihilation line and the orthopositronium continuum. It was obtained from the model of Guessoum et al 2005 that compute a spectrum for each phase of the interstellar medium. The spectral model was corrected by the Galactic rotation using the model of Fich, Blitz and Stark 1989 for R > 3 kpc and a solid rotation model for R < 3 kpc.
+This is the description of the model of the diffuse emission due to the steady state annihilation of positrons produced by 44Ti decay in our Galaxy. The spatial distribution is derived from the calculation of the propagation of positrons in our Galaxy. The initial positions of positrons follow the model NE2001 of [Cordes & Lazio 2002](https://arxiv.org/abs/astro-ph/0207156) that fits the distribution of massive stars in our Galaxy, with a fraction of 44Ti in the bulge of 2%, which corresponds to the fraction of massive stars also used for the 26Al. The positron propagation method is described in [Alexis et al. 2014](https://ui.adsabs.harvard.edu/abs/2014A%26A...564A.108A/abstract). The positron rate due to 44Ti decay is $\sim 3 \times 10^{42}$ e+/s (see section 2.3 of Alexis et al. 2014).
+The spectral distribution takes into account the annihilation line and the orthopositronium continuum. It was obtained from the model of [Guessoum et al 2005](https://ui.adsabs.harvard.edu/abs/2005A%26A...436..171G/abstract) that compute a spectrum for each phase of the interstellar medium. The spectral model was corrected by the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc.
 
 **Goals:** <br />
 1. Detection of the diffuse line and continuum emissions
