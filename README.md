@@ -81,7 +81,7 @@ The available background files are listed in the [data-products](data-products) 
 The Earth blocks a significant portion of the sky for satellites in low-Earth orbit, referred to as Earth occultation. It is important to account for this when simulating observations and performing data analysis. In order to implement this for the DC3 simulations we added new functionality to MEGAlib (*develop-cosi* branch), as detailed in the [earth-occultation](earth-occultation) directory. **These new methods now allow for simulating instruments with non-zenith pointings.** We also added new methods in cosipy to account for Earth occultation in the data analysis. 
 
 ## Polarization
-Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release the first version of our polarization tools in cosipy. A general introduction into Compton polarimetry can be found in the [polarization](polarization) directory.
+Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release the first version of our polarization tools in cosipy. We also added new functionality in MEGAlib to define polarization in Galactic coordinates. This allows for simulating polarized sources together with the instrument's orbit. A general introduction into Compton polarimetry can be found in the [polarization](polarization) directory.
 
 ## Releases
 
