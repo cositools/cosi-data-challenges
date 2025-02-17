@@ -13,7 +13,7 @@
 This is the COSI internal release. The public release is planned for April 1, 2025. Some things are still missing or incomplete, as specified below:
 - **The SAA and primary protons background components are not available.** They are highly computationally intensive (requiring ~2,739 CPU years for SAA and ~57 CPU years for primary protons!), and we are currently working on completing this using both the Mainz and NASA Discover clusters. Correspondingly, the page describing the background simulations for DC3 is incomplete.
 - **Precomputed point source response files are not available.** In principle, anyone can compute these using cosipy, but they may take a while (1 or 2 days depending on the component). For convenience, we will provide these files for continuum, 511, Al26, Ti44, and Fe60.
-- **Response files need to be converted from .rsp files to .h5 files (with good chunks).** The .rsp files can still be used for analysis, but the h5 files will be much faster and require less memory. 
+- **Response files need to be converted from standard .h5 files to .h5 files with good chunks.** The h5 files with good chuncks will optimize the speed and memory usage. 
 - **No binned data products have been provided.** Binning the data is part of the standard analysis procedure. However, in some cases, binning the data may require lots of RAM, making it difficult for standard laptops (as was found for DC2). Please let us know if you are running into related difficulties, and we can see if we need to provide some binned data products.
 - **A small number of the source simulations have not been completed**. Generally, these are input models that require a bit of extra work to implement in the simulation pipeline. We will be working to complete the remaining models before the public release. If you notice that your model is missing and were planning to test it in the near future, please let us know and we will make it a priority. 
 - **The polarization response is not available.** This will be coming soon.
@@ -198,7 +198,7 @@ The tools needed to complete these challenges are demonstrated in the [GRB spect
 7. Check/refine descriptions and challenges.
    
 **Data Files:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -232,8 +232,8 @@ The models are specified below, including the position in detector coordinates, 
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 **All challenges should use the same detector response files:** 
-Response511.o4.e509_513.s2923345515139.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 
 The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. 
 
@@ -323,7 +323,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 1. Proofread/check content
    
 **Data Files:** <br /> 
-Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -342,7 +342,7 @@ due to the interstellar turbulence.
 1. Proofread/check content
    
 **Data Files:** <br /> 
-Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -367,7 +367,7 @@ The tools needed to complete these challenges are demonstrated in the [Crab spec
 4. Provide links to cited papers
    
 **Data Files:** <br /> 
-Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -389,8 +389,8 @@ All spectra follow simple Gaussian distributions. The flux is taken as the value
 1. Proofread/check content
    
 **Data Files:** <br /> 
-Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br /> 
-Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br /> 
+Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
+Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
 
 **Input Models:**  <br />
@@ -407,8 +407,8 @@ described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M
 1. Proofread/check content
    
 **Data Files:** <br /> 
-Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br /> 
-Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
+Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 60Fe_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -422,7 +422,7 @@ This is the description of the model of the diffuse emission of the 1173 keV and
 The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb), and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) (for extended source analysis) notebooks.
 
 **All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 
 ### Galactic diffuse continuum
 
@@ -506,7 +506,7 @@ Both models represent the INTEGRAL data well but strongly differ at the highest 
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
 **All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse.rsp.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 
 ### NGC 1068
 ⚠️ Internal ToDo (Lea):
@@ -584,7 +584,8 @@ The spectral data is for 3C 279 high, which represent the high state of the sour
 ## Dark Matter
 ⚠️ Internal ToDo (Yu):
 1. Provide more info about models.
-2. Proofread/check content
+2. Please let us know what kind of spectra you have (line and/or continuum). This will determine the type of respsonse needed. 
+3. Proofread/check content
 
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
  
