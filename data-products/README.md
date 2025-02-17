@@ -57,6 +57,7 @@ DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br />
 
 **Response Files:** <br />
 wasabi path: COSI-SMEX/DC3/Responses <br />
+NB: Response files must be unzipped before using in analysis.  <br />
 
 Detector Response Files: <br />
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
