@@ -55,6 +55,7 @@ The measured source ASAD and simulated 100% polarized ASAD are both divided by t
 <img src="images/corrected-100-percent-polarized-asad.png" alt="Corrected 100% polarized ASAD" width="500"/>
 
 ***Figure 6:** The ASAD of the simulated 100% polarized source is divided by ASAD of the simulated unpolarized source and fit with a sinusoid in order to determine the modulation of the 100% polarized source.*          
+
 Both corrected ASADs are fit with the above probability distribution function. The modulation of the 100% polarized ASAD, which is used to convert the amplitude of the sinusoidal fit of the source's ASAD to a polarization fraction, is given by        
 $$\large \mu_{100} = \frac{\hat{B_{100}}}{\hat{A_{100}}}$$               
 where $\large \hat{A_{100}}$ and $\large \hat{B_{100}}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization fraction of the source is        
@@ -121,4 +122,8 @@ A useful way to **visualize** the linear polarization state is to plot $\large U
   - A point lying close to the origin indicates weak (or zero) linear polarization.
   - To consider a measurement a detection, a 99% C.L. (a ($\large Q/I$, $\large U/I$) point ~2.575 sigma distance from (0,0)) is required.
 
-In practice, $\large Q-U$ charts are especially helpful for rapidly assessing the **direction** and **degree** of polarization in an observation, and for comparing different datasets (e.g., source vs. background, or different energy bands) in a straightforward 2D representation.
+In practice, $\large Q-U$ charts are especially helpful for rapidly assessing the **direction** and **degree** of polarization in an observation, and for comparing different datasets (e.g., source vs. background, or different energy bands) in a straightforward 2D representation.       
+
+<img src="images/qu-chart.png" alt="Q-U chart" width="500"/>
+
+***Figure 7:** Polarization analysis in the Q/I - U/I plane: The red dot represents the measured polarization, while the red contours indicate confidence intervals around the measurement. The green marker and contours correspond to the simulated polarization values. The shaded pink region represents the 99% Minimum Detectable Polarization.*          
