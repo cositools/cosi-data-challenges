@@ -606,7 +606,7 @@ m_DM = 3 MeV and <sigma v> = 1e-30 cm3/s. Other parameters are detailed in our s
 2. Compare the spectra from DM and background, and determine COSI’s detectability for attractive DM candidates.
    
 ## Known Caveats and Limitations
-The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work them, with the ultimate goal of implementing the software solutions into cosipy. 
+The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work on them, with the ultimate goal of implementing the software solutions into cosipy. 
 
 - **It is not currently possible to simultaneously fit continuum and line components.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
   - Creating a single response for all components 
