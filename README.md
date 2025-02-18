@@ -234,7 +234,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 **All challenges should use the same detector response files:** 
 Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
-extended_source_response_511_merged.h5 (precomputed extended source response file)
+extended_source_response_511_merged.h5.gz (precomputed extended source response file)
 
 The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. 
 
@@ -424,7 +424,7 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 
 **All challenges should use the same detector response file:** <br />
 ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
-extended_source_response_continuum_merged.h5 (for extended sources) <br />
+extended_source_response_continuum_merged.h5.gz (precomputed extended source response file) <br />
 
 ### Galactic diffuse continuum
 
