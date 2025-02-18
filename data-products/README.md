@@ -30,7 +30,7 @@ There are fits files for each individual component, for both sources and backgro
 
 <img  align="right" width="250"  src="images/clusters_DC3.png">
 
-The source simulations were ran on NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover). We used 1000 parallel CPUs for most of the source simulations, which allowed us to simulate them in a fairly short time (typically less than ~10 minutes of total wall time per source). The source models were provided by the COSI science teams, and more information about them can be found in the respective [data-challenges](#data-challenges) section on the main page. The Background simulations were mostly run on the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz. More details about the background simulations can be found in the [backgrounds](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds) directory.
+The source simulations were ran on NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover). We used 1000 parallel CPUs for most of the source simulations, which allowed us to simulate them in a fairly short time (typically less than ~10 minutes of total wall time per source). The source models were provided by the COSI science teams, and more information about them can be found in the respective **Data Challenges** section on the main page. The Background simulations were mostly run on the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz. More details about the background simulations can be found in the [backgrounds](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds) directory.
 
 ### Accessing the Data
 
@@ -38,7 +38,7 @@ The data is hosted on [wasabi](https://console.wasabisys.com/file_manager/cosi-p
 <pre>
 AWS_ACCESS_KEY_ID=GBAL6XATQZNRV3GFH9Y4 AWS_SECRET_ACCESS_KEY=GToOczY5hGX3sketNO2fUwiq4DJoewzIgvTCHoOv aws s3api get-object  --bucket cosi-pipeline-public --key full/path/your_file --endpoint-url=https://s3.us-west-1.wasabisys.com your_file
 </pre>
-Note that you must replace 'full/path/your_file' (after '--key') and 'your_file' (at the end) with the actual path and file. All the needed paths and file names are given below. The specific files needed for each respective data challenge are given in the [data-challenges](#data-challenges) section on the main page.
+Note that you must replace 'full/path/your_file' (after '--key') and 'your_file' (at the end) with the actual path and file. All the needed paths and file names are given below. The specific files needed for each respective data challenge are given in the **Data Challenges** section on the main page.
 
 Alternatively, cosipy has a utility function that can be used for downloading files. The usage is as follows:
 <pre>
