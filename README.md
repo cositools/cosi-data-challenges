@@ -424,6 +424,7 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 
 **All challenges should use the same detector response file:** <br />
 ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+extended_source_response_continuum_merged.h5 (for extended sources) <br />
 
 ### Galactic diffuse continuum
 
