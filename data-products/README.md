@@ -68,7 +68,8 @@ Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimag
 ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 
 Extended Source Response Files (in Responses/extended_source_response): <br />
-extended_source_response_511_merged.h5
+extended_source_response_511_merged.h5 <br />
+extended_source_response_continuum_merged.h5 <br />
 
 **Background Files:** <br />
 
