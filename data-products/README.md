@@ -68,7 +68,9 @@ Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimag
 ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 
 Extended Source Response Files (in Responses/extended_source_response): <br />
-extended_source_response_511_merged.h5
+extended_source_response_511_merged.h5.gz <br />
+extended_source_response_continuum_merged.h5.gz <br />
+extended_source_response_Al26_merged.h5.gz <br />
 
 **Background Files:** <br />
 
@@ -76,6 +78,7 @@ wasabi path: COSI-SMEX/DC3/Data/Backgrounds/Ge <br />
 
 Unbinned Files: <br />
 GalTotal_SA100_F98_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CosmicPhotons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 AlbedoNeutrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 AlbedoPhotons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PrimaryAlphas_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -83,7 +86,8 @@ PrimaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PrimaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryProtons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- 
+SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
 Binned Files: <br />
 
 
