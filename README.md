@@ -3,7 +3,7 @@
 # Welcome to COSI Data Challenge 3!
 
 <p align="center">
-<img width="325"  src="static/logo.png">
+<img width="325"  src="static/COSI-SMEX Emblem_2E.png">
 </p>
 
 <div align="left">
