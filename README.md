@@ -3,7 +3,7 @@
 # Welcome to COSI Data Challenge 3!
 
 <p align="center">
-<img width="325"  src="static/logo.png">
+<img width="325"  src="static/COSI-SMEX Emblem_2E.png">
 </p>
 
 <div align="left">
@@ -11,7 +11,7 @@
 ## ⚠️ Notice
 
 This is the COSI internal release. The public release is planned for April 1, 2025. Some things are still missing or incomplete, as specified below:
-- **The SAA and primary protons background components are not available.** They are highly computationally intensive (requiring ~2,739 CPU years for SAA and ~57 CPU years for primary protons!), and we are currently working on completing this using both the Mainz and NASA Discover clusters. Correspondingly, the total background file is not available yet, and the page describing the background simulations for DC3 is incomplete.
+- **The SAA and primary protons background components are not available.** They are highly computationally intensive (requiring ~2,739 core years for SAA and ~57 core years for primary protons!), and we are currently working on completing this using both the Mainz and NASA Discover clusters. Correspondingly, the total background file is not available yet, and the page describing the background simulations for DC3 is incomplete.
 - **Precomputed point source response files are not available.** In principle, anyone can compute these using cosipy, but they may take a while (1 or 2 days depending on the component). For convenience, we will provide these files for continuum, 511, Al26, Ti44, and Fe60.
 - **Response files need to be converted from standard .h5 files to .h5 files with good chunks.** The h5 files with good chuncks will optimize the speed and memory usage. 
 - **No binned data products have been provided.** Binning the data is part of the standard analysis procedure. However, in some cases, binning the data may require lots of RAM, making it difficult for standard laptops (as was found for DC2). Please let us know if you are running into related difficulties, and we can see if we need to provide some binned data products.
@@ -608,7 +608,7 @@ m_DM = 3 MeV and <sigma v> = 1e-30 cm3/s. Other parameters are detailed in our s
 2. Compare the spectra from DM and background, and determine COSI’s detectability for attractive DM candidates.
    
 ## Known Caveats and Limitations
-The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work them, with the ultimate goal of implementing the software solutions into cosipy. 
+The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work on them, with the ultimate goal of implementing the software solutions into cosipy. 
 
 - **It is not currently possible to simultaneously fit continuum and line components.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
   - Creating a single response for all components 
