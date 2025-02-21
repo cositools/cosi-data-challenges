@@ -225,7 +225,7 @@ The models are specified below, including the position in detector coordinates, 
 3. Measure polarization (fraction and angle)
 4. Classify: GRB or MGF
 
-**Magnetar short burst Goals:**
+**Magnetar Short Burst Goals:**
 1. Check if they are detectable
 2. If detectable, localize and fit spectrum
    
