@@ -190,12 +190,7 @@ There are a few different options for modeling the background. The staring point
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 ⚠️ Internal ToDo (Eliza, Aaron):
-1. Provide a bit more information about the input spectral models.
-2. Do we need to provide burst times like we did for DC2 (I think yes)?
-4. Should we separate challenges for MGFs and GRBs or can we keep them together?
-5. Should we provide the same model information for MGFs as is given for GRBs below? 
-6. What are the goals for the MGFs?
-7. Check/refine descriptions and challenges.
+1. Should we provide the same model information for MGFs as is given for GRBs below? 
    
 **Data Files:** <br />
 ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
@@ -234,7 +229,6 @@ The models are specified below, including the position in detector coordinates, 
 1. Check if they are detectable
 2. If detectable, localize and fit spectrum
    
-
 ## Positrons
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
