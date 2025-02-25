@@ -232,6 +232,13 @@ Information for the MGFs, including reference papers (PF = 1, PA = $90^\circ$ fo
 - MGF200415A ([Svinkin+21](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835488530.0 s
 - MGF231115A ([Trigg+25](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533696.0 s
 
+Information for magnetar short burst:
+- MgtBurst_bright_complex: no polarization, t = 1835640345.022513 s
+  - SGR 1935+2154 ([Li+21](https://www.nature.com/articles/s41550-021-01302-6)) - a bright burst with a complex light curve.
+- MgtBurst_bright_simple: no polarization, t = 1837365120.031250 s
+  - A bright burst with simple light curve: spectrum of SGR 1935+2154 burst + light curve of 1E 1048.1-5937 ([Gavriil+02](https://www.nature.com/articles/nature01011)) burst.
+- 1RXS J170849.0-400901 ([Hartog+08](https://drive.google.com/drive/u/0/home)): PF = 0.8, PA = $150^\circ$, t = 1835487300.0 s
+
 **GRB and MGF Goals:**
 1. Localize GRB
 2. Fit spectrum
@@ -240,7 +247,7 @@ Information for the MGFs, including reference papers (PF = 1, PA = $90^\circ$ fo
 
 **Magnetar Short Burst Goals:**
 1. Check if they are detectable
-2. If detectable, localize and fit spectrum
+2. If detectable, localize and fit spectrum (and polarization when applicable) 
    
 ## Positrons
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
