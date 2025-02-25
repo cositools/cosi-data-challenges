@@ -190,7 +190,8 @@ There are a few different options for modeling the background. The staring point
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 **Data Files:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz <br />
 GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -246,7 +247,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 
 **All challenges should use the same detector response files:** 
 Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 extended_source_response_511_merged.h5.gz (precomputed extended source response file)
 
 The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. 
@@ -436,7 +437,8 @@ This is the description of the model of the diffuse emission of the 1173 keV and
 The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb), and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) (for extended source analysis) notebooks.
 
 **All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz <br /> (polarized sources)
 extended_source_response_continuum_merged.h5.gz (precomputed extended source response file) <br />
 
 ### Galactic diffuse continuum
@@ -521,7 +523,8 @@ Both models represent the INTEGRAL data well but strongly differ at the highest 
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
 **All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz <br /> (polarized sources)
 
 ### NGC 1068
 ⚠️ Internal ToDo (Lea):
