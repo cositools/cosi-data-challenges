@@ -72,9 +72,9 @@ Extended Source Response Files (in Responses/extended_source_response): <br />
 extended_source_response_511_merged.h5.gz <br />
 extended_source_response_continuum_merged.h5.gz <br />
 extended_source_response_Al26_merged.h5.gz <br />
-extended_source_response_Ti44_merged.h5.gz
-extended_source_response_Fe60_low_merged.h5.gz
-extended_source_response_Fe60_high_merged.h5.gz
+extended_source_response_Ti44_merged.h5.gz <br />
+extended_source_response_Fe60_low_merged.h5.gz <br />
+extended_source_response_Fe60_high_merged.h5.gz <br />
 
 **Background Files:** <br />
 
