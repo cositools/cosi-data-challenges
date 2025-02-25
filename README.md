@@ -223,13 +223,13 @@ The GRBs occur randomly within the orientation file, with their positions chosen
 - bn180504136: PF = 0.8, PA = $45^\circ$, t = 1847439100.0 s
 - bn180703876: PF = 0.9, PA = $25^\circ$, t = 1849427245.0 s
 
-Information for the MGFs (PF = 1, PA = $90^\circ$ for all sources):
-- MGF051103: t = 1835533723.498 s
-- MGF070201: t = 1835537496.0 s
-- MGF070222: t = 1835491681.0 s
-- MGF180128A: t = 1835488380.0 s
-- MGF200415A: t = 1835488530.0 s
-- MGF231115A: t = 1835533696.0 s
+Information for the MGFs, including reference papers (PF = 1, PA = $90^\circ$ for all sources):
+- MGF051103 ([Svinkin+21](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533723.498 s
+- MGF070201 ([Ofek+08](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835537496.0 s
+- MGF070222 ([Svinkin+16](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835491681.0 s
+- MGF180128A ([Trigg+24](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835488380.0 s
+- MGF200415A ([Svinkin+21](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835488530.0 s
+- MGF231115A ([Trigg+25](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533696.0 s
 
 **GRB and MGF Goals:**
 1. Localize GRB
