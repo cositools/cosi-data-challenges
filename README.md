@@ -191,7 +191,7 @@ The tools needed to complete these challenges are demonstrated in the [GRB spect
 
 **Data Files:** <br />
 ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
-ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz <br />
+ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz <br /> (for polarization)
 GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -248,7 +248,8 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 **All challenges should use the same detector response files:** 
 Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
-extended_source_response_511_merged.h5.gz (precomputed extended source response file)
+extended_source_response_511_merged.h5.gz (precomputed 511 extended source response file)
+extended_source_response_continuum_merged.h5.gz (precomputed continuum extended source response file)
 
 The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. 
 
@@ -339,6 +340,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
    
 **Data Files:** <br /> 
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
+extended_source_response_Al26_merged.h5.gz (precomputed extended source response file) <br />
 26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -358,6 +360,7 @@ due to the interstellar turbulence.
    
 **Data Files:** <br /> 
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
+extended_source_response_Al26_merged.h5.gz (precomputed extended source response file) <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -383,6 +386,7 @@ The tools needed to complete these challenges are demonstrated in the [Crab spec
    
 **Data Files:** <br /> 
 Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
+extended_source_response_Ti44_merged.h5.gz (precomputed extended source response) <br />
 CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -406,6 +410,8 @@ All spectra follow simple Gaussian distributions. The flux is taken as the value
 **Data Files:** <br /> 
 Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
+extended_source_response_Fe60_low_merged.h5.gz (precomputed extended source response) <br />
+extended_source_response_Fe60_high_merged.h5.gz (precomputed extended source response) <br />
 60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
 
 **Input Models:**  <br />
@@ -424,6 +430,8 @@ described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M
 **Data Files:** <br /> 
 Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
+extended_source_response_Fe60_low_merged.h5.gz (precomputed extended source response) <br />
+extended_source_response_Fe60_high_merged.h5.gz (precomputed extended source response) <br />
 60Fe_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -524,7 +532,8 @@ The tools needed to complete the Extragalactic challenges are demonstrated in th
 
 **All challenges should use the same detector response file:** <br />
 ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
-ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz <br /> (polarized sources)
+ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz (polarized sources) <br />
+extended_source_response_continuum_merged.h5.gz (precomputed extended source response)  <br />
 
 ### NGC 1068
 ⚠️ Internal ToDo (Lea):
