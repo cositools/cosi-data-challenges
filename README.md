@@ -237,7 +237,6 @@ Information for magnetar short burst:
   - SGR 1935+2154 ([Li+21](https://www.nature.com/articles/s41550-021-01302-6)) - a bright burst with a complex light curve.
 - MgtBurst_bright_simple: no polarization, t = 1837365120.031250 s
   - A bright burst with simple light curve: spectrum of SGR 1935+2154 burst + light curve of 1E 1048.1-5937 ([Gavriil+02](https://www.nature.com/articles/nature01011)) burst.
-- 1RXS J170849.0-400901 ([Hartog+08](https://drive.google.com/drive/u/0/home)): PF = 0.8, PA = $150^\circ$, t = 1835487300.0 s
 
 **GRB and MGF Goals:**
 1. Localize GRB
