@@ -220,11 +220,11 @@ The GRBs occur randomly within the orientation file, with their positions chosen
 - bn100612726: PF = 0.2, PA = $35^\circ$, t = 1839617230.0 s
 - bn110605183: PF = 0.3, PA = $50^\circ$, t = 1841896404.0 s
 - bn131122490: PF = 0.4, PA = $175^\circ$, t = 1842123855.0 s
-- bn140329295: PF = 0.5, PA = $95^\circ$, t = 1843753776.0 s
-- bn161004964: PF = 0.6, PA = $10^\circ$, t = 1845900508.0 s
-- bn170405777: PF = 0.7, PA = $160^\circ$, t = 1846666390.0 s
-- bn180504136: PF = 0.8, PA = $45^\circ$, t = 1847439100.0 s
-- bn180703876: PF = 0.9, PA = $25^\circ$, t = 1849427245.0 s
+- bn140329295: PF = 0.5, PA = $95^\circ$, t = 1837652924.0 s
+- bn161004964: PF = 0.6, PA = $10^\circ$, t = 1842948485.0 s
+- bn170405777: PF = 0.7, PA = $160^\circ$, t = 1841915858.0 s
+- bn180504136: PF = 0.8, PA = $45^\circ$, t = 1836985181.0 s
+- bn180703876: PF = 0.9, PA = $25^\circ$, t = 1838652949.0 s
 
 Information for the MGFs, including reference papers (PF = 1, PA = $90^\circ$ for all sources):
 - MGF051103 ([Svinkin+21](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533723.498 s
