@@ -629,8 +629,7 @@ gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-Files for DM annihilating into gamma-gamma or e-e-gamma, assuming NFW or Burkert profile. <br />
-m_DM = 3 MeV and <sigma v> = 1e-30 cm3/s. Other parameters are detailed in our slides. <br />
+Photon spectra from annihilating dark matter (DM) in our galaxy. We consider cases where two DM particles annihilate into either two photons (gg) or an e+e− pair with a FSR photon (eeg), assuming DM follows an NFW or Burkert profile. The profile parameters are taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. We assume a DM mass of 3 MeV and an annihilation cross section of 1e-29 cm3/s.
 
 **Goals:** <br />
 1. Calculate the gamma-ray spectra from the annihilating MeV DM.
