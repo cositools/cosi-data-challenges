@@ -613,11 +613,6 @@ The spectral data is for 3C 279 high, which represent the high state of the sour
 1. Measure the polarization fraction and angle. 
 
 ## Dark Matter
-⚠️ Internal ToDo (Yu):
-1. Provide more info about models.
-2. Please let us know what kind of spectra you have (line and/or continuum). This will determine the type of respsonse needed. 
-3. Proofread/check content
-
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
  
 **Data Files:** <br />
@@ -632,8 +627,9 @@ gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Photon spectra from annihilating dark matter (DM) in our galaxy. We consider cases where two DM particles annihilate into either two photons (gg) or an e+e− pair with a FSR photon (eeg), assuming DM follows an NFW or Burkert profile. The profile parameters are taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. We assume a DM mass of 3 MeV and an annihilation cross section of 1e-29 cm3/s.
 
 **Goals:** <br />
-1. Calculate the gamma-ray spectra from the annihilating MeV DM.
-2. Compare the spectra from DM and background, and determine COSI’s detectability for attractive DM candidates.
+1. Obtaining energy spectra
+2. Obtaining signal morphologies
+3. Estimating COSI’s detectability for annihilating WIMPs
    
 ## Known Caveats and Limitations
 The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work on them, with the ultimate goal of implementing the software solutions into cosipy. 
