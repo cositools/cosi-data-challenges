@@ -288,10 +288,6 @@ We also include each source at 100x the nominal flux, in order to ensure that th
 1. Determine COSI's sensitivity for detecting these potential extragalactic 511 keV sources. 
 
 ### Globular Clusters (Tuc 47, Omega_Cen, NGC 6121, NGC_6397)
-⚠️ Internal ToDo (Saurabh):
-1. Clarify and provide a bit more information regarding how the 511 flux was estimated. 
-2. Proofread/check content
-3. Provide links to cited papers
 
 **Data Files:** <br />
 Globular_Cluster_Tuc_47_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
