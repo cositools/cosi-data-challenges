@@ -86,7 +86,7 @@ Although this might look more complicated, the mechanics are exactly the same as
 
 <img src="figures/cds_psichi_slices.png" alt="" width="500"/>
 
-For simplicity, we have simply assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. Alternatively, the data can be binned in time, with small enough bins such that the spacecraft can be considered static within the bin. Furthermore, we can collect multiple time bins where the spacecraft had the same orientation into "spacecraft attitude bins" –a.k.a. scatt bins. More details are explained [here](https://github.com/cositools/cosipy/tree/main/docs/tutorials/response/SpacecraftFile.ipynb).
+For simplicity, we have simply assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. During this convolution, the algorithm computed the portion of the field of view blocked by the Earth at any given time, and sets to zero the contribution to the signal from sources in that region.
 
 ## The cosipy modules, inputs and outputs
 
