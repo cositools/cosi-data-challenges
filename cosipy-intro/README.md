@@ -22,7 +22,7 @@ The cosipy library is open-source and written in Python.
 
 Cosipy uses a likelihood-based forward-folding technique. This means that different source hypotheses are convolved with the instrument response in order to obtain the expected data. The expectation is directly compared to the observed data to evaluate the likelihood that the source hypothesis explains the observations, and therefore find the best model. In the following section, we explain what we actually mean by all of this! 
 
-You can also explore how the analysis works through a series of tutorial in a simplified 2D worls
+You can also explore how the analysis works through a series of [tutorial](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials) in a simplified 2D world in the [gamma-ray toys](https://github.com/israelmcmc/gammaraytoys) repository. 
 
 ### Likelihood analysis
 
@@ -142,31 +142,25 @@ The cosipy library is under active development in preparation for the COSI launc
 
 There are three main development frontiers:
 
-### The scalability problem
+### The scalability problem: response re-parametrization and unbinned analysis.
 
-Currently, we have a coarse detector response and no polarization, and the code is still relatively slow. This will not be sustainable when we use a binning appropriate for COSI's capabilities. 
+Currently, we have a coarse detector response and the code is still relatively slow. This will not be sustainable when we use a binning appropriate for COSI's capabilities. 
 
-Some options are:
-
-- Further code optimization. We haven't profiled the code exhaustively, it's likely that there are still low-hanging fruits.
-- Decouple the response matrix from data binning. Although currently we explicitly do a direct matrix multiplication, we can _effectively_ perform this same operation in clever ways. We are exploring various ways to perform the response interpolation, including:
-
-    - Using machine learning techniques
-    - Exploiting the approximate symmetries
-    - Reparametrizations of the response.
-- We are developing an unbinned analysis, which might speed up some analyses --e.g. GRBs.
+In order to solve this we're exploring a combination of a response re-parametrization and using an unbinned analysis. These also help resolve other limitations, like simultaneously fitting continuum and line components, the search for line sources of unknown energy, and the inclusion or additional event quality information. You can see more details in the presentations posted [here](https://github.com/cositools/cosipy/issues/222). 
 
 ### Background estimation
 
-On Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we use the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. For real data, although we can simulate the background, we will not know a priori exactly what the background distribution is, and therefore it needs to be estimated. We are working on background estimation techniques for the next release.
+On Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. In DC3 we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likley to require the combiantion of simulated and measured background templated, as well as dedicated techniques for specific analyses.
 
 ### Improving the code performance, usability and maintenance
 
 These tasks include:
 
 - Improve parts of the documentation that might not be clear.
-- Add unit tests until we have full coverage, and run these tests automatically with each pull request
 - Standardize the API and coding style across all modules
 - Develop yaml-configurable analysis scripts.
+- Identify bottlenecks and make the code more efficient
+- Reduce the memory footprint
+- Parallelization.
 
 
