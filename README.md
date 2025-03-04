@@ -262,9 +262,6 @@ extended_source_response_continuum_merged.h5.gz (precomputed continuum extended 
 The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. 
 
 ### Extragalactic Sources (LMC, M31, Virgo)
-⚠️ Internal ToDo (Sophie):
-1. Proofread/check content
-2. Provide links to cited papers
 
 **Data Files:** <br />
 LMC_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -275,12 +272,12 @@ Virgo_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Virgo_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-Fluxes are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of a source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ (Siegert et al 2016) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ (McMillan et al 2016), we scale the 511 keV flux of each extragalactic source based on the 511 keV flux assumed to be associated with the stellar mass in the Milky Way.
+Fluxes are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of a source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ ([Siegert+16](https://www.aanda.org/articles/aa/full_html/2016/02/aa27510-15/aa27510-15.html)) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ ([McMillan+16](https://academic.oup.com/mnras/article/465/1/76/2417479)), we scale the 511 keV flux of each extragalactic source based on the 511 keV flux assumed to be associated with the stellar mass in the Milky Way.
 
 The stellar masses are: <br />
-LMC: $1 \times 10^{10} \ M_\odot\$ (Erkal et al 2019) <br />
-M31: $1.25 \times 10^{11} \ M_\odot\$ (Tamm et al 2012) <br />
-Virgo: $1.2 \times 10^{14} \ M_\odot\$ (Fouque et al 2001) <br />
+LMC: $1 \times 10^{10} \ M_\odot\$ ([Erkal+19](https://academic.oup.com/mnras/article/487/2/2685/5491315)) <br />
+M31: $1.25 \times 10^{11} \ M_\odot\$ ([Tamm+12](https://www.aanda.org/articles/aa/full_html/2012/10/aa20065-12/aa20065-12.html)) <br />
+Virgo: $1.2 \times 10^{14} \ M_\odot\$ ([Fouque+01](https://www.aanda.org/articles/aa/abs/2001/33/aa1326/aa1326.html)) <br />
 
 We also include each source at 100x the nominal flux, in order to ensure that they are above COSI's 511 keV line sensitivity.
 
