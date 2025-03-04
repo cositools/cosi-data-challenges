@@ -104,17 +104,16 @@ In cosipy, different modules are combined to perform the implementation of the l
 - The Spacecraft File module keeps track of the spacecraft orientation, so we can transform galactic coordinates to detector coordinates.
 - The Detector Response module reads the response matrix obtained from MEGAlib and produces the expected signal counts.
 
-We add the expected background counts to obtain the total expectation. The normalization can be a free parameter of the model.
+We add the expected background counts to obtain the total expectation. The shaped of the background (in Ei+CDS) can be based on a simulated template, or estimated based on data. In addition, the normalization can be let free parameter of the model. 
 
 The likelihood is then maximized by other modules, which have different goals:
 
 - Spectral fit: the sky model parameters are the source(s) spectral shape and normalization parameters. The source location can also be float, but the initial guess is nearby. 
 - TS map: the sky model parameters are the source sky location. Is it designed to look for a source --e.g. a GRB-- in the whole sky.
 - Image deconvolution: the sky model is discretized, effectively having one free parameter for every sky pixel and energy bin. The main advantage is that is it not model-dependent; the main disadvantage is that it is hard to estimate errors due to the high correlation between the different parameters.
+- Polarization: fit the polarization angle and polarization degree.
 
-Cosipy does not currently include polarization analysis, that will wait for the next data challenge.
-
-Although cosipy doesn't have a source injector (simulator) yet, it is relatively easy to do given the expected counts. It would be a good exercise/challenge.
+Cosipy provides a "source injector" which packages the expected excess into a standard data format, which effectively be used to simulate a source without running the event-by-event Monte Carlo in MEGALib.
 
 Internally, all modules handle the data using the objects:
 
