@@ -22,6 +22,8 @@ The cosipy library is open-source and written in Python.
 
 Cosipy uses a likelihood-based forward-folding technique. This means that different source hypotheses are convolved with the instrument response in order to obtain the expected data. The expectation is directly compared to the observed data to evaluate the likelihood that the source hypothesis explains the observations, and therefore find the best model. In the following section, we explain what we actually mean by all of this! 
 
+You can also explore how the analysis works through a series of tutorial in a simplified 2D worls
+
 ### Likelihood analysis
 
 Every analysis in cosipy is based on the following likelihood function:
@@ -136,21 +138,11 @@ Once you have a global likelihood function, the analysis machinery is the same w
 
 ## Next steps
 
-The cosipy library is under active development in preparation for the COSI launch scheduled in 2027. There are currently 50 open issues and/or desired features as of today!
+The cosipy library is under active development in preparation for the COSI launch scheduled in 2027. There are currently +70 open issues and/or desired features as of today!
 
-The next steps for cosipy can be classified into three categories:
+There are three main development frontiers:
 
-### Adding new features
-
-While COSI will be capable of measuring polarization, polarization analysis was not included in Data Challenge 2. It will be part of Data Challenge 3.
-
-Various improvements to the imaging algorithm are underway. The cosipy version at launch will contain various imaging algorithm approaches.
-
-We are also developing a source injector starting from the detector response, as opposed to starting always from MEGAlib event-by-event simulations. This will simplify sensitivity calculations and theoretical predictions.
-
-On Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we use the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. For real data, although we can simulate the background, we will not know a priori exactly what the background distribution is, and therefore it needs to be estimated. We are working on background estimation techniques for the next release.
-
-### Optimization and scalability
+### The scalability problem
 
 Currently, we have a coarse detector response and no polarization, and the code is still relatively slow. This will not be sustainable when we use a binning appropriate for COSI's capabilities. 
 
@@ -164,7 +156,11 @@ Some options are:
     - Reparametrizations of the response.
 - We are developing an unbinned analysis, which might speed up some analyses --e.g. GRBs.
 
-### Improving the code usability and maintenance
+### Background estimation
+
+On Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we use the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. For real data, although we can simulate the background, we will not know a priori exactly what the background distribution is, and therefore it needs to be estimated. We are working on background estimation techniques for the next release.
+
+### Improving the code performance, usability and maintenance
 
 These tasks include:
 
