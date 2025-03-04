@@ -127,28 +127,12 @@ Internally, all modules handle the data using the objects:
 The Multi-Mission Maximum Likelihood framework ([3ML](https://threeml.readthedocs.io/en/stable/)) is a common interface to perform a likelihood-based analysis across multiple instruments. Since all instruments observe the same source, their likelihoods for a common source model can be simply multiplied to obtain the global likelihood:
 
 ```math
-\mathcal{L}_{}(\mathrm{model}) = \mathcal{L}_{\mathrm{NuSTAR}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{GBM}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{COSI}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{LAT}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{HAWC}}(\mathrm{model})\ldots
+\mathcal{L}(\mathrm{model}) = \mathcal{L}_{\mathrm{NuSTAR}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{GBM}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{COSI}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{LAT}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{HAWC}}(\mathrm{model})\ldots
 ```
 
 All 3ML needs is a plugin for each instrument that accepts a common model in a predetermined format ([astromodels](https://astromodels.readthedocs.io/en/latest/)), convolves it with its particular instrument response, and returns a likelihood. This is precisely what COSILike does.
 
 Once you have a global likelihood function, the analysis machinery is the same whether you have one detector or multiple. This is why we reuse directly the 3ML algorithms to perform our spectral analysis!
-
-## Differences with cosipy-classic
-
-The first COSI data challenge release used the analysis software developed by Thomas Siegert, now called "cosipy-classic". While the analysis is very similar between cosipy and cosipy-classic, the new cosipy brings several improvements:
-
-- Increase in sensitivity, since the analysis is always performed in $\left\lbrace E', \phi, l', b' \right\rbrace￼$, not projected into $\left\lbrace E' \right\rbrace$ (for the spectral analysis) and $\left\lbrace E', \phi, l', b' \right\rbrace$ (for imaging)
-- 3ML integration
-- The response and data are easier to visualize and manipulate, thanks to using:
-    - mhealpy
-    - histpy
-    - Astropy coordinates and reference frame
-- Easier to use, maintain and extend
-    - Code is organized in modules and classes
-    - More user-friendly API ￼(work in progress)
-    - Better documentation ￼(work in progress)
-    - Configurable ￼(work in progress)
 
 ## Next steps
 
