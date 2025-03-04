@@ -86,7 +86,15 @@ Although this might look more complicated, the mechanics are exactly the same as
 
 <img src="figures/cds_psichi_slices.png" alt="" width="500"/>
 
-For simplicity, we have simply assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. During this convolution, the algorithm computed the portion of the field of view blocked by the Earth at any given time, and sets to zero the contribution to the signal from sources in that region.
+This is the point spread function (PSF) of a Compton instrument.
+
+For polarized sources, the PSF shows a modulation in the azimuth direction:
+
+<img src="figures/cds_psichi_polarization.png" alt="" width="150"/>
+
+This allow us to fit the polarization degree and polarization angle. The modulation fraction is both the energy and the scattering angle, which is why can gain fitting leverage by keeping the measured data space intact (Ei + CDS), as opposed to projecting in into the azimuthal angle. In addition, this allows us to simultanously fit the spectrum and the location, as well as multiple sources.
+
+For simplicity, we have assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. During this convolution, the algorithm computed the portion of the field of view blocked by the Earth at any given time, and sets to zero the contribution to the signal from sources in that region.
 
 ## The cosipy modules, inputs and outputs
 
