@@ -4,7 +4,7 @@ The cosipy library is [COSI](https://cosi.ssl.berkeley.edu)'s high-level analysi
 
 The main repository is hosted at https://github.com/cositools/cosipy
 
-Here we explain how cosipy works internally, including the statistical analysis. We also end with a note on the next steps for cosipy, in the context of the second COSI data challenge release.
+Here we explain how cosipy works internally, including the statistical analysis. We also end with a note on the next steps for cosipy.
 
 For the cosipy installation and usage instructions please refer to the main [cosipy documentation](https://cositools.github.io/cosipy/).
 
@@ -150,17 +150,17 @@ In order to solve this we're exploring a combination of a response re-parametriz
 
 ### Background estimation
 
-On Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. In DC3 we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likley to require the combiantion of simulated and measured background templated, as well as dedicated techniques for specific analyses.
+In Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. In DC3 we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likely to require the combination of simulated and measured background templates, as well as dedicated techniques for specific analyses.
 
 ### Improving the code performance, usability and maintenance
 
 These tasks include:
 
-- Improve parts of the documentation that might not be clear.
+- Improve parts of the documentation that might not be clear
 - Standardize the API and coding style across all modules
-- Develop yaml-configurable analysis scripts.
+- Develop yaml-configurable analysis scripts
 - Identify bottlenecks and make the code more efficient
 - Reduce the memory footprint
-- Parallelization.
+- Parallelization
 
 
