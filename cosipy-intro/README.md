@@ -4,7 +4,7 @@ The cosipy library is [COSI](https://cosi.ssl.berkeley.edu)'s high-level analysi
 
 The main repository is hosted at https://github.com/cositools/cosipy
 
-Here we explain how cosipy works internally, including the statistical analysis. We also end with a note on the next steps for cosipy, in the context of the second COSI data challenge release.
+Here we explain how cosipy works internally, including the statistical analysis. We also end with a note on the next steps for cosipy.
 
 For the cosipy installation and usage instructions please refer to the main [cosipy documentation](https://cositools.github.io/cosipy/).
 
@@ -21,6 +21,8 @@ The cosipy library is open-source and written in Python.
 ## The cosipy analysis
 
 Cosipy uses a likelihood-based forward-folding technique. This means that different source hypotheses are convolved with the instrument response in order to obtain the expected data. The expectation is directly compared to the observed data to evaluate the likelihood that the source hypothesis explains the observations, and therefore find the best model. In the following section, we explain what we actually mean by all of this! 
+
+You can also explore how the analysis works through a series of [tutorial](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials) in a simplified 2D world in the [gamma-ray toys](https://github.com/israelmcmc/gammaraytoys) repository. 
 
 ### Likelihood analysis
 
@@ -86,7 +88,15 @@ Although this might look more complicated, the mechanics are exactly the same as
 
 <img src="figures/cds_psichi_slices.png" alt="" width="500"/>
 
-For simplicity, we have simply assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. Alternatively, the data can be binned in time, with small enough bins such that the spacecraft can be considered static within the bin. Furthermore, we can collect multiple time bins where the spacecraft had the same orientation into "spacecraft attitude bins" –a.k.a. scatt bins. More details are explained [here](https://github.com/cositools/cosipy/tree/main/docs/tutorials/response/SpacecraftFile.ipynb).
+This is the point spread function (PSF) of a Compton instrument.
+
+For polarized sources, the PSF shows a modulation in the azimuth direction:
+
+<img src="figures/cds_psichi_polarization.png" alt="" width="150"/>
+
+This allow us to fit the polarization degree and polarization angle. The modulation fraction is both the energy and the scattering angle, which is why can gain fitting leverage by keeping the measured data space intact (Ei + CDS), as opposed to projecting in into the azimuthal angle. In addition, this allows us to simultanously fit the spectrum and the location, as well as multiple sources.
+
+For simplicity, we have assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. During this convolution, the algorithm computed the portion of the field of view blocked by the Earth at any given time, and sets to zero the contribution to the signal from sources in that region.
 
 ## The cosipy modules, inputs and outputs
 
@@ -96,17 +106,16 @@ In cosipy, different modules are combined to perform the implementation of the l
 - The Spacecraft File module keeps track of the spacecraft orientation, so we can transform galactic coordinates to detector coordinates.
 - The Detector Response module reads the response matrix obtained from MEGAlib and produces the expected signal counts.
 
-We add the expected background counts to obtain the total expectation. The normalization can be a free parameter of the model.
+We add the expected background counts to obtain the total expectation. The shaped of the background (in Ei+CDS) can be based on a simulated template, or estimated based on data. In addition, the normalization can be let free parameter of the model. 
 
 The likelihood is then maximized by other modules, which have different goals:
 
 - Spectral fit: the sky model parameters are the source(s) spectral shape and normalization parameters. The source location can also be float, but the initial guess is nearby. 
 - TS map: the sky model parameters are the source sky location. Is it designed to look for a source --e.g. a GRB-- in the whole sky.
 - Image deconvolution: the sky model is discretized, effectively having one free parameter for every sky pixel and energy bin. The main advantage is that is it not model-dependent; the main disadvantage is that it is hard to estimate errors due to the high correlation between the different parameters.
+- Polarization: fit the polarization angle and polarization degree.
 
-Cosipy does not currently include polarization analysis, that will wait for the next data challenge.
-
-Although cosipy doesn't have a source injector (simulator) yet, it is relatively easy to do given the expected counts. It would be a good exercise/challenge.
+Cosipy provides a "source injector" which packages the expected excess into a standard data format, which effectively be used to simulate a source without running the event-by-event Monte Carlo in MEGALib.
 
 Internally, all modules handle the data using the objects:
 
@@ -120,66 +129,38 @@ Internally, all modules handle the data using the objects:
 The Multi-Mission Maximum Likelihood framework ([3ML](https://threeml.readthedocs.io/en/stable/)) is a common interface to perform a likelihood-based analysis across multiple instruments. Since all instruments observe the same source, their likelihoods for a common source model can be simply multiplied to obtain the global likelihood:
 
 ```math
-\mathcal{L}_{}(\mathrm{model}) = \mathcal{L}_{\mathrm{NuSTAR}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{GBM}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{COSI}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{LAT}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{HAWC}}(\mathrm{model})\ldots
+\mathcal{L}(\mathrm{model}) = \mathcal{L}_{\mathrm{NuSTAR}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{GBM}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{COSI}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{LAT}}(\mathrm{model}) \cdot \mathcal{L}_{\mathrm{HAWC}}(\mathrm{model})\ldots
 ```
 
 All 3ML needs is a plugin for each instrument that accepts a common model in a predetermined format ([astromodels](https://astromodels.readthedocs.io/en/latest/)), convolves it with its particular instrument response, and returns a likelihood. This is precisely what COSILike does.
 
 Once you have a global likelihood function, the analysis machinery is the same whether you have one detector or multiple. This is why we reuse directly the 3ML algorithms to perform our spectral analysis!
 
-## Differences with cosipy-classic
-
-The first COSI data challenge release used the analysis software developed by Thomas Siegert, now called "cosipy-classic". While the analysis is very similar between cosipy and cosipy-classic, the new cosipy brings several improvements:
-
-- Increase in sensitivity, since the analysis is always performed in $\left\lbrace E', \phi, l', b' \right\rbrace￼$, not projected into $\left\lbrace E' \right\rbrace$ (for the spectral analysis) and $\left\lbrace E', \phi, l', b' \right\rbrace$ (for imaging)
-- 3ML integration
-- The response and data are easier to visualize and manipulate, thanks to using:
-    - mhealpy
-    - histpy
-    - Astropy coordinates and reference frame
-- Easier to use, maintain and extend
-    - Code is organized in modules and classes
-    - More user-friendly API ￼(work in progress)
-    - Better documentation ￼(work in progress)
-    - Configurable ￼(work in progress)
-
 ## Next steps
 
-The cosipy library is under active development in preparation for the COSI launch scheduled in 2027. There are currently 50 open issues and/or desired features as of today!
+The cosipy library is under active development in preparation for the COSI launch scheduled in 2027. There are currently +70 open issues and/or desired features as of today!
 
-The next steps for cosipy can be classified into three categories:
+There are three main development frontiers:
 
-### Adding new features
+### The scalability problem: response re-parametrization and unbinned analysis.
 
-While COSI will be capable of measuring polarization, polarization analysis was not included in Data Challenge 2. It will be part of Data Challenge 3.
+Currently, we have a coarse detector response and the code is still relatively slow. This will not be sustainable when we use a binning appropriate for COSI's capabilities. 
 
-Various improvements to the imaging algorithm are underway. The cosipy version at launch will contain various imaging algorithm approaches.
+In order to solve this we're exploring a combination of a response re-parametrization and using an unbinned analysis. These also help resolve other limitations, like simultaneously fitting continuum and line components, the search for line sources of unknown energy, and the inclusion or additional event quality information. You can see more details in the presentations posted [here](https://github.com/cositools/cosipy/issues/222). 
 
-We are also developing a source injector starting from the detector response, as opposed to starting always from MEGAlib event-by-event simulations. This will simplify sensitivity calculations and theoretical predictions.
+### Background estimation
 
-On Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we use the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. For real data, although we can simulate the background, we will not know a priori exactly what the background distribution is, and therefore it needs to be estimated. We are working on background estimation techniques for the next release.
+In Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. In DC3 we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likely to require the combination of simulated and measured background templates, as well as dedicated techniques for specific analyses.
 
-### Optimization and scalability
-
-Currently, we have a coarse detector response and no polarization, and the code is still relatively slow. This will not be sustainable when we use a binning appropriate for COSI's capabilities. 
-
-Some options are:
-
-- Further code optimization. We haven't profiled the code exhaustively, it's likely that there are still low-hanging fruits.
-- Decouple the response matrix from data binning. Although currently we explicitly do a direct matrix multiplication, we can _effectively_ perform this same operation in clever ways. We are exploring various ways to perform the response interpolation, including:
-
-    - Using machine learning techniques
-    - Exploiting the approximate symmetries
-    - Reparametrizations of the response.
-- We are developing an unbinned analysis, which might speed up some analyses --e.g. GRBs.
-
-### Improving the code usability and maintenance
+### Improving the code performance, usability and maintenance
 
 These tasks include:
 
-- Improve parts of the documentation that might not be clear.
-- Add unit tests until we have full coverage, and run these tests automatically with each pull request
+- Improve parts of the documentation that might not be clear
 - Standardize the API and coding style across all modules
-- Develop yaml-configurable analysis scripts.
+- Develop yaml-configurable analysis scripts
+- Identify bottlenecks and make the code more efficient
+- Reduce the memory footprint
+- Parallelization
 
 
