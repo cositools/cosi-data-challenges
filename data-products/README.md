@@ -137,6 +137,8 @@ PSRB1259_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 cygX1_hard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXI1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXI1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
