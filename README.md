@@ -530,6 +530,20 @@ Both models represent the INTEGRAL data well but strongly differ at the highest 
 
 **Goals:** <br />
 1. Test whether COSI would be able to distinguish between the two models.
+
+### MAXIJ1820+070
+⚠️ Internal ToDo (Julien):
+1. Proofread/check content
+   
+**Data Files:** <br />
+MAXI1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXI1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**Input Models:**  <br />
+The spectral models for MAXIJ1820+070 and MAXI J1348-630 are scans of published INTEGRAL data shown in Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract), in the hard state. The polarimetric models corresponds to the measurements shown in table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXIJ1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. 
+
+**Goals:** <br />
+1. Test COSI's ability to measure spectra and polarization of transient sources.
    
 ## Extragalactic
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
