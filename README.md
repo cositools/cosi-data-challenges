@@ -186,8 +186,47 @@ The 1 second binning may be optimal for analyzing transients on short time scale
 **Background Files:** <br />
 There are a few different options for modeling the background. The staring point is to use the ideal case, where the background model in the analysis is the same as the simulated background. We have provided a file with the total background, as well as files for the individual background components. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. albedo photons), and then move on to the total background after everything is working. A more realistic estimate of the uncertainty on the background modeling can be achieved by using one of the background estimation tools (see the [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) and [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) examples). However, we caution that these tools are in thier very early stages, and they still require further testing and development.  
 
-Data Challenges:
-- [GRBs](DC-GRBs)
+## GRBs
+The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
+
+⚠️ Internal ToDo (Eliza, Aaron):
+1. Provide a bit more information about the input spectral models.
+2. Do we need to provide burst times like we did for DC2 (I think yes)?
+4. Should we separate challenges for MGFs and GRBs or can we keep them together?
+5. Should we provide the same model information for MGFs as is given for GRBs below? 
+6. What are the goals for the MGFs?
+7. Check/refine descriptions and challenges.
+   
+**Data Files:** <br />
+ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn110605183_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn131122490_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF051103_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF070201_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF070222_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_MGF180128A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**Input Models:** <br />
+The GRBs occur randomly within the orientation file, with their positions chosen such that they have incidence angles under $60^\circ$. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. 
+
+The models are specified below, including the position in detector coordinates, the flux, the polarization fraction (PF), and the polarization angle (PA) given in IAU convention:
+- bn081207680: zenith = $5^\circ$, azimuth = $15^\circ$, flux = 0.0785 ph/cm2/s, PF = 0, PA = $0^\circ$
+- bn090424592: zenith = $20^\circ$, azimuth = $185^\circ$, flux = 244.8000 ph/cm2/s, PF = 0.1, PA = $110^\circ$
+- bn100612726: zenith = $23^\circ$, azimuth = $295^\circ$, flux = 1.0236 ph/cm2/s, PF = 0.2, PA = $35^\circ$
+- bn110605183: zenith = $40^\circ$, azimuth = $315^\circ$, flux = 1.5570 ph/cm2/s, PF = 0.3, PA = $50^\circ$
+- bn131122490: zenith = $0^\circ$, azimuth = $346^\circ$, flux = 0.9651 ph/cm2/s, PF = 0.4, PA = $175^\circ$
+- bn140329295: zenith = $8^\circ$, azimuth = $95^\circ$, flux = 0.2418 ph/cm2/s, PF = 0.5, PA = $95^\circ$
+- bn161004964: zenith = $15^\circ$, azimuth = $84^\circ$, flux = 0.8569 ph/cm2/s, PF = 0.6, PA = $10^\circ$
+- bn170405777: zenith = $60^\circ$, azimuth = $20^\circ$, flux = 0.5760 ph/cm2/s, PF = 0.7, PA = $160^\circ$
+- bn180504136: zenith = $12^\circ$, azimuth = $213^\circ$, flux = 0.4181 ph/cm2/s, PF = 0.8, PA = $45^\circ$
+- bn180703876: zenith = $25^\circ$, azimuth = $156^\circ$, flux = 0.3540 ph/cm2/s, PF = 0.9, PA = $25^\circ$
+
+**Goals:**
+1. Detect GRB
+2. Measure polarization (fraction and angle)
    
 ## Positrons
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
