@@ -66,9 +66,9 @@ The simulations for the COSI Data Challenges are run on high performance computi
 The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective Data Challenge release. Model inputs for the simulations and the corresponding Data Challenges come from the COSI science team. All of the models used for past Data Challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).   
 
 ## Releases
-- Data Challenge 1, March 2023: [cosi-data-challenge-1](https://github.com/cositools/cosi-data-challenge-1)
-- Data Challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0)
-- Data Challenge 3, April 2025: **cosi-data-challenge-3 (latest release)**
+- [Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1): March 2023
+- [Data Challenge 2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0): March 2024
+- Data Challenge 3: April 2025 **(latest release)**
 - Data Challenge 4: Planned for March 2026
 - Data Challenge 5: Planned for March 2027 (final release before launch :rocket:!)
 
