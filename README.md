@@ -51,7 +51,7 @@ Users are encouraged to post feedback on the [Discussions](https://github.com/co
 In summary, to get started with DC3, install cosipy, familiarize yourself with the [data-products](data-products), and then start working through the [Data Challenges](#data-challenges), as described below. 
 
 ## System Requirements
-One of our goals in developing cosipy is to make it easily accesible to all users. **All of the Data Challenges starting with DC2 should be doable on a laptop with at least 16 GB of RAM**. We are still working on optimizing the code, and so please let us know if you are running into memory issues.
+One of our goals in developing cosipy is to make it easily accesible to all users. **All of the Data Challenges should be doable on a laptop with at least 16 GB of RAM**. We are still working on optimizing the code, and so please let us know if you are running into memory issues.
 
 ## Getting Help
 Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) git repository if you have issues with the code. If you have general feedback, or need further assistance, please reach out to the COSI Data Challenge team lead, Chris Karwin ([christopher.m.karwin@nasa.gov](mailto:christopher.m.karwin@nasa.gov)), the cosipy implementation lead, Israel Martinez-Castellanos ([israel.martinezcastellanos@nasa.gov](israel.martinezcastellanos@nasa.gov)), and the pipeline development lead Carolyn Kierans ([carolyn.a.kierans@nasa.gov](carolyn.a.kierans@nasa.gov)).
@@ -64,14 +64,14 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 The simulations for the COSI Data Challenges are run on high performance computing clusters. Most notably, we have made extensive use of NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover), the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz, and Clemson University's [Palmetto](https://docs.rcd.clemson.edu/palmetto/) cluster. 
 
 ## Simulation Tools
-The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective Data Challenge directory. Model inputs for the simulations and the corresponding Data Challenges come from the COSI science team. All of the models used for past Data Challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).   
+The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective Data Challenge release. Model inputs for the simulations and the corresponding Data Challenges come from the COSI science team. All of the models used for past Data Challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).   
 
 ## Releases
 - Data challenge 1, March 2023: [cosi-data-challenge-1](https://github.com/cositools/cosi-data-challenge-1)
 - Data challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0)
 - Data challenge 3, April 2025: **cosi-data-challenge-3 (latest release)**
 - Data challenge 4: Planned for March 2026
-- Data challenge 5: Planned for March 2027 (final challenge before launch :rocket:!)
+- Data challenge 5: Planned for March 2027 (final release before launch :rocket:!)
 
 ## Summary of Current and Past Challenges 
 - **[Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1):**
@@ -110,16 +110,16 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - Pointing changes between +/- 22 degrees every 12 hrs, with 8 minute transition time. 
   - Used detailed COSI SMEX mass model.
   - Simulated all background components in low-Earth orbit, including variability from geomagnetic cutoff, long-term buildup, and full SAA passage.
-    - Background includes the Galactic diffuse continuum for the first time. 
+    - Background also includes the Galactic diffuse continuum for the first time. 
   - New methods in both MEGAlib and cosipy to account for Earth occultation with a non-zenith pointing. 
   - First time including polarization.
   - Numerous improvements to cosipy:
     - First version of source injector.
-    - New implementation of Earth occultation in detector response.
+    - New implementation of Earth occultation in point source response.
     - First polarization tools.
     - New methods to estimate the background for continuum sources and line sources.
     - Refinements and further developments of imaging class.
-    - New Extended source response class.
+    - New extended source response class.
       
 ## Backgrounds
 In general, observations in the MeV band are hindered by high backgrounds (both instrumental and astrophysical). In order to ensure that COSI accomplishes its main science goals, it is therefore crucial to have a firm understanding of these backgrounds. DC3 includes all of the background components. Compared to the background estimates from DC2, we have now included the full SAA passage, as well as the Galacic diffuse continuum emission. Further details can be found in the [backgrounds](backgrounds) directory. 
