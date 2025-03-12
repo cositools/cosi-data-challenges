@@ -8,17 +8,6 @@
 
 <div align="left">
 
-## ⚠️ Notice
-
-This is the COSI internal release. The public release is planned for April 1, 2025. Some things are still missing or incomplete, as specified below:
-- **The SAA background component is not available.** This is highly computationally intensive (requiring ~2,739 core years), and we are currently working on completing this using both the Mainz and NASA clusters. Correspondingly, the total background file is not available yet, and the page describing the background simulations for DC3 is incomplete.
-- **Response files need to be converted from standard .h5 files to .h5 files with good chunks.** The h5 files with good chuncks will optimize the speed and memory usage. 
-- **No binned data products have been provided.** Binning the data is part of the standard analysis procedure. However, in some cases, binning the data may require lots of RAM, making it difficult for standard laptops (as was found for DC2). Please let us know if you are running into related difficulties, and we can see if we need to provide some binned data products.
-- **A small number of the source simulations have not been completed**. Generally, these are input models that require a bit of extra work to implement in the simulation pipeline. We will be working to complete the remaining models before the public release. If you notice that your model is missing and were planning to test it in the near future, please let us know and we will make it a priority.
-- **The polarization analysis tools do not yet account for the instrument orientation.** Consequently, only GRB polarization on short time scales can be analyzed at the moment. This is a top priority that we are working on updating.
-- **The source injector only works for point sources, and it doesn't account for Earth occultation.** The Earth occultation will be implemented soon, and we are also updating the code to allow for injecting extended sources. Both of these should be ready by the public release. 
-- **The description of each data challenge needs to be checked for content by the science team member that provided it.** You will find notes at the top of each data challenge with the requested information. 
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -34,12 +23,6 @@ This is the COSI internal release. The public release is planned for April 1, 20
 - [Summary of Current and Past Challenges](#summary-of-current-and-past-challenges)
 - [Useful Reference Guides](#useful-reference-guides)
 - [Data Challenges](#data-challenges)
-  - [GRBs](#grbs)
-  - [Positrons](#positrons)
-  - [Nucleosynthesis](#nucleosynthesis)
-  - [Galactic](#galactic)
-  - [Extragalactic](#extragalactic)
-  - [Dark Matter](#dark-matter)
 - [Known Caveats and Limitations](#known-caveats-and-limitations)
 - [Citing](#citing)
 
@@ -186,7 +169,7 @@ The 1 second binning may be optimal for analyzing transients on short time scale
 **Background Files:** <br />
 There are a few different options for modeling the background. The staring point is to use the ideal case, where the background model in the analysis is the same as the simulated background. We have provided a file with the total background, as well as files for the individual background components. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. albedo photons), and then move on to the total background after everything is working. A more realistic estimate of the uncertainty on the background modeling can be achieved by using one of the background estimation tools (see the [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) and [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) examples). However, we caution that these tools are in thier very early stages, and they still require further testing and development.  
 
-**Data Challenges for different science topics:**
+**Data Challenges for the different science topics can be found in the links below:**
 - [GRBs](DC-GRBs)
 - [Positrons](DC-Positrons)
 - [Nucleosynthesis](DC-Nucleosynthesis)
