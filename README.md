@@ -60,7 +60,7 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 <img width="1050"  src="static/clusters.png">
 <div align="left">
   
-The simulations for the COSI Data Challenges are run on high performance computing clusters. Most notably, we have made extensive use of NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover), the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz, and Clemson University's [Palmetto](https://docs.rcd.clemson.edu/palmetto/) cluster. 
+The simulations for the COSI Data Challenges are run on high performance computing clusters. Most notably, we have made extensive use of NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover), the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz, and Clemson University's [Palmetto](https://docs.rcd.clemson.edu/palmetto/) cluster. We used 1000 parallel cores for most of the source simulations, which allowed us to simulate them in a fairly short time (typically less than ~10 minutes of total wall time per source). The background simulations are generally much more computationally intensive, with the extreme case being the SAA component, which required roughly 2 million core hours to simulate. 
 
 ## Simulation Tools
 The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective Data Challenge release. Model inputs for the simulations and the corresponding Data Challenges come from the COSI science team. All of the models used for past Data Challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).   
@@ -137,8 +137,8 @@ Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro)**
 - **[Introduction to cosipy](cosipy-intro)** 
 - **[Summary of background simulations](backgrounds)**
-- **[Dealing with Earth Occultation](earth-occultation)** 
-- **[Introduction to Polarization](polarization)** 
+- **[Dealing with Earth occultation](earth-occultation)** 
+- **[Introduction to polarization](polarization)** 
 
 ## Data Challenges
 We have created example Jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below: <br /> 

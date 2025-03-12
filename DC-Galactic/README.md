@@ -1,4 +1,4 @@
-## Galactic 
+## Galactic Data Challenges
 The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb), and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) (for extended source analysis) notebooks.
 
 **All challenges should use the same detector response file:** <br />
@@ -24,9 +24,7 @@ This is the first data challenge to include the Galactic diffuse continuum, and 
 3. Characterize how the the Galactic diffuse continuum emission impacts the sensitivity for point sources in the Galactic plane
    
 ### Gamma-ray Binary PSR B1259-63
-⚠️ Internal ToDo (Hiroki):
-1. Proofread/check content
-   
+
 **Data Files:** <br /> 
 PSRB1259_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PSRB1259_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -39,8 +37,6 @@ PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a mas
 2. Determine the duration of flare periods.
 
 ### GRS 1758-258
-⚠️ Internal ToDo (not sure who provided this):
-1. Proofread/check content
 
 **Data Files:** <br />
 GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz
@@ -52,8 +48,6 @@ Best fit comptonization model of epoch2 of [Pottschmidt+06](https://arxiv.org/pd
 1. A simple test of spectral measurement for this galactic center source.
    
 ### Cygnus X1
-⚠️ Internal ToDo (not sure who provided this):
-1. Proofread/check content
    
 **Data Files:** <br />
 cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -67,8 +61,6 @@ The two spectral models for Cyg X1 are best fit eqpair  models of time averaged 
 2. Test how well COSI can monitor for spectral transitions
 
 ### 1E1740.7-2942
-⚠️ Internal ToDo (not sure who provided this):
-1. Proofread/check content
    
 **Data Files:** <br />
 1E1740_compow_3months_unbinned_data_filtered_with_SAAcut.fits.gz
@@ -85,8 +77,6 @@ Both models represent the INTEGRAL data well but strongly differ at the highest 
 1. Test whether COSI would be able to distinguish between the two models.
 
 ### MAXI J1820+070 and MAXI J1348-630
-⚠️ Internal ToDo (Julien):
-1. Proofread/check content
    
 **Data Files:** <br />
 MAXI1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />

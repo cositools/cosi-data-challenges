@@ -20,17 +20,11 @@ For the source simulations (with *cosima*) we use the COSISMEX.sim.geo.setup ver
 We simulate energies between 100 keV - 10 MeV. Note that COSI's nominal energy range is 200 keV - 5 MeV, but we used an upper bound of 10 MeV in order to account for energy dispersion. Earth occultation is accounted for in the simulations by blocking all photons with arrival directions beyond $\mathrm{\sim 113^\circ}$ of the zenith (see [here](https://github.com/cositools/cosi-data-challenges/tree/develop/earth-occultation) for more details). Events that occure during the passage of the Southern Atlantic Anomaly (SAA) are removed. We only select photons corresponding to Compton events. The full configuration files used for the event reconstruction (with *revan*) and extracting the data (with *mimrec*) can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Input_Files/Configuration_Files/Data_Challenges/Data_Challenge_3). 
 
 ### Data Format
-The data is provided in fits file format, which contains all of the photon information for each reconstructed event. If you are unfamiliar with analysis of Compton data, we highly recommend reading the introduction page [here](https://github.com/cositools/cosi-data-challenges/tree/develop/Compton-telescope-data-analysis-intro), which covers some of the fundamental topics. In short, the data for each reconstructed photon event is decribed in terms of four axes: energy, time, Compton scattering angle (&phi;), and event circle axis (&psi; &chi;). For Compton data, photons occupy what is known as the Compton data space, which is a 3-dimensional space defined by the axes &phi;, &psi;, and &chi;, where &psi; and &chi; are the angles defining the vector that points from the location of the second detector hit to the location of the first detector hit. A reconstructed photon event corresponds to a so-called event circle on the sky, where the axis of the circle is given by the &psi; &chi; vector, and the radius of the circle is given by the Compton scattering angle &phi;. For the actual data analysis, &psi; and &chi; are defined using a healpix grid, allowing us to reduce this to a single dimension (&psi; &chi;), i.e. the healpix pixel number.  
+The data is provided in Fits file format, which contains all of the photon information for each reconstructed event. If you are unfamiliar with analysis of Compton data, we highly recommend reading the introduction page [here](https://github.com/cositools/cosi-data-challenges/tree/develop/Compton-telescope-data-analysis-intro), which covers some of the fundamental topics. In short, the data for each reconstructed photon event is decribed in terms of four axes: energy, time, Compton scattering angle (&phi;), and event circle axis (&psi; &chi;). For Compton data, photons occupy what is known as the Compton data space, which is a 3-dimensional space defined by the axes &phi;, &psi;, and &chi;, where &psi; and &chi; are the angles defining the vector that points from the location of the second detector hit to the location of the first detector hit. A reconstructed photon event corresponds to a so-called event circle on the sky, where the axis of the circle is given by the &psi; &chi; vector, and the radius of the circle is given by the Compton scattering angle &phi;. For the actual data analysis, &psi; and &chi; are defined using a healpix grid, allowing us to reduce this to a single dimension (&psi; &chi;), i.e. the healpix pixel number.  
 
-There are fits files for each individual component, for both sources and backgrounds. Each data challenge specifies the specific source files that you'll need. In order to create the dataset for a given data challenge, you will need to combine the source data with the background data. Instructions on how to do this are provided in the [DataIO example](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) in cosipy, as well as some of the jupyter notebooks in cosipy. There are 13 individual background components that need to be combined in order to obtain the total background. Alternatively, a file with the total background already combined is also available. 
+There are Fits files for each individual component, for both sources and backgrounds. Each data challenge specifies the specific source files that you'll need. In order to create the dataset for a given data challenge, you will need to combine the source data with the background data. Instructions on how to do this are provided in the [DataIO example](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) in cosipy, as well as some of the jupyter notebooks in cosipy. There are 12 individual background components that need to be combined in order to obtain the total background. Alternatively, a file with the total background already combined is also available. 
 
-**Important Note:** Combining the data and binning the data can be memory intensive. If you are running into memory limitations at these steps, then workarounds are described in the dataIO example. Alternatively, we have also provided binned data products for some of the larger files, which can be loaded directly.  
-
-### Computing Resources 
-
-<img  align="right" width="250"  src="images/clusters_DC3.png">
-
-The source simulations were ran on NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover). We used 1000 parallel CPUs for most of the source simulations, which allowed us to simulate them in a fairly short time (typically less than ~10 minutes of total wall time per source). The source models were provided by the COSI science teams, and more information about them can be found in the respective **Data Challenges** section on the main page. The Background simulations were mostly run on the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz. More details about the background simulations can be found in the [backgrounds](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds) directory.
+**Important Note:** Combining the data and binning the data can be memory intensive. If you are running into memory limitations at these steps, then workarounds are described in the [DataIO example](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO). 
 
 ### Accessing the Data
 
@@ -59,7 +53,7 @@ DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br />
 wasabi path: COSI-SMEX/DC3/Responses <br />
 NB: Response files must be unzipped before using in analysis.  <br />
 
-Detector Response Files: <br />
+**Detector Response Files:** <br />
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
@@ -68,7 +62,7 @@ Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimag
 ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
 ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz <br />
 
-Extended Source Response Files (in Responses/extended_source_response): <br />
+**Extended Source Response Files (in Responses/extended_source_response):** <br />
 extended_source_response_511_merged.h5.gz <br />
 extended_source_response_continuum_merged.h5.gz <br />
 extended_source_response_Al26_merged.h5.gz <br />
@@ -77,7 +71,6 @@ extended_source_response_Fe60_low_merged.h5.gz <br />
 extended_source_response_Fe60_high_merged.h5.gz <br />
 
 **Background Files:** <br />
-
 wasabi path: COSI-SMEX/DC3/Data/Backgrounds/Ge <br />
 
 Unbinned Files: <br />
@@ -93,11 +86,7 @@ SecondaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryProtons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
-Binned Files: <br />
-
-
 **Source Files:** <br />
-
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
@@ -175,6 +164,3 @@ GRB_MGF200415A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF231115A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 MgtBurst_bright_complex_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 MgtBurst_bright_simple_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-Binned Files: <br />
-

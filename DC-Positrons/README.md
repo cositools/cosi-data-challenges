@@ -1,4 +1,4 @@
-## Positrons
+## Positron Data Challenges
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 **All challenges should use the same detector response files:** 
@@ -47,8 +47,6 @@ The 511 keV photon flux for the brightest 4 globular clusters is presented here.
 1. Determine COSI's sensitivity for detecting 511 keV emission from Globular clusters.
 
 ### Positrons from 26Al
-⚠️ Internal ToDo (Pierre):
-1. Proofread/check content
 
 **Data Files:** <br />
 Positrons_from_26Al_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -64,8 +62,6 @@ This is the description of the model of the diffuse emission due to the steady s
 4. Correlation with the 26Al map (1809 keV emission)
 
 ### Positrons from 44Ti
-⚠️ Internal ToDo (Pierre):
-1. Proofread/check content
 
 **Data Files:** <br />
 Positrons_from_44Ti_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
