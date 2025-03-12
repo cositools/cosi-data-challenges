@@ -10,7 +10,9 @@
 
 ![GitHub License](https://img.shields.io/github/license/cositools/cosi-data-challenges)
 ![COSI Data Challenge](https://img.shields.io/badge/%20COSI%20Data%20Challenge-Feedback%20Welcomed!-blue) 
-![Countdown](https://img.shields.io/badge/%20Anticipated%20COSI%20Launch%20-872%20days-orange)
+![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-872%20days%20left-orange)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=cositools.cosi-data-challenges&left_color=black&right_color=blue)
+
 
 ## Table of Contents
 
