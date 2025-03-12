@@ -8,20 +8,24 @@
 
 <div align="left">
 
+![GitHub License](https://img.shields.io/github/license/cositools/cosi-data-challenges)
+![COSI Data Challenge](https://img.shields.io/badge/%20COSI%20Data%20Challenge-Feedback%20Welcomed-blue) 
+![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-872%20days%20left-orange)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [System Requirements](#system-requirements)
 - [Getting Help](#getting-help)
+- [Computing Resources](#computing-resources)
+- [Simulation Tools](#simulation-tools)
+- [Releases](#releases)
+- [Summary of Current and Past Challenges](#summary-of-current-and-past-challenges)
 - [Backgrounds](#backgrounds)
 - [Earth Occultation](#earth-occultation)
 - [Polarization](#polarization)
-- [Releases](#releases)
-- [Computing Resources](#computing-resources)
-- [Simulation Tools](#simulation-tools)
-- [Summary of Current and Past Challenges](#summary-of-current-and-past-challenges)
-- [Useful Reference Guides](#useful-reference-guides)
+- [Available Reference Guides](#available-reference-guides)
 - [Data Challenges](#data-challenges)
 - [Known Caveats and Limitations](#known-caveats-and-limitations)
 - [Citing](#citing)
@@ -53,27 +57,6 @@ One of our goals in developing cosipy is to make it easily accesible to all user
 ## Getting Help
 Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) git repository if you have issues with the code. If you have general feedback, or need further assistance, please reach out to the COSI Data Challenge team lead, Chris Karwin ([christopher.m.karwin@nasa.gov](mailto:christopher.m.karwin@nasa.gov)), the cosipy implementation lead, Israel Martinez-Castellanos ([israel.martinezcastellanos@nasa.gov](israel.martinezcastellanos@nasa.gov)), and the pipeline development lead Carolyn Kierans ([carolyn.a.kierans@nasa.gov](carolyn.a.kierans@nasa.gov)).
 
-## Backgrounds
-In general, observations in the MeV band are hindered by high backgrounds (both instrumental and astrophysical). In order to ensure that COSI accomplishes its main science goals, it is therefore crucial to have a firm understanding of these backgrounds. DC3 includes all of the background components. Compared to the background estimates from DC2, we have now included the full SAA passage, as well as the Galacic diffuse continuum emission. Further details can be found in the [backgrounds](backgrounds) directory. 
-
-For analyzing data in DC3, the starting point is to model the backgrounds using the actual simulated backgrounds themselves. This is the ideal case, where the backgrounds are perfectly known, which of course is not very realistic. The next step is to estimate the backgrounds. **With DC3 we have new methods to estimate the background for both line and continuum sources**. The background estimation tool for line emission can be used for both point sources and extended sources. An example tutorial can be found in the [line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) notebook. The background estimation tool for continuum emission is currently only available for point sources. An example tutorial is available in the [continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) notebook. We stress that both of these background estimation algorithms are only first versions, and further development and testing is still needed. More details are provided in the respective example tutorials. 
-
-The available background files are listed in the [data-products](data-products) directory. We provide a file with the total background, as well as separate files for the individual background components (as details in the [backgrounds](backgrounds) directory). 
-
-## Earth Occultation
-The Earth blocks a significant portion of the sky for satellites in low-Earth orbit, referred to as Earth occultation. It is important to account for this when simulating observations and performing data analysis. In order to implement this for the DC3 simulations we added new functionality to MEGAlib (*develop-cosi* branch), as detailed in the [earth-occultation](earth-occultation) directory. **These new methods now allow for simulating instruments with non-zenith pointings.** We also added new methods in cosipy to account for Earth occultation in the data analysis. 
-
-## Polarization
-Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release the first version of our polarization tools in cosipy. We also added new functionality in MEGAlib to define polarization in Galactic coordinates. This allows for simulating polarized sources together with the instrument's orbit. A general introduction into Compton polarimetry can be found in the [polarization](polarization) directory.
-
-## Releases
-
-- Data challenge 1, March 2023: [cosi-data-challenge-1](https://github.com/cositools/cosi-data-challenge-1)
-- Data challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0)
-- Data challenge 3, April 2025: **cosi-data-challenge-3 (latest release)**
-- Data challenge 4: Planned for March 2026
-- Data challenge 5: Planned for March 2027 (final challenge before launch :rocket:!)
-
 ## Computing Resources
 <div align="center">
 <img width="1050"  src="static/clusters.png">
@@ -83,6 +66,13 @@ The simulations for the COSI Data Challenges are run on high performance computi
 
 ## Simulation Tools
 The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective Data Challenge directory. Model inputs for the simulations and the corresponding Data Challenges come from the COSI science team. All of the models used for past Data Challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).   
+
+## Releases
+- Data challenge 1, March 2023: [cosi-data-challenge-1](https://github.com/cositools/cosi-data-challenge-1)
+- Data challenge 2, March 2024: [cosi-data-challenge-2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0)
+- Data challenge 3, April 2025: **cosi-data-challenge-3 (latest release)**
+- Data challenge 4: Planned for March 2026
+- Data challenge 5: Planned for March 2027 (final challenge before launch :rocket:!)
 
 ## Summary of Current and Past Challenges 
 - **[Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1):**
@@ -131,7 +121,21 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - New methods to estimate the background for continuum sources and line sources.
     - Refinements and further developments of imaging class.
     - New Extended source response class.
-## Useful Reference Guides
+      
+## Backgrounds
+In general, observations in the MeV band are hindered by high backgrounds (both instrumental and astrophysical). In order to ensure that COSI accomplishes its main science goals, it is therefore crucial to have a firm understanding of these backgrounds. DC3 includes all of the background components. Compared to the background estimates from DC2, we have now included the full SAA passage, as well as the Galacic diffuse continuum emission. Further details can be found in the [backgrounds](backgrounds) directory. 
+
+For analyzing data in DC3, the starting point is to model the backgrounds using the actual simulated backgrounds themselves. This is the ideal case, where the backgrounds are perfectly known, which of course is not very realistic. The next step is to estimate the backgrounds. **With DC3 we have new methods to estimate the background for both line and continuum sources**. The background estimation tool for line emission can be used for both point sources and extended sources. An example tutorial can be found in the [line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) notebook. The background estimation tool for continuum emission is currently only available for point sources. An example tutorial is available in the [continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) notebook. We stress that both of these background estimation algorithms are only first versions, and further development and testing is still needed. More details are provided in the respective example tutorials. 
+
+The available background files are listed in the [data-products](data-products) directory. We provide a file with the total background, as well as separate files for the individual background components (as details in the [backgrounds](backgrounds) directory). 
+
+## Earth Occultation
+The Earth blocks a significant portion of the sky for satellites in low-Earth orbit, referred to as Earth occultation. It is important to account for this when simulating observations and performing data analysis. In order to implement this for the DC3 simulations we added new functionality to MEGAlib (*develop-cosi* branch), as detailed in the [earth-occultation](earth-occultation) directory. **These new methods now allow for simulating instruments with non-zenith pointings.** We also added new methods in cosipy to account for Earth occultation in the data analysis. 
+
+## Polarization
+Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release the first version of our polarization tools in cosipy. We also added new functionality in MEGAlib to define polarization in Galactic coordinates. This allows for simulating polarized sources together with the instrument's orbit. A general introduction into Compton polarimetry can be found in the [polarization](polarization) directory.
+
+## Available Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro)**
 - **[Introduction to cosipy](cosipy-intro)** 
 - **[Summary of background simulations](backgrounds)**
