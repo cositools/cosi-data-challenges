@@ -1,0 +1,34 @@
+name: Update Countdown Badge
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Runs daily at midnight UTC
+  workflow_dispatch:  # Allows manual execution
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Calculate Countdown
+        run: |
+          TARGET_DATE="2027-08-01"
+          TODAY=$(date -u +%Y-%m-%d)
+          SECONDS_LEFT=$(( $(date -d "$TARGET_DATE" +%s) - $(date -d "$TODAY" +%s) ))
+          DAYS_LEFT=$(( SECONDS_LEFT / 86400 ))
+
+          # Generate the new badge URL
+          BADGE_URL="https://img.shields.io/badge/%20Anticipated%20Launch%20Date%20-${DAYS_LEFT}%20days%20left-orange"
+
+          # Update README.md
+          sed -i "s|!\[Countdown\](.*)|![Countdown]($BADGE_URL)|g" README.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Updated countdown badge" || echo "No changes to commit"
+          git push
