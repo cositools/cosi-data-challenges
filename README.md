@@ -8,6 +8,11 @@
 
 <div align="left">
 
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=cositools.cosi-data-challenges)
+
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=cositools.cosi-data-challenges)
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
