@@ -137,8 +137,8 @@ Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro)**
 - **[Introduction to cosipy](cosipy-intro)** 
 - **[Summary of background simulations](backgrounds)**
-- **[Dealing with Earth Occultation](earth-occultation)** 
-- **[Introduction to Polarization](polarization)** 
+- **[Dealing with Earth occultation](earth-occultation)** 
+- **[Introduction to polarization](polarization)** 
 
 ## Data Challenges
 We have created example Jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below: <br /> 
