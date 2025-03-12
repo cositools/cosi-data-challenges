@@ -4,7 +4,8 @@
 We employed MEGAlib to simululate 3 months of instrumental and astrophysical backgrounds (BGs), using an equatorial orbit at 530 km with a rocking of 22 degree every 12h. The astrophysical BGs include albedo emission and cosmic photons (i.e. the extragalactic gamma-ray background). The instrumental backgrounds arise from cosmic rays bombarding the instrument, and there is both a prompt component and a delayed component. The former is due to cosmic ray particles directly triggering the instrument. The latter is due to activation of the irradiated materials, which subsequently decay and emit photons that contribute to the BG emission. The instrumental BGs arise mainly from primary protons, primary alpha particles, atmospheric neutrons, primary electrons, primary positrons, and secondary protons electrons and positrons, all of which are included in DC3. In order to simulate the activation, MEGAlib keeps in memory each isotope created during the simulation until it decays (the expected decay time is computed according to the isotope lifetime and the event is rejected if this time is longer than the simulation time). This method accurately simulates the build-up of the activation during the 3 months of orbit. Our background simulations account for the time-dependent flux variation due to the changing geomagnetic cutoff along the orbit. Another important BG for COSI will be due to passage through the Southern Atlantic Anomoly (SAA). The SAA component is include in DC3 and will be describe below. Spectra and lightcurves for the DC3 BG components are shown below. Further details about the BG simulations are provided in the sections that follow. 
 
 <p align="center">
-<img width="600"  src="images/">
+<img width="600"  src="images/DC3CO_LC.png"> 
+<img width="600"  src="images/DC3spectrum.png">
 </p>
 
 ## Input Models
@@ -20,7 +21,7 @@ The input spectra are generated using the model from [Cumani](https://link.sprin
 
 
 ### South Atlantic Anomaly (SAA)
-The spectrum and light curve of the trapped protons are generated using the model [IRENE AP9 v1.57.004](https://www.vdl.afrl.af.mil/programs/ae9ap9/) . The expected differential flux is computed for every 15s of DC3 orbit and then integrated over the energy to get the light curve. Since COSI will not take data during SAA passages, we did not simulate the trapped electrons component. In order to improve the simulation time, the spectrum is troncated at 4 Mev. This is motivated by the fact we are only interested into activation induced by the trapped protons during a SAA passage. As shown in the figures below, the proton cross-section with commun materials found in the spacecraft are negligible below 4 MeV. A 24h orbit test has been done for a cut at 2 MeV, showing no significant variation with a cut at 4 MeV.      
+The spectrum and light curve of the trapped protons are generated using the model [IRENE AP9 v1.57.004](https://www.vdl.afrl.af.mil/programs/ae9ap9/) . The expected differential flux is computed for every 15s of DC3 orbit and then integrated over the energy to get the light curve. Since COSI will not take data during SAA passages, we did not simulate the trapped electrons component. In order to improve the simulation time, the spectrum is truncated at 4 Mev. This is motivated by the fact we are only interested into activation induced by the trapped protons during a SAA passage. As shown in the figures below, the proton cross-section with commun materials found in the spacecraft is negligible below 4 MeV. A 24h orbit test has been done for a cut at 2 MeV, showing no significant variation with a cut at 4 MeV.      
 
 <p align="center">
 <img width="1000"  src="images/SAAspectrum.png">
@@ -63,33 +64,24 @@ The second step is the event reconstruction done by *revan*. This part still use
 
 The last step is the event selection done by *mimrec* using the configuration file **SMEXv12.Continuum.HEALPixO3.binnedimaging.mimrec.cfg**. Here, all the tra files from the individual simulation are collected into a single extracted file that is then converted into a fits file (using cosipy).  
 
-### Computation Time
-The simulations are very computationally intensive. **put a number of CPU h**
-
 ## Results
 
 ### Spectra and Light Curves 
-The resulting spectra for each component are shown in the left figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC3 event selection. We can observe a dominance of the cosmic photons up to ~1 MeV,  The rates for each component are shown in the right figure at the top of the page. As expected, the rate is dominated by the cosmic photons and the proton/alpha delayed components. The total rates for the energy bands corresponding to the 0.511 MeV and Al26 emission lines are given below:
-* 508 - 512 keV: 0.1848 Hz
-* 1805 - 1812 keV: 0.0112 Hz
+The resulting spectra for each component are shown in the second figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC3 event selection. We can observe a dominance of the cosmic photons up to ~1 MeV,  The rates for each component are shown in the top figure at the top of the page. As expected, the rate is dominated by the cosmic photons and the proton/alpha delayed components.
 
 ### Time Variation
 
-On a daily scale, it is difficult to see the variation due to the geomagnetic cutoff. However, on the minute scale we can observe the rate variation which is opposite to the geomagnetic variation, as shown below. 
+On a daily scale, it is difficult to see the variation due to the geomagnetic cutoff (GC). However, on the minute scale we can observe the rate variation which is opposite to the geomagnetic variation, as shown below. However, due to SAA passages that are removed from the data, the maximum peak of GC is also removed.
 
 <p align="center">
-<img width="650"  src="images/rate_geomagnetic_cutoff_comparison.png">
+<img width="650"  src="images/COLC_minscale.png">
 </p>
 
-This validates the light curve models we used as input for the simulations. The total BG rate (without cosmic photons) as a function of the spacecraft geographic coordinates is shown in the left figure below and as function of the geographic longitude in the right figure below. 
-
-<p align="center">
-<img width="900"  src="images/geomagnetic_cutoff_location_comparison.png">
-</p>
+This validates the light curve models we used as input for the simulations.
 
 ### Activation Backgrounds
 
-We can observe several lines in the delayed components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. As a first approach, the line energies in the total spectrum are determined manually using matplotlib. A more robust method for the future will be to fit each line with a Gaussian, with its width constrained at the instrumental resolution. Almost all the lines are identified also thanks to the identification of SPI/INTEGRAL BG lines in [Weidenspointner+03](https://hal.in2p3.fr/in2p3-00022236v1/file/in2p3-00022236.pdf) and [Diehl+18](https://ui.adsabs.harvard.edu/abs/2018A%26A...611A..12D/abstract). The table below summarizes most of the lines we can identify in the total spectrum. 
+We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. As a first approach, the line energies in the total spectrum are determined manually using matplotlib. A more robust method for the future will be to fit each line with a Gaussian, with its width constrained at the instrumental resolution. Almost all the lines are identified also thanks to the identification of SPI/INTEGRAL BG lines in [Weidenspointner+03](https://hal.in2p3.fr/in2p3-00022236v1/file/in2p3-00022236.pdf) and [Diehl+18](https://ui.adsabs.harvard.edu/abs/2018A%26A...611A..12D/abstract). The table below summarizes most of the lines we can identify in the total spectrum. 
 
 <p align="center">
 <img width="550"  src="images/table_of_identified_lines.png">

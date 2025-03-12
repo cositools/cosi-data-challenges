@@ -11,12 +11,10 @@
 ## ⚠️ Notice
 
 This is the COSI internal release. The public release is planned for April 1, 2025. Some things are still missing or incomplete, as specified below:
-- **The SAA and primary protons background components are not available.** They are highly computationally intensive (requiring ~2,739 core years for SAA and ~57 core years for primary protons!), and we are currently working on completing this using both the Mainz and NASA Discover clusters. Correspondingly, the total background file is not available yet, and the page describing the background simulations for DC3 is incomplete.
-- **Precomputed point source response files are not available.** In principle, anyone can compute these using cosipy, but they may take a while (1 or 2 days depending on the component). For convenience, we will provide these files for continuum, 511, Al26, Ti44, and Fe60.
+- **The SAA background component is not available.** This is highly computationally intensive (requiring ~2,739 core years), and we are currently working on completing this using both the Mainz and NASA clusters. Correspondingly, the total background file is not available yet, and the page describing the background simulations for DC3 is incomplete.
 - **Response files need to be converted from standard .h5 files to .h5 files with good chunks.** The h5 files with good chuncks will optimize the speed and memory usage. 
 - **No binned data products have been provided.** Binning the data is part of the standard analysis procedure. However, in some cases, binning the data may require lots of RAM, making it difficult for standard laptops (as was found for DC2). Please let us know if you are running into related difficulties, and we can see if we need to provide some binned data products.
-- **A small number of the source simulations have not been completed**. Generally, these are input models that require a bit of extra work to implement in the simulation pipeline. We will be working to complete the remaining models before the public release. If you notice that your model is missing and were planning to test it in the near future, please let us know and we will make it a priority. 
-- **The polarization response is not available.** This will be coming soon.
+- **A small number of the source simulations have not been completed**. Generally, these are input models that require a bit of extra work to implement in the simulation pipeline. We will be working to complete the remaining models before the public release. If you notice that your model is missing and were planning to test it in the near future, please let us know and we will make it a priority.
 - **The polarization analysis tools do not yet account for the instrument orientation.** Consequently, only GRB polarization on short time scales can be analyzed at the moment. This is a top priority that we are working on updating.
 - **The source injector only works for point sources, and it doesn't account for Earth occultation.** The Earth occultation will be implemented soon, and we are also updating the code to allow for injecting extended sources. Both of these should be ready by the public release. 
 - **The description of each data challenge needs to be checked for content by the science team member that provided it.** You will find notes at the top of each data challenge with the requested information. 
@@ -61,6 +59,8 @@ The only software requirement for DC3 is [cosipy](https://github.com/cositools/c
 This year's Data Challenge is based on 3 months of exposure time, for an equatorial orbit at an altitude of 530 km, with a pointing that rocks between $\pm 20^\circ$ from the Earth zenith. The simulated data products are provided in fits file format, and are hosted on wasabi. Details of the simulations, simulated data, and information for accessing the data products can be found in the [data-products](data-products) directory. 
 
 The input models and challenges for DC3 were provided by the COSI science teams. There are challenges for the different science groups: GRBs, Positrons, Nucleosynthesis, Galactic, Extragalactic, and Dark Matter. These are described in detail in the [Data Challenges](#data-challenges) section below.  
+
+Users are encouraged to post feedback on the [Discussions](https://github.com/cositools/cosi-data-challenges/discussions) page. This can include solutions to specific challenges, questions, issues, etc.
 
 In summary, to get started with DC3, install cosipy, familiarize yourself with the [data-products](data-products), and then start working through the [Data Challenges](#data-challenges), as described below. 
 
@@ -258,15 +258,13 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 
 **All challenges should use the same detector response files:** 
 Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
-extended_source_response_511_merged.h5.gz (precomputed extended source response file)
+ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+extended_source_response_511_merged.h5.gz (precomputed 511 extended source response file)
+extended_source_response_continuum_merged.h5.gz (precomputed continuum extended source response file)
 
 The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. 
 
 ### Extragalactic Sources (LMC, M31, Virgo)
-⚠️ Internal ToDo (Sophie):
-1. Proofread/check content
-2. Provide links to cited papers
 
 **Data Files:** <br />
 LMC_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -277,12 +275,12 @@ Virgo_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Virgo_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-Fluxes are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of a source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ (Siegert et al 2016) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ (McMillan et al 2016), we scale the 511 keV flux of each extragalactic source based on the 511 keV flux assumed to be associated with the stellar mass in the Milky Way.
+Fluxes are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of a source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ ([Siegert+16](https://www.aanda.org/articles/aa/full_html/2016/02/aa27510-15/aa27510-15.html)) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ ([McMillan+16](https://academic.oup.com/mnras/article/465/1/76/2417479)), we scale the 511 keV flux of each extragalactic source based on the 511 keV flux assumed to be associated with the stellar mass in the Milky Way.
 
 The stellar masses are: <br />
-LMC: $1 \times 10^{10} \ M_\odot\$ (Erkal et al 2019) <br />
-M31: $1.25 \times 10^{11} \ M_\odot\$ (Tamm et al 2012) <br />
-Virgo: $1.2 \times 10^{14} \ M_\odot\$ (Fouque et al 2001) <br />
+LMC: $1 \times 10^{10} \ M_\odot\$ ([Erkal+19](https://academic.oup.com/mnras/article/487/2/2685/5491315)) <br />
+M31: $1.25 \times 10^{11} \ M_\odot\$ ([Tamm+12](https://www.aanda.org/articles/aa/full_html/2012/10/aa20065-12/aa20065-12.html)) <br />
+Virgo: $1.2 \times 10^{14} \ M_\odot\$ ([Fouque+01](https://www.aanda.org/articles/aa/abs/2001/33/aa1326/aa1326.html)) <br />
 
 We also include each source at 100x the nominal flux, in order to ensure that they are above COSI's 511 keV line sensitivity.
 
@@ -290,10 +288,6 @@ We also include each source at 100x the nominal flux, in order to ensure that th
 1. Determine COSI's sensitivity for detecting these potential extragalactic 511 keV sources. 
 
 ### Globular Clusters (Tuc 47, Omega_Cen, NGC 6121, NGC_6397)
-⚠️ Internal ToDo (Saurabh):
-1. Clarify and provide a bit more information regarding how the 511 flux was estimated. 
-2. Proofread/check content
-3. Provide links to cited papers
 
 **Data Files:** <br />
 Globular_Cluster_Tuc_47_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -302,7 +296,7 @@ Globular_Cluster_NGC_6397_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br
 Globular_Cluster_NGC_6121_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-The 511 keV photon flux for the brightest 4 globular clusters is presented here. The flux is estimated based on the 0.1 - 100 GeV luminosity from the Globular clusters, nuclear bulge emission, and boxy bulge emission in the Milky Way (Bartels+2017). The GeV luminosity of the Bulge is compared to the 511 keV luminosity of the bulge to estimate the 511 keV flux of the globular clusters. The flux values shown here are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit.
+The 511 keV photon flux for the brightest 4 globular clusters is presented here. The flux is estimated based on the 0.1 - 100 GeV luminosity from the Globular clusters, nuclear bulge emission, and boxy bulge emission in the Milky Way [Bartels et al 2018a](https://ui.adsabs.harvard.edu/abs/2018NatAs...2..819B/abstract). The GeV luminosity of the Bulge is compared to the 511 keV luminosity of the bulge [Bartels et al 2018b](https://ui.adsabs.harvard.edu/abs/2018MNRAS.480.3826B/abstract). This GeV luminosity vs 511 keV luminosity correlation is applied to the GeV excess observed from globular clusters [Zhang et al 2016](https://ui.adsabs.harvard.edu/abs/2016MNRAS.459...99Z/abstract) in the Galaxy to estimate the 511 keV flux of the globular clusters. The flux values shown here are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit.
 
 **Goals:** <br />
 1. Determine COSI's sensitivity for detecting 511 keV emission from Globular clusters.
@@ -350,6 +344,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
    
 **Data Files:** <br /> 
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
+extended_source_response_Al26_merged.h5.gz (precomputed extended source response file) <br />
 26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -369,6 +364,7 @@ due to the interstellar turbulence.
    
 **Data Files:** <br /> 
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
+extended_source_response_Al26_merged.h5.gz (precomputed extended source response file) <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -394,6 +390,7 @@ The tools needed to complete these challenges are demonstrated in the [Crab spec
    
 **Data Files:** <br /> 
 Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
+extended_source_response_Ti44_merged.h5.gz (precomputed extended source response) <br />
 CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -417,6 +414,8 @@ All spectra follow simple Gaussian distributions. The flux is taken as the value
 **Data Files:** <br /> 
 Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
+extended_source_response_Fe60_low_merged.h5.gz (precomputed extended source response) <br />
+extended_source_response_Fe60_high_merged.h5.gz (precomputed extended source response) <br />
 60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
 
 **Input Models:**  <br />
@@ -435,6 +434,8 @@ described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M
 **Data Files:** <br /> 
 Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
+extended_source_response_Fe60_low_merged.h5.gz (precomputed extended source response) <br />
+extended_source_response_Fe60_high_merged.h5.gz (precomputed extended source response) <br />
 60Fe_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
@@ -448,7 +449,8 @@ This is the description of the model of the diffuse emission of the 1173 keV and
 The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb), and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) (for extended source analysis) notebooks.
 
 **All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz (polarized sources) <br />
 extended_source_response_continuum_merged.h5.gz (precomputed extended source response file) <br />
 
 ### Galactic diffuse continuum
@@ -528,12 +530,28 @@ Both models represent the INTEGRAL data well but strongly differ at the highest 
 
 **Goals:** <br />
 1. Test whether COSI would be able to distinguish between the two models.
+
+### MAXI J1820+070 and MAXI J1348-630
+⚠️ Internal ToDo (Julien):
+1. Proofread/check content
+   
+**Data Files:** <br />
+MAXI1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXI1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**Input Models:**  <br />
+The spectral models for MAXI J1820+070 and MAXI J1348-630 are scans of published INTEGRAL data shown in Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract), in the hard state. The polarimetric models corresponds to the measurements shown in table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXIJ1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. 
+
+**Goals:** <br />
+1. Test COSI's ability to measure spectra and polarization of transient sources.
    
 ## Extragalactic
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
 **All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s5383095312085.m1190.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.h5.gz <br />
+ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.h5.gz (polarized sources) <br />
+extended_source_response_continuum_merged.h5.gz (precomputed extended source response)  <br />
 
 ### NGC 1068
 ⚠️ Internal ToDo (Lea):
@@ -609,11 +627,6 @@ The spectral data is for 3C 279 high, which represent the high state of the sour
 1. Measure the polarization fraction and angle. 
 
 ## Dark Matter
-⚠️ Internal ToDo (Yu):
-1. Provide more info about models.
-2. Please let us know what kind of spectra you have (line and/or continuum). This will determine the type of respsonse needed. 
-3. Proofread/check content
-
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
  
 **Data Files:** <br />
@@ -625,12 +638,12 @@ gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-Files for DM annihilating into gamma-gamma or e-e-gamma, assuming NFW or Burkert profile. <br />
-m_DM = 3 MeV and <sigma v> = 1e-30 cm3/s. Other parameters are detailed in our slides. <br />
+Photon spectra from annihilating dark matter (DM) in our galaxy. We consider cases where two DM particles annihilate into either two photons (gg) or an e+e− pair with a FSR photon (eeg), assuming DM follows an NFW or Burkert profile. The profile parameters are taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. We assume a DM mass of 3 MeV and an annihilation cross section of 1e-29 cm3/s.
 
 **Goals:** <br />
-1. Calculate the gamma-ray spectra from the annihilating MeV DM.
-2. Compare the spectra from DM and background, and determine COSI’s detectability for attractive DM candidates.
+1. Obtaining energy spectra
+2. Obtaining signal morphologies
+3. Estimating COSI’s detectability for annihilating WIMPs
    
 ## Known Caveats and Limitations
 The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work on them, with the ultimate goal of implementing the software solutions into cosipy. 
