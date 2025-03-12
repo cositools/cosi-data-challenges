@@ -1,4 +1,4 @@
-## Extragalactic
+## Extragalactic Data Challenges
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
 **All challenges should use the same detector response file:** <br />
@@ -7,9 +7,6 @@ ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonspar
 extended_source_response_continuum_merged.h5.gz (precomputed extended source response)  <br />
 
 ### NGC 1068
-⚠️ Internal ToDo (Lea):
-1. Proofread/check content
-2. Provide links to cited papers
 
 **Data Files:** <br /> 
 NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz
@@ -22,9 +19,6 @@ Gamma=1.92, Ecut=200 keV; intrinsic flux 2-10 keV = 8.9e-10 erg/cm2/s
 1. Determine flux in the COSI band, and coronal cut-off energy
 
 ### NGC 4151
-⚠️ Internal ToDo (Lea):
-1. Proofread/check content
-2. Provide links to cited papers
 
 **Data Files:** <br />
 NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -47,10 +41,6 @@ NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 1. Determine flux in the COSI band, and coronal cut-off energy <br />
 
 ### 4C+21.35
-⚠️ Internal ToDo (Michela):
-1. Give gaol of challenge
-2. Provide description of model
-3. Proofread/check content
 
 **Data Files:** <br />
 4C21p35_noflare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
