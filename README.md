@@ -19,6 +19,8 @@ This is the COSI internal release. The public release is planned for April 1, 20
 - **The source injector only works for point sources, and it doesn't account for Earth occultation.** The Earth occultation will be implemented soon, and we are also updating the code to allow for injecting extended sources. Both of these should be ready by the public release. 
 - **The description of each data challenge needs to be checked for content by the science team member that provided it.** You will find notes at the top of each data challenge with the requested information. 
 
+![GitHub License](https://img.shields.io/github/license/cositools/cosi-data-challenges)
+![Data Challenge](https://img.shields.io/badge/%20Data%20Challenge-COSI-blue) 
 ![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20Date%20-872%20days%20left-orange)
 
 ## Table of Contents
