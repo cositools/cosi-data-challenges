@@ -9,7 +9,7 @@
 <div align="left">
 
 ![Data Challenge](https://img.shields.io/badge/%20Data%20Challenge-COSI-blue) 
-![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20Date%20-872%20days%20left-orange)
+![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-872%20days%20left-orange)
 
 ## Table of Contents
 
