@@ -1,9 +1,7 @@
-## Nucleosynthesis
+## Nucleosynthesis Data Challenges
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 ### Al26 Cygnus Region
-⚠️ Internal ToDo (Pierre):
-1. Proofread/check content
    
 **Data Files:** <br /> 
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
@@ -22,9 +20,7 @@ due to the interstellar turbulence.
 3. Recover 60Fe/26Al ratio (see 60Fe_Cyg_Region)
 
 ### Al26 NE2001
-⚠️ Internal ToDo (Pierre):
-1. Proofread/check content
-   
+
 **Data Files:** <br /> 
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
 extended_source_response_Al26_merged.h5.gz (precomputed extended source response file) <br />
@@ -44,12 +40,6 @@ The shape of the line in each spatial bin takes into account the turbulence of t
    
 ### Ti44
 The tools needed to complete these challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
-
-⚠️  Internal ToDo (Anaya):
-1. Clarify and provide a bit more information regarding the models
-2. State the goals of the data challenge
-3. Proofread/check content
-4. Provide links to cited papers
    
 **Data Files:** <br /> 
 Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
@@ -71,9 +61,7 @@ All spectra follow simple Gaussian distributions. The flux is taken as the value
 1. What are the goals?
 
 ### Fe60 Cygnus Region
-⚠️ Internal ToDo (Pierre):
-1. Proofread/check content
-   
+
 **Data Files:** <br /> 
 Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
@@ -91,9 +79,7 @@ described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M
 3. Recover 60Fe/26Al ratio (see 26Al_Cyg_Region)
 
  ### Fe60 NE2001
-⚠️ Internal ToDo (Pierre):
-1. Proofread/check content
-   
+
 **Data Files:** <br /> 
 Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
 Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br /> 
