@@ -42,14 +42,21 @@ fetch_wasabi_file('full/path/wasabi/file')
 </pre>
 Note that an error will be thrown if the file already exists. To overwrite the existing file, the keyword ``override=True`` can be passed.   
 
-**Orientation File:** <br />
+**Available files and corresponding wasabi paths (click to expand):**
+
+<details>
+  <summary>Orientation Files</summary>
+  
 wasabi path: COSI-SMEX/DC3/Data/Orientation <br />
 
 files: <br />
 DC3_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.ori <br />
-DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br />
+DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br /> 
+</details>
 
-**Response Files:** <br />
+<details>
+  <summary>Response Files</summary>
+  
 wasabi path: COSI-SMEX/DC3/Responses <br />
 NB: Response files must be unzipped before using in analysis.  <br />
 
@@ -69,8 +76,11 @@ extended_source_response_Al26_merged.h5.gz <br />
 extended_source_response_Ti44_merged.h5.gz <br />
 extended_source_response_Fe60_low_merged.h5.gz <br />
 extended_source_response_Fe60_high_merged.h5.gz <br />
+</details>
 
-**Background Files:** <br />
+<details>
+  <summary>Background Files</summary>
+  
 wasabi path: COSI-SMEX/DC3/Data/Backgrounds/Ge <br />
 
 Unbinned Files: <br />
@@ -85,8 +95,11 @@ PrimaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryProtons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+</details>
 
-**Source Files:** <br />
+<details>
+  <summary>Source Files</summary>
+  
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
@@ -163,4 +176,5 @@ GRB_MGF180128A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF200415A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF231115A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 MgtBurst_bright_complex_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MgtBurst_bright_simple_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MgtBurst_bright_simple_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />  
+</details>
