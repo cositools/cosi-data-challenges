@@ -73,6 +73,7 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
 - Data Challenge 5: Planned for March 2027 (final release before launch :rocket:!)
 
 ## Summary of Current and Past Challenges 
+
 Click to expand summaries below:
 
 <details>
