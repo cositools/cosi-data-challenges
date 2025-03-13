@@ -23,7 +23,7 @@
 - [Backgrounds](#backgrounds)
 - [Earth Occultation](#earth-occultation)
 - [Polarization](#polarization)
-- [Available Reference Guides](#available-reference-guides)
+- [Reference Guides](#reference-guides)
 - [Data Challenges](#data-challenges)
 - [Known Caveats and Limitations](#known-caveats-and-limitations)
 - [Citing](#citing)
@@ -146,7 +146,7 @@ The Earth blocks a significant portion of the sky for satellites in low-Earth or
 ## Polarization
 Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release the first version of our polarization tools in cosipy. We also added new functionality in MEGAlib to define polarization in Galactic coordinates. This allows for simulating polarized sources together with the instrument's orbit. A general introduction into Compton polarimetry can be found in the [polarization](polarization) directory.
 
-## Available Reference Guides
+## Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro)**
 - **[Introduction to cosipy](cosipy-intro)** 
 - **[Summary of background simulations](backgrounds)**
