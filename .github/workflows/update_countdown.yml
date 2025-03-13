@@ -20,7 +20,7 @@ jobs:
           DAYS_LEFT=$(( SECONDS_LEFT / 86400 ))
 
           # Generate the new badge URL
-          BADGE_URL="https://img.shields.io/badge/%20Anticipated%20Launch%20Date%20-${DAYS_LEFT}%20days-blue"
+          BADGE_URL="https://img.shields.io/badge/%20Anticipated%20Launch%20-${DAYS_LEFT}%20days-blue"
 
           # Update README.md
           sed -i "s|!\[Countdown\](.*)|![Countdown]($BADGE_URL)|g" README.md
