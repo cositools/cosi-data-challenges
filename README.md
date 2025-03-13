@@ -171,13 +171,7 @@ The 1 second binning may be optimal for analyzing transients on short time scale
 **Background Files:** <br />
 There are a few different options for modeling the background. The staring point is to use the ideal case, where the background model in the analysis is the same as the simulated background. We have provided a file with the total background, as well as files for the individual background components. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. albedo photons), and then move on to the total background after everything is working. A more realistic estimate of the uncertainty on the background modeling can be achieved by using one of the background estimation tools (see the [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) and [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) examples). However, we caution that these tools are in thier very early stages, and they still require further testing and development.  
 
-**Data Challenges for the different science topics can be found in the links below:**
-- [GRBs](DC-GRBs)
-- [Positrons](DC-Positrons)
-- [Nucleosynthesis](DC-Nucleosynthesis)
-- [Galactic](DC-Galactic)
-- [Extragalactic](DC-Extragalactic)
-- [Dark Matter](DC-DarkMatter)
+**Data Challenges for the different science topics can be found below (click to expand):**
 
 <details>
   <summary>GRBs</summary>
