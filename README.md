@@ -603,7 +603,7 @@ The spectral data is for 3C 279 high, which represent the high state of the sour
 <details>
   <summary>Dark Matter</summary>
   
-## Dark Matter
+## Dark Matter Data Challenges
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
  
 **Data Files:** <br />
