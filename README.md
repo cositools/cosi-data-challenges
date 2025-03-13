@@ -23,7 +23,7 @@
 - [Backgrounds](#backgrounds)
 - [Earth Occultation](#earth-occultation)
 - [Polarization](#polarization)
-- [Available Reference Guides](#available-reference-guides)
+- [Reference Guides](#reference-guides)
 - [Data Challenges](#data-challenges)
 - [Known Caveats and Limitations](#known-caveats-and-limitations)
 - [Citing](#citing)
@@ -73,7 +73,11 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
 - Data Challenge 5: Planned for March 2027 (final release before launch :rocket:!)
 
 ## Summary of Current and Past Challenges 
-- **[Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1):**
+Click to expand summaries below:
+
+<details>
+  <summary>Data Challenge 1</summary>
+
   - Focused on the 2016 COSI Balloon flight.
   - Release includes real flight data for the Crab.
   - Main goal is to learn the fundamentals of analyzing Compton data with COSI.
@@ -82,8 +86,12 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
   - Contains 3 straightforward examples of COSI’s science goals:
     - Extracting energy spectra from the Crab, Cen A, Cygnus X-1, and Vela.
     - Imaging bright point sources, such as the Crab and Cygnus X-1.
-    - Imaging diffuse emission from the positron-electron annihilation 511 keV and Al-26 1.8 MeV gamma-ray lines.
-- **[Data Challenge 2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0):**
+    - Imaging diffuse emission from the positron-electron annihilation 511 keV and Al-26 1.8 MeV gamma-ray lines.  
+</details>
+
+<details>
+  <summary>Data Challenge 2</summary>
+  
   - Focused on COSI SMEX mission.
   - First (alpha) release of cosipy. 
   - Data challenges for all the main science groups (none for dark matter and solar).
@@ -99,9 +107,13 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - Crab spectral fit
     - 511 spectral fit
     - Crab imaging
-    - 511 imaging
-- **Data Challenge 3**
-  - Focused on COSI SMEX mission.
+    - 511 imaging  
+</details>
+
+<details>
+  <summary>Data Challenge 3</summary>
+  
+ - Focused on COSI SMEX mission.
   - Data challenges for all the main science groups (including dark matter), covering all of COSI's primary science objectives. 
   - All models and challenges provided by respective COSI science teams.
   - Used 3 months of observations, for an equatorial orbit at 530 km.
@@ -118,8 +130,9 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
     - First polarization tools.
     - New methods to estimate the background for continuum sources and line sources.
     - Refinements and further developments of imaging class.
-    - New extended source response class.
-      
+    - New extended source response class. 
+</details>
+
 ## Backgrounds
 In general, observations in the MeV band are hindered by high backgrounds (both instrumental and astrophysical). In order to ensure that COSI accomplishes its main science goals, it is therefore crucial to have a firm understanding of these backgrounds. DC3 includes all of the background components. Compared to the background estimates from DC2, we have now included the full SAA passage, as well as the Galacic diffuse continuum emission. Further details can be found in the [backgrounds](backgrounds) directory. 
 
@@ -133,7 +146,7 @@ The Earth blocks a significant portion of the sky for satellites in low-Earth or
 ## Polarization
 Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release the first version of our polarization tools in cosipy. We also added new functionality in MEGAlib to define polarization in Galactic coordinates. This allows for simulating polarized sources together with the instrument's orbit. A general introduction into Compton polarimetry can be found in the [polarization](polarization) directory.
 
-## Available Reference Guides
+## Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro)**
 - **[Introduction to cosipy](cosipy-intro)** 
 - **[Summary of background simulations](backgrounds)**
