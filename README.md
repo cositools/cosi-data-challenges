@@ -503,7 +503,7 @@ cygX1_hard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 The two spectral models for Cyg X1 are best fit eqpair  models of time averaged INTEGRAL data [Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract) given for hard and soft states respectively. Polarization is also included. The hard state model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. The soft spectral state assumes an energy-independent polarization of 20% (same angle).  
 
 **Goals:** <br />
-1. Check detection sensitivty in soft state
+1. Check detection sensitivity in soft state
 2. Test how well COSI can monitor for spectral transitions
 
 ### 1E1740.7-2942
