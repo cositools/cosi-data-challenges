@@ -22,7 +22,7 @@ The cosipy library is open-source and written in Python.
 
 Cosipy uses a likelihood-based forward-folding technique. This means that different source hypotheses are convolved with the instrument response in order to obtain the expected data. The expectation is directly compared to the observed data to evaluate the likelihood that the source hypothesis explains the observations, and therefore find the best model. In the following section, we explain what we actually mean by all of this! 
 
-You can also explore how the analysis works through a series of [tutorial](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials) in a simplified 2D world in the [gamma-ray toys](https://github.com/israelmcmc/gammaraytoys) repository. 
+You can also explore how the analysis works through a series of [tutorials](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials) in a simplified 2D world in the [gamma-ray toys](https://github.com/israelmcmc/gammaraytoys) repository. 
 
 ### Likelihood analysis
 
