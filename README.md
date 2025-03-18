@@ -135,7 +135,7 @@ Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release
 ## Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro/README.md)**
 - **[Introduction to cosipy](cosipy-intro/README.md)**
-- **[Series of tutorials using a simplified 2D analysis framework](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials) (part of the [Gamma-ray Toys](https://github.com/israelmcmc/gammaraytoys/tree/main) repository)**
+- **[Simplified 2D tutorials](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials) (part of the [Gamma-ray Toys](https://github.com/israelmcmc/gammaraytoys/tree/main) repository)**
 - **[Summary of background simulations](backgrounds/README.md)**
 - **[Dealing with Earth occultation](earth-occultation/README.md)** 
 - **[Introduction to polarization](polarization/README.md)** 
