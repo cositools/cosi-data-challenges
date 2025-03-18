@@ -151,10 +151,8 @@ CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-eeg_ISO_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 eeg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 eeg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-gg_ISO_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
