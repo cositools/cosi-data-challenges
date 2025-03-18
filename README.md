@@ -20,7 +20,6 @@
 - [Data Challenges](#data-challenges)
 - [Known Caveats and Limitations](#known-caveats-and-limitations)
 - [Releases](#releases)
-- [Summary of Current and Past Challenges](#summary-of-current-and-past-challenges)
 - [Citing](#citing)
 
 ## Introduction
@@ -561,8 +560,7 @@ The items listed here are some of the priorities for DC4 development. These can 
 - Data Challenge 4: Planned for March 2026
 - Data Challenge 5: Planned for March 2027 (final release before launch :rocket:!)
 
-## Summary of Current and Past Challenges
-Click to expand summaries below:
+**Summaries of current and past releases can be found below (click to expand):**
 
 <details>
   <summary>Data Challenge 1</summary>
