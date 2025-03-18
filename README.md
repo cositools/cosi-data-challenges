@@ -52,7 +52,7 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 ## Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro/README.md)**
 - **[Introduction to cosipy](cosipy-intro/README.md)**
-- **[Simplified 2D tutorials](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials)** (part of the **[Gamma-ray Toys](https://github.com/israelmcmc/gammaraytoys/tree/main)** repository)
+- **[Simplified 2D tutorials](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials)** from the **[Gamma-ray Toys](https://github.com/israelmcmc/gammaraytoys/tree/main)** repository
 - **[Summary of background simulations](backgrounds/README.md)**
 - **[Dealing with Earth occultation](earth-occultation/README.md)** 
 - **[Introduction to polarization](polarization/README.md)** 
@@ -563,7 +563,7 @@ The items listed here are some of the priorities for DC4 development. These can 
 **Summaries of current and past releases can be found below (click to expand):**
 
 <details>
-  <summary>Data Challenge 1</summary>
+  <summary><a href="https://github.com/cositools/cosi-data-challenge-1">Data Challenge 1:</a> March 2023</summary>
 
   - Focused on the 2016 COSI Balloon flight.
   - Release includes real flight data for the Crab.
@@ -577,7 +577,7 @@ The items listed here are some of the priorities for DC4 development. These can 
 </details>
 
 <details>
-  <summary>Data Challenge 2</summary>
+  <summary><a href="https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0">Data Challenge 2:</a> March 2024</summary>
   
   - Focused on COSI SMEX mission.
   - First (alpha) release of cosipy. 
@@ -598,7 +598,7 @@ The items listed here are some of the priorities for DC4 development. These can 
 </details>
 
 <details>
-  <summary>Data Challenge 3</summary>
+  <summary>Data Challenge 3: April 2025</summary>
   
  - Focused on COSI SMEX mission.
   - Data challenges for all the main science groups (including dark matter), covering all of COSI's primary science objectives. 
