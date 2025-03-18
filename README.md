@@ -554,16 +554,10 @@ The items listed here are some of the priorities for DC4 development. These can 
 - **The tools still need to be stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
 
 ## Releases
-- [Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1): March 2023
-- [Data Challenge 2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0): March 2024
-- Data Challenge 3: April 2025 **(latest release)**
-- Data Challenge 4: Planned for March 2026
-- Data Challenge 5: Planned for March 2027 (final release before launch :rocket:!)
-
-**Summaries of current and past releases can be found below (click to expand):**
+Click to expand summaries below:
 
 <details>
-  <summary><a href="https://github.com/cositools/cosi-data-challenge-1">Data Challenge 1:</a> March 2023</summary>
+  <summary>Data Challenge 1 (<a href="https://github.com/cositools/cosi-data-challenge-1">link</a>): March 2023</summary>
 
   - Focused on the 2016 COSI Balloon flight.
   - Release includes real flight data for the Crab.
@@ -577,7 +571,7 @@ The items listed here are some of the priorities for DC4 development. These can 
 </details>
 
 <details>
-  <summary><a href="https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0">Data Challenge 2:</a> March 2024</summary>
+  <summary>Data Challenge 2 (<a href="https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0">link</a>): March 2024</summary>
   
   - Focused on COSI SMEX mission.
   - First (alpha) release of cosipy. 
@@ -598,7 +592,7 @@ The items listed here are some of the priorities for DC4 development. These can 
 </details>
 
 <details>
-  <summary>Data Challenge 3: April 2025</summary>
+  <summary>Data Challenge 3 (current release): April 2025</summary>
   
  - Focused on COSI SMEX mission.
   - Data challenges for all the main science groups (including dark matter), covering all of COSI's primary science objectives. 
@@ -618,6 +612,17 @@ The items listed here are some of the priorities for DC4 development. These can 
     - New methods to estimate the background for continuum sources and line sources.
     - Refinements and further developments of imaging class.
     - New extended source response class. 
+</details>
+
+<details>
+  <summary>Data Challenge 4: Planned for March 2026</summary>
+</details>
+
+<details>
+  <summary>Data Challenge 5: Planned for March 2027</summary>
+  
+  - Final release before launch :rocket:!
+
 </details>
 
 ## Citing 
