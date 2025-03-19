@@ -288,7 +288,7 @@ The shape of the line in each spatial bin takes into account the turbulence of t
 5. Extract F(26Al)/F(60Fe) ratio and its uncertainty
    
 ### Ti44
-The tools needed to complete these challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
+The tools needed to complete these challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
    
 **Data Files:** <br /> 
 Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
@@ -300,14 +300,15 @@ CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-In all 4 scenarios, bulk center of motion is at rest. Doppler broadening is limited to 1000 km/s, as otherwise, when combined with the Doppler shifts of clumps, the signal will fall quite outside the DC2 simulated response region of 1143-1171 keV.
+The five simulated models are meant to test the spectral features recovery capabilities of COSI with a low-resolution response file. In DC2, the imaging capabilities (using a vanilla Richardson-Lucy algorithm) of point-like sources was tested by placing four distinct sources at various locations on the sky (as an aside, advanced imaging methods have been developed since DC2 and can be tested on the other Data Challenges). Here, we restrict all our models to the location of Cas A whose flux and spectra have been studied thoroughly ([Grefenstette+14](https://doi.org/10.1038/nature12997), [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19), [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877), [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536)). The symmetric model provides the base case where we simulate a single Gaussian signal with 10x the flux value provided by [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877) and [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536). Note that the user can randomly sample 10% of the data to obtain a true-flux simulation.
+The unresolved, partially resolved and fully resolved simulations consider a SNR with two 44Ti clumps whose bulk center of motion is at rest. The doppler broadening of each clump is the same across the three models. One clump contains 2/3 of the total 44Ti yield and doppler shifted towards the observer (blueshifted), i.e., a signal with peak energy higher than 1157 keV. The other clump ontains 1/3 of total 44Ti yield Doppler shifted away from the observer (redshifted) whose energy is lower than 1157 keV. The goal is to detect a statistically significant deviation from the Gaussian model in each of the three cases.
+Additionally, [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19) (G16) have presented the only spatially-resolved positive detection of 44Ti. The G16 model simulates this complex distribution of clumps. As flux results from the lower energy 68 and 78 keV lines have been systematically lower than observations at 1157 keV by a factor of 1.66x, we enhance the flux by the same factor to normalize our Cas A simulations. The goal remains the same: to detect a statistically significant deviation from the Gaussian model.
 
-In asymmetric scenarios, Clump 1: Contains 2/3 of total 44Ti yield Doppler shifted towards from the observer (blueshifted). Has peak energy higher than 1157 keV. Clump 2: Contains 1/3 of total 44Ti yield Doppler shifted away from the observer (redshifted). Has peak energy lower than 1157 keV.
-
-All spectra follow simple Gaussian distributions. The flux is taken as the value between $2.1 \times 10^{-5} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$ in Grefenstette et al 2015 and $3.5 \times 10^{-5} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$  in Siegert et al 2015.
+Note that this is an advanced data challenge that will inform the required resolution for the response file. COSIPy does not support such advanced spectral analysis methods yet.
 
 **Goals:** <br />
-1. What are the goals?
+1. Detect deviations from a Gaussian spectrum for the four non-symmetric models.
+2. Quantify the deviations with a suitable statistical metric.
 
 ### Fe60 Cygnus Region
 
