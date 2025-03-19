@@ -342,8 +342,7 @@ This is the description of the model of the diffuse emission of the 1173 keV and
 **Goals:** <br />
 1. Detection of the diffuse emission.
 2. Extraction of the F(26Al)/F(60Fe) ratio and its uncertainty.
-
-  
+ 
 </details>
 
 <details>
@@ -618,6 +617,8 @@ Previous, current, and planned releases are summarized below (click to expand):
   <summary>Data Challenge 4: Planned for March 2026</summary>
 </details>
 
+  - Under development following the release of DC3. 
+  
 <details>
   <summary>Data Challenge 5: Planned for March 2027</summary>
   
