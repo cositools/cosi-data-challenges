@@ -554,7 +554,7 @@ The items listed here are some of the priorities for DC4 development. These can 
 - **The tools still need to be stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
 
 ## Releases
-Click to expand summaries below:
+Previous, current, and planned releases are summarized below (click to expand):
 
 <details>
   <summary>Data Challenge 1 (<a href="https://github.com/cositools/cosi-data-challenge-1">link</a>): March 2023</summary>
