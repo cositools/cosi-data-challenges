@@ -615,10 +615,11 @@ Previous, current, and planned releases are summarized below (click to expand):
 
 <details>
   <summary>Data Challenge 4: Planned for March 2026</summary>
+ 
+  - Currently under development following the release of DC3. 
+
 </details>
 
-  - Under development following the release of DC3. 
-  
 <details>
   <summary>Data Challenge 5: Planned for March 2027</summary>
   
