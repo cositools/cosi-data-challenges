@@ -16,16 +16,10 @@
 - [Getting Started](#getting-started)
 - [System Requirements](#system-requirements)
 - [Getting Help](#getting-help)
-- [Computing Resources](#computing-resources)
-- [Simulation Tools](#simulation-tools)
-- [Releases](#releases)
-- [Summary of Current and Past Challenges](#summary-of-current-and-past-challenges)
-- [Backgrounds](#backgrounds)
-- [Earth Occultation](#earth-occultation)
-- [Polarization](#polarization)
 - [Reference Guides](#reference-guides)
 - [Data Challenges](#data-challenges)
 - [Known Caveats and Limitations](#known-caveats-and-limitations)
+- [Releases](#releases)
 - [Citing](#citing)
 
 ## Introduction
@@ -41,7 +35,7 @@ Welcome to the third COSI Data Challenge (DC3)! The COSI Data Challenges are rel
 ## Getting Started 
 The only software requirement for DC3 is [cosipy](https://github.com/cositools/cosipy). A general introduction into cosipy, including installation instructions, can be found in the [cosipy-intro](cosipy-intro/README.md) directory. For a general introduction into analyzing data from Compton telescopes see [Compton-telescope-data-analysis-intro](Compton-telescope-data-analysis-intro/README.md). Note that cosipy is part of the larger COSITools, which is a broad collection of COSI data analysis tools, documentation, and verification data sets. COSITools can be installed by following the installation instructions [here](https://github.com/cositools/cosi-setup). This also includes MEGAlib, which is the main software program used for running simulations. However, unless you need MEGAlib and/or COSITools for other reasons, it's highly recommended to just install cosipy.    
 
-This year's Data Challenge is based on 3 months of exposure time, for an equatorial orbit at an altitude of 530 km, with a pointing that rocks between $\pm 20^\circ$ from the Earth zenith. The simulated data products are provided in Fits file format, and are hosted on Wasabi. Details of the simulations, simulated data, and information for accessing the data products can be found in the [data-products](data-products/README.md) directory. 
+This year's Data Challenge is based on 3 months of exposure time, for an equatorial orbit at an altitude of 530 km, with a pointing that rocks between $\pm 20^\circ$ from the Earth zenith. The simulated data products are provided in FITS file format, and are hosted on Wasabi. Details of the simulations, simulated data, and information for accessing the data products can be found in the [data-products](data-products/README.md) directory. 
 
 The input models and challenges for DC3 were provided by the COSI science teams. There are challenges for the different science groups: GRBs, Positrons, Nucleosynthesis, Galactic, Extragalactic, and Dark Matter. These are described in detail in the [Data Challenges](#data-challenges) section below.  
 
@@ -53,103 +47,12 @@ In summary, to get started with DC3, install cosipy, familiarize yourself with t
 One of our goals in developing cosipy is to make it easily accesible to all users. **All of the Data Challenges should be doable on a laptop with at least 16 GB of RAM**. We are still working on optimizing the code, and so please let us know if you are running into memory issues.
 
 ## Getting Help
-Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) git repository if you have issues with the code. If you have general feedback, or need further assistance, please reach out to the COSI Data Challenge team lead, Chris Karwin ([christopher.m.karwin@nasa.gov](mailto:christopher.m.karwin@nasa.gov)), the cosipy implementation lead, Israel Martinez-Castellanos ([israel.martinezcastellanos@nasa.gov](israel.martinezcastellanos@nasa.gov)), and the pipeline development lead Carolyn Kierans ([carolyn.a.kierans@nasa.gov](carolyn.a.kierans@nasa.gov)).
-
-## Computing Resources
-<div align="center">
-<img width="1050"  src="static/clusters.png">
-<div align="left">
-  
-The simulations for the COSI Data Challenges are run on high performance computing clusters. Most notably, we have made extensive use of NASA's [Discover cluster](https://www.nccs.nasa.gov/systems/discover), the [MOGON](https://mogonwiki.zdv.uni-mainz.de/docs/introduction/what_is_mogon) cluster in Mainz, and Clemson University's [Palmetto](https://docs.rcd.clemson.edu/palmetto/) cluster. We used 1000 parallel cores for most of the source simulations, which allowed us to simulate them in a fairly short time (typically less than ~10 minutes of total wall time per source). The background simulations are generally much more computationally intensive, with the extreme case being the SAA component, which required roughly 1.5M CPUh to simulate. The other background components required ~180k CPUh each.  
-
-## Simulation Tools
-The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Python-based COSI simulation pipepline, [cosi-sim](https://github.com/cositools/cosi-sim). Details regarding the specific MEGAlib versions and configuration files can be found in each respective Data Challenge release. Model inputs for the simulations and the corresponding Data Challenges come from the COSI science team. All of the models used for past Data Challenges can be found in the source library of the cosi-sim tools ([link](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)).  
-
-## Releases
-- [Data Challenge 1](https://github.com/cositools/cosi-data-challenge-1): March 2023
-- [Data Challenge 2](https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0): March 2024
-- Data Challenge 3: April 2025 **(latest release)**
-- Data Challenge 4: Planned for March 2026
-- Data Challenge 5: Planned for March 2027 (final release before launch :rocket:!)
-
-## Summary of Current and Past Challenges 
-
-Click to expand summaries below:
-
-<details>
-  <summary>Data Challenge 1</summary>
-
-  - Focused on the 2016 COSI Balloon flight.
-  - Release includes real flight data for the Crab.
-  - Main goal is to learn the fundamentals of analyzing Compton data with COSI.
-  - The analysis tools used for DC1 are only preliminary (referred to as cosipy classic).
-    - Developed by Thomas Siegert for analysis of the 2016 balloon data. 
-  - Contains 3 straightforward examples of COSI’s science goals:
-    - Extracting energy spectra from the Crab, Cen A, Cygnus X-1, and Vela.
-    - Imaging bright point sources, such as the Crab and Cygnus X-1.
-    - Imaging diffuse emission from the positron-electron annihilation 511 keV and Al-26 1.8 MeV gamma-ray lines.  
-</details>
-
-<details>
-  <summary>Data Challenge 2</summary>
-  
-  - Focused on COSI SMEX mission.
-  - First (alpha) release of cosipy. 
-  - Data challenges for all the main science groups (none for dark matter and solar).
-  - All models and challenges provided by respective COSI science teams.
-  - Uses 3 months of observations, for an equatorial orbit at 550 km, with a zenith pointing. 
-  - All BG components are included, except for SAA passage (i.e. trapped cosmic rays).
-    - BG also includes time variability from changing geomagnetic cutoff.
-  - We simulated 12 background components, and 30 unique sources, running 49 different source simulations in total (using multiple models for some of the sources).
-  - Contains 7 main tutorials demonstrating all the tools/methods needed for completing the challenges, included as part of the cosipy release:
-    - dataIO
-    - GRB localization
-    - GRB spectral fit
-    - Crab spectral fit
-    - 511 spectral fit
-    - Crab imaging
-    - 511 imaging  
-</details>
-
-<details>
-  <summary>Data Challenge 3</summary>
-  
- - Focused on COSI SMEX mission.
-  - Data challenges for all the main science groups (including dark matter), covering all of COSI's primary science objectives. 
-  - All models and challenges provided by respective COSI science teams.
-  - Used 3 months of observations, for an equatorial orbit at 530 km.
-  - Simulations include rocking of instrument:
-    - Pointing changes between +/- 22 degrees every 12 hrs, with 8 minute transition time. 
-  - Used detailed COSI SMEX mass model.
-  - Simulated all background components in low-Earth orbit, including variability from geomagnetic cutoff, long-term buildup, and full SAA passage.
-    - Background also includes the Galactic diffuse continuum for the first time. 
-  - New methods in both MEGAlib and cosipy to account for Earth occultation with a non-zenith pointing. 
-  - First time including polarization.
-  - Numerous improvements to cosipy:
-    - First version of source injector.
-    - New implementation of Earth occultation in point source response.
-    - First polarization tools.
-    - New methods to estimate the background for continuum sources and line sources.
-    - Refinements and further developments of imaging class.
-    - New extended source response class. 
-</details>
-
-## Backgrounds
-In general, observations in the MeV band are hindered by high backgrounds (both instrumental and astrophysical). In order to ensure that COSI accomplishes its main science goals, it is therefore crucial to have a firm understanding of these backgrounds. DC3 includes all of the background components. Compared to the background estimates from DC2, we have now included the full SAA passage, as well as the Galacic diffuse continuum emission. Further details can be found in the [backgrounds](backgrounds/README.md) directory. 
-
-For analyzing data in DC3, the starting point is to model the backgrounds using the actual simulated backgrounds themselves. This is the ideal case, where the backgrounds are perfectly known, which of course is not very realistic. The next step is to estimate the backgrounds. **With DC3 we have new methods to estimate the background for both line and continuum sources**. The background estimation tool for line emission can be used for both point sources and extended sources. An example tutorial can be found in the [line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) notebook. The background estimation tool for continuum emission is currently only available for point sources. An example tutorial is available in the [continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) notebook. We stress that both of these background estimation algorithms are only first versions, and further development and testing is still needed. More details are provided in the respective example tutorials. 
-
-The available background files are listed in the [data-products](data-products/README.md) directory. We provide a file with the total background, as well as separate files for the individual background components (as details in the [backgrounds](backgrounds/README.md) directory). 
-
-## Earth Occultation
-The Earth blocks a significant portion of the sky for satellites in low-Earth orbit, referred to as Earth occultation. It is important to account for this when simulating observations and performing data analysis. In order to implement this for the DC3 simulations we added new functionality to MEGAlib (*develop-cosi* branch), as detailed in the [earth-occultation](earth-occultation/README.md) directory. **These new methods now allow for simulating instruments with non-zenith pointings.** We also added new methods in cosipy to account for Earth occultation in the data analysis. 
-
-## Polarization
-Polarimetry is a key aspect of COSI's primary science goals. With DC3 we release the first version of our polarization tools in cosipy. We also added new functionality in MEGAlib to define polarization in Galactic coordinates. This allows for simulating polarized sources together with the instrument's orbit. A general introduction into Compton polarimetry can be found in the [polarization](polarization/README.md) directory.
+Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) git repository if you have issues with the code. If you have general feedback, or need further assistance, please reach out to the COSI Data Challenges team lead, Chris Karwin ([christopher.m.karwin@nasa.gov](mailto:christopher.m.karwin@nasa.gov)), the cosipy implementation lead, Israel Martinez-Castellanos ([israel.martinezcastellanos@nasa.gov](israel.martinezcastellanos@nasa.gov)), and the pipeline development lead Carolyn Kierans ([carolyn.a.kierans@nasa.gov](carolyn.a.kierans@nasa.gov)).
 
 ## Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro/README.md)**
-- **[Introduction to cosipy](cosipy-intro/README.md)** 
+- **[Introduction to cosipy](cosipy-intro/README.md)**
+- **[Simplified 2D tutorials](https://github.com/israelmcmc/gammaraytoys/tree/main/docs/tutorials)** (from the **[Gamma-ray Toys](https://github.com/israelmcmc/gammaraytoys/tree/main)** repository)
 - **[Summary of background simulations](backgrounds/README.md)**
 - **[Dealing with Earth occultation](earth-occultation/README.md)** 
 - **[Introduction to polarization](polarization/README.md)** 
@@ -172,7 +75,7 @@ Example 12: [Line background estimation](https://github.com/cositools/cosipy/blo
 
 If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md).
 
-As a very first step, try working through some of the example notebooks. It is highly recommended to start with the dataIO notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described in the links below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in exploring other models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, as well as the bottom of the [cosipy-intro](cosipy-intro/README.md), which outlines some of the priority areas for the next stages of development. 
+As a very first step, try working through some of the example notebooks. It is highly recommended to start with the dataIO notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in exploring other models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, as well as the bottom of the [cosipy-intro](cosipy-intro/README.md), which outlines some of the priority areas for the next stages of development. 
 
 All input models used for the simulations can be found in the DC3 source library of the COSI simulation pipeline, available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3). This includes all the information about the injected sources, and it can be used for checking the results of the data challenges. 
 
@@ -182,8 +85,10 @@ DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori  <br />
 DC3_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.ori  <br />
 The 1 second binning may be optimal for analyzing transients on short time scales, but generally the 15 second binning should be sufficient and is considered the default. 
 
-**Background Files:** <br />
-There are a few different options for modeling the background. The staring point is to use the ideal case, where the background model in the analysis is the same as the simulated background. We have provided a file with the total background, as well as files for the individual background components. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. albedo photons), and then move on to the total background after everything is working. A more realistic estimate of the uncertainty on the background modeling can be achieved by using one of the background estimation tools (see the [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) and [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) examples). However, we caution that these tools are in thier very early stages, and they still require further testing and development.  
+**Background Modeling:** <br />
+DC3 includes all of the background components. Compared to the background estimates from DC2, we have now included the full SAA passage, as well as the Galacic diffuse continuum emission. Further details of the background models and simulations be found in the [backgrounds](backgrounds/README.md) directory. The available background files are listed in the [data-products](data-products/README.md) directory. We provide a file with the total background, as well as separate files for the individual background components.
+
+For analyzing data in DC3, the starting point is to model the backgrounds using the actual simulated backgrounds themselves. This is the ideal case, where the backgrounds are perfectly known, which of course is not very realistic. To simplify the analysis, it is sometimes helpful to start with just a single background component (e.g. albedo photons), and then move on to the total background after everything is working. The next step is to estimate the backgrounds. **With DC3 we have new methods to estimate the background for both line and continuum sources**. The background estimation tool for line emission can be used for both point sources and extended sources. An example tutorial can be found in the [line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) notebook. The background estimation tool for continuum emission is currently only available for point sources. An example tutorial is available in the [continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) notebook. We stress that both of these background estimation algorithms are only first versions, and further development and testing is still needed. More details are provided in the respective example tutorials. 
 
 **Data Challenges for the different science topics can be found below (click to expand):**
 
@@ -343,7 +248,7 @@ The spectral distribution takes into account the annihilation line and the ortho
   <summary>Nucleosynthesis</summary>
   
 ## Nucleosynthesis Data Challenges
-The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
+The tools needed to complete most of these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. For the Ti44 data challenge you will need the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
 
 ### Al26 Cygnus Region
    
@@ -383,7 +288,6 @@ The shape of the line in each spatial bin takes into account the turbulence of t
 5. Extract F(26Al)/F(60Fe) ratio and its uncertainty
    
 ### Ti44
-The tools needed to complete these challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
    
 **Data Files:** <br /> 
 Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.h5.gz <br />
@@ -395,14 +299,15 @@ CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-In all 4 scenarios, bulk center of motion is at rest. Doppler broadening is limited to 1000 km/s, as otherwise, when combined with the Doppler shifts of clumps, the signal will fall quite outside the DC2 simulated response region of 1143-1171 keV.
+The five simulated models are meant to test the spectral features recovery capabilities of COSI with a low-resolution response file. In DC2, the imaging capabilities (using a vanilla Richardson-Lucy algorithm) of point-like sources was tested by placing four distinct sources at various locations on the sky (as an aside, advanced imaging methods have been developed since DC2 and can be tested on the other Data Challenges). Here, we restrict all our models to the location of Cas A whose flux and spectra have been studied thoroughly ([Grefenstette+14](https://doi.org/10.1038/nature12997), [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19), [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877), [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536)). The symmetric model provides the base case where we simulate a single Gaussian signal with 10x the flux value provided by [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877) and [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536). Note that the user can randomly sample 10% of the data to obtain a true-flux simulation.
+The unresolved, partially resolved and fully resolved simulations consider a SNR with two 44Ti clumps whose bulk center of motion is at rest. The doppler broadening of each clump is the same across the three models. One clump contains 2/3 of the total 44Ti yield and doppler shifted towards the observer (blueshifted), i.e., a signal with peak energy higher than 1157 keV. The other clump ontains 1/3 of total 44Ti yield Doppler shifted away from the observer (redshifted) whose energy is lower than 1157 keV. The goal is to detect a statistically significant deviation from the Gaussian model in each of the three cases.
+Additionally, [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19) (G16) have presented the only spatially-resolved positive detection of 44Ti. The G16 model simulates this complex distribution of clumps. As flux results from the lower energy 68 and 78 keV lines have been systematically lower than observations at 1157 keV by a factor of 1.66x, we enhance the flux by the same factor to normalize our Cas A simulations. The goal remains the same: to detect a statistically significant deviation from the Gaussian model.
 
-In asymmetric scenarios, Clump 1: Contains 2/3 of total 44Ti yield Doppler shifted towards from the observer (blueshifted). Has peak energy higher than 1157 keV. Clump 2: Contains 1/3 of total 44Ti yield Doppler shifted away from the observer (redshifted). Has peak energy lower than 1157 keV.
-
-All spectra follow simple Gaussian distributions. The flux is taken as the value between $2.1 \times 10^{-5} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$ in Grefenstette et al 2015 and $3.5 \times 10^{-5} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$  in Siegert et al 2015.
+Note that this is an advanced data challenge that will inform the required resolution for the response file. COSIPy does not support such advanced spectral analysis methods yet.
 
 **Goals:** <br />
-1. What are the goals?
+1. Detect deviations from a Gaussian spectrum for the four non-symmetric models.
+2. Quantify the deviations with a suitable statistical metric.
 
 ### Fe60 Cygnus Region
 
@@ -437,8 +342,7 @@ This is the description of the model of the diffuse emission of the 1173 keV and
 **Goals:** <br />
 1. Detection of the diffuse emission.
 2. Extraction of the F(26Al)/F(60Fe) ratio and its uncertainty.
-
-  
+ 
 </details>
 
 <details>
@@ -621,15 +525,13 @@ The spectral data is for 3C 279 high, which represent the high state of the sour
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
  
 **Data Files:** <br />
-eeg_ISO_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 eeg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 eeg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-gg_ISO_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-Photon spectra from annihilating dark matter (DM) in our galaxy. We consider cases where two DM particles annihilate into either two photons (gg) or an e+e− pair with a FSR photon (eeg), assuming DM follows an NFW or Burkert profile. The profile parameters are taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. We assume a DM mass of 3 MeV and an annihilation cross section of 1e-29 cm3/s.
+Photon spectra from annihilating dark matter (DM) in our galaxy. We consider cases where two DM particles annihilate into either two photons (gg) or an e+e− pair with a FSR photon (eeg), assuming DM follows an NFW or Burkert profile. The profile parameters are taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. We assume a DM mass of 3 MeV and an annihilation cross section of 1e-30 cm3/s.
 
 **Goals:** <br />
 1. Obtaining energy spectra
@@ -649,6 +551,82 @@ The items listed here are some of the priorities for DC4 development. These can 
 - **The background estimation tools need to be further tested and developed.** With DC3 we have provided first versions for estimating continuum and line backgrounds. These methods need to be tested, stressed, and further developed. Additionally, we still need background estimation tools for transient sources.
 - **The way in which parameters are configured needs to be refined, and callable scripts need to be added.** By callable scripts we are referring to command-line options that will perform common task, such as producing light curves and spectra.  
 - **The tools still need to be stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
+
+## Releases
+Previous, current, and planned releases are summarized below (click to expand):
+
+<details>
+  <summary>Data Challenge 1 (<a href="https://github.com/cositools/cosi-data-challenge-1">link</a>): March 2023</summary>
+
+  - Focused on the 2016 COSI Balloon flight.
+  - Release includes real flight data for the Crab.
+  - Main goal is to learn the fundamentals of analyzing Compton data with COSI.
+  - The analysis tools used for DC1 are only preliminary (referred to as cosipy classic).
+    - Developed by Thomas Siegert for analysis of the 2016 balloon data. 
+  - Contains 3 straightforward examples of COSI’s science goals:
+    - Extracting energy spectra from the Crab, Cen A, Cygnus X-1, and Vela.
+    - Imaging bright point sources, such as the Crab and Cygnus X-1.
+    - Imaging diffuse emission from the positron-electron annihilation 511 keV and Al-26 1.8 MeV gamma-ray lines.  
+</details>
+
+<details>
+  <summary>Data Challenge 2 (<a href="https://github.com/cositools/cosi-data-challenges/tree/data_challenge_2.0">link</a>): March 2024</summary>
   
+  - Focused on COSI SMEX mission.
+  - First (alpha) release of cosipy. 
+  - Data challenges for all the main science groups (none for dark matter and solar).
+  - All models and challenges provided by respective COSI science teams.
+  - Uses 3 months of observations, for an equatorial orbit at 550 km, with a zenith pointing. 
+  - All background components are included, except for SAA passage (i.e. trapped cosmic rays).
+    - Background also includes time variability from changing geomagnetic cutoff.
+  - We simulated 12 background components, and 30 unique sources, running 49 different source simulations in total (using multiple models for some of the sources).
+  - Contains 7 main tutorials demonstrating all the tools/methods needed for completing the challenges, included as part of the cosipy release:
+    - dataIO
+    - GRB localization
+    - GRB spectral fit
+    - Crab spectral fit
+    - 511 spectral fit
+    - Crab imaging
+    - 511 imaging  
+</details>
+
+<details>
+  <summary>Data Challenge 3 (current release): April 2025</summary>
+  
+ - Focused on COSI SMEX mission.
+  - Data challenges for all the main science groups (including dark matter), covering all of COSI's primary science objectives. 
+  - All models and challenges provided by respective COSI science teams.
+  - Used 3 months of observations, for an equatorial orbit at 530 km.
+  - Simulations include rocking of instrument:
+    - Pointing changes between +/- 22 degrees every 12 hrs, with 8 minute transition time. 
+  - Used detailed COSI SMEX mass model.
+  - Simulated all background components in low-Earth orbit, including variability from geomagnetic cutoff, long-term buildup, and full SAA passage.
+    - Background also includes the Galactic diffuse continuum for the first time. 
+  - New methods in both MEGAlib and cosipy to account for Earth occultation with a non-zenith pointing. 
+  - First time including polarization.
+  - Restructuring and refinement of the cosi-data-challenges repository. 
+  - Numerous improvements to cosipy:
+    - First version of source injector.
+    - New implementation of Earth occultation in point source response.
+    - First polarization tools.
+    - New methods to estimate the background for continuum sources and line sources.
+    - Refinements and further developments of imaging class.
+    - New extended source response class. 
+</details>
+
+<details>
+  <summary>Data Challenge 4: Planned for March 2026</summary>
+ 
+  - Currently under development following the release of DC3. 
+
+</details>
+
+<details>
+  <summary>Data Challenge 5: Planned for March 2027</summary>
+  
+  - Final release before launch :rocket:!
+
+</details>
+
 ## Citing 
 If you make use of any of the data products from the COSI Data Challenges in a publication, please provide a link to this page and cite [Zoglauer+23](https://arxiv.org/abs/2102.13158) and [Martinez-Castellanos+23](https://pos.sissa.it/444/858). 
