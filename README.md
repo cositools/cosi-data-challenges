@@ -75,7 +75,7 @@ Example 12: [Line background estimation](https://github.com/cositools/cosipy/blo
 
 If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md).
 
-As a very first step, try working through some of the example notebooks. It is highly recommended to start with the dataIO notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described in the links below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in exploring other models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, as well as the bottom of the [cosipy-intro](cosipy-intro/README.md), which outlines some of the priority areas for the next stages of development. 
+As a very first step, try working through some of the example notebooks. It is highly recommended to start with the dataIO notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in exploring other models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, as well as the bottom of the [cosipy-intro](cosipy-intro/README.md), which outlines some of the priority areas for the next stages of development. 
 
 All input models used for the simulations can be found in the DC3 source library of the COSI simulation pipeline, available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3). This includes all the information about the injected sources, and it can be used for checking the results of the data challenges. 
 
@@ -578,8 +578,8 @@ Previous, current, and planned releases are summarized below (click to expand):
   - Data challenges for all the main science groups (none for dark matter and solar).
   - All models and challenges provided by respective COSI science teams.
   - Uses 3 months of observations, for an equatorial orbit at 550 km, with a zenith pointing. 
-  - All BG components are included, except for SAA passage (i.e. trapped cosmic rays).
-    - BG also includes time variability from changing geomagnetic cutoff.
+  - All background components are included, except for SAA passage (i.e. trapped cosmic rays).
+    - Background also includes time variability from changing geomagnetic cutoff.
   - We simulated 12 background components, and 30 unique sources, running 49 different source simulations in total (using multiple models for some of the sources).
   - Contains 7 main tutorials demonstrating all the tools/methods needed for completing the challenges, included as part of the cosipy release:
     - dataIO
@@ -605,6 +605,7 @@ Previous, current, and planned releases are summarized below (click to expand):
     - Background also includes the Galactic diffuse continuum for the first time. 
   - New methods in both MEGAlib and cosipy to account for Earth occultation with a non-zenith pointing. 
   - First time including polarization.
+  - Restructuring and refinement of the cosi-data-challenges repository. 
   - Numerous improvements to cosipy:
     - First version of source injector.
     - New implementation of Earth occultation in point source response.
