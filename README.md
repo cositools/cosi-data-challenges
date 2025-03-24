@@ -410,6 +410,31 @@ The two spectral models for Cyg X1 are best fit eqpair  models of time averaged 
 1. Check detection sensitivity in soft state
 2. Test how well COSI can monitor for spectral transitions
 
+### Cygnus X3
+   
+**Data Files:** <br />
+cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**Input Models:**  <br />
+There are 6 different spectral models for Cyg X3, which are best fit eqpair models of time averaged INTEGRAL data from [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
+We would like to assume a succession of the different states (in this order and for the specified approximate durations):
+
+<pre>
+Percent of time of observed state    ->    time in days (for a 2 year mission)
+Quiescent:  6.                                    47
+Transition  46.                                   335
+FHXR:       10.                                   73
+FIM:        22.                                   161
+FSXR:       54.                                   28
+Hypersoft:  12.                                   86
+</pre>
+
+Since DC3 simulates 3 months of exposure, we reduce the time spent in each state accordingly and
+increase the fluxes by a factor of 7.9 as to obtain the same total number of photons as we would in 2 yrs of observations. NB: The background rates should also be scaled up in the same way!
+
+**Goals:** <br />
+1. Check if COSI can achieve a decent measurement of the average spectrum over its lifetime, and if so, check if we can detect the spectral changes on shorter time scales.
+   
 ### 1E1740.7-2942
    
 **Data Files:** <br />
@@ -437,7 +462,6 @@ The spectral models for MAXI J1820+070 and MAXI J1348-630 are scans of published
 
 **Goals:** <br />
 1. Test COSI's ability to measure spectra and polarization of transient sources.
-
   
 </details>
 
