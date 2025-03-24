@@ -2,7 +2,7 @@
 
 Polarization, which describes the alignment of photons' electric field vectors, can be used to probe the emission processes of astrophysical sources. As a Compton telescope, *COSI* is inherently sensitive to gamma-ray linear polarization. Data Challenge 3 includes a first version of *COSI*'s polarization analysis software, including two approaches: the azimuthal scattering angle distribution (ASAD) method and the Stokes parameters method.        
 
-The polarization analysis tools will be made more sensitive and comprehensive in future Data Challenges, including a maximum likelihood method using forward-folding.        
+The polarization analysis tools will be made more sensitive and comprehensive in future Data Challenges, including a maximum likelihood method using forward-folding. See [Tomsick et al. 2012](https://ui.adsabs.harvard.edu/abs/2022hxga.book...73T/abstract) for a more in-depth overview of polarimetry with *COSI*.        
 
 ## Compton Polarimetry       
 
@@ -92,7 +92,7 @@ This principle is particularly important when addressing spurious polarization i
 $$\large Q_{src} = Q_{obs} - Q_{sim}, ~~~~ U_{src} = U_{obs} - Q_{sim},$$
 
 ### Photon-based pseudo-Stokes parameters
-In implementing this pipeline, we adopt the formalism outlined in [Kislat et al, 2015](https://arxiv.org/abs/1409.6214) and follow the computational framework provided by the _ixpeobssim_ software, as described in ([Baldini et al 2023](https://arxiv.org/abs/2203.06384)).
+In implementing this pipeline, we adopt the formalism outlined in [Kislat et al., 2015](https://arxiv.org/abs/1409.6214) and follow the computational framework provided by the _ixpeobssim_ software, as described in ([Baldini et al., 2023](https://arxiv.org/abs/2203.06384)).
 
 The Stokes parameters $\large I$, $\large Q$, and $\large U$ are derived from the measured azimuthal scattering angles $\large \eta'$ of incoming photons. The modulation curve, representing the distribution of these angles, is described by
 $$\large N(\eta') = A[1+\mu cos(2(\eta'-\eta_0))]$$
