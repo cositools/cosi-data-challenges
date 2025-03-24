@@ -85,8 +85,8 @@ This validates the light curve models we used as input for the simulations.
 
 ### Activation Backgrounds
 
-We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. As a first approach, the line energies in the total spectrum are determined manually using matplotlib. A more robust method for the future will be to fit each line with a Gaussian, with its width constrained at the instrumental resolution. Almost all the lines are identified also thanks to the identification of SPI/INTEGRAL BG lines in [Weidenspointner+03](https://hal.in2p3.fr/in2p3-00022236v1/file/in2p3-00022236.pdf) and [Diehl+18](https://ui.adsabs.harvard.edu/abs/2018A%26A...611A..12D/abstract). The table below summarizes most of the lines we can identify in the total spectrum. 
+We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. A distribution of all the isotopes created by the Primary protons is shown below. Some stable elements are writtend in red.  
 
 <p align="center">
-<img width="550"  src="images/table_of_identified_lines.png">
+<img width="550"  src="images/ProtonsActivation.png">
 </p>
