@@ -609,8 +609,9 @@ Previous, current, and planned releases are summarized below (click to expand):
   - All background components are included, except for SAA passage (i.e. trapped cosmic rays).
     - Background also includes time variability from changing geomagnetic cutoff.
   - We simulated 12 background components, and 30 unique sources, running 49 different source simulations in total (using multiple models for some of the sources).
-  - Contains 7 main tutorials demonstrating all the tools/methods needed for completing the challenges, included as part of the cosipy release:
+  - Contains 8 main tutorials demonstrating all the tools/methods needed for completing the challenges, included as part of the cosipy release:
     - dataIO
+    - detector response
     - GRB localization
     - GRB spectral fit
     - Crab spectral fit
@@ -633,14 +634,21 @@ Previous, current, and planned releases are summarized below (click to expand):
     - Background also includes the Galactic diffuse continuum for the first time. 
   - New methods in both MEGAlib and cosipy to account for Earth occultation with a non-zenith pointing. 
   - First time including polarization.
-  - Restructuring and refinement of the cosi-data-challenges repository. 
+  - Restructuring and refinement of the cosi-data-challenges repository.
+  - Simulated 43 unique sources, running 71 different source simulations in total (using multiple models for some of the sources).
   - Numerous improvements to cosipy:
     - First version of source injector.
     - New implementation of Earth occultation in point source response.
     - First polarization tools.
     - New methods to estimate the background for continuum sources and line sources.
     - Refinements and further developments of imaging class.
-    - New extended source response class. 
+    - New extended source response class.
+  - Contains 5 new tutorials (in addition to the ones released with DC2) demonstrating the tools/methods needed for completing the challenges, included as part of the cosipy release:
+    - Source injector
+    - TS maps
+    - Polarization (ASAD method)
+    - Continuum background estimation
+    - Line background estimation  
 </details>
 
 <details>
