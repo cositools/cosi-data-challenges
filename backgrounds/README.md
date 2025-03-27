@@ -24,7 +24,7 @@ The spectrum and light curve of the trapped protons are generated using the mode
 <img width="1000"  src="images/SAAspectrum.png">
 </p>
 
-The corresponding light curve for a few days of orbit is shown in the figure below. The variations seen here result from differences in how COSI crosses the SAA, caused by changes in its orbit over a 24-hour period.
+The corresponding light curve for a few days of orbit is shown in the figure below. This light curve is used as input for MEGAlib and it allows us to simulate the passage of the satellite through the SAA. The variations seen here result from differences in how COSI crosses the SAA, caused by changes in its orbit over a 24-hour period.
 
 <p align="center">
 <img width="550"  src="images/SAALC.png">
