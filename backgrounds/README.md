@@ -1,7 +1,7 @@
 # Backgrounds
 
 ### Executive Summary
-We employed MEGAlib to simululate 3 months of instrumental and astrophysical backgrounds (BGs), using an equatorial orbit at 530 km with a rocking of 22 degree every 12 hours. The astrophysical BGs include albedo emission, cosmic photons (i.e. the extragalactic gamma-ray background), and the Galactic diffuse continuum emission. The instrumental backgrounds arise from cosmic rays bombarding the instrument, and there is both a prompt component and a delayed component. The former is due to cosmic ray particles directly triggering the instrument. The latter is due to activation of the irradiated materials, which subsequently decay and emit photons that contribute to the BG emission. The instrumental BGs arise mainly from primary protons, primary alpha particles, atmospheric neutrons, primary electrons, primary positrons, and secondary protons electrons and positrons, all of which are included in DC3. In order to simulate the activation, MEGAlib keeps in memory each isotope created during the simulation until it decays (the expected decay time is computed according to the isotope lifetime and the event is rejected if this time is longer than the simulation time). This method accurately simulates the build-up of the activation during the 3 months of orbit. Our background simulations account for the time-dependent flux variation due to the changing geomagnetic cutoff along the orbit. Another important BG for COSI will be due to passage through the Southern Atlantic Anomoly (SAA). The SAA component is included in DC3 and will be describe below. Spectra and lightcurves for the DC3 BG components are shown below. Further details about the BG simulations are provided in the sections that follow. 
+We employed MEGAlib to simululate 3 months of instrumental and astrophysical backgrounds (BGs), using an equatorial orbit at 530 km with a rocking of 22 degree every 12 hours. The astrophysical BGs include albedo emission, cosmic photons (i.e. the extragalactic gamma-ray background), and the Galactic diffuse continuum emission. The instrumental backgrounds arise from cosmic rays bombarding the instrument, and there is both a prompt component and a delayed component. The former is due to cosmic ray particles directly triggering the instrument. The latter is due to activation of the irradiated materials, which subsequently decay and emit photons that contribute to the BG emission. The instrumental BGs arise mainly from primary protons, primary alpha particles, atmospheric neutrons, primary electrons, primary positrons, and secondary protons, electrons, and positrons, all of which are included in DC3. In order to simulate the activation, MEGAlib keeps in memory each isotope created during the simulation until it decays (the expected decay time is computed according to the isotope lifetime and the event is rejected if this time is longer than the simulation time). This method accurately simulates the build-up of the activation during the 3 months of orbit. Our background simulations account for the time-dependent flux variation due to the changing geomagnetic cutoff along the orbit. Another important BG for COSI will be due to passage through the Southern Atlantic Anomoly (SAA). The SAA component is included in DC3 and will be described below. Spectra and lightcurves for the DC3 BG components are shown below. Further details about the BG simulations are provided in the sections that follow. 
 
 <p align="center">
 <img width="475"  src="images/DC3CO_LC.png"> 
@@ -18,17 +18,23 @@ The input spectra are generated using the model from [Cumani](https://link.sprin
 </p>
 
 ### South Atlantic Anomaly (SAA)
-The spectrum and light curve of the trapped protons are generated using the model [IRENE AP9 v1.57.004](https://www.vdl.afrl.af.mil/programs/ae9ap9/) . The expected differential flux is computed for every 15s of DC3 orbit and then integrated over the energy to get the light curve. Since COSI will not take data during SAA passages, we did not simulate the trapped electrons component. In order to improve the simulation time, the spectrum is truncated at 4 Mev. This is motivated by the fact we are only interested into activation induced by the trapped protons during a SAA passage. As shown in the figures below, the proton cross-section with commun materials found in the spacecraft is negligible below 4 MeV. A 24h orbit test has been done for a cut at 2 MeV, showing no significant variation with a cut at 4 MeV.      
+The spectrum and light curve of the trapped protons are generated using the model [IRENE AP9 v1.57.004](https://www.vdl.afrl.af.mil/programs/ae9ap9/) . The expected differential flux is computed for every 15s of DC3 orbit and then integrated over the energy to get the light curve. Since COSI will not take data during SAA passages, we did not simulate the trapped electrons component. In order to improve the simulation time, the spectrum is truncated at 4 Mev. This is motivated by the fact that we are only interested in activation induced by the trapped protons during a SAA passage. As shown in the figures below, the proton cross-section with common materials found in the spacecraft is negligible below 4 MeV. A 24h orbit test has been done for a cut at 2 MeV, showing no significant variation with a cut at 4 MeV.      
 
 <p align="center">
 <img width="1000"  src="images/SAAspectrum.png">
 </p>
 
-The corresponding light curve for a few days of orbit is shown in the figure below: 
+The corresponding light curve for a few days of orbit is shown in the figure below. The variations seen here result from differences in how COSI crosses the SAA, caused by changes in its orbit over a 24-hour period.
 
 <p align="center">
 <img width="550"  src="images/SAALC.png">
 </p>
+
+The corresponding Compton events rate as well as the input light curve are show in the figure below for the first hours of orbit. On this shorter timescale, the rise and fall of the background rate just as COSI leaves the SAA can be seen. Note that the actual SAA passages are removed from the simulated data: 
+<p align="center">
+<img width="550"  src="images/SAAproton_rate_minscale.png">
+</p>
+
 
 ### Galactic Diffuse Continuum Emission
 <p align="center">
