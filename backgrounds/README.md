@@ -30,6 +30,12 @@ The corresponding light curve for a few days of orbit is shown in the figure bel
 <img width="550"  src="images/SAALC.png">
 </p>
 
+The corresponding Compton events rate as well as the input light curve are show in the figure below for the first hours of orbit. The SAA passages are removed from the simulated data : 
+<p align="center">
+<img width="550"  src="images/SAAproton_rate_minscale.png">
+</p>
+
+
 ### Galactic Diffuse Continuum Emission
 <p align="center">
 <img width="450"  src="images/galdiff.png">
