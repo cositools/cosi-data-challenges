@@ -123,8 +123,7 @@ For analyzing data in DC3, the starting point is to model the backgrounds using 
  GRB_MGF180128A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
  GRB_MGF200415A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
  GRB_MGF231115A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- MgtBurst_bright_complex_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- MgtBurst_bright_simple_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ MgtBurst_bright_complex_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
  
  **Input Models:** <br />
  All input models can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3/sources/GRBs).
@@ -151,10 +150,8 @@ For analyzing data in DC3, the starting point is to model the backgrounds using 
  - MGF231115A ([Trigg+25](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533696.0 s
  
  Information for magnetar short burst:
- - MgtBurst_bright_complex: no polarization, t = 1835640345.022513 s
-   - SGR 1935+2154 ([Li+21](https://www.nature.com/articles/s41550-021-01302-6)) - a bright burst with a complex light curve.
- - MgtBurst_bright_simple: no polarization, t = 1837365120.031250 s
-   - A bright burst with simple light curve: spectrum of SGR 1935+2154 burst + light curve of 1E 1048.1-5937 ([Gavriil+02](https://www.nature.com/articles/nature01011)) burst.
+ - MgtBurst_bright_complex_10x: no polarization, t = 1835640345.022513 s
+   - SGR 1935+2154 ([Li+21](https://www.nature.com/articles/s41550-021-01302-6)) - a bright burst with a complex light curve. Flux has been increased by a factor of 10.  
  
  **GRB and MGF Goals:**
  1. Localize GRB
@@ -163,10 +160,9 @@ For analyzing data in DC3, the starting point is to model the backgrounds using 
  4. Classify: GRB or MGF
  
  **Magnetar Short Burst Goals:**
- 1. Check if they are detectable
- 2. If detectable, localize and fit spectrum (and polarization when applicable)
+ 1. Check if they detectable
+ 2. If detectable, localize and fit spectrum
 
-  
 </details>
 
 <details>
