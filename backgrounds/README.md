@@ -81,7 +81,7 @@ The resulting spectra for each component are shown in the second figure at the t
 
 ### Time Variation
 
-On a daily scale, it is difficult to see the variation due to the geomagnetic cutoff (GC). However, on the minute scale we can observe the rate variation which is opposite to the geomagnetic variation, as shown below. However, due to SAA passages that are removed from the data, the maximum peak of GC is also removed.
+On a daily scale, it is difficult to see the variation due to the geomagnetic cutoff (GC). However, on the minute scale we can observe the rate (without including EGB or SAA protons) variation which is opposite to the geomagnetic variation, as shown below. However, due to SAA passages that are removed from the data, the maximum peak of GC is also removed. Also since the EGB and SAA protons dominate the background, these variations are washed out.
 
 <p align="center">
 <img width="650"  src="images/COLC_minscale.png">
