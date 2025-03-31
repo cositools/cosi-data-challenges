@@ -194,7 +194,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 - Determine the scale height of the 511 keV disk
 - Compare line width and ortho-Ps fraction in bulge and disk
 - Measure the Doppler shift in the disk
-- _Stretch goal:_ cross-correlate the measured 511 keV emission with Al-26 map (1809 keV emission) to constrain propagation distances
+- _Stretch goal:_ cross-correlate the measured 511 keV emission with <sup>26</sup>Al map (1809 keV emission) to constrain propagation distances
 
 We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum. We have also simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum.  Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
 
@@ -277,100 +277,71 @@ $6.96 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ for NGC 6121 <br />
   <summary>Nucleosynthesis</summary>
   
 ## Nucleosynthesis Data Challenges
-The tools needed to complete most of these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. For the Ti44 data challenge you will need the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
+The Key Objectives for the COSI nucleosynthesis science goal are:
+1. Reveal the history of core collapse supernova activity in the Galaxy
+2. Determine the role of the evolution of massive stars in creating the elements
+3. Detect nuclear line emission from young supernova remnants in the Galaxy
+4. Probe explosion physics in the core of supernovae
 
-### Al26 Cygnus Region
-   
+The tools needed to complete most of these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. For the <sup>44</sup>Ti data challenge you will need the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks since Cas A is modeled as a point source.
+
+### DC3 Goals:
+- Image the <sup>26</sup>Al (1.8 MeV) diffuse emission
+- Fit the spectral shape of the Galactic 1.8 MeV line and detect of the Doppler shift of the line in the disk
+- Image the <sup>60</sup>Fe diffuse emission at 1173 keV and 1332 keV
+- Fit the two <sup>60</sup>Fe decay lines to find the total mass of <sup>60</sup>Fe in the Galaxy
+- Extract the <sup>26</sup>Al/<sup>60</sup>Fe ratio and its uncertainty
+- Detect the <sup>26</sup>Al and <sup>60</sup>Fe emission from the Cygnus region and measure widths of the gamma-ray line emissions
+- Determine the mass of <sup>44</sup>Ti in Cas A from the 1157 keV line emission
+- _Stretch goal:_ Cross-correlate the <sup>26</sup>Al 1.8 MeV spatial distribution with the 511 keV emission from Galactic positron annihilation
+- _Stretch goal:_ Detect and characterize the different non-gaussian line profiles of the <sup>44</sup>Ti 1157 keV line for Cas A
+
+We have modeled the diffuse emission from <sup>26</sup>Al and <sup>60</sup>Fe in our Galaxy assuming they follow the distribution of massive stars and are in agreement with INTEGRAL/SPI observations. We have also included a model for the <sup>26</sup>Al and <sup>60</sup>Fe emission from the Cygnus region. We have simulated the <sup>44</sup>Ti decay from Cas A with 5 different spectral line profiles to test the resolving power of COSI. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
+
+**The challenges will use the following detector response files:** 
+- Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
+- extended_source_response_Al26_merged.h5.gz
+- Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
+- Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
+- extended_source_response_Fe60_low_merged.h5.gz
+- extended_source_response_Fe60_high_merged.h5.gz
+- Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
+- extended_source_response_Ti44_merged.h5.gz 
+
+Each gamma-ray line has a different response, and the response files are labeled with each isotope. Note that <sup>60</sup>Fe has two separate response files for the two decay lines at 1173 keV and 1332 keV. Currently, these two line components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. The pre-computed extended source responses should be used for imaging in Galactic coordinates and the spectral fit notebook when analyzing extended sources (i.e. <sup>26</sup>Al or <sup>60</sup>Fe).
+
+### <sup>26</sup>Al and <sup>60</sup>Fe diffuse emission
+
 **Data Files:** <br /> 
-Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br />
-extended_source_response_Al26_merged.h5.gz (precomputed extended source response file) <br />
-26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
-The characteristics of the emission were obtained from the analyses of INTEGRAL/SPI observations
-described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M/abstract). The source is modeled with a $3^\circ$ width (standard deviation) Gaussian shape emission centered
-at $l = 81^\circ, b = 1^\circ$. The line flux is $3.9 \times 10^{-5} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$. It is centered at 1808.8 keV and its width is 1.6 keV (FWHM)
-due to the interstellar turbulence.
-
-**Goals:** <br />
-1. Make detection taking into account the Galactic diffuse continuum background at 1809 keV emission
-2. Measure width of the gamma-ray line
-3. Recover 60Fe/26Al ratio (see 60Fe_Cyg_Region)
-
-### Al26 NE2001
-
-**Data Files:** <br /> 
-Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br />
-extended_source_response_Al26_merged.h5.gz (precomputed extended source response file) <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
-This is the description of the model of the 1809 keV line diffuse emission due decay of 26Al in our Galaxy. The spatial distribution is derived from the model NE2001 of [Cordes & Lazio 2002](https://arxiv.org/abs/astro-ph/0207156) that fits
-the distribution of massive stars in our Galaxy. The fraction of 26Al in the bulge is 2%. This value is a compromise between SPI observations and results of studies of star formation rate in this region.
-The shape of the line in each spatial bin takes into account the turbulence of the interstellar medium and the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc.
-
-**Goals:** <br />
-1. Detection of the diffuse emission
-2. Detection of the Doppler shift in the disk
-3. Detection of the spectral shape
-4. Correlation with the emission of the Galactic positron annihilations
-5. Extract F(26Al)/F(60Fe) ratio and its uncertainty
-   
-### Ti44
-   
-**Data Files:** <br /> 
-Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br />
-extended_source_response_Ti44_merged.h5.gz (precomputed extended source response) <br />
-CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
-The five simulated models are meant to test the spectral features recovery capabilities of COSI with a low-resolution response file. In DC2, the imaging capabilities (using a vanilla Richardson-Lucy algorithm) of point-like sources was tested by placing four distinct sources at various locations on the sky (as an aside, advanced imaging methods have been developed since DC2 and can be tested on the other Data Challenges). Here, we restrict all our models to the location of Cas A whose flux and spectra have been studied thoroughly ([Grefenstette+14](https://doi.org/10.1038/nature12997), [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19), [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877), [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536)). The symmetric model provides the base case where we simulate a single Gaussian signal with 10x the flux value provided by [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877) and [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536). Note that the user can randomly sample 10% of the data to obtain a true-flux simulation.
-The unresolved, partially resolved and fully resolved simulations consider a SNR with two 44Ti clumps whose bulk center of motion is at rest. The doppler broadening of each clump is the same across the three models. One clump contains 2/3 of the total 44Ti yield and doppler shifted towards the observer (blueshifted), i.e., a signal with peak energy higher than 1157 keV. The other clump ontains 1/3 of total 44Ti yield Doppler shifted away from the observer (redshifted) whose energy is lower than 1157 keV. The goal is to detect a statistically significant deviation from the Gaussian model in each of the three cases.
-Additionally, [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19) (G16) have presented the only spatially-resolved positive detection of 44Ti. The G16 model simulates this complex distribution of clumps. As flux results from the lower energy 68 and 78 keV lines have been systematically lower than observations at 1157 keV by a factor of 1.66x, we enhance the flux by the same factor to normalize our Cas A simulations. The goal remains the same: to detect a statistically significant deviation from the Gaussian model.
-
-Note that this is an advanced data challenge that will inform the required resolution for the response file. COSIPy does not support such advanced spectral analysis methods yet.
-
-**Goals:** <br />
-1. Detect deviations from a Gaussian spectrum for the four non-symmetric models.
-2. Quantify the deviations with a suitable statistical metric.
-
-### Fe60 Cygnus Region
-
-**Data Files:** <br /> 
-Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br /> 
-Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br /> 
-extended_source_response_Fe60_low_merged.h5.gz (precomputed extended source response) <br />
-extended_source_response_Fe60_high_merged.h5.gz (precomputed extended source response) <br />
-60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
-
-**Input Models:**  <br />
-The flux of the 60Fe lines is derived from the calculation of [Martin+10](https://ui.adsabs.harvard.edu/abs/2010A%26A...511A..86M/abstract). The spatial extent of this diffuse emission is the same as the one of the 1809 keV line emission that were obtained from the analyses of SPI/INTEGRAL observations
-described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M/abstract). The source is modeled with a 3deg width (standard deviation) Gaussian shape emission centered at $l = 81^\circ, b = 1^\circ$. The line fluxes are $2.7 \times 10^{-6} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$ for the both line. The line energies are 1173.3 keV and 1332.6 keV and their width are 1.04 keV and 1.18 keV (FWHM), respectively (broadening due to the interstellar turbulence).
-
-**Goals:** <br />
-1. Make detection taking into account the Galactic diffuse continuum background at 1173 keV and 1332 keV
-2. Measure width of the gamma-ray line
-3. Recover 60Fe/26Al ratio (see 26Al_Cyg_Region)
-
- ### Fe60 NE2001
-
-**Data Files:** <br /> 
-Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br /> 
-Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br /> 
-extended_source_response_Fe60_low_merged.h5.gz (precomputed extended source response) <br />
-extended_source_response_Fe60_high_merged.h5.gz (precomputed extended source response) <br />
 60Fe_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-This is the description of the model of the diffuse emission of the 1173 keV and 1332 keV lines due decay of 60Fe in our Galaxy. The spatial distribution is derived from the model NE2001 of [Cordes & Lazio 2002](https://arxiv.org/abs/astro-ph/0207156) that fits the distribution of massive stars in our Galaxy. The fraction of 60Fe in the bulge is 2%. This value is the same as the one of the 26Al, which is a compromise between SPI observations and results of studies of star formation rate in this region. The flux is computed assuming a total mass of 60Fe of 3.5 M_sol in our Galaxy (see [Wang+20](https://ui.adsabs.harvard.edu/abs/2020ApJ...889..169W/abstract) and [Siegert+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..54S/abstract)). The shape of the line in each spatial bin takes into account the turbulence of the interstellar medium and the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc.
+The spatial distribution of the 1809 keV line from <sup>26</sup>Al decay and the 1173 keV and 1332 keV lines from <sup>60</sup>Fe decay in our Galaxy follow the NE2001 model from [Cordes & Lazio 2002](https://arxiv.org/abs/astro-ph/0207156). The model fits the distribution of massive stars in our Galaxy, with an assumed fraction of 2% for both <sup>26</sup>Al and <sup>60</sup>Fe in the Galactic bulge. This value is a compromise between SPI observations and results of studies of star formation rate in this region. The flux of <sup>26</sup>Al is consistent with measurements from SPI with a total mass of 2.7 $M_\odot\$ in our Galaxy ([Diehl et al. 2006](https://ui.adsabs.harvard.edu/abs/2006Natur.439...45D/abstract)). The flux of <sup>60</sup>Fe is computed assuming a total mass of 3.5 $M_\odot\$ (see [Wang+20](https://ui.adsabs.harvard.edu/abs/2020ApJ...889..169W/abstract) and [Siegert+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..54S/abstract)). The shape of the line in each spatial bin takes into account the turbulence of the interstellar medium and the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc.
 
-**Goals:** <br />
-1. Detection of the diffuse emission.
-2. Extraction of the F(26Al)/F(60Fe) ratio and its uncertainty.
+### Cygnus Region
+   
+**Data Files:** <br /> 
+26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**Input Models:**  <br />
+The characteristics of the <sup>26</sup>Al emission from the Cygnus region are obtained from INTEGRAL/SPI observations described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M/abstract), while predictions for the <sup>60</sup>Fe lines are derived from the calculation of [Martin+10](https://ui.adsabs.harvard.edu/abs/2010A%26A...511A..86M/abstract). The spatial distribution, for both <sup>26</sup>Al and <sup>60</sup>Fe, is modeled with a $3^\circ$ $\sigma$ Gaussian shape centered at $l = 81^\circ, b = 1^\circ$. The 1.8 MeV line flux is $3.9 \times 10^{-5} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$, and it is centered at 1808.8 keV with a width of 1.6 keV FWHM due to the interstellar turbulence. The flux of <sup>60</sup>Fe is $2.7 \times 10^{−6}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ for the both lines, and centroids are 1173.3 keV and 1332.6 keV with a width of 1.04 keV and 1.18 keV FWHM, respectively.
+
+### <sup>44</sup>Ti line profiles from Cas A
+   
+**Data Files:** <br /> 
+CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**Input Models:**  <br />
+The five Cas A simulations all have slightly different line profiles and are meant to test the spectral features recovery capabilities of COSI with a low-resolution response file. The source is modeled as a point source at $l = 111.7^\circ, b = -2.1^\circ$, and each spectral model has a flux of $3 \times 10^{-4} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$ at 1157 keV, which is 10$\times$ the flux value provided by  [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877) and [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536). The symmetric model is a single Gaussian at 1157 keV. The unresolved, partially resolved, and fully resolved simulations assume the emission is from two <sup>44</sup>Ti clumps whose bulk center of motion is at rest, but the doppler shifts of two clumps are at different levels of spectral separation. The blueshifted clump contains 2/3 of the total <sup>44</sup>Ti yield, and the redshifted clump contains the other 1/3. The doppler broadening of each clump is the same across the three models. The goal is to detect a statistically significant deviation from the Gaussian model in each of the three cases. 
+
+Additionally, the G16 model simulates a complex distribution of clumps as detected in [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19), where 11 spectral features from 11 different clumps are simulated with varying fluxes and doppler shifts. The <sup>44</sup>Ti flux for the G16 is set to 1.66x the measured flux at 68 and 78 keV, matching the SPI observations of Cas A. The goal remains the same: to detect a statistically significant deviation from the Gaussian model.
+
  
 </details>
 
