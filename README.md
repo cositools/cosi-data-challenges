@@ -100,11 +100,29 @@ For analyzing data in DC3, the starting point is to model the backgrounds using 
   <summary>GRBs</summary>
   
 ## GRB Data Challenges
- The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
+ 
+The Key Objectives for GRB science with COSI are:
+1. Detect short GRBs following neutron star mergers, which are a known source of gravitational waves
+2. Constrain geometries and emission processes with polarization
+
+The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
+
+### DC3 Goals:
+- Localize a GRB
+- Fit the GRB spectrum
+- Measure polarization (fraction and angle) of a GRB
+- Confirm detection of MGF
+- If detectable, localize the MGF and fit its spectrum
+- _Stretch goal:_ Classify the event as GRB or MGF
+
+We have simulated 12 GRBs and 7 Magnetar Giant Flares (MGFs) within the 3 months of observation time. GRB bn090424592 is the brightest of the bursts we’ve simulated and it may be easiest to start with that one. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+
+**The challenges will use the following detector response files:** 
+- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
+ - ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz (for polarization) <br />
+Note: the second response file is used for polarization analysis and has only 1 energy bin.
  
  **Data Files:** <br />
- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
- ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz (for polarization) <br />
  GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
  GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
  GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -128,7 +146,7 @@ For analyzing data in DC3, the starting point is to model the backgrounds using 
  **Input Models:** <br />
  All input models can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3/sources/GRBs).
  
- The GRBs occur randomly within the orientation file, with their positions chosen such that they have incidence angles under $60^\circ$. The spectra are described with Band functions, and the parameters are based on fits to GBM data. Likewise, the lightcurves are also from GBM data. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. The models are specified below, including the polarization fraction (PF), and the polarization angle (PA) given in IAU convention. We also provide burst times, which is needed for the analysis:
+The simualated GRBs occur randomly within the 3-month orientation file, with their positions chosen such that they have incidence angles under $60^\circ$. The spectra are described with Band functions, and the parameters are based on fits to GBM data. Likewise, the lightcurves are also from GBM data. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. The models are specified below, including the polarization fraction (PF), and the polarization angle (PA) given in IAU convention. We also provide burst times, which is needed for the analysis:
  - bn081207680: PF = 0, PA = $0^\circ$, t = 1836496300.0 s
  - bn090424592: PF = 0.1, PA = $110^\circ$, t = 1837507002.0 s
  - bn100612726: PF = 0.2, PA = $35^\circ$, t = 1839617230.0 s
@@ -152,16 +170,7 @@ For analyzing data in DC3, the starting point is to model the backgrounds using 
  Information for magnetar short burst:
  - MgtBurst_bright_complex_10x: no polarization, t = 1835640345.022513 s
    - SGR 1935+2154 ([Li+21](https://www.nature.com/articles/s41550-021-01302-6)) - a bright burst with a complex light curve. Flux has been increased by a factor of 10.  
- 
- **GRB and MGF Goals:**
- 1. Localize GRB
- 2. Fit spectrum
- 3. Measure polarization (fraction and angle)
- 4. Classify: GRB or MGF
- 
- **Magnetar Short Burst Goals:**
- 1. Check if they detectable
- 2. If detectable, localize and fit spectrum
+
 
 </details>
 
