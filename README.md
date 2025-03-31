@@ -115,12 +115,12 @@ The tools needed to complete these challenges are demonstrated in the [GRB spect
 - If detectable, localize the MGF and fit its spectrum
 - _Stretch goal:_ Classify the event as GRB or MGF
 
-We have simulated 12 GRBs and 7 Magnetar Giant Flares (MGFs) within the 3 months of observation time. GRB bn090424592 is the brightest of the bursts we’ve simulated and it may be easiest to start with that one. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+We have simulated 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. GRB bn090424592 is the brightest of the bursts we’ve simulated and it may be easiest to start with that one. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** 
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
  - ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz (for polarization) <br />
-Note: the second response file is used for polarization analysis and has only 1 energy bin.
+Note: the second response file is used for polarization analysis and has fewer energy bins.
  
  **Data Files:** <br />
  GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -146,7 +146,7 @@ Note: the second response file is used for polarization analysis and has only 1 
  **Input Models:** <br />
  All input models can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3/sources/GRBs).
  
-The simualated GRBs occur randomly within the 3-month orientation file, with their positions chosen such that they have incidence angles under $60^\circ$. The spectra are described with Band functions, and the parameters are based on fits to GBM data. Likewise, the lightcurves are also from GBM data. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. The models are specified below, including the polarization fraction (PF), and the polarization angle (PA) given in IAU convention. We also provide burst times, which is needed for the analysis:
+The simulated GRBs occur randomly within the 3-month orientation file, with their positions chosen such that they have incidence angles under $60^\circ$. The spectra are described with Band functions, and the parameters are based on fits to GBM data. Likewise, the lightcurves are also from GBM data. The fluxes were chosen such that some GRBs have a minimum detectable polarization (MDP) below their polarization fraction, and some have a MDP above. The models are specified below, including the polarization fraction (PF), and the polarization angle (PA) given in IAU convention. We also provide burst times, which is needed for the analysis:
  - bn081207680: PF = 0, PA = $0^\circ$, t = 1836496300.0 s
  - bn090424592: PF = 0.1, PA = $110^\circ$, t = 1837507002.0 s
  - bn100612726: PF = 0.2, PA = $35^\circ$, t = 1839617230.0 s
@@ -157,7 +157,8 @@ The simualated GRBs occur randomly within the 3-month orientation file, with the
  - bn170405777: PF = 0.7, PA = $160^\circ$, t = 1841915858.0 s
  - bn180504136: PF = 0.8, PA = $45^\circ$, t = 1836985181.0 s
  - bn180703876: PF = 0.9, PA = $25^\circ$, t = 1838652949.0 s
- - bn080802386: PF = 0.8, PA = $90^\circ$, t = 1835493492.2 s
+ - bn080802386: PF = 0.8, PA = $90^\circ$, t = 1835493492.2 s <br />
+Note: The two short GRBs (bn080802386) are unrealistically bright and are intended to be used for the polarization tutorial.
  
  Information for the MGFs, including reference papers (PF = 1, PA = $90^\circ$ for all sources):
  - MGF051103 ([Svinkin+21](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533723.498 s
