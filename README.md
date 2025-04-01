@@ -389,10 +389,10 @@ GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
 1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
 
 **Crab Input Models:**  <br />
-The standard Crab model is the same as DC1 and DC2. The point source is located at  $l = 184.56^\circ, b = -5.78^\circ$, has a total integrated flux of $4.9 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 10.0 MeV), and is define the by spectral model from [Jourdain et al. 2020](https://iopscience.iop.org/article/10.3847/1538-4357/aba8a4). There is also a simpler Crab simulation used mainly for testing purposes with a flat spectrum (“Crab_Flat”) and the same flux.
+The standard Crab model is the same as DC1 and DC2. The point source is located at  $l = 184.56^\circ, b = -5.78^\circ$, has a total integrated flux of $4.9 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 10.0 MeV), and is define by spectral model from [Jourdain et al. 2020](https://iopscience.iop.org/article/10.3847/1538-4357/aba8a4). There is also a simpler Crab simulation used mainly for testing purposes with a flat spectrum (“Crab_Flat”) and the same flux.
 
 **GRS 1758-258 Input Models:**  <br />
-The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$. 
+The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. 
 
 **1E1740.7-2942 Input Models:**  <br />
 The 2 spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) are the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). The "compow" simulation is a thermal comptonization + powerlaw model, while the "twocompt" simulation has two components of thermal comptonization with different temperatures. Both models represent the INTEGRAL data well but strongly differ at the highest energies. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the compow model and $3.13 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the twocompt model.
@@ -410,7 +410,7 @@ cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0). We have included two flux scenarios: the nominal value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$, and we have included 10x enhanced flux for easier analysis. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
 
 **Cyg X3 Input Models:**  <br />
-In DC3 we have simulated 6 different spectral models for Cyg X3 ($l = 79.8^{\circ}, b= 0.7^{\circ}$) which are combined to create a source which transitions through each state during the 3 months of observation. The spectra are described by best fit eqpair models of time averaged INTEGRAL data from  [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
+In DC3 we have simulated 6 different spectral models for Cyg X3 ($l = 79.8^{\circ}, b= 0.7^{\circ}$) which are combined to create a source which transitions through each state during the 3 months of observation. The spectra are described by best-fit eqpair models of time-averaged INTEGRAL data from  [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
 We have assumed a succession of the different states (in this order and for the specified approximate durations):
 
 <pre>
@@ -438,7 +438,7 @@ MAXI1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 The two spectral models for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) are best fit eqpair models of time averaged INTEGRAL data ([Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract))  given for hard and soft states respectively. Both hard and soft states are simulated for the full 3 months, but the user can make a time cut and combine as needed to define a spectral transition. The hard state polarization model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. The soft spectral state assumes an energy-independent polarization of 20%, again at the same 40 degree angle.
 
 **MAXI J1820+070 and J1348-630 Input Models:**  <br />
-The spectral models for two black hole X-ray binaries, MAXI J1820+070 and MAXI J1348-630, are based on INTEGRAL data (Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract)), in the hard state. The polarimetric models corresponds to the measurements shown in Table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXI J1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. Therefore, MAXI J1820+070 and has a nominal flux of $1.4 \times 10^{-1}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (0.1 - 0.4 MeV) until T = 1840671300, and then drops to zero. MAXI J1348-630 has a flux of $8.6 \times 10^{-2}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (0.1 - 0.4 MeV) until T = 1836092100.
+The spectral models for two black hole X-ray binaries, MAXI J1820+070 and MAXI J1348-630, are based on INTEGRAL data (Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract)), in the hard state. The polarimetric models corresponds to the measurements shown in Table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXI J1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. Therefore, MAXI J1820+070 has a nominal flux of $1.4 \times 10^{-1}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $6.0 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1840671300, and then drops to zero. MAXI J1348-630 has a flux of $8.6 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $2.3 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1836092100.
 
 ### Galactic diffuse continuum
 
@@ -470,12 +470,12 @@ While the main science goals for COSI are not directly related to many extragala
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
 ### DC3 Goals:
-- Perform the image and spectral fit of AGN NGC 1068 to determine the flux in the COSI band and the coronal cut-off energy
-- Perform the image and spectral fit of AGN NGC 4151 to determine the flux in the COSI band and the coronal cut-off energy
-- Test whether COSI would be able to distinguish between the different  NGC 4151 spectral models
-- Measure MeV gamma-ray flux during the quasar 4C+21.35 flare and determine the duration of the flaring period
+- Perform the image and spectral fit of NGC 1068 to determine the flux in the COSI band and the coronal cut-off energy
+- Perform the image and spectral fit of NGC 4151 to determine the flux in the COSI band and the coronal cut-off energy
+- Test whether COSI would be able to distinguish between the different NGC 4151 spectral models
+- Measure MeV gamma-ray flux during the 4C+21.35 flare and determine the duration of the flaring period
 - Fit the 4C+21.35 spectrum in the flaring and non-flaring state
-- Perform the image and spectral fit of quasar 3C 279
+- Perform the image and spectral fit of 3C 279
 - Measure the polarization fraction and angle of 3C 279 in the hard state
 
 We have simulated 4 extragalactic sources: 2 are steady state sources (NGC 1068 and NGC 4151), 1 transient source (4C+21.35), and 1 polarized source (3C 279). Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
@@ -496,11 +496,11 @@ NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_faint_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **NGC 1068 Input Models:**  <br />
-The simulation for AGN NGC 1068 is based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract). The source is located at $l = 17.2^{\circ}, b = -51.9^{\circ}$, and is modeled as a power law with a photon index of 1.92 and an exponential cut off at 200 keV. The intrinsic flux reported in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract) for the 2-10 keV band is $8.9 \times ^{-10} \ \mathrm{erg \ cm^{-2} s^{-1}}$, and we have simulated a total integrated flux of $1.5 \times 10^{-3}\ \mathrm{ ph \ cm^{-2} s^{-1}}$ (0.1 – 10 MeV).
+The simulation for NGC 1068 is based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract). The source is located at $l = 17.2^{\circ}, b = -51.9^{\circ}$, and is modeled as a power law with a photon index of 1.92 and an exponential cut off at 200 keV. The intrinsic flux reported in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract) for the 2-10 keV band is $8.9 \times ^{-10} \ \mathrm{erg \ cm^{-2} \ s^{-1}}$, and we have simulated a total integrated flux of $1.5 \times 10^{-3}\ \mathrm{ ph \ cm^{-2} \ s^{-1}}$ (0.1 – 10 MeV).
 
 
 **NGC 4151 Input Models:**  <br />
-NGC 4151 is a Seyfert galaxy which hosts one of the brightest AGN. For DC3, we have included 4 different spectral models for NGC 4151 which are all defined as a powerlaw with exponential cut off. From NuSTAR observations, with the flux calibrated in the 20-30 keV range, we have simulated two different cut-off energies based on the analysis presented in [Keck+ 2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...806..149K/abstract): <br />
+NGC 4151 is a Seyfert galaxy which hosts one of the brightest AGN. For DC3, we have included 4 different spectral models for NGC 4151 which are all defined as a powerlaw with exponential cut-off. From NuSTAR observations, with the flux calibrated in the 20-30 keV range, we have simulated two different cut-off energies based on the analysis presented in [Keck+ 2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...806..149K/abstract): <br />
 - NGC_4151_ec200: Gamma=1.75, Ecut=200 keV <br />
 - NGC_4151_ec1000: Gamma=1.75, Ecut=1000 keV <br />
 
@@ -508,7 +508,7 @@ From INTEGRAL observations there are two cut-off energies and two power-law gamm
 - NGC_4151_bright: Gamma=1.71, Ecut=264 keV <br />
 - NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 
-The source is located at $l = 155.1^{\circ}, b = 75.1^{\circ}$ and has an integrated flux ranging from $6.8 \times 10^{-4}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (NGC_4151_faint) to $3.7 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (NGC_4151_ec1000).
+The source is located at $l = 155.1^{\circ}, b = 75.1^{\circ}$ and has an integrated flux ranging from $6.8 \times 10^{-4}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (NGC_4151_faint) to $3.7 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (NGC_4151_ec1000).
 
 ### Transient source
 
@@ -517,7 +517,7 @@ The source is located at $l = 155.1^{\circ}, b = 75.1^{\circ}$ and has an integr
 4C21p35_flare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **4C+21.35 Input Models:**  <br />
-We have included a simulation of quasar 4C+21.35 which has both a quiescent state simulation (noflare) and a flaring state in separate files. The lightcurve describing the quiescent flux and the flare is based on Fermi data, where the flaring state is initiated when the reported flux is 3x greater than the 16-years average flux. The normalization is derived from the integrated flux in the COSI energy band, based on an extrapolation of the Fermi-LAT log parabola function. The two states come with two different spectra: both powerlaws with different indices, where the non-flaring state has and index of 1.6, and the flaring state has an index of 2.5. The flaring state has variable flux between 1838089680 < T < 1840422465, and is zero elsewhere, and the non-flaring state is the opposite, as seen in the light curve below. Combine these files to represent a 4C+21.35 flare with a different spectral model in the flaring state.
+We have included a simulation of quasar 4C+21.35 which has both a quiescent state simulation (noflare) and a flaring state in separate files. The lightcurve describing the quiescent flux and the flare is based on Fermi-LAT data, where the flaring state is initiated when the reported flux is 3x greater than the 16-years average flux. The normalization is derived from the integrated flux in the COSI energy band, based on an extrapolation of the Fermi-LAT log parabola function. The two states come with two different spectra: both powerlaws with different indices, where the non-flaring state has and index of 1.6, and the flaring state has an index of 2.5. The flaring state has variable flux between 1838089680 < T < 1840422465, and is zero elsewhere, and the non-flaring state is the opposite, as seen in the light curve below. Combine these files to represent a 4C+21.35 flare with a different spectral model in the flaring state.
 
 <p align="center">
 <img width="500"  src="static/ExtragalacticDC3_4C_LC.png">
