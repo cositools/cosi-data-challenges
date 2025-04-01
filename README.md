@@ -288,7 +288,7 @@ The tools needed to complete most of these challenges are demonstrated in the [5
 
 ### DC3 Goals:
 - Image the <sup>26</sup>Al (1.8 MeV) diffuse emission
-- Fit the spectral shape of the Galactic 1.8 MeV line and detect of the Doppler shift of the line in the disk
+- Fit the spectral shape of the Galactic 1.8 MeV line and detect the Doppler shift of the line in the disk
 - Image the <sup>60</sup>Fe diffuse emission at 1173 keV and 1332 keV
 - Fit the two <sup>60</sup>Fe decay lines to find the total mass of <sup>60</sup>Fe in the Galaxy
 - Extract the <sup>26</sup>Al/<sup>60</sup>Fe ratio and its uncertainty
@@ -394,7 +394,7 @@ The standard Crab model is the same as DC1 and DC2. The point source is located 
 **GRS 1758-258 Input Models:**  <br />
 The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$. 
 
-**GRS 1758-258 Input Models:**  <br />
+**1E1740.7-2942 Input Models:**  <br />
 The 2 spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) are the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). The "compow" simulation is a thermal comptonization + powerlaw model, while the "twocompt" simulation has two components of thermal comptonization with different temperatures. Both models represent the INTEGRAL data well but strongly differ at the highest energies. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the compow model and $3.13 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the twocompt model.
 
 
