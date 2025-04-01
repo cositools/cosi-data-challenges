@@ -145,6 +145,9 @@ Positrons_from_26Al_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br 
 Positrons_from_26Al_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Positrons_from_44Ti_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Positrons_from_44Ti_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Narrow_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Broad_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NFW_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC200_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
