@@ -389,10 +389,10 @@ GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
 1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
 
 **Crab Input Models:**  <br />
-The standard Crab model is the same as DC1 and DC2. The point source is located at  $l = 184.56^\circ, b = -5.78^\circ$, has a total integrated flux of $4.9 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 10.0 MeV), and is define the by spectral model from [Jourdain et al. 2020](https://iopscience.iop.org/article/10.3847/1538-4357/aba8a4). There is also a simpler Crab simulation used mainly for testing purposes with a flat spectrum (“Crab_Flat”) and the same flux.
+The standard Crab model is the same as DC1 and DC2. The point source is located at  $l = 184.56^\circ, b = -5.78^\circ$, has a total integrated flux of $4.9 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 10.0 MeV), and is define by spectral model from [Jourdain et al. 2020](https://iopscience.iop.org/article/10.3847/1538-4357/aba8a4). There is also a simpler Crab simulation used mainly for testing purposes with a flat spectrum (“Crab_Flat”) and the same flux.
 
 **GRS 1758-258 Input Models:**  <br />
-The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$. 
+The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. 
 
 **1E1740.7-2942 Input Models:**  <br />
 The 2 spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) are the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). The "compow" simulation is a thermal comptonization + powerlaw model, while the "twocompt" simulation has two components of thermal comptonization with different temperatures. Both models represent the INTEGRAL data well but strongly differ at the highest energies. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the compow model and $3.13 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the twocompt model.
@@ -410,7 +410,7 @@ cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0). We have included two flux scenarios: the nominal value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$, and we have included 10x enhanced flux for easier analysis. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
 
 **Cyg X3 Input Models:**  <br />
-In DC3 we have simulated 6 different spectral models for Cyg X3 ($l = 79.8^{\circ}, b= 0.7^{\circ}$) which are combined to create a source which transitions through each state during the 3 months of observation. The spectra are described by best fit eqpair models of time averaged INTEGRAL data from  [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
+In DC3 we have simulated 6 different spectral models for Cyg X3 ($l = 79.8^{\circ}, b= 0.7^{\circ}$) which are combined to create a source which transitions through each state during the 3 months of observation. The spectra are described by best-fit eqpair models of time-averaged INTEGRAL data from  [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
 We have assumed a succession of the different states (in this order and for the specified approximate durations):
 
 <pre>
@@ -470,12 +470,12 @@ While the main science goals for COSI are not directly related to many extragala
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
 ### DC3 Goals:
-- Perform the image and spectral fit of AGN NGC 1068 to determine the flux in the COSI band and the coronal cut-off energy
-- Perform the image and spectral fit of AGN NGC 4151 to determine the flux in the COSI band and the coronal cut-off energy
-- Test whether COSI would be able to distinguish between the different  NGC 4151 spectral models
-- Measure MeV gamma-ray flux during the quasar 4C+21.35 flare and determine the duration of the flaring period
+- Perform the image and spectral fit of NGC 1068 to determine the flux in the COSI band and the coronal cut-off energy
+- Perform the image and spectral fit of NGC 4151 to determine the flux in the COSI band and the coronal cut-off energy
+- Test whether COSI would be able to distinguish between the different NGC 4151 spectral models
+- Measure MeV gamma-ray flux during the 4C+21.35 flare and determine the duration of the flaring period
 - Fit the 4C+21.35 spectrum in the flaring and non-flaring state
-- Perform the image and spectral fit of quasar 3C 279
+- Perform the image and spectral fit of 3C 279
 - Measure the polarization fraction and angle of 3C 279 in the hard state
 
 We have simulated 4 extragalactic sources: 2 are steady state sources (NGC 1068 and NGC 4151), 1 transient source (4C+21.35), and 1 polarized source (3C 279). Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
