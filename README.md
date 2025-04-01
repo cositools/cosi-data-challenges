@@ -544,8 +544,17 @@ The spectral model for the DC3 simulation of quasar 3C 279 represents the high s
   <summary>Dark Matter</summary>
   
 ## Dark Matter Data Challenges
+
+While the main science goals for COSI are not directly related to dark matter, there is no doubt that COSI’s unique energy range will bring compelling new observations. We start exploring COSI’s dark matter science capabilities in DC3. 
+
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
- 
+
+### DC3 Goals:
+- Image the two photon (gg) spatial distribution (either NFW or Burkert models)
+- Fit for the spectra of the gg or eeg annihilation model
+- Confirm that COSI is sensitive to the different spatial distribution modeled in the Burkert and NFW profile, for either the gg or eeg model
+- Estimate COSI’s sensitivity to annihilating WIMPs
+
 **Data Files:** <br />
 eeg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 eeg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -553,12 +562,10 @@ gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-Photon spectra from annihilating dark matter (DM) in our galaxy. We consider cases where two DM particles annihilate into either two photons (gg) or an e+e− pair with a FSR photon (eeg), assuming DM follows an NFW or Burkert profile. The profile parameters are taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. We assume a DM mass of 3 MeV and an annihilation cross section of 1e-30 cm3/s.
+We consider cases where two dark matter (DM) particles annihilate into either two photons (gg) or an e+e− pair with a FSR (final state radiation) photon (eeg). We use profile parameters describing the NFW or Burkert profile taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. For each of these models, we assume a DM mass of 3 MeV and an annihilation cross section of $1 \times 10^{-30} \ \mathrm{cm^{3} s^{-1}}$.
 
-**Goals:** <br />
-1. Obtaining energy spectra
-2. Obtaining signal morphologies
-3. Estimating COSI’s detectability for annihilating WIMPs
+
+
   
 </details>
 
