@@ -108,12 +108,12 @@ The Key Objectives for GRB science with COSI are:
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 ### DC3 Goals:
-- Localize a GRB
-- Fit the GRB spectrum
+- Localize a GRB and fit the spectrum
 - Measure polarization (fraction and angle) of a GRB
-- Confirm detection of MGF
-- If detectable, localize the MGF and fit its spectrum
-- _Stretch goal:_ Classify the event as GRB or MGF
+- Localize a MGF and fit the spectrum
+- Measure the polarization (fraction and angle) of a MGF
+- Check if the magnetar short burst is detectable, and if detectable localize and fit the spectrum
+- _Stretch goal:_ Develop a classification technique to distinguish a GRB or MGF
 
 We have simulated 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. GRB bn090424592 is the brightest of the bursts we’ve simulated and it may be easiest to start with that one. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
 
