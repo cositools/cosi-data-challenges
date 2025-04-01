@@ -517,7 +517,7 @@ The source is located at $l = 155.1^{\circ}, b = 75.1^{\circ}$ and has an integr
 4C21p35_flare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **4C+21.35 Input Models:**  <br />
-We have included a simulation of quasar 4C+21.35 which has both a quiescent state simulation (noflare) and a flaring state in separate files. The lightcurve describing the quiescent flux and the flare is based on Fermi data, where the flaring state is initiated when the reported flux is 3x greater than the 16-years average flux. The normalization is derived from the integrated flux in COSI energy band derived from the extrapolation of the Fermi-LAT log parabola function. The two states come with two different spectra: both powerlaws with different indices, where the non flaring state has = 1.6, and the flaring state has an index of 2.5. The flaring state has variable flux between 1838089680 < T < 1840422465, and is zero elsewhere, and the non-flaring state is the opposite, as seen in the light curve below. Combine these files to represent a 4C+21.35 flare with a different spectral model in the flaring state.
+We have included a simulation of quasar 4C+21.35 which has both a quiescent state simulation (noflare) and a flaring state in separate files. The lightcurve describing the quiescent flux and the flare is based on Fermi data, where the flaring state is initiated when the reported flux is 3x greater than the 16-years average flux. The normalization is derived from the integrated flux in the COSI energy band, based on an extrapolation of the Fermi-LAT log parabola function. The two states come with two different spectra: both powerlaws with different indices, where the non-flaring state has and index of 1.6, and the flaring state has an index of 2.5. The flaring state has variable flux between 1838089680 < T < 1840422465, and is zero elsewhere, and the non-flaring state is the opposite, as seen in the light curve below. Combine these files to represent a 4C+21.35 flare with a different spectral model in the flaring state.
 
 <p align="center">
 <img width="500"  src="static/ExtragalacticDC3_4C_LC.png">
@@ -552,7 +552,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 ### DC3 Goals:
 - Image the two photon (gg) spatial distribution (either NFW or Burkert models)
 - Fit for the spectra of the gg or eeg annihilation model
-- Confirm that COSI is sensitive to the different spatial distribution modeled in the Burkert and NFW profile, for either the gg or eeg model
+- Confirm that COSI is sensitive to the different spatial distributions modeled in the Burkert and NFW profiles, for either the gg or eeg model
 - Estimate COSI’s sensitivity to annihilating WIMPs
 
 **Data Files:** <br />
