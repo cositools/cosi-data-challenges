@@ -350,12 +350,95 @@ Additionally, the G16 model simulates a complex distribution of clumps as detect
   <summary>Galactic</summary>
   
   ## Galactic Data Challenges
-The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb), and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) (for extended source analysis) notebooks.
+There is one Key Objective for Galactic science with COSI:
+1. Constrain geometries and emission processes in Galactic black holes <br />
 
-**All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
-ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz (polarized sources) <br />
-extended_source_response_continuum_merged.h5.gz (precomputed extended source response file) <br />
+While the main science goals for COSI are not directly related to many Galactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. We start exploring COSI’s Galactic science capabilities in DC3.
+
+The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.  The [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit)  notebook can be used to analyze the Galactic diffuse continuum extended source.
+
+### DC3 Goals:
+- Perform the image and spectral fit of the Crab
+- Perform the image and spectral fit for GRS 1758-258
+- Test whether COSI would be able to distinguish between the two models of 1E1740.7-2942
+- Measure MeV gamma-ray flux during the Gamma-ray binary flare event from PSR B1259-63 and determine the duration of flare periods
+- Fit for the average Cyg X3 spectrum over the 3 months of observation and attempt to detect the spectral changes on shorter time scales
+- Check the detection sensitivity in the Cyg X1 soft state and hard state
+- Measure the polarization of Cyg X1 in the hard state
+- Measure the spectra and polarization of transient sources MAXI J1820+070 and J1348-063
+- Characterize how the the Galactic diffuse continuum emission as a background component impacts the sensitivity for point sources in the Galactic plane
+- Image the Galactic diffuse continuum emission in the COSI energy band
+- Measure the spectrum of the Galactic diffuse continuum emission, extracting it from the rest of the background
+- _Stretch goal:_ Make a time cut for the Cyg X1 soft and hard states and combine the two simulations to create a spectral transition, and determine COSI’s ability to detect this transition.
+
+We have simulated 8 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 2 transient sources (PSR B1259-63 has a single flare, and Cyg X3 has 6 state transitions), and 3 sources with polarization (Cyg-X1, MAXI J1820+070 and J1348-630). We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
+
+**The challenges will use the following detector response files:** <br />
+- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
+- ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz <br />
+- extended_source_response_continuum_merged.h5.gz <br />
+
+Note: the second response file is used for polarization analysis and the extended source response should be used to analyze the Galactic diffuse continuum when imaging or performing the spectral fit.
+
+### Steady-state sources
+**Data Files:** <br /> 
+crab_standard_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
+Crab_Flat_Spectrum_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
+GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
+1E1740_compow_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
+1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
+
+**Crab Input Models:**  <br />
+The standard Crab model is the same as DC1 and DC2. The point source is located at  $l = 184.56^\circ, b = -5.78^\circ$, has a total integrated flux of $4.9 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 10.0 MeV), and is define the by spectral model from [Jourdain et al. 2020](https://iopscience.iop.org/article/10.3847/1538-4357/aba8a4). There is also a simpler Crab simulation used mainly for testing purposes with a flat spectrum (“Crab_Flat”) and the same flux.
+
+**GRS 1758-258 Input Models:**  <br />
+The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$. 
+
+**GRS 1758-258 Input Models:**  <br />
+The 2 spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) are the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). The "compow" simulation is a thermal comptonization + powerlaw model, while the "twocompt" simulation has two components of thermal comptonization with different temperatures. Both models represent the INTEGRAL data well but strongly differ at the highest energies. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the compow model and $3.13 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the twocompt model.
+
+
+
+### Transient sources 
+
+**Data Files:** <br /> 
+PSRB1259_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+PSRB1259_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**PSR B1259-63 Input Models:**  <br />
+PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0). We have included two flux scenarios: the nominal value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$, and we have included 10x enhanced flux for easier analysis. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
+
+**Cyg X3 Input Models:**  <br />
+In DC3 we have simulated 6 different spectral models for Cyg X3 ($l = 79.8^{\circ}, b= 0.7^{\circ}$) which are combined to create a source which transitions through each state during the 3 months of observation. The spectra are described by best fit eqpair models of time averaged INTEGRAL data from  [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
+We have assumed a succession of the different states (in this order and for the specified approximate durations):
+
+<pre>
+Percent of time of observed state    ->    time in days (2 year mission)  -> time in days (DC3)
+Quiescent:  6.                                    47                                  5.4
+Transition  46.                                   335                                 41.4
+FHXR:       10.                                   73                                  9.0
+FIM:        22.                                   161                                 19.8 
+FSXR:       5.4                                   28                                  4.8
+Hypersoft:  12.                                   86                                  10.8
+</pre>
+
+Since DC3 simulates 3 months of exposure, we reduced the time spent in each state accordingly and increased the fluxes by a factor of 7.9 to obtain the same total number of photons as we would in 2 yrs of observations. Note: The background rates should also be scaled up in the same way to preserve the expected S/N ratio!
+
+
+### Polarized Sources
+
+**Data Files:** <br />
+cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+cygX1_hard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXI1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXI1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+**Cyg X1 Input Models:**  <br />
+The two spectral models for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) are best fit eqpair models of time averaged INTEGRAL data ([Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract))  given for hard and soft states respectively. Both hard and soft states are simulated for the full 3 months, but the user can make a time cut and combine as needed to define a spectral transition. The hard state polarization model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. The soft spectral state assumes an energy-independent polarization of 20%, again at the same 40 degree angle.
+
+**MAXI J1820+070 and J1348-630 Input Models:**  <br />
+The spectral models for two black hole X-ray binaries, MAXI J1820+070 and MAXI J1348-630, are based on INTEGRAL data (Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract)), in the hard state. The polarimetric models corresponds to the measurements shown in Table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXI J1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. Therefore, MAXI J1820+070 and has a nominal flux of $1.4 \times 10^{-1}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (0.1 - 0.4 MeV) until T = 1840671300, and then drops to zero. MAXI J1348-630 has a flux of $8.6 \times 10^{-2}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (0.1 - 0.4 MeV) until T = 1836092100.
 
 ### Galactic diffuse continuum
 
@@ -363,107 +446,15 @@ extended_source_response_continuum_merged.h5.gz (precomputed extended source res
 GalTotal_SA100_F98_3months_unbinned_data_filtered_with_SAAcut.fits.gz
 
 **Input Models:**  <br />
-The Galactic diffuse continuum emission is modeled using the v57 release of the GALPROP cosmic ray (CR) propagation and interstellar emissions framework [(Porter+22)](https://iopscience.iop.org/article/10.3847/1538-4365/ac80f6). GALPROP self-consistently calculates spectra and abundances of Galactic CR species and associated diffuse emissions (gamma rays, X-rays, and radio) in 2D and 3D. The v57 release includes a set of steady-state emission model examples that reproduce the latest CR data. There are six models in total, categorized according to the CR source and interstellar radioation field (ISRF) model used for the prediction. There are 3 CR source models (SA0, SA50, SA100) and two ISRF models (R12, F98). The CR source density models are based on the distribution of injected CR power, with SA0 describing an axisymmetric disk (following the radial distribution of pulsars), SA50 describing a 50/50% split of the injected CR luminosity between disk-like and spiral arms, and SA100 describing pure spiral arms. All models have the same exponential scale height of 200 pc. The two ISRF models employ different spatial densities for both the stars and the dust but produce intensities very similar to those of the data for near- to far-infrared wavelengths at the location of the solar system (see [Porter+17](https://iopscience.iop.org/article/10.3847/1538-4357/aa844d) and references therein). For the neutral gas distributions (atomic and molecular), a 3D model from [Johannesson+18](https://iopscience.iop.org/article/10.3847/1538-4357/aab26e) is employed. These GALPROP models include the total emission, which is dominated by inverse Compton radiation, but also has a small contribution from Bremsstrahlung towards the upper energy bound. As our representative case, for DC3 we simulate the SA100-F98 model. 
+The Galactic diffuse continuum emission is modeled using the v57 release of the GALPROP cosmic ray (CR) propagation and interstellar emissions framework [(Porter+22)](https://iopscience.iop.org/article/10.3847/1538-4365/ac80f6). GALPROP self-consistently calculates spectra and abundances of Galactic CR species and associated diffuse emissions (gamma rays, X-rays, and radio) in 2D and 3D. The v57 release includes a set of steady-state emission model examples that reproduce the latest CR data. There are six models in total, categorized according to the CR source and interstellar radiation field (ISRF) model used for the prediction. There are 3 CR source models (SA0, SA50, SA100) and two ISRF models (R12, F98). The CR source density models are based on the distribution of injected CR power, with SA0 describing an axisymmetric disk (following the radial distribution of pulsars), SA50 describing a 50/50% split of the injected CR luminosity between disk-like and spiral arms, and SA100 describing pure spiral arms. All models have the same exponential scale height of 200 pc. The two ISRF models employ different spatial densities for both the stars and the dust but produce intensities very similar to those of the data for near- to far-infrared wavelengths at the location of the solar system (see [Porter+17](https://iopscience.iop.org/article/10.3847/1538-4357/aa844d) and references therein). For the neutral gas distributions (atomic and molecular), a 3D model from [Johannesson+18](https://iopscience.iop.org/article/10.3847/1538-4357/aab26e) is employed. These GALPROP models include the total emission, which is dominated by inverse Compton radiation, but also has a small contribution from Bremsstrahlung towards the upper energy bound. As our representative case, for DC3 we simulate the SA100-F98 model. 
 
 This is the first data challenge to include the Galactic diffuse continuum, and our corresponding goals this year are straight forward. Future data challenges will look more into the different model variations and key parameters. 
 
 **Note that the Galactic diffuse continuum emission is also part of the standard background model for COSI, which will be employed for most analyses.**
 
-**Goals:** <br />
-1. Measure the spectrum of the Galactic diffuse continuum emission, extracting it from the rest of the background
-2. Image the Galactic diffuse continuum emission in the COSI energy band
-3. Characterize how the the Galactic diffuse continuum emission impacts the sensitivity for point sources in the Galactic plane
-   
-### Gamma-ray Binary PSR B1259-63
 
-**Data Files:** <br /> 
-PSRB1259_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-PSRB1259_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
-**Input Models:**  <br />
-PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The system has a highly eccentric orbit, with an orbital period of 3.4 years. Gamma-ray emission occurs during its periastron passage, as interactions between the outflows of the two objects trigger particle acceleration. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see model 1 in the bottom of Figure 5). For the DC3 simulations, the following features are assumed: 1) Constant emission for 30 days. 2) Two flux scenarios: the nominal value from Abdo+11, as well as a 10x enhanced flux. Note that in general the flux and duration vary for each periastron passage, and in COSI's energy band they are not well understood.
 
-**Goals:** <br />
-1. Measure MeV gamma-ray flux during the flare event.
-2. Determine the duration of flare periods.
-
-### GRS 1758-258
-
-**Data Files:** <br />
-GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz
-
-**Input Models:**  <br />
-Best fit comptonization model of epoch2 of [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf).
-
-**Goals:** <br />
-1. A simple test of spectral measurement for this galactic center source.
-   
-### Cygnus X1
-   
-**Data Files:** <br />
-cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-cygX1_hard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
-The two spectral models for Cyg X1 are best fit eqpair  models of time averaged INTEGRAL data [Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract) given for hard and soft states respectively. Polarization is also included. The hard state model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. The soft spectral state assumes an energy-independent polarization of 20% (same angle).  
-
-**Goals:** <br />
-1. Check detection sensitivity in soft state
-2. Test how well COSI can monitor for spectral transitions
-
-### Cygnus X3
-   
-**Data Files:** <br />
-cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
-There are 6 different spectral models for Cyg X3, which are best fit eqpair models of time averaged INTEGRAL data from [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
-We would like to assume a succession of the different states (in this order and for the specified approximate durations):
-
-<pre>
-Percent of time of observed state    ->    time in days (for a 2 year mission)
-Quiescent:  6.                                    47
-Transition  46.                                   335
-FHXR:       10.                                   73
-FIM:        22.                                   161
-FSXR:       54.                                   28
-Hypersoft:  12.                                   86
-</pre>
-
-Since DC3 simulates 3 months of exposure, we reduce the time spent in each state accordingly and
-increase the fluxes by a factor of 7.9 as to obtain the same total number of photons as we would in 2 yrs of observations. NB: The background rates should also be scaled up in the same way!
-
-**Goals:** <br />
-1. Check if COSI can achieve a decent measurement of the average spectrum over its lifetime, and if so, check if we can detect the spectral changes on shorter time scales.
-   
-### 1E1740.7-2942
-   
-**Data Files:** <br />
-1E1740_compow_3months_unbinned_data_filtered_with_SAAcut.fits.gz
-1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz
-
-**Input Models:**  <br />
-The 2 spectral models for 1E1740.7-2942 (also know as great annihilator) are the best fit models
- of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf):
- - compow: thermal comptonization + power law
- - twocompt: two components of thermal comptonization with different temperatures
-Both models represent the INTEGRAL data well but strongly differ at the highest energies. 
-
-**Goals:** <br />
-1. Test whether COSI would be able to distinguish between the two models.
-
-### MAXI J1820+070 and MAXI J1348-630
-   
-**Data Files:** <br />
-MAXI1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MAXI1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
-The spectral models for MAXI J1820+070 and MAXI J1348-630 are scans of published INTEGRAL data shown in Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract), in the hard state. The polarimetric models corresponds to the measurements shown in table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXIJ1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. 
-
-**Goals:** <br />
-1. Test COSI's ability to measure spectra and polarization of transient sources.
-  
 </details>
 
 <details>
@@ -477,17 +468,10 @@ ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.
 ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz (polarized sources) <br />
 extended_source_response_continuum_merged.h5.gz (precomputed extended source response)  <br />
 
-### NGC 1068
 
-**Data Files:** <br /> 
-NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz
-
-**Input Models:**  <br />
 The baseline model is a powerlaw with exponential cut-off from Bauer+2015: <br />
 Gamma=1.92, Ecut=200 keV; intrinsic flux 2-10 keV = 8.9e-10 erg/cm2/s
 
-**Goals:** <br />
-1. Determine flux in the COSI band, and coronal cut-off energy
 
 ### NGC 4151
 
@@ -508,9 +492,6 @@ flux calibrated from INTEGRAL observation of Lubinski+2010: <br />
 NGC_4151_bright: Gamma=1.71, Ecut=264 keV <br />
 NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
 
-**Goals:** <br />
-1. Determine flux in the COSI band, and coronal cut-off energy <br />
-
 ### 4C+21.35
 
 **Data Files:** <br />
@@ -526,8 +507,6 @@ The two states come with two different spectra: both powerlaws with different in
 
 The normalization is derived from the integrated flux in COSI energy band derived from the extrapolation of the Fermi-LAT log parabola function. 
 
-**Goals:** <br />
-1. What are the goals of this challenge? <br />
 
 ### 3C 279
 
@@ -537,8 +516,8 @@ The normalization is derived from the integrated flux in COSI energy band derive
 **Input Models:**  <br />
 The spectral data is for 3C 279 high, which represent the high state of the source, and the flux is increased by 100x its nominal value. The source is polarized with a polarization fraction of 19.62%, and a randomly chosen polarization angle of 45 degrees (in IAU convention). 
 
-**Goals:** <br />
-1. Measure the polarization fraction and angle.
+
+
 
   
 </details>
