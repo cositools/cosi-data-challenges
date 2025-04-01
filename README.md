@@ -519,6 +519,12 @@ The source is located at $l = 155.1^{\circ}, b = 75.1^{\circ}$ and has an integr
 **4C+21.35 Input Models:**  <br />
 We have included a simulation of quasar 4C+21.35 which has both a quiescent state simulation (noflare) and a flaring state in separate files. The lightcurve describing the quiescent flux and the flare is based on Fermi data, where the flaring state is initiated when the reported flux is 3x greater than the 16-years average flux. The normalization is derived from the integrated flux in COSI energy band derived from the extrapolation of the Fermi-LAT log parabola function. The two states come with two different spectra: both powerlaws with different indices, where the non flaring state has = 1.6, and the flaring state has an index of 2.5. The flaring state has variable flux between 1838089680 < T < 1840422465, and is zero elsewhere, and the non-flaring state is the opposite, as seen in the light curve below. Combine these files to represent a 4C+21.35 flare with a different spectral model in the flaring state.
 
+<p align="center">
+<img width="500"  src="static/ExtragalacticDC3_4C_LC.png">
+</p>
+
+<div align="left">
+
 
 ### Polarized source
 
