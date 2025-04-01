@@ -124,7 +124,7 @@ Total_BG_3months_binned_for_Ti44_filtered_with_SAAcut.hdf5 <br />
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
-For DC2 we simulated 43 unique sources, running 71 different simulations in total (using multiple models for some of the sources). 
+For DC3 we simulated 43 unique sources, running 71 different simulations in total (using multiple models for some of the sources). 
 
 Unbinned Files: <br />
 511_testing_point_src_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
