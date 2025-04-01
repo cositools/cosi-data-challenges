@@ -107,6 +107,15 @@ PrimaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryProtons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+Binned Files (in Backgrounds/Ge/Binned_BG_Files): <br />
+Note: The binning matches the response specified in the name, and a single bin is used for time. <br />
+Total_BG_3months_binned_for_26Al_filtered_with_SAAcut.hdf5 <br />
+Total_BG_3months_binned_for_511_filtered_with_SAAcut.hdf5 <br />
+Total_BG_3months_binned_for_continuum_filtered_with_SAAcut.hdf5 <br />
+Total_BG_3months_binned_for_Fe60High_filtered_with_SAAcut.hdf5 <br />
+Total_BG_3months_binned_for_Fe60Low_filtered_with_SAAcut.hdf5 <br />
+Total_BG_3months_binned_for_Ti44_filtered_with_SAAcut.hdf5 <br />
 </details>
 
 <details>
@@ -115,7 +124,7 @@ SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
-For DC2 we simulated 43 unique sources, running 71 different simulations in total (using multiple models for some of the sources). 
+For DC3 we simulated 43 unique sources, running 71 different simulations in total (using multiple models for some of the sources). 
 
 Unbinned Files: <br />
 511_testing_point_src_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
@@ -136,6 +145,9 @@ Positrons_from_26Al_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br 
 Positrons_from_26Al_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Positrons_from_44Ti_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Positrons_from_44Ti_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Narrow_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Broad_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NFW_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC200_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
