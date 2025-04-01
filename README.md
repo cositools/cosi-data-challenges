@@ -371,7 +371,7 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 - Measure the spectrum of the Galactic diffuse continuum emission, extracting it from the rest of the background
 - _Stretch goal:_ Make a time cut for the Cyg X1 soft and hard states and combine the two simulations to create a spectral transition, and determine COSI’s ability to detect this transition.
 
-We have simulated 8 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 2 transient sources (PSR B1259-63 has a single flare, and Cyg X3 has 6 state transitions), and 3 sources with polarization (Cyg-X1, MAXI J1820+070 and J1348-630). We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
+We have simulated 8 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 2 transient sources (PSR B1259-63 has a single flare, and Cyg X3 has 6 state transitions), and 3 sources with polarization (Cyg-X1, MAXI J1820+070 and J1348-630). We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** <br />
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
@@ -461,60 +461,72 @@ This is the first data challenge to include the Galactic diffuse continuum, and 
   <summary>Extragalactic</summary>
   
 ## Extragalactic Data Challenges
+There is one Key Objective for Extragalactic science with COSI:
+1. Constrain geometries and emission processes in Active Galactic Nuclei (AGN) <br />
+
+While the main science goals for COSI are not directly related to many extragalactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. We start exploring COSI’s extragalactic science capabilities in DC3. 
+
+
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
-**All challenges should use the same detector response file:** <br />
-ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
-ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz (polarized sources) <br />
-extended_source_response_continuum_merged.h5.gz (precomputed extended source response)  <br />
+### DC3 Goals:
+- Perform the image and spectral fit of AGN NGC 1068 to determine the flux in the COSI band and the coronal cut-off energy
+- Perform the image and spectral fit of AGN NGC 4151 to determine the flux in the COSI band and the coronal cut-off energy
+- Test whether COSI would be able to distinguish between the different  NGC 4151 spectral models
+- Measure MeV gamma-ray flux during the quasar 4C+21.35 flare and determine the duration of the flaring period
+- Fit the 4C+21.35 spectrum in the flaring and non-flaring state
+- Perform the image and spectral fit of quasar 3C 279
+- Measure the polarization fraction and angle of 3C 279 in the hard state
 
+We have simulated 4 extragalactic sources: 2 are steady state sources (NGC 1068 and NGC 4151), 1 transient source (4C+21.35), and 1 polarized source (3C 279). Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
 
-The baseline model is a powerlaw with exponential cut-off from Bauer+2015: <br />
-Gamma=1.92, Ecut=200 keV; intrinsic flux 2-10 keV = 8.9e-10 erg/cm2/s
+**All challenges should use the same detector response files:** <br />
+- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
+- ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz <br />
 
+Note: the second response file is used for polarization analysis.
 
-### NGC 4151
+### Steady state sources
 
 **Data Files:** <br />
+NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz
 NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC200_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_faint_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
-**Input Models:**  <br />
-The baseline model is a powerlaw with exponential cut-off. <br />
+**NGC 1068 Input Models:**  <br />
+The simulation for AGN NGC 1068 is based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract). The source is located at $l = 17.2^{\circ}, b = -51.9^{\circ}$, and is modeled as a power law with a photon index of 1.92 and an exponential cut off at 200 keV. The intrinsic flux reported in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract) for the 2-10 keV band is $8.9 \times ^{-10} \ \mathrm{erg \ cm^{-2} s^{-1}}$, and we have simulated a total integrated flux of $1.5 \times 10^{-3}\ \mathrm{ ph \ cm^{-2} s^{-1}}$ (0.1 – 10 MeV).
 
-flux in the 20-30 keV calibrated from NuSTAR observations: <br />
-NGC_4151_ec200: Gamma=1.75, Ecut=200 keV <br />
-NGC_4151_ec1000: Gamma=1.75, Ecut=1000 keV <br />
 
-flux calibrated from INTEGRAL observation of Lubinski+2010: <br />
-NGC_4151_bright: Gamma=1.71, Ecut=264 keV <br />
-NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
+**NGC 4151 Input Models:**  <br />
+NGC 4151 is a Seyfert galaxy which hosts one of the brightest AGN. For DC3, we have included 4 different spectral models for NGC 4151 which are all defined as a powerlaw with exponential cut off. From NuSTAR observations, with the flux calibrated in the 20-30 keV range, we have simulated two different cut-off energies based on the analysis presented in [Keck+ 2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...806..149K/abstract): <br />
+- NGC_4151_ec200: Gamma=1.75, Ecut=200 keV <br />
+- NGC_4151_ec1000: Gamma=1.75, Ecut=1000 keV <br />
 
-### 4C+21.35
+From INTEGRAL observations there are two cut-off energies and two power-law gamma factors to model two different states as presented in  [Lubinski+ 2010](https://ui.adsabs.harvard.edu/abs/2010MNRAS.408.1851L/abstract):
+- NGC_4151_bright: Gamma=1.71, Ecut=264 keV <br />
+- NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
+
+The source is located at $l = 155.1^{\circ}, b = 75.1^{\circ}$ and has an integrated flux ranging from $6.8 \times 10^{-4}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (NGC_4151_faint) to $3.7 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ (NGC_4151_ec1000).
+
+### Transient source
 
 **Data Files:** <br />
 4C21p35_noflare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 4C21p35_flare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
-**Input Models:**  <br />
-We present a lightcurve showing 2 states: a flaring state and a quiescent state. The Flaring state is defined every time in which the average flux is 3 times greater than the 16-years average flux (given by Fermi).
-
-The two states come with two different spectra: both powerlaws with different indices:
-1. noflare = 1.6
-2. flare = 2.5
-
-The normalization is derived from the integrated flux in COSI energy band derived from the extrapolation of the Fermi-LAT log parabola function. 
+**4C+21.35 Input Models:**  <br />
+We have included a simulation of quasar 4C+21.35 which has both a quiescent state simulation (noflare) and a flaring state in separate files. The lightcurve describing the quiescent flux and the flare is based on Fermi data, where the flaring state is initiated when the reported flux is 3x greater than the 16-years average flux. The normalization is derived from the integrated flux in COSI energy band derived from the extrapolation of the Fermi-LAT log parabola function. The two states come with two different spectra: both powerlaws with different indices, where the non flaring state has = 1.6, and the flaring state has an index of 2.5. The flaring state has variable flux between 1838089680 < T < 1840422465, and is zero elsewhere, and the non-flaring state is the opposite, as seen in the light curve below. Combine these files to represent a 4C+21.35 flare with a different spectral model in the flaring state.
 
 
-### 3C 279
+### Polarized source
 
 **Data Files:** <br />
 3C279_3months_unbinned_data_filtered_with_SAAcut.fits.gz
 
-**Input Models:**  <br />
-The spectral data is for 3C 279 high, which represent the high state of the source, and the flux is increased by 100x its nominal value. The source is polarized with a polarization fraction of 19.62%, and a randomly chosen polarization angle of 45 degrees (in IAU convention). 
+**3C 279 Input Models:**  <br />
+The spectral model for the DC3 simulation of quasar 3C 279 represents the high state of the source, where we have used a flux 100x its nominal value. The spectra is described is based on the model in  ______ [cite], with a total integrated flux of $1.2 \times 10^{-2} \ \mathrm{ph cm^{-2} s^{-1}}$. This is the same model as DC2, but we now include polarization. We have assumed a polarization fraction of 19.62% based on the results from ____ [cite], and a randomly chosen polarization angle of 45 degrees (in IAU convention). The source is located at $l = 305.1^{\circ}, b = 57.1^{\circ}$.
 
 
 
