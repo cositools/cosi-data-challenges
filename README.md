@@ -532,7 +532,7 @@ We have included a simulation of quasar 4C+21.35 which has both a quiescent stat
 3C279_3months_unbinned_data_filtered_with_SAAcut.fits.gz
 
 **3C 279 Input Models:**  <br />
-The spectral model for the DC3 simulation of quasar 3C 279 represents the high state of the source, where we have used a flux 100x its nominal value. The spectra is described is based on the model in  ______ [cite], with a total integrated flux of $1.2 \times 10^{-2} \ \mathrm{ph cm^{-2} s^{-1}}$. This is the same model as DC2, but we now include polarization. We have assumed a polarization fraction of 19.62% based on the results from ____ [cite], and a randomly chosen polarization angle of 45 degrees (in IAU convention). The source is located at $l = 305.1^{\circ}, b = 57.1^{\circ}$.
+The spectral model for the DC3 simulation of quasar 3C 279 represents the high state of the source, where we have used a flux 100x its nominal value. The spectra is described is based on the model in [Zhang+15](https://ui.adsabs.harvard.edu/abs/2015ApJ...804...58Z/abstract), with a total integrated flux of $1.2 \times 10^{-2} \ \mathrm{ph cm^{-2} s^{-1}}$. This is the same model as DC2, but we now include polarization. We have assumed a polarization fraction of 19.62% based on the results from [Zhang+15](https://ui.adsabs.harvard.edu/abs/2015ApJ...804...58Z/abstract), and a randomly chosen polarization angle of 45 degrees (in IAU convention). The source is located at $l = 305.1^{\circ}, b = 57.1^{\circ}$.
 
 
 
