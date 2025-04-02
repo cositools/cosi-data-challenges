@@ -115,7 +115,7 @@ The tools needed to complete these challenges are demonstrated in the [GRB spect
 - Check if the magnetar short burst is detectable, and if detectable localize and fit the spectrum
 - _Stretch goal:_ Develop a classification technique to distinguish a GRB or MGF
 
-We have simulated 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. GRB bn090424592 is the brightest of the bursts we’ve simulated and it may be easiest to start with that one. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+We have simulated 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. GRB bn090424592 is the brightest of the bursts we’ve simulated and it may be easiest to start with. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** 
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
