@@ -668,4 +668,4 @@ Previous, current, and planned releases are summarized below (click to expand):
 </details>
 
 ## Citing 
-If you make use of any of the data products from the COSI Data Challenges in a publication, please provide a link to this page and cite [Zoglauer+23](https://arxiv.org/abs/2102.13158) and [Martinez-Castellanos+23](https://pos.sissa.it/444/858), as well as the zenodo release: https://doi.org/10.5281/zenodo.15126188. 
+If you make use of any of the data products from the COSI Data Challenges in a publication, please provide a link to this page and cite [Zoglauer+23](https://arxiv.org/abs/2102.13158), [Martinez-Castellanos+23](https://pos.sissa.it/444/858), and the zenodo release: https://doi.org/10.5281/zenodo.15126188. 
