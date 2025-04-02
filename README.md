@@ -431,8 +431,8 @@ Since DC3 simulates 3 months of exposure, we reduced the time spent in each stat
 **Data Files:** <br />
 cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 cygX1_hard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MAXI1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MAXI1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXIJ1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXIJ1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Cyg X1 Input Models:**  <br />
 The two spectral models for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) are best fit eqpair models of time averaged INTEGRAL data ([Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract))  given for hard and soft states respectively. Both hard and soft states are simulated for the full 3 months, but the user can make a time cut and combine as needed to define a spectral transition. The hard state polarization model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. The soft spectral state assumes an energy-independent polarization of 20%, again at the same 40 degree angle.
