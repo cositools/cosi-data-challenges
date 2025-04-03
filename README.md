@@ -366,12 +366,14 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 - Check the detection sensitivity in the Cyg X1 soft state and hard state
 - Measure the polarization of Cyg X1 in the hard state
 - Measure the spectra and polarization of transient sources MAXI J1820+070 and J1348-063
+- Establish analysis methods for detecting periodic sources like LS 5039
+- Obtain an orbital light curve folded with the binary period for LS 5039
 - Characterize how the the Galactic diffuse continuum emission as a background component impacts the sensitivity for point sources in the Galactic plane
 - Image the Galactic diffuse continuum emission in the COSI energy band
 - Measure the spectrum of the Galactic diffuse continuum emission, extracting it from the rest of the background
 - _Stretch goal:_ Make a time cut for the Cyg X1 soft and hard states and combine the two simulations to create a spectral transition, and determine COSI’s ability to detect this transition.
 
-We have simulated 8 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 2 transient sources (PSR B1259-63 has a single flare, and Cyg X3 has 6 state transitions), and 3 sources with polarization (Cyg-X1, MAXI J1820+070 and J1348-630). We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+We have simulated 9 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 2 transient/variable sources (PSR B1259-63 has a single flare, Cyg X3 has 6 state transitions, and LS 5039 is periodic), and 3 sources with polarization (Cyg-X1, MAXI J1820+070 and J1348-630). We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** <br />
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
