@@ -168,6 +168,8 @@ cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 MAXIJ1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 MAXIJ1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+LS5039_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+LS5039_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
