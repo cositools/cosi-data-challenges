@@ -643,7 +643,7 @@ Previous, current, and planned releases are summarized below (click to expand):
   - New methods in both MEGAlib and cosipy to account for Earth occultation with a non-zenith pointing. 
   - First time including polarization.
   - Restructuring and refinement of the cosi-data-challenges repository.
-  - Simulated 43 unique sources, running 71 different source simulations in total (using multiple models for some of the sources).
+  - Simulated 44 unique sources, running 74 different source simulations in total (using multiple models for some of the sources).
   - Numerous improvements to cosipy:
     - First version of source injector.
     - New implementation of Earth occultation in point source response.
