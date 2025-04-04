@@ -124,7 +124,7 @@ Total_BG_3months_binned_for_Ti44_filtered_with_SAAcut.hdf5 <br />
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
-For DC3 we simulated 43 unique sources, running 71 different simulations in total (using multiple models for some of the sources). 
+For DC3 we simulated 44 unique sources, running 74 different simulations in total (using multiple models for some of the sources). 
 
 Unbinned Files: <br />
 511_testing_point_src_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
@@ -149,6 +149,9 @@ Narrow_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Broad_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NFW_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Vela_SNR_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+nova_co_511keV_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+nova_co_continuum_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+nova_co_478keV_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC200_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
