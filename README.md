@@ -197,7 +197,7 @@ The tools needed to complete these challenges are demonstrated in the [511 imagi
 - Measure the Doppler shift in the disk
 - _Stretch goal:_ cross-correlate the measured 511 keV emission with <sup>26</sup>Al map (1809 keV emission) to constrain propagation distances
 
-We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum. We have also simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum.  Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
+We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum, with three different bulge models that agree with INTEGRAL/SPI measurements. We have also simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum.  Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
 
 **The challenges will use the following detector response files:** 
 - Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br />
@@ -214,8 +214,9 @@ Positrons_from_26Al_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br 
 Positrons_from_26Al_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Positrons_from_44Ti_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Positrons_from_44Ti_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Vela_SNR_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
-**Input Models:**  <br />
+**Galactic Input Models:**  <br />
 The spatial distribution of positrons from <sup>26</sup>Al and <sup>44</sup>Ti decay is derived from the propagation of positrons in our Galaxy, where the initial positions of positrons follows the NE2001 model from [Cordes & Lazio 2002](https://arxiv.org/abs/astro-ph/0207156). The model fits the distribution of massive stars in our Galaxy, with an assumed fraction of 2% for both <sup>26</sup>Al and <sup>44</sup>Ti in the bulge. The positron propagation method is described in [Alexis et al. 2014](https://ui.adsabs.harvard.edu/abs/2014A%26A...564A.108A/abstract). The positron rate due to <sup>26</sup>Al is set to $2.6 \times 10^{42}$ e+/s based on INTEGRAL/SPI measurements at 1809 keV [Diehl et al. 2006](https://ui.adsabs.harvard.edu/abs/2006Natur.439...45D/abstract),  and the rate from <sup>44</sup>Ti decay is assumed to be $3\times 10^{42}$ e+/s (see section 2.3 of [Alexis et al. 2014](https://ui.adsabs.harvard.edu/abs/2014A%26A...564A.108A/abstract)).
 
 The spectrum for these diffuse models have two separate components: the 511 keV annihilation line and the ortho-positronium continuum (i.e. files containing “cont”). These were obtained from the model of [Guessoum et al 2005](https://ui.adsabs.harvard.edu/abs/2005A%26A...436..171G/abstract) with a computed spectrum for each phase of the interstellar medium, based on the spatial distribution described above. The spectral model was corrected by the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc.
@@ -228,6 +229,22 @@ The imaged spatial distribution should resemble the initial model, shown here fo
 
 <div align="left">
 
+**Vela Input Models:**  <br />
+The 511 keV photon flux from the Vela SNR is estimated assuming that all positrons from $1 \times 10^{-4}$ $M_\odot\$ of <sup>44</sup>Ti decay are trapped within the remnant by magnetic fields. We assume a 511 keV flux of $3.5 \times 10^{-4} \mathrm{ph \ cm^{-2} \ s^{-1}}$ and a spatial distribution the follows total ROSAT all-sky survey X-ray emission. This is NOT a point source, but ~8 deg in extent.
+
+### Bulge Emission
+**Data Files:** <br />
+Narrow_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Broad_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NFW_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+We've simulated 3 bulge models seperate from the disk but recommend you add either the NFW or narrow + broad bulge to the disk simulations above for a representative all-sky distribution. The broad bulge and narrow bulge spatial models are based on the Boxy bulge ([Freudenreich 1998](https://ui.adsabs.harvard.edu/abs/1998ApJ...492..495F/abstract)) and nuclear bulge ([Launhardt et al. 2002](https://ui.adsabs.harvard.edu/abs/2002A%26A...384..112L/abstract)). These are consistent with the INTEGRAL/SPI spatial model components referred to as the broad and narrow bulge in ([Skinner et al. 2014](https://pos.sissa.it/228/054/) and [Siegert et al. 2016](https://ui.adsabs.harvard.edu/abs/2016A%26A...586A..84S/abstract)). The NFW<sup>2</sup> model is derived from dark matter models and is based on the spatial distribution presented in ([Siegert et al. 2024](https://ui.adsabs.harvard.edu/abs/2024MNRAS.528.3433S/abstract)). Each bulge model has a 511 keV component and ortho-Ps continuum, as expected from low-energy positron annihilation ($f_{Ps}$ ~ 1). Images of the narrow, broad, and NFW<sup>2</sup> models are shown below. 
+
+<p float="left">
+  <img src="static/PositronDC3_NarrowBulge.png" width="300" />
+  <img src="static/PositronDC3_BroadBulge.png" width="300" /> 
+  <img src="static/PositronDC3_NFWBulge.png" width="300" />
+</p>
 
 ### Extragalactic Sources
 
@@ -578,8 +595,7 @@ We consider cases where two dark matter (DM) particles annihilate into either tw
 ## Known Caveats and Limitations
 The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work on them, with the ultimate goal of implementing the software solutions into cosipy. Also see the bottom of the [cosipy-intro](cosipy-intro) for a related discussion on the next steps of development.
 
-- **Image deconvolution does not consider Earth occultation or SAA passage when computing the point source response on the fly.** To include these effects, use a precomputed point source response file instead.
-- **The polarization analysis is currently only working for short transients that are >15 degrees off-axis.** The polarization analysis tools are currently limited to short transients because they do not yet account for the changing aspect information. This will be updated soon. Additionally, the issue relating to sources that are close to on-axis stems from the polarization response, which is defined with respect to the instrument's z-axis, leading to an undefined polarization angle for on-axis sources. The problem actually pertains to all sources within ~15 degrees due to the coarse response binning. We are working on providing a polarization response defined with respect to the instrument's x-axis (where the effective area is much smaller), which will help to alleviate this issue.  
+- **Image deconvolution does not consider Earth occultation or SAA passage when computing the point source response on the fly.** To include these effects, use a precomputed point source response file instead. 
 - **It is not currently possible to simultaneously fit continuum and line components.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
   - Creating a single response for all components
   - Creating a class that automatically matches an input model with the corresponding response

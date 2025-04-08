@@ -2,7 +2,7 @@
 
 Polarization, which describes the alignment of photons' electric field vectors, can be used to probe the emission processes of astrophysical sources. As a Compton telescope, *COSI* is inherently sensitive to gamma-ray linear polarization. Data Challenge 3 includes a first version of *COSI*'s polarization analysis software, including two approaches: the azimuthal scattering angle distribution (ASAD) method and the Stokes parameters method.        
 
-The polarization analysis tools will be made more sensitive and comprehensive in future Data Challenges, including a maximum likelihood method using forward-folding. See [Tomsick et al. 2012](https://ui.adsabs.harvard.edu/abs/2022hxga.book...73T/abstract) for a more in-depth overview of polarimetry with *COSI*.        
+The polarization analysis tools will be made more sensitive and comprehensive in future Data Challenges, including a maximum likelihood method using forward-folding. See [Tomsick et al. 2022](https://ui.adsabs.harvard.edu/abs/2022hxga.book...73T/abstract) for a more in-depth overview of polarimetry with *COSI*.        
 
 ## Compton Polarimetry       
 
