@@ -62,17 +62,16 @@ We have created example Jupyter notebooks demonstrating all of the tools that wi
 
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) <br />
 Example 2: [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) <br />
-Example 3: [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) <br />
+Example 3: [GRB localization (TS maps)](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) <br />
 Example 4: [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb) <br />
 Example 5: [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) <br />
 Example 6: [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) <br />
 Example 7: [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning) <br />
 Example 8: [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/GalacticCDS) <br />
 Example 9: [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) <br />
-Example 10: [TS maps](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) <br />
-Example 11: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) <br />
-Example 12: [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) <br />
-Example 13: [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
+Example 10: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) <br />
+Example 11: [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) <br />
+Example 12: [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
 
 If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md).
 
@@ -636,7 +635,7 @@ Previous, current, and planned releases are summarized below (click to expand):
   - Contains 8 main tutorials demonstrating all the tools/methods needed for completing the challenges, included as part of the cosipy release:
     - dataIO
     - detector response
-    - GRB localization
+    - GRB localization (TS maps)
     - GRB spectral fit
     - Crab spectral fit
     - 511 spectral fit
@@ -667,9 +666,8 @@ Previous, current, and planned releases are summarized below (click to expand):
     - New methods to estimate the background for continuum sources and line sources.
     - Refinements and further developments of imaging class.
     - New extended source response class.
-  - Contains 5 new tutorials (in addition to the ones released with DC2) demonstrating the tools/methods needed for completing the challenges, included as part of the cosipy release:
+  - Contains 4 new tutorials (in addition to the ones released with DC2) demonstrating the tools/methods needed for completing the challenges, included as part of the cosipy release:
     - Source injector
-    - TS maps
     - Polarization (ASAD method)
     - Continuum background estimation
     - Line background estimation  
