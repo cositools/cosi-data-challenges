@@ -467,8 +467,10 @@ The magnetar 1RXS J170849.0-400901 is a bright periodic source, with a spectrum 
 
 The spectrum is a log parabola in the MeV energy range:
 
-        spec = norm * var**(-alpha-beta*np.log(var)),
-        where var = x/pivot
+```
+spec = norm * var**(-alpha-beta*np.log(var)),
+where var = x/pivot
+```
 
 The assumed parameters are:
 * alpha = 1.637
