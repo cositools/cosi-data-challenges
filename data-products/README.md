@@ -124,7 +124,7 @@ Total_BG_3months_binned_for_Ti44_filtered_with_SAAcut.hdf5 <br />
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Sources: <br />
-For DC3 we simulated 44 unique sources, running 74 different simulations in total (using multiple models for some of the sources). 
+For DC3 we simulated 45 unique sources, running 75 different simulations in total (using multiple models for some of the sources). 
 
 Unbinned Files: <br />
 511_testing_point_src_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
@@ -173,6 +173,7 @@ MAXIJ1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 LS5039_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 LS5039_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+1RXSJ170849_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />

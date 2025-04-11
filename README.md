@@ -384,12 +384,13 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 - Measure the spectra and polarization of transient sources MAXI J1820+070 and J1348-063
 - Establish analysis methods for detecting periodic sources like LS 5039
 - Obtain an orbital light curve folded with the binary period for LS 5039
+- Detect the magnetar 1RXS J170849.0-400901, including its pulsation, polariztion, and spectrum
 - Characterize how the the Galactic diffuse continuum emission as a background component impacts the sensitivity for point sources in the Galactic plane
 - Image the Galactic diffuse continuum emission in the COSI energy band
 - Measure the spectrum of the Galactic diffuse continuum emission, extracting it from the rest of the background
 - _Stretch goal:_ Make a time cut for the Cyg X1 soft and hard states and combine the two simulations to create a spectral transition, and determine COSI’s ability to detect this transition.
 
-We have simulated 9 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 2 transient/variable sources (PSR B1259-63 has a single flare, Cyg X3 has 6 state transitions, and LS 5039 is periodic), and 3 sources with polarization (Cyg-X1, MAXI J1820+070 and J1348-630). We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+We have simulated 10 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 3 transient/variable sources (PSR B1259-63 has a single flare, Cyg X3 has 6 state transitions,  and LS 5039 is periodic), and 4 sources with polarization (Cyg-X1, MAXI J1820+070, J1348-630, and 1RXS J170849.0-400901). Note that all of the polarized sources are variable as well. We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** <br />
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
@@ -414,8 +415,6 @@ The spectral model for the microquasar GRS 1758-258 near the Galactic center is 
 
 **1E1740.7-2942 Input Models:**  <br />
 The 2 spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) are the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). The "compow" simulation is a thermal comptonization + powerlaw model, while the "twocompt" simulation has two components of thermal comptonization with different temperatures. Both models represent the INTEGRAL data well but strongly differ at the highest energies. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the compow model and $3.13 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the twocompt model.
-
-
 
 ### Transient/Variable sources 
 
@@ -461,6 +460,29 @@ The two spectral models for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) are bes
 
 **MAXI J1820+070 and J1348-630 Input Models:**  <br />
 The spectral models for two black hole X-ray binaries, MAXI J1820+070 and MAXI J1348-630, are based on INTEGRAL data (Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract)), in the hard state. The polarimetric models corresponds to the measurements shown in Table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXI J1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. Therefore, MAXI J1820+070 has a nominal flux of $1.4 \times 10^{-1}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $6.0 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1840671300, and then drops to zero. MAXI J1348-630 has a flux of $8.6 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $2.3 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1836092100.
+
+**1RXS J170849.0-400901:**  <br />
+The magnetar 1RXS J170849.0-400901 is a bright periodic source, with a spectrum (nuFnu) rising above 10 keV that is well constrained by INTEGRAL-IBIS, and an extreme polarization in soft X-rays with a strong energy dependence ([Zane+23](https://iopscience.iop.org/article/10.3847/2041-8213/acb703)). The models that we use are based on [Hartog+08](https://www.aanda.org/articles/aa/abs/2008/37/aa09772-08/aa09772-08.html).
+
+The spectrum is a log parabola in the MeV energy range:
+
+        spec = norm * var**(-alpha-beta*np.log(var)),
+        where var = x/pivot
+
+The assumed parameters are:
+* alpha = 1.637
+* beta = 0.261
+* norm = 1.68e-6 ph/cm2/s/keV
+* pivot = 143.276 keV
+
+The polarization is assumed energy independent in the COSI band with a phase-integrated polarization degree of 80% (PA=-60 deg).
+
+The Lightcurve is periodic with the following parameters:
+* Period: P = 11.00502461 s
+* Period derivative: Pdot = 1.95E-11 s/s
+* Pulsed Fraction: PF = 0.5
+
+The Pulsed fraction is defined as (Fmax - Fmin)/(Fmax + Fmin), with F being the flux.
 
 ### Galactic diffuse continuum
 
@@ -658,7 +680,7 @@ Previous, current, and planned releases are summarized below (click to expand):
   - New methods in both MEGAlib and cosipy to account for Earth occultation with a non-zenith pointing. 
   - First time including polarization.
   - Restructuring and refinement of the cosi-data-challenges repository.
-  - Simulated 44 unique sources, running 74 different source simulations in total (using multiple models for some of the sources).
+  - Simulated 45 unique sources, running 75 different source simulations in total (using multiple models for some of the sources).
   - Numerous improvements to cosipy:
     - First version of source injector.
     - New implementation of Earth occultation in point source response.
