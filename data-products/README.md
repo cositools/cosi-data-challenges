@@ -94,7 +94,8 @@ extended_source_response_Fe60_high_merged.h5.gz <br />
 wasabi path: COSI-SMEX/DC3/Data/Backgrounds/Ge <br />
 
 Unbinned Files: <br />
-Total_BG_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Total_BG_with_SAAcomponent_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Total_BG_without_SAAcomponent_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CosmicPhotons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GalTotal_SA100_F98_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 AlbedoNeutrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
