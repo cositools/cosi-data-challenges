@@ -8,7 +8,7 @@
 
 <div align="left">
 
-![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-619%20days-blue)
+![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-618%20days-blue)
 
 ## Table of Contents
 
