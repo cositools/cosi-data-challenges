@@ -673,7 +673,7 @@ Previous, current, and planned releases are summarized below (click to expand):
 </details>
 
 <details>
-  <summary>Data Challenge 3 (current release): April 2025</summary>
+  <summary>Data Challenge 3 (<a href="https://github.com/cositools/cosi-data-challenges/tree/data_challenge_3.2">link</a>): April 2025</summary>
   
  - Focused on COSI SMEX mission.
   - Data challenges for all the main science groups (including dark matter), covering all of COSI's primary science objectives. 
@@ -703,16 +703,25 @@ Previous, current, and planned releases are summarized below (click to expand):
 </details>
 
 <details>
-  <summary>Data Challenge 4: Planned for March 2026</summary>
+  <summary>Data Challenge 4 (current release): May 2026</summary>
  
-  - Currently under development following the release of DC3. 
+  - Fist time using a realistic mock dataset:
+    - We use the same source simulations from DC3, i.e. same orientation, mass model, etc.
+    - Response files are also the same, but the formatting has been optimized. 
+  - Substantial changes to COSIPy, including:
+    - Moved to relative coordinate response and interpolation using machine learning.
+    - Unbinned analysis.
+    - Optimization and usability of code.
+    - Improvements to background estimation tools.
+    - Abiity to fit multiple background parameters.
+    - Improved tools to make data selections.       
 
 </details>
 
 <details>
-  <summary>Data Challenge 5: Planned for March 2027</summary>
+  <summary>Data Challenge 5: Planned for January 2027</summary>
   
-  - Final release before launch :rocket:!
+  - Final release before launch :rocket:! 
 
 </details>
 
