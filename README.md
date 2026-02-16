@@ -723,7 +723,7 @@ Previous, current, and planned releases are summarized below (click to expand):
   <summary>Data Challenge 5: Planned for January 2027</summary>
   
   - Final release before launch :rocket:!
-  - This data challenge will be blind to the general scientific community and most of the COSI science. 
+  - This data challenge will be blind to the general scientific community and most of the COSI science team. 
 
 </details>
 
