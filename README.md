@@ -1,6 +1,6 @@
 <div align="center">
   
-# Welcome to COSI Data Challenge 3!
+# Welcome to COSI Data Challenge 4!
 
 <p align="center">
 <img width="325"  src="static/COSI-SMEX Emblem_2E.png">
