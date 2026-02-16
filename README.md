@@ -706,8 +706,9 @@ Previous, current, and planned releases are summarized below (click to expand):
   <summary>Data Challenge 4 (current release): May 2026</summary>
  
   - Fist time using a realistic mock dataset:
-    - We use the same source simulations from DC3, i.e. same orientation, mass model, etc.
-    - Response files are also the same, but the formatting has been optimized. 
+    - We use the same source simulations from DC3, i.e., same spacecraft orientation, mass model, MEGALib version (including detector effects engine), MEGALib configuration files, etc.
+    - In addition to the source simulations from DC3, we simulated 25 new sources. 
+    - Response files are also the same, but the formatting has been optimized.
   - Substantial changes to COSIPy, including:
     - Moved to relative coordinate response and interpolation using machine learning.
     - Unbinned analysis.
@@ -721,7 +722,8 @@ Previous, current, and planned releases are summarized below (click to expand):
 <details>
   <summary>Data Challenge 5: Planned for January 2027</summary>
   
-  - Final release before launch :rocket:! 
+  - Final release before launch :rocket:!
+  - This data challenge will be blind to the general scientific community and most of the COSI science. 
 
 </details>
 
