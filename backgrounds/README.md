@@ -1,20 +1,23 @@
 # Backgrounds
 
+### Reference 
+A detailed description about the background simulations for DC4 and its results can be found at [Gallego et al. 2026]([10.3847/1538-4357/ae32f4](https://iopscience.iop.org/article/10.3847/1538-4357/ae32f4#apjae32f4fn10)) 
+
 ### Executive Summary
-We employed MEGAlib to simulate 3 months of instrumental and astrophysical backgrounds (BGs), using an equatorial orbit at 530 km with a rocking of 22 degree every 12 hours. The astrophysical BGs include albedo emission, cosmic photons (i.e. the extragalactic gamma-ray background), and the Galactic diffuse continuum emission. The instrumental backgrounds arise from cosmic rays bombarding the instrument, and there is both a prompt component and a delayed component. The former is due to cosmic ray particles directly triggering the instrument. The latter is due to activation of the irradiated materials, which subsequently decay and emit photons that contribute to the BG emission. The instrumental BGs arise mainly from primary protons, primary alpha particles, atmospheric neutrons, primary electrons, primary positrons, and secondary protons, electrons, and positrons, all of which are included in DC3. In order to simulate the activation, MEGAlib keeps in memory each isotope created during the simulation until it decays (the expected decay time is computed according to the isotope lifetime and the event is rejected if this time is longer than the simulation time). This method accurately simulates the build-up of the activation during the 3 months of orbit. Our background simulations account for the time-dependent flux variation due to the changing geomagnetic cutoff along the orbit. Another important BG for COSI will be due to passage through the Southern Atlantic Anomoly (SAA). The SAA component is included in DC3 and will be described below. Spectra and lightcurves for the DC3 BG components are shown below. Further details about the BG simulations are provided in the sections that follow. 
+We employed MEGAlib to simulate 3 months of instrumental and astrophysical backgrounds (BGs), using an equatorial orbit at 530 km with a rocking of 22 degree every 12 hours. The astrophysical BGs include albedo emission, cosmic photons (i.e. the extragalactic gamma-ray background), and the Galactic diffuse continuum emission. The instrumental backgrounds arise from cosmic rays bombarding the instrument, and there is both a prompt component and a delayed component. The former is due to cosmic ray particles directly triggering the instrument. The latter is due to activation of the irradiated materials, which subsequently decay and emit photons that contribute to the BG emission. The instrumental BGs arise mainly from primary protons, primary alpha particles, atmospheric neutrons, primary electrons, primary positrons, and secondary protons, electrons, and positrons, all of which are included in DC4. In order to simulate the activation, MEGAlib keeps in memory each isotope created during the simulation until it decays (the expected decay time is computed according to the isotope lifetime and the event is rejected if this time is longer than the simulation time). This method accurately simulates the build-up of the activation during the 3 months of orbit. Our background simulations account for the time-dependent flux variation due to the changing geomagnetic cutoff along the orbit. Another important BG for COSI will be due to passage through the Southern Atlantic Anomoly (SAA). The SAA component is included in DC4 and will be described below. Spectra the DC4 BG components are shown below. Further details about the BG simulations are provided in the sections that follow. 
 
 <p align="center">
-<img width="475"  src="images/DC3CO_LC.png"> 
-<img width="500"  src="images/DC3spectrum.png">
+<img width="475"  src="images/DC3_Spectrum.png"> 
+<img width="500"  src="images/DC3_spectrum_zoom.png">
 </p>
 
 ## Input Models
 
 ### Spectra and Source Files 
-The input spectra are generated using the model from [Cumani](https://link.springer.com/article/10.1007/s10686-019-09624-0). This is implemented using the code **CreateBackgroundSpectrumMEGAlib.py**, available in the **DC3** branch of the [cosi-background](https://github.com/cositools/cosi-background/tree/DC3) repository. The user can choose the main parameters, including altitude, inclination, geomagnetic cutoff, etc. For DC3 we simulated an equatorial orbit at 530 km. Correspondingly, for the BGs we used the average rigidity cutoff for this orbit (10 GV) as the nominal value. Solar modulation is accounted for using the force field approximation, for which we use 520 MV, extrapolation of the expected solar activity in 2027. The resulting spectra are shown below. All of the input files used for the DC3 simulations can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3). 
+The input spectra are generated using the model from [Cumani](https://link.springer.com/article/10.1007/s10686-019-09624-0). This is implemented using the code **CreateBackgroundSpectrumMEGAlib.py**, available in the **DC3** branch of the [cosi-background](https://github.com/cositools/cosi-background/tree/DC3) repository. The user can choose the main parameters, including altitude, inclination, geomagnetic cutoff, etc. For DC4 we simulated an equatorial orbit at 530 km. Correspondingly, for the BGs we used the average rigidity cutoff for this orbit (12.6 GV) as the nominal value. Solar modulation is accounted for using the force field approximation, for which we use 520 MV, extrapolation of the expected solar activity in 2027. The resulting spectra are shown below. All of the input files used for the DC3 simulations can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC4). 
 
 <p align="center">
-<img width="550"  src="images/DC3inputflux.png">
+<img width="550"  src="images/DC4_inputspectra.png">
 </p>
 
 ### South Atlantic Anomaly (SAA)
@@ -24,16 +27,12 @@ The spectrum and light curve of the trapped protons are generated using the mode
 <img width="1000"  src="images/SAAspectrum.png">
 </p>
 
-The corresponding light curve for a few days of orbit is shown in the figure below. This light curve is used as input for MEGAlib and it allows us to simulate the passage of the satellite through the SAA. The variations seen here result from differences in how COSI crosses the SAA, caused by changes in its orbit over a 24-hour period.
+The corresponding light curve for a few days of orbit is shown in the figure below. This light curve is used as input for MEGAlib and it allows us to simulate the passage of the satellite through the SAA. The variations seen here result from differences in how COSI crosses the SAA, caused by changes in its orbit over a 24-hour period. The actual SAA passages are removed from the simulated data.
 
 <p align="center">
 <img width="550"  src="images/SAALC.png">
 </p>
 
-The corresponding Compton events rate as well as the input light curve are show in the figure below for the first hours of orbit. On this shorter timescale, the rise and fall of the background rate just as COSI leaves the SAA can be seen. Note that the actual SAA passages are removed from the simulated data: 
-<p align="center">
-<img width="550"  src="images/SAAproton_rate_minscale.png">
-</p>
 
 
 ### Galactic Diffuse Continuum Emission
@@ -51,13 +50,8 @@ The spacecraft coordinates have been generated with [SPENVIS](https://www.spenvi
 <img width="550"  src="images/DC3orientation.png">
 </p>
 
-Based on these coordinates, the average geomagnetic cutoff (in GV) is calculated as in [Smart and Shea (2005)](https://www.sciencedirect.com/science/article/pii/S0273117705001997?via%3Dihub):
-
-$$ R_{\mathrm{cutoff}} = \frac{g^1_0\cdot R_{\mathrm{Earth}}}{4}\cdot \left( 1+\frac{h}{R_{\mathrm{Earth}}}\right)^{-2}\cos^4({\lambda}), $$
-
-with $h$ the altitude in km, $R_{\mathrm{Earth}}$ the radius of Earth, $\lambda$ the geomagnetic latitude, and $g^1_0$ a coefficient computed by the International Geomagnetic Reference Field [IGRF](https://www.ncei.noaa.gov/products/international-geomagnetic-reference-field). The geomagnetic latitude for each orbit is computed with the python package [aacgmv2](https://pypi.org/project/aacgmv2/). The IGRF results are released every 5 years. For the DC3 simulations we used the extrapolated value for the year 2027: $g^1_0 =$ 29147.79 nT.        
-
-We calculate the geomagnetic cutoff for 15 second time intervals of the 3 month orientation file, and use this to obtain the integrated spectrum for each instrumental BG component. The geomagnetic cutoff dependencies are described in [Cumani+19](https://link.springer.com/article/10.1007/s10686-019-09624-0). This results in a light curve for each instrumental BG component, which is used as input for the simulations, in order to take into account the geomagnetic cutoff dependencies in the expected BG flux. Note that cosima only takes the light curve shape into account, and the overall flux normalization is set by the spectrum. We make the simplifying approximation that the spectral shape is constant with time. This is a reasonable assumption, considering that the geomagnetic cutoff only varies from 9-11.5 GV, and correspondingly, the change in spectral shape is minor.
+Based on these coordinates, the average geomagnetic cutoff (in GV) is calculated using the Python tool [OTSO](http://doi.org/https://doi.org/10.1029/2022JA031061)
+We calculate the geomagnetic cutoff for 15 second time intervals of the 3 month orientation file, and use this to obtain the integrated spectrum for each instrumental BG component. The geomagnetic cutoff dependencies are described in [Cumani+19](https://link.springer.com/article/10.1007/s10686-019-09624-0). This results in a light curve for each instrumental BG component, which is used as input for the simulations, in order to take into account the geomagnetic cutoff dependencies in the expected BG flux. Note that cosima only takes the light curve shape into account, and the overall flux normalization is set by the spectrum. We make the simplifying approximation that the spectral shape is constant with time. This is a reasonable assumption, considering that the geomagnetic cutoff only varies from 10.4-14.5 GV, and correspondingly, the change in spectral shape is minor.
 
 ## Simulations
 
@@ -77,14 +71,13 @@ The last step is the event selection done by *mimrec* using the configuration fi
 ## Results
 
 ### Spectra and Light Curves 
-The resulting spectra for each component are shown in the second figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC3 event selection. We can observe a dominance of the cosmic photons up to ~1 MeV,  The rates for each component are shown in the top figure at the top of the page. As expected, the rate is dominated by the cosmic photons and the proton/alpha delayed components.
+The resulting spectra for each component are shown in the second figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC4 event selection. We can observe that the extragalactic background photon dominates the background at low energies ($<$660 keV), while delayed activation from cosmic-ray primaries (proton/alpha) and albedo photons dominate at higher energies.
 
 ### Time Variation
 
-On a daily scale, it is difficult to see the variation due to the geomagnetic cutoff (GC). However, on the minute scale we can observe the rate (without including EGB or SAA protons) variation which is opposite to the geomagnetic variation, as shown below. However, due to SAA passages that are removed from the data, the maximum peak of GC is also removed. Also since the EGB and SAA protons dominate the background, these variations are washed out.
-
+On a daily scale, it is difficult to see the variation due to the geomagnetic cutoff (GC). However, on the minute scale we can observe the rate variation which is opposite to the geomagnetic variation, as shown below. The SAA cut is not applied here for better visualization of the rate variation.
 <p align="center">
-<img width="650"  src="images/COLC_minscale.png">
+<img width="650"  src="images/RatevsCutoff.png">
 </p>
 
 This validates the light curve models we used as input for the simulations.
