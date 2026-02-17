@@ -9,7 +9,7 @@ We employed MEGAlib to simulate 3 months of instrumental and astrophysical backg
 </p>
 
 ### Reference 
-A detailed description about the background simulations for DC4 can be found in [Gallego et al. 2026](https://iopscience.iop.org/article/10.3847/1538-4357/ae32f4#apjae32f4fn10). 
+A detailed description of the background simulations for DC4 can be found in [Gallego et al. 2026](https://iopscience.iop.org/article/10.3847/1538-4357/ae32f4#apjae32f4fn10). 
 
 ## Input Models
 
