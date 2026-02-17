@@ -17,20 +17,20 @@ A detailed description of the background simulations for DC4 can be found in [Ga
 The input spectra are generated using the model from [Cumani](https://link.springer.com/article/10.1007/s10686-019-09624-0). This is implemented using the code **CreateBackgroundSpectrumMEGAlib.py**, available in the **DC3** branch of the [cosi-background](https://github.com/cositools/cosi-background/tree/DC3) repository. The user can choose the main parameters, including altitude, inclination, geomagnetic cutoff, etc. For DC4 we simulated an equatorial orbit at 530 km. Correspondingly, for the BGs we used the average rigidity cutoff for this orbit (12.6 GV) as the nominal value. Solar modulation is accounted for using the force field approximation, for which we use 520 MV, extrapolation of the expected solar activity in 2027. The resulting spectra are shown below. All of the input files used for the DC4 simulations can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC4). 
 
 <p align="center">
-<img width="550"  src="images/DC4_inputspectra.png">
+<img width="500"  src="images/DC4_inputspectra.png">
 </p>
 
 ### South Atlantic Anomaly (SAA)
 The spectrum and light curve of the trapped protons are generated using the model [IRENE AP9 v1.57.004](https://www.vdl.afrl.af.mil/programs/ae9ap9/) . The expected differential flux is computed for every 15s of DC4 orbit and then integrated over the energy to get the light curve. Since COSI will not take data during SAA passages, we did not simulate the trapped electrons component. In order to improve the simulation time, the spectrum is truncated at 4 Mev. This is motivated by the fact that we are only interested in activation induced by the trapped protons during a SAA passage. As shown in the figures below, the proton cross-section with common materials found in the spacecraft is negligible below 4 MeV. A 24h orbit test has been done for a cut at 2 MeV, showing no significant variation with a cut at 4 MeV.      
 
 <p align="center">
-<img width="1000"  src="images/SAAspectrum.png">
+<img width="900"  src="images/SAAspectrum.png">
 </p>
 
 The corresponding light curve for a few days of orbit is shown in the figure below. This light curve is used as input for MEGAlib and it allows us to simulate the passage of the satellite through the SAA. The variations seen here result from differences in how COSI crosses the SAA, caused by changes in its orbit over a 24-hour period. The actual SAA passages are removed from the simulated data.
 
 <p align="center">
-<img width="550"  src="images/SAALC.png">
+<img width="450"  src="images/SAALC.png">
 </p>
 
 
@@ -47,7 +47,7 @@ The Galactic diffuse continuum emission is modeled using the v57 release of the 
 The spacecraft coordinates have been generated with [SPENVIS](https://www.spenvis.oma.be/intro.php), as shown below. In addition, we added a +-22° rocking angle, with the northern sky observed for 12 hours, followed by a 8 minute slewing time, and then the southern sky observed for 12 hours. An example of the instrument's zenith pointing for 4 days of observation is shown below.
 
 <p align="center">
-<img width="550"  src="images/DC3orientation.png">
+<img width="450"  src="images/DC3orientation.png">
 </p>
 
 Based on these coordinates, the average geomagnetic cutoff (in GV) is calculated using the Python tool [OTSO](http://doi.org/https://doi.org/10.1029/2022JA031061).
@@ -77,7 +77,7 @@ The resulting spectra for each component are shown in the figure at the top of t
 
 On a daily scale, it is difficult to see the variation due to the geomagnetic cutoff (GC). However, on the minute scale we can observe the rate variation which is opposite to the geomagnetic variation, as shown below. The SAA cut is not applied here for better visualization of the rate variation.
 <p align="center">
-<img width="650"  src="images/RatevsCutoff.png">
+<img width="450"  src="images/RatevsCutoff.png">
 </p>
 
 This validates the light curve models we used as input for the simulations.
