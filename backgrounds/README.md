@@ -8,7 +8,7 @@ We employed MEGAlib to simulate 3 months of instrumental and astrophysical backg
 
 <p align="center">
 <img width="475"  src="images/DC3_Spectrum.png"> 
-<img width="500"  src="images/DC3_spectrum_zoom.png">
+<img width="500"  src="images/DC3_Spectrum_zoom.png">
 </p>
 
 ## Input Models
@@ -87,5 +87,5 @@ This validates the light curve models we used as input for the simulations.
 We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. A distribution of all the isotopes created by the Primary protons is shown below. Some stable elements are writtend in red.  
 
 <p align="center">
-<img width="550"  src="images/ProtonsActivation.png">
+<img width="550"  src="images/ProtonActivation.png">
 </p>
