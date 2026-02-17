@@ -1,8 +1,5 @@
 # Backgrounds
 
-### Reference 
-A detailed description about the background simulations for DC4 and its results can be found at [Gallego et al. 2026](https://iopscience.iop.org/article/10.3847/1538-4357/ae32f4#apjae32f4fn10)
-
 ### Executive Summary
 We employed MEGAlib to simulate 3 months of instrumental and astrophysical backgrounds (BGs), using an equatorial orbit at 530 km with a rocking of 22 degree every 12 hours. The astrophysical BGs include albedo emission, cosmic photons (i.e. the extragalactic gamma-ray background), and the Galactic diffuse continuum emission. The instrumental backgrounds arise from cosmic rays bombarding the instrument, and there is both a prompt component and a delayed component. The former is due to cosmic ray particles directly triggering the instrument. The latter is due to activation of the irradiated materials, which subsequently decay and emit photons that contribute to the BG emission. The instrumental BGs arise mainly from primary protons, primary alpha particles, atmospheric neutrons, primary electrons, primary positrons, and secondary protons, electrons, and positrons, all of which are included in DC4. In order to simulate the activation, MEGAlib keeps in memory each isotope created during the simulation until it decays (the expected decay time is computed according to the isotope lifetime and the event is rejected if this time is longer than the simulation time). This method accurately simulates the build-up of the activation during the 3 months of orbit. Our background simulations account for the time-dependent flux variation due to the changing geomagnetic cutoff along the orbit. Another important BG for COSI will be due to passage through the Southern Atlantic Anomoly (SAA). The SAA component is included in DC4 and will be described below. Spectra the DC4 BG components are shown below. Further details about the BG simulations are provided in the sections that follow. 
 
@@ -10,6 +7,9 @@ We employed MEGAlib to simulate 3 months of instrumental and astrophysical backg
 <img width="475"  src="images/DC3_Spectrum.png"> 
 <img width="500"  src="images/DC3_Spectrum_zoom.png">
 </p>
+
+### Reference 
+A detailed description about the background simulations for DC4 and its results can be found at [Gallego et al. 2026](https://iopscience.iop.org/article/10.3847/1538-4357/ae32f4#apjae32f4fn10). 
 
 ## Input Models
 
