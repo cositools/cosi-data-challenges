@@ -14,14 +14,14 @@ We employed MEGAlib to simulate 3 months of instrumental and astrophysical backg
 ## Input Models
 
 ### Spectra and Source Files 
-The input spectra are generated using the model from [Cumani](https://link.springer.com/article/10.1007/s10686-019-09624-0). This is implemented using the code **CreateBackgroundSpectrumMEGAlib.py**, available in the **DC3** branch of the [cosi-background](https://github.com/cositools/cosi-background/tree/DC3) repository. The user can choose the main parameters, including altitude, inclination, geomagnetic cutoff, etc. For DC4 we simulated an equatorial orbit at 530 km. Correspondingly, for the BGs we used the average rigidity cutoff for this orbit (12.6 GV) as the nominal value. Solar modulation is accounted for using the force field approximation, for which we use 520 MV, extrapolation of the expected solar activity in 2027. The resulting spectra are shown below. All of the input files used for the DC3 simulations can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC4). 
+The input spectra are generated using the model from [Cumani](https://link.springer.com/article/10.1007/s10686-019-09624-0). This is implemented using the code **CreateBackgroundSpectrumMEGAlib.py**, available in the **DC3** branch of the [cosi-background](https://github.com/cositools/cosi-background/tree/DC3) repository. The user can choose the main parameters, including altitude, inclination, geomagnetic cutoff, etc. For DC4 we simulated an equatorial orbit at 530 km. Correspondingly, for the BGs we used the average rigidity cutoff for this orbit (12.6 GV) as the nominal value. Solar modulation is accounted for using the force field approximation, for which we use 520 MV, extrapolation of the expected solar activity in 2027. The resulting spectra are shown below. All of the input files used for the DC4 simulations can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC4). 
 
 <p align="center">
 <img width="550"  src="images/DC4_inputspectra.png">
 </p>
 
 ### South Atlantic Anomaly (SAA)
-The spectrum and light curve of the trapped protons are generated using the model [IRENE AP9 v1.57.004](https://www.vdl.afrl.af.mil/programs/ae9ap9/) . The expected differential flux is computed for every 15s of DC3 orbit and then integrated over the energy to get the light curve. Since COSI will not take data during SAA passages, we did not simulate the trapped electrons component. In order to improve the simulation time, the spectrum is truncated at 4 Mev. This is motivated by the fact that we are only interested in activation induced by the trapped protons during a SAA passage. As shown in the figures below, the proton cross-section with common materials found in the spacecraft is negligible below 4 MeV. A 24h orbit test has been done for a cut at 2 MeV, showing no significant variation with a cut at 4 MeV.      
+The spectrum and light curve of the trapped protons are generated using the model [IRENE AP9 v1.57.004](https://www.vdl.afrl.af.mil/programs/ae9ap9/) . The expected differential flux is computed for every 15s of DC4 orbit and then integrated over the energy to get the light curve. Since COSI will not take data during SAA passages, we did not simulate the trapped electrons component. In order to improve the simulation time, the spectrum is truncated at 4 Mev. This is motivated by the fact that we are only interested in activation induced by the trapped protons during a SAA passage. As shown in the figures below, the proton cross-section with common materials found in the spacecraft is negligible below 4 MeV. A 24h orbit test has been done for a cut at 2 MeV, showing no significant variation with a cut at 4 MeV.      
 
 <p align="center">
 <img width="1000"  src="images/SAAspectrum.png">
@@ -50,7 +50,7 @@ The spacecraft coordinates have been generated with [SPENVIS](https://www.spenvi
 <img width="550"  src="images/DC3orientation.png">
 </p>
 
-Based on these coordinates, the average geomagnetic cutoff (in GV) is calculated using the Python tool [OTSO](http://doi.org/https://doi.org/10.1029/2022JA031061)
+Based on these coordinates, the average geomagnetic cutoff (in GV) is calculated using the Python tool [OTSO](http://doi.org/https://doi.org/10.1029/2022JA031061).
 We calculate the geomagnetic cutoff for 15 second time intervals of the 3 month orientation file, and use this to obtain the integrated spectrum for each instrumental BG component. The geomagnetic cutoff dependencies are described in [Cumani+19](https://link.springer.com/article/10.1007/s10686-019-09624-0). This results in a light curve for each instrumental BG component, which is used as input for the simulations, in order to take into account the geomagnetic cutoff dependencies in the expected BG flux. Note that cosima only takes the light curve shape into account, and the overall flux normalization is set by the spectrum. We make the simplifying approximation that the spectral shape is constant with time. This is a reasonable assumption, considering that the geomagnetic cutoff only varies from 10.4-14.5 GV, and correspondingly, the change in spectral shape is minor.
 
 ## Simulations
@@ -71,7 +71,7 @@ The last step is the event selection done by *mimrec* using the configuration fi
 ## Results
 
 ### Spectra and Light Curves 
-The resulting spectra for each component are shown in the second figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC4 event selection. We can observe that the extragalactic background photon dominates the background at low energies ($<$660 keV), while delayed activation from cosmic-ray primaries (proton/alpha) and albedo photons dominate at higher energies.
+The resulting spectra for each component are shown in the second figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC4 event selection. We can observe that the extragalactic background photon dominates the background at low energies (<660 keV), while delayed activation from cosmic-ray primaries (proton/alpha) and albedo photons dominate at higher energies.
 
 ### Time Variation
 
@@ -84,7 +84,7 @@ This validates the light curve models we used as input for the simulations.
 
 ### Activation Backgrounds
 
-We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. A distribution of all the isotopes created by the Primary protons is shown below. Some stable elements are writtend in red.  
+We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. A distribution of all the isotopes created by the Primary protons is shown below. Some stable elements are written in red.  
 
 <p align="center">
 <img width="550"  src="images/ProtonActivation.png">
