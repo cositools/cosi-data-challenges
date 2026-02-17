@@ -71,7 +71,7 @@ The last step is the event selection done by *mimrec* using the configuration fi
 ## Results
 
 ### Spectra and Light Curves 
-The resulting spectra for each component are shown in the second figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC4 event selection. We can observe that the extragalactic background photon dominates the background at low energies (<660 keV), while delayed activation from cosmic-ray primaries (proton/alpha) and albedo photons dominate at higher energies.
+The resulting spectra for each component are shown in the figure at the top of this page. Note that here we are only considering the reconstructed Compton events, using the DC4 event selection. We can observe that the extragalactic background photon dominates the background at low energies (<660 keV), while delayed activation from cosmic-ray primaries (proton/alpha) and albedo photons dominate at higher energies.
 
 ### Time Variation
 
@@ -84,7 +84,7 @@ This validates the light curve models we used as input for the simulations.
 
 ### Activation Backgrounds
 
-We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. A distribution of all the isotopes created by the Primary protons is shown below. Some stable elements are written in red.  
+We can observe several lines in the cosmic ray components due to the activation of materials present in the mass model. The fact that a majority of the lines are common for all components suggests that these isotopes are produced by spallation reactions at high energy, where the type of particle does not matter. A distribution of all the isotopes created by the primary protons is shown below. Some stable elements are written in red.  
 
 <p align="center">
 <img width="550"  src="images/ProtonActivation.png">
