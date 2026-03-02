@@ -91,6 +91,24 @@ extended_source_response_Fe60_high_merged.h5.gz <br />
 <details>
   <summary>Background Files</summary>
   
+Details for the background simulations can be found [here](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds). The backgrounds for the DC4 mock dataset are similar to the backgrounds used for DC3, although some components have been updated. All individual components for both DC3 and DC4 are listed below. The DC4 components supercede those from DC3, but if a component was not simulated for DC4, then it was taken from DC3. 
+
+DC4 background files: <br />
+wasabi path: COSI-SMEX/DC4/Data/Backgrounds <br />
+
+Unbinned Files: <br />
+Total_DC4_BG_3months_unbinned_data_filtered_with_SAAcut_withSAAbck.fits.gz <br />
+SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+SAA_3months_unbinned_data_filtered_with_SAAcut_statreduced_akaHEPD01result.fits.gz <br />
+AlbedoPhotons_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
+SecondaryProtons_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
+AlbedoNeutrons_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
+PrimaryPositrons_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
+PrimaryElectrons_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
+PrimaryAlphas_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
+PrimaryProtons_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+DC3 background files: <br />
 wasabi path: COSI-SMEX/DC3/Data/Backgrounds/Ge <br />
 
 Unbinned Files: <br />
@@ -108,15 +126,6 @@ PrimaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryProtons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-Binned Files (in Backgrounds/Ge/Binned_BG_Files): <br />
-Note: The binning matches the response specified in the name, and a single bin is used for time. <br />
-Total_BG_3months_binned_for_26Al_filtered_with_SAAcut.hdf5 <br />
-Total_BG_3months_binned_for_511_filtered_with_SAAcut.hdf5 <br />
-Total_BG_3months_binned_for_continuum_filtered_with_SAAcut.hdf5 <br />
-Total_BG_3months_binned_for_Fe60High_filtered_with_SAAcut.hdf5 <br />
-Total_BG_3months_binned_for_Fe60Low_filtered_with_SAAcut.hdf5 <br />
-Total_BG_3months_binned_for_Ti44_filtered_with_SAAcut.hdf5 <br />
 </details>
 
 <details>
