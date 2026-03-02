@@ -122,10 +122,45 @@ Total_BG_3months_binned_for_Ti44_filtered_with_SAAcut.hdf5 <br />
 <details>
   <summary>Source Files</summary>
   
-wasabi path: COSI-SMEX/DC3/Data/Sources <br />
+The DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. All individual source files from both DC3 and DC4 are available and are listed below.
 
-Sources: <br />
+DC4 Sources: <br />
+For DC4 we simulated 24 unique sources. 
+
+wasabi path: COSI-SMEX/DC4/Data/Sources <br />
+
+Unbinned Files: <br />
+CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GS1903_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Kepler_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MgtBurst_bright_complex_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+OrEr_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+positron_annihilation_in_flight_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Positrons_Central_Source_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+positrons_thin_disk_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+positrons_thin_disk_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+SN1987A_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Tycho_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+USco_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+VelaJr_44Ti_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+LMC_sourceX3_cosima_cut.fits.gz <br />
+M31_sourceX3_cosima_cut.fits.gz <br />
+Virgo_sourceX3_cosima_cut.fits.gz <br />
+NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NGC_4151_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+1RXSJ170849_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+magnetar2_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+4C71p07_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+3C454p3_low_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+3C454p3_high_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CenA_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Crab_DC4_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+DC3 Sources: <br />
 For DC3 we simulated 45 unique sources, running 75 different simulations in total (using multiple models for some of the sources). 
+
+wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
 Unbinned Files: <br />
 511_testing_point_source_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
