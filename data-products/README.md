@@ -96,21 +96,21 @@ For DC4 we have produced a single mock dataset intended to mimick the real fligh
 wasabi path: COSI-SMEX/DC4/Data/Mock_Dataset <br />
 weekly file names: dc4_mock_dataset_week_i_unbinned_data_filtered_with_SAAcut.fits.gz, for i between 1-14.
 
-Below are plots showing the total observed counts spectrum and light curve, along with contributions from individual components. The total background is divided into cosmic diffuse, instrumental, albedo photons, and Galactic diffuse continuum. For the sources, the total contributions from each of COSI's five primary science groups is shown (Galactic, Extragalactic, Positrons, GRBs, and Nucleosynthesis). In addition, the Crab is plotted separately, since it's an important calibration source. The bin size for the light curve is 1 week, except for the GRBs which have 1 second bins (otherwise their flux is washed out by the large bin size).
+The goal of DC4 is to analyze the mock dataset. For reference, the individual simulation files that make up the mock dataset are also available, as specified in the *Background Files* and *Source Files* tabs below. Note that the DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. 
+
+Below are plots showing the total observed counts spectrum and light curve, along with contributions from individual components. The total background is divided into cosmic diffuse, instrumental, albedo photons, and Galactic diffuse continuum. For the sources, the total contributions from each of COSI's five primary science groups are shown (Galactic, Extragalactic, Positrons, GRBs, and Nucleosynthesis). In addition, the Crab is plotted separately, since it's an important calibration source. The bin size for the light curve is 1 week, except for the GRBs which have 1 second bins (otherwise their flux is washed out by the large bin size).
 
 <p align="center">
 <img width="500"  src="images/spectrum.png"> 
 <img width="500"  src="images/lc.png">
 </p>
 
-The goal with DC4 is to analyze the mock dataset...
-
 </details>
   
 <details>
   <summary>Background Files</summary>
   
-Details for the background simulations can be found [here](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds). The backgrounds for the DC4 mock dataset are similar to the backgrounds used for DC3, although some components have been updated. All individual components for both DC3 and DC4 are listed below. The DC4 components supercede those from DC3, but if a component was not simulated for DC4, then it was taken from DC3. 
+Details for the background simulations can be found [here](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds). The backgrounds for the DC4 mock dataset are similar to the backgrounds used for DC3, although some components have been updated. All individual components for both DC3 and DC4 are listed below. Note that the DC4 components supercede those from DC3, but if a component was not simulated for DC4, then it was taken from DC3. 
 
 DC4 background files: <br />
 wasabi path: COSI-SMEX/DC4/Data/Backgrounds <br />
