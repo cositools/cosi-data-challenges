@@ -42,7 +42,7 @@ The data is hosted on [wasabi](https://console.wasabisys.com/file_manager/cosi-p
 <pre>
 AWS_ACCESS_KEY_ID=GBAL6XATQZNRV3GFH9Y4 AWS_SECRET_ACCESS_KEY=GToOczY5hGX3sketNO2fUwiq4DJoewzIgvTCHoOv aws s3api get-object  --bucket cosi-pipeline-public --key full/path/your_file --endpoint-url=https://s3.us-west-1.wasabisys.com your_file
 </pre>
-Note that you must replace 'full/path/your_file' (after '--key') and 'your_file' (at the end) with the actual path and file. All the needed paths and file names are given below. The specific files needed for each respective data challenge are given in the **Data Challenges** section on the main page.
+Note that you must replace 'full/path/your_file' (after '--key') and 'your_file' (at the end) with the actual path and file. All the needed paths and file names are given below. 
 
 Alternatively, cosipy has a utility function that can be used for downloading files. The usage is as follows:
 <pre>
@@ -88,6 +88,25 @@ extended_source_response_Fe60_low_merged.h5.gz <br />
 extended_source_response_Fe60_high_merged.h5.gz <br />
 </details>
 
+<details>
+  <summary>Mock Dataset</summary>
+
+For DC4 we have produced a single mock dataset intended to mimick the real flight data for 3 months of observations. The mock dataset includes 64 sources plus total background. The data is provided in weekly files, and it can be downloaded from wasabi: 
+
+wasabi path: COSI-SMEX/DC4/Data/Mock_Dataset <br />
+weekly file names: dc4_mock_dataset_week_i_unbinned_data_filtered_with_SAAcut.fits.gz, for i between 1-14.
+
+Below are plots showing the total observed counts spectrum and light curve, along with contributions from individual components. The total background is divided into cosmic diffuse, instrumental, albedo photons, and Galactic diffuse continuum. For the sources, the total contributions from each of COSI's five primary science groups is shown (Galactic, Extragalactic, Positrons, GRBs, and Nucleosynthesis). In addition, the Crab is plotted separately, since it's an important calibration source. The bin size for the light curve is 1 week, except for the GRBs which have 1 second bins (otherwise their flux is washed out by the large bin size).
+
+<p align="center">
+<img width="500"  src="images/spectrum.png"> 
+<img width="500"  src="images/lc.png">
+</p>
+  
+</details>
+
+The goal with DC4 is to analyze the mock dataset
+  
 <details>
   <summary>Background Files</summary>
   
