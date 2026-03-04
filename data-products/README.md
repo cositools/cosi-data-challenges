@@ -102,10 +102,10 @@ Below are plots showing the total observed counts spectrum and light curve, alon
 <img width="500"  src="images/spectrum.png"> 
 <img width="500"  src="images/lc.png">
 </p>
-  
-</details>
 
-The goal with DC4 is to analyze the mock dataset
+The goal with DC4 is to analyze the mock dataset...
+
+</details>
   
 <details>
   <summary>Background Files</summary>
