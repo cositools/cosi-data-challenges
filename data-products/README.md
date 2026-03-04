@@ -153,9 +153,9 @@ SN1987A_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Tycho_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 USco_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 VelaJr_44Ti_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-LMC_sourceX3_cosima_cut.fits.gz <br />
-M31_sourceX3_cosima_cut.fits.gz <br />
-Virgo_sourceX3_cosima_cut.fits.gz <br />
+LMC_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+M31_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Virgo_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 NGC_4151_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 1RXSJ170849_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
