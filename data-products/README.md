@@ -150,14 +150,16 @@ SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 <details>
   <summary>Source Files</summary>
   
-The DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. All individual source files from both DC3 and DC4 are available and are listed below.
+The DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. All individual source files from both DC3 and DC4 are available and are listed below. 
+
+Note: Not all sources from DC3 are included in the mock dataset. The distinction between included and excluded sources is indicated below. 
 
 DC4 Sources: <br />
 For DC4 we simulated 24 unique sources. 
 
 wasabi path: COSI-SMEX/DC4/Data/Sources <br />
 
-Unbinned Files: <br />
+Unbinned Files (**included in mock dataset**): <br />
 CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GS1903_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -190,17 +192,7 @@ For DC3 we simulated 45 unique sources, running 75 different simulations in tota
 
 wasabi path: COSI-SMEX/DC3/Data/Sources <br />
 
-Unbinned Files: <br />
-511_testing_point_source_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
-511_testing_extended_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
-crab_standard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-Crab_Flat_Spectrum_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-LMC_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-LMC_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-M31_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-M31_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-Virgo_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
-Virgo_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Unbinned Files (**included in mock dataset**): <br />
 Globular_Cluster_Tuc_47_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Globular_Cluster_Omega_Cen_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Globular_Cluster_NGC_6397_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -211,48 +203,21 @@ Positrons_from_44Ti_line_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br 
 Positrons_from_44Ti_cont_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Narrow_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Broad_Bulge_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NFW_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Vela_SNR_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 nova_co_511keV_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 nova_co_continuum_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 nova_co_478keV_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_4151_EC200_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_4151_faint_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-4C21p35_noflare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 4C21p35_flare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-3C279_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-GalTotal_SA100_F98_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PSRB1259_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-PSRB1259_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 1E1740_compow_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 cygX1_hard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MAXIJ1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MAXIJ1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRS1758_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 LS5039_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-LS5039_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-1RXSJ170849_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PSRJ1846_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-PSRJ1846_3months_unbinned_data_100x_filtered_with_SAAcut.fits.gz <br />
 26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 60Fe_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-eeg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-eeg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -264,12 +229,50 @@ GRB_bn170405777_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn180504136_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn180703876_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_bn080802386_flux150_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-GRB_bn080802386_flux300_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF051103_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF070201_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF070222_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF180128A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF200415A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GRB_MGF231115A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+Unbinned Files (**not included in mock dataset**): <br />
+511_testing_point_source_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
+511_testing_extended_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
+crab_standard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Crab_Flat_Spectrum_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+LMC_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+LMC_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+M31_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+M31_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Virgo_Gaussian_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
+Virgo_Gaussian_511_x100_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NFW_511_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NGC_4151_EC200_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NGC_4151_faint_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+4C21p35_noflare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+3C279_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+PSRB1259_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXIJ1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+MAXIJ1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+LS5039_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+1RXSJ170849_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+PSRJ1846_3months_unbinned_data_100x_filtered_with_SAAcut.fits.gz <br />
+CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+eeg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+eeg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+GRB_bn080802386_flux300_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 MgtBurst_bright_complex_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br /> 
 </details>
