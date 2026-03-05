@@ -110,12 +110,14 @@ Below are plots showing the total observed counts spectrum and light curve, alon
 <details>
   <summary>Background Files</summary>
   
-Details for the background simulations can be found [here](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds). The backgrounds for the DC4 mock dataset are similar to the backgrounds used for DC3, although some components have been updated. All individual components for both DC3 and DC4 are listed below. Note that the DC4 components supercede those from DC3, but if a component was not simulated for DC4, then it was taken from DC3. 
+Details for the background simulations can be found [here](https://github.com/cositools/cosi-data-challenges/tree/develop/backgrounds). The backgrounds for the DC4 mock dataset are similar to the backgrounds used for DC3, although some components have been updated. All individual components for both DC3 and DC4 are listed below. For convenience, we also provide the total background file.  
+
+Note: Not all background components from DC3 are included in the mock dataset, as many were re-simulated for DC4. The distinction between included and excluded sources is indicated below.
 
 DC4 background files: <br />
 wasabi path: COSI-SMEX/DC4/Data/Backgrounds <br />
 
-Unbinned Files: <br />
+Unbinned Files (**included in mock dataset**): <br />
 Total_DC4_BG_3months_unbinned_data_filtered_with_SAAcut_withSAAbck.fits.gz <br />
 SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SAA_3months_unbinned_data_filtered_with_SAAcut_statreduced_akaHEPD01result.fits.gz <br />
@@ -130,11 +132,14 @@ PrimaryProtons_WithDetCstunbinned_data_filtered_with_SAAcut.fits.gz <br />
 DC3 background files: <br />
 wasabi path: COSI-SMEX/DC3/Data/Backgrounds/Ge <br />
 
-Unbinned Files: <br />
-Total_BG_with_SAAcomponent_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-Total_BG_without_SAAcomponent_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Unbinned Files (**included in mock dataset**): <br />
 CosmicPhotons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 GalTotal_SA100_F98_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+SecondaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+
+Unbinned Files (**not included in mock dataset**): <br />
+Total_BG_with_SAAcomponent_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+Total_BG_without_SAAcomponent_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 AlbedoNeutrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 AlbedoPhotons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SAA_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
@@ -142,7 +147,6 @@ PrimaryProtons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PrimaryAlphas_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PrimaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 PrimaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-SecondaryElectrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryProtons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 </details>
