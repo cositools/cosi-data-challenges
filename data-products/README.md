@@ -150,7 +150,7 @@ SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 <details>
   <summary>Source Files</summary>
   
-The DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. All individual source files from both DC3 and DC4 are available and are listed below. 
+The DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. All individual source files from both DC3 and DC4 are available and listed below. 
 
 Note: Not all sources from DC3 are included in the mock dataset. The distinction between included and excluded sources is indicated below. 
 
