@@ -69,9 +69,8 @@ DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br />
 <details>
   <summary>Response Files</summary>
   
-wasabi path: COSI-SMEX/DC4/Data/Responses <br />
-
 **Detector Response Files:** <br />
+wasabi path: COSI-SMEX/DC4/Data/Responses <br />
 Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
 Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
 Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
@@ -83,7 +82,8 @@ Response44Ti_high_res.h5 (pending) <br />
 ResponseContinuum_pol_high_res.h5 (pending) <br />
 ResponseLineDM.h5 (pending) <br />
 
-**Extended Source Response Files (in Responses/extended_source_response):** <br />
+**Extended Source Response Files:** <br />
+wasabi path: COSI-SMEX/DC3/Data/Responses/extended_source_response <br />
 extended_source_response_511_merged.h5.gz <br />
 extended_source_response_continuum_merged.h5.gz <br />
 extended_source_response_Al26_merged.h5.gz <br />
