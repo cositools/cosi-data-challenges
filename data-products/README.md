@@ -57,6 +57,8 @@ Note that an error will be thrown if the file already exists. To overwrite the e
 <details>
   <summary>Orientation Files</summary>
   
+DC4 uses the same orientation file from DC3.  <br />
+  
 wasabi path: COSI-SMEX/DC3/Data/Orientation <br />
 
 files: <br />
@@ -98,7 +100,7 @@ weekly file names: dc4_mock_dataset_week_i_unbinned_data_filtered_with_SAAcut.fi
 
 The goal of DC4 is to analyze the mock dataset. For reference, the individual simulation files that make up the mock dataset are also available, as specified in the *Background Files* and *Source Files* tabs below. Note that the DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. 
 
-Below are plots showing the total observed counts spectrum and light curve, along with contributions from individual components. The total background is divided into cosmic diffuse, instrumental, albedo photons, and Galactic diffuse continuum. For the sources, the total contributions from each of COSI's five primary science groups are shown (Galactic, Extragalactic, Positrons, GRBs, and Nucleosynthesis). In addition, the Crab is plotted separately, since it's an important calibration source. The bin size for the light curve is 1 week, except for the GRBs which have 1 second bins (otherwise their flux is washed out by the large bin size).
+Below are plots showing the total observed counts spectrum and light curve, along with contributions from individual components. The total background is divided into cosmic diffuse, instrumental, albedo photons, and Galactic diffuse continuum. We refer to these as “backgrounds” because they constitute background emission for many astrophysical analyses, although each component is scientifically interesting in its own right. For the sources, the total contributions from each of COSI's five primary science groups are shown (Galactic, Extragalactic, Positrons, GRBs, and Nucleosynthesis). In addition, the Crab is plotted separately, since it's an important calibration source. The bin size for the light curve is 1 week, except for the GRBs which have 1 second bins (otherwise their flux is washed out by the large bin size).
 
 <p align="center">
 <img width="500"  src="images/spectrum.png"> 
@@ -156,7 +158,7 @@ SecondaryPositrons_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
   
 The DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. All individual source files from both DC3 and DC4 are available and listed below. 
 
-Note: Not all sources from DC3 are included in the mock dataset. The distinction between included and excluded sources is indicated below. 
+Note: Not all simulated sources are included in the mock dataset. The distinction between included and excluded sources is indicated below. 
 
 DC4 Sources: <br />
 For DC4 we simulated 24 unique sources. 
