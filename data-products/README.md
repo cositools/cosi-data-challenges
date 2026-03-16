@@ -2,10 +2,10 @@
 
 ### Simulated Data
 
-We simulated 3 months of exposure for an equatorial orbit at 530 km. The simulations mimic the actual time-dependence of the instrument's pointing on the sky. The instrument rocks between $\pm 22^\circ$ from the Earth zenith every 12 hours, with a slewing time of 8 minutes. This is similar to the pointing strategy for the actual satellite mission, with the exception that the solar panels may need to be rotated based on the exposure to the Sun, which will effect the slewing time (expected to be between $\sim 4 - 12$ minutes). The orbital period is 104.0 minutes. With this pointing strategy COSI will observe the entire sky every day. The figure below shows the pointing of the instrument's z-axis as a function of time for the first 24 hours, in Galactic coordinates. Note that the dotted curve corresponds to the slewing of the instrument.
+We simulated 3 months of exposure for an equatorial orbit at 530 km. The simulations mimic the actual time-dependence of the instrument's pointing on the sky. The instrument rocks between $\pm 22^\circ$ from the Earth zenith every 12 hours, with a slewing time of 8 minutes. This is similar to the pointing strategy for the actual satellite mission, with the exception that the solar panels may need to be rotated based on the exposure to the Sun, which will effect the slewing time (expected to be between $\sim 4 - 12$ minutes). The orbital period is 1.73 hrs. With this pointing strategy, COSI will observe the entire sky every day. The right panel in the figure below shows the pointing of the instrument's z-axis as a function of time for the first 24 hours, in Galactic coordinates. Note that the dotted curve corresponds to the slewing of the instrument.
 
 <p align="center">
-<img width="800"  src="images/cosi_pointing.png">
+<img width="850"  src="images/cosi_pointing.png">
 </p>
 
 The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) (*develop-cosi* branch) via the COSI simulation pipepline ([cosi-sim](https://github.com/cositools/cosi-sim)), using version 21 of the COSI-SMEX mass model ([massmodel-cosi-dc3
