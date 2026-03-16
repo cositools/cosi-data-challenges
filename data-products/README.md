@@ -32,10 +32,6 @@ The simulations employ [MEGAlib](https://github.com/zoglauer/megalib) via the Py
 ### Data Format
 The data is provided in FITS file format, which contains all of the photon information for each reconstructed event. If you are unfamiliar with analysis of Compton data, we highly recommend reading the introduction page [here](https://github.com/cositools/cosi-data-challenges/tree/develop/Compton-telescope-data-analysis-intro), which covers some of the fundamental topics. In short, the data for each reconstructed photon event is decribed in terms of four axes: energy, time, Compton scattering angle (&phi;), and event circle axis (&psi; &chi;). For Compton data, photons occupy what is known as the Compton data space, which is a 3-dimensional space defined by the axes &phi;, &psi;, and &chi;, where &psi; and &chi; are the angles defining the vector that points from the location of the second detector hit to the location of the first detector hit. A reconstructed photon event corresponds to a so-called event circle on the sky, where the axis of the circle is given by the &psi; &chi; vector, and the radius of the circle is given by the Compton scattering angle &phi;. For the actual data analysis, &psi; and &chi; are defined using a healpix grid, allowing us to reduce this to a single dimension (&psi; &chi;), i.e. the healpix pixel number.  
 
-There are FITS files for each individual component, for both sources and backgrounds. Each data challenge specifies the specific source files that you'll need. In order to create the dataset for a given data challenge, you will need to combine the source data with the background data. Instructions on how to do this are provided in the [DataIO example](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) in cosipy, as well as some of the jupyter notebooks in cosipy. There are 12 individual background components that need to be combined in order to obtain the total background. Alternatively, a file with the total background already combined is also available. 
-
-**Important Note:** Combining the data and binning the data can be memory intensive. If you are running into memory limitations at these steps, then workarounds are described in the [DataIO example](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO). 
-
 ### Accessing the Data
 
 The data is hosted on [wasabi](https://console.wasabisys.com/file_manager/cosi-pipeline-public?region=us-west-1), and it can be downloaded using the command line prompt below:
@@ -52,7 +48,21 @@ fetch_wasabi_file('full/path/wasabi/file')
 </pre>
 Note that an error will be thrown if the file already exists. To overwrite the existing file, the keyword ``override=True`` can be passed.   
 
-**Available files and corresponding wasabi paths (click to expand):**
+### Mock Dataset
+
+For DC4 we have produced a single mock dataset intended to mimick the real flight data for 3 months of observations. The mock dataset includes 64 sources plus total background. The data is provided in weekly files, and it can be downloaded from wasabi: 
+
+wasabi path: COSI-SMEX/DC4/Data/Mock_Dataset <br />
+weekly file names: dc4_mock_dataset_week_i_unbinned_data_filtered_with_SAAcut.fits.gz, for i between 1-14.
+
+Below are plots showing the total observed counts spectrum and light curve, along with contributions from individual components. The total background is divided into cosmic diffuse, instrumental, albedo photons, and Galactic diffuse continuum. We refer to these as “backgrounds” because they constitute background emission for many astrophysical analyses, although each component is scientifically interesting in its own right. For the sources, the total contributions from each of COSI's five primary science groups are shown (Galactic, Extragalactic, Positrons, GRBs, and Nucleosynthesis). In addition, the Crab is plotted separately, since it's an important calibration source. The bin size for the light curve is 1 week, except for the GRBs which have 1 second bins (otherwise their flux is washed out by the large bin size).
+
+<p align="center">
+<img width="500"  src="images/spectrum.png"> 
+<img width="500"  src="images/lc.png">
+</p>
+
+The data analysis also requires spacecraft orientation files and response files. Information for these files is provided in the tabs below. For reference, the individual simulation files that make up the mock dataset are also available, as specified in the *Background Files* and *Source Files* tabs. Note that the DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. 
 
 <details>
   <summary>Orientation Files</summary>
@@ -92,25 +102,6 @@ extended_source_response_Fe60_low_merged.h5.gz <br />
 extended_source_response_Fe60_high_merged.h5.gz <br />
 </details>
 
-<details>
-  <summary>Mock Dataset</summary>
-
-For DC4 we have produced a single mock dataset intended to mimick the real flight data for 3 months of observations. The mock dataset includes 64 sources plus total background. The data is provided in weekly files, and it can be downloaded from wasabi: 
-
-wasabi path: COSI-SMEX/DC4/Data/Mock_Dataset <br />
-weekly file names: dc4_mock_dataset_week_i_unbinned_data_filtered_with_SAAcut.fits.gz, for i between 1-14.
-
-The goal of DC4 is to analyze the mock dataset. For reference, the individual simulation files that make up the mock dataset are also available, as specified in the *Background Files* and *Source Files* tabs below. Note that the DC4 mock dataset is comprised of a combination of sources from DC3 and new simulations for DC4. 
-
-Below are plots showing the total observed counts spectrum and light curve, along with contributions from individual components. The total background is divided into cosmic diffuse, instrumental, albedo photons, and Galactic diffuse continuum. We refer to these as “backgrounds” because they constitute background emission for many astrophysical analyses, although each component is scientifically interesting in its own right. For the sources, the total contributions from each of COSI's five primary science groups are shown (Galactic, Extragalactic, Positrons, GRBs, and Nucleosynthesis). In addition, the Crab is plotted separately, since it's an important calibration source. The bin size for the light curve is 1 week, except for the GRBs which have 1 second bins (otherwise their flux is washed out by the large bin size).
-
-<p align="center">
-<img width="500"  src="images/spectrum.png"> 
-<img width="500"  src="images/lc.png">
-</p>
-
-</details>
-  
 <details>
   <summary>Background Files</summary>
   
