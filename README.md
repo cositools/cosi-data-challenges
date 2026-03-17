@@ -62,9 +62,9 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 - **[Introduction to polarization](polarization/README.md)** 
 
 ## Data Challenges
-For DC4 we have produced a single mock dataset intended to mimick the real flight data for 3 months of observations. The mock dataset includes 64 sources plus total background.
+For DC4, we have produced a single mock dataset that mimics three months of real flight observations. It includes 64 sources along with the total background. Detailed information is available in the [data-products](data-products/README.md) directory. All simulation input models are provided in the source library of the COSI simulation pipeline (available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)), which can be used to verify data challenge results. 
 
-We have created example Jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below: <br /> 
+We have created example Jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md). <br /> 
 
 CK: Update these with latest available and paths once DC4 version of cosipy is ready. <br />
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) <br />
@@ -80,12 +80,9 @@ Example 10: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blo
 Example 11: [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) <br />
 Example 12: [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
 
-If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md).
-
 As a very first step, try working through some of the example notebooks. It is highly recommended to start with the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in exploring other models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, as well as the bottom of the [cosipy-intro](cosipy-intro/README.md), which outlines some of the priority areas for the next stages of development. 
 
-The list of sources included in the mock dataset can be found in the [data-products](data-products/README.md) directory. All input models used for the simulations can be found in the source library of the COSI simulation pipeline, available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library). This includes all the information about the injected sources, and it can be used for checking the results of the data challenges. 
-
+**Binned vs. Unbinned Analyses:** <br />
 DC4 now allows for both binned and unbinned analyses. The choice of which type of analysis to perform will depend on the scientific objectives of the data challenge, and we leave this decision to the user. 
 
 **Configuration Files:** <br />
