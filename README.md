@@ -64,6 +64,7 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 ## Data Challenges
 We have created example Jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below: <br /> 
 
+CK Internal Note: Update these with latest available and paths once DC4 version of cosipy is ready. 
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) <br />
 Example 2: [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) <br />
 Example 3: [GRB localization (TS maps)](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) <br />
