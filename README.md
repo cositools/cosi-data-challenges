@@ -487,9 +487,6 @@ This is the first data challenge to include the Galactic diffuse continuum, and 
 
 **Note that the Galactic diffuse continuum emission is also part of the standard background model for COSI, which will be employed for most analyses.**
 
-
-
-
 </details>
 
 <details>
@@ -499,25 +496,22 @@ This is the first data challenge to include the Galactic diffuse continuum, and 
 There is one Key Objective for Extragalactic science with COSI:
 1. Constrain geometries and emission processes in Active Galactic Nuclei (AGN) <br />
 
-While the main science goals for COSI are not directly related to many extragalactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. We start exploring COSI’s extragalactic science capabilities in DC3. 
-
+While the main science goals for COSI are not directly related to many extragalactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. 
 
 The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
 
-### DC3 Goals:
-- Perform the image and spectral fit of NGC 1068 to determine the flux in the COSI band and the coronal cut-off energy
-- Perform the image and spectral fit of NGC 4151 to determine the flux in the COSI band and the coronal cut-off energy
-- Test whether COSI would be able to distinguish between the different NGC 4151 spectral models
-- Measure MeV gamma-ray flux during the 4C+21.35 flare and determine the duration of the flaring period
-- Fit the 4C+21.35 spectrum in the flaring and non-flaring state
-- Perform the image and spectral fit of 3C 279
-- Measure the polarization fraction and angle of 3C 279 in the hard state
+### DC4 Goals:
+- Constrain geometries and emission processes in Active Galactic Nuclei (AGN)
+- Spectral, time-resolved analysis of blazar flares
+- Spectral analysis of radio-quiet AGN to constrain the properties of the corona
+- Detection and Characterization of the MeV background
 
-We have simulated 4 extragalactic sources: 2 are steady state sources (NGC 1068 and NGC 4151), 1 transient source (4C+21.35), and 1 polarized source (3C 279). Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+**⚠️ Pending:** Need to update info about included sources and models. <br />
+We have simulated 4 extragalactic sources: 2 are steady state sources (NGC 1068 and NGC 4151), 1 transient source (4C+21.35), and 1 polarized source (3C 279). Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **All challenges should use the same detector response files:** <br />
-- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
-- ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz <br />
+- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
+- ResponseContinuum.o3.pol.e200_10000.b4.p12.relx.s10396905069491.m420.filtered.binnedpolarization.11D.h5 <br />
 
 Note: the second response file is used for polarization analysis.
 
@@ -569,10 +563,6 @@ We have included a simulation of quasar 4C+21.35 which has both a quiescent stat
 **3C 279 Input Models:**  <br />
 The spectral model for the DC3 simulation of quasar 3C 279 represents the high state of the source, where we have used a flux 100x its nominal value. The spectra is described is based on the model in [Zhang+15](https://ui.adsabs.harvard.edu/abs/2015ApJ...804...58Z/abstract), with a total integrated flux of $1.2 \times 10^{-2} \ \mathrm{ph cm^{-2} s^{-1}}$. This is the same model as DC2, but we now include polarization. We have assumed a polarization fraction of 19.62% based on the results from [Zhang+15](https://ui.adsabs.harvard.edu/abs/2015ApJ...804...58Z/abstract), and a randomly chosen polarization angle of 45 degrees (in IAU convention). The source is located at $l = 305.1^{\circ}, b = 57.1^{\circ}$.
 
-
-
-
-  
 </details>
 
 <details>
