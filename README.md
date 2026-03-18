@@ -113,40 +113,19 @@ The Key Objectives for GRB science with COSI are:
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 ### DC3 Goals:
-- Localize a GRB and fit the spectrum
-- Measure polarization (fraction and angle) of a GRB
-- Localize a MGF and fit the spectrum
-- Measure the polarization (fraction and angle) of a MGF
-- Check if the magnetar short burst is detectable, and if detectable localize and fit the spectrum
-- _Stretch goal:_ Develop a classification technique to distinguish a GRB or MGF
+- Localize GRBs and fit the spectra
+- Measure polarization (fraction and angle) of GRBs
+- Localize MGFs and fit the spectra
+- Measure the polarization (fraction and angle) of MGFs
+- Check if the magnetar short burst is detectable, and if detectable, localize and fit the spectrum
 
-We have simulated 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. GRB bn090424592 is the brightest of the bursts we’ve simulated and it may be easiest to start with. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+The DC4 mock dataset includes 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time.  
 
-**The challenges will use the following detector response files:** 
-- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
- - ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz (for polarization) <br />
+**The binned analysis will require the following detector response files:** 
+- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
+- ResponseContinuum.o3.pol.e200_10000.b4.p12.relx.s10396905069491.m420.filtered.binnedpolarization.11D.h5 <br />
+  
 Note: the second response file is used for polarization analysis and has fewer energy bins.
- 
- **Data Files:** <br />
- GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn110605183_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn131122490_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn140329295_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn161004964_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn170405777_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn180504136_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn180703876_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn080802386_flux150_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_bn080802386_flux300_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_MGF051103_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_MGF070201_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_MGF070222_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_MGF180128A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_MGF200415A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- GRB_MGF231115A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
- MgtBurst_bright_complex_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
  
  **Input Models:** <br />
  All input models can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3/sources/GRBs).
@@ -163,7 +142,6 @@ The simulated GRBs occur randomly within the 3-month orientation file, with thei
  - bn180504136: PF = 0.8, PA = $45^\circ$, t = 1836985181.0 s
  - bn180703876: PF = 0.9, PA = $25^\circ$, t = 1838652949.0 s
  - bn080802386: PF = 0.8, PA = $90^\circ$, t = 1835493492.2 s <br />
-Note: The two short GRBs (bn080802386) are unrealistically bright and are intended to be used for the polarization tutorial.
  
  Information for the MGFs, including reference papers (PF = 1, PA = $90^\circ$ for all sources):
  - MGF051103 ([Svinkin+21](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533723.498 s
@@ -174,8 +152,8 @@ Note: The two short GRBs (bn080802386) are unrealistically bright and are intend
  - MGF231115A ([Trigg+25](https://www.nature.com/articles/s41586-020-03076-9)): t = 1835533696.0 s
  
  Information for magnetar short burst:
- - MgtBurst_bright_complex_10x: no polarization, t = 1835640345.022513 s
-   - SGR 1935+2154 ([Li+21](https://www.nature.com/articles/s41550-021-01302-6)) - a bright burst with a complex light curve. Flux has been increased by a factor of 10.  
+ - MgtBurst_bright_complex: no polarization, t = 1835640345.022513 s
+   - SGR 1935+2154 ([Li+21](https://www.nature.com/articles/s41550-021-01302-6)) - a bright burst with a complex light curve.   
 
 
 </details>
