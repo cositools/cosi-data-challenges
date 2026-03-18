@@ -570,22 +570,21 @@ The spectral model for the DC3 simulation of quasar 3C 279 represents the high s
   
 ## Dark Matter Data Challenges
 
-While the main science goals for COSI are not directly related to dark matter, there is no doubt that COSI’s unique energy range will bring compelling new observations. We start exploring COSI’s dark matter science capabilities in DC3. 
+While the main science goals for COSI are not directly related to dark matter, there is no doubt that COSI’s unique energy range will bring compelling new observations.  
 
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
 
-### DC3 Goals:
-- Image the two photon (gg) spatial distribution (either NFW or Burkert models)
-- Fit for the spectra of the gg or eeg annihilation model
-- Confirm that COSI is sensitive to the different spatial distributions modeled in the Burkert and NFW profiles, for either the gg or eeg model
-- Estimate COSI’s sensitivity to annihilating WIMPs
-
+### DC4 Goals:
+- Set upper limits on DM signals in the absence of a signal.
+- Extract signal from background in the case of a signal.
+  
 **Data Files:** <br />
 eeg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 eeg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_Bur_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
+**⚠️ Pending:** Need to update info about included sources and models. <br />
 **Input Models:**  <br />
 We consider cases where two dark matter (DM) particles annihilate into either two photons (gg) or an e+e− pair with a FSR (final state radiation) photon (eeg). We use profile parameters describing the NFW or Burkert profile taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. For each of these models, we assume a DM mass of 3 MeV and an annihilation cross section of $1 \times 10^{-30} \ \mathrm{cm^{3} s^{-1}}$.
 
