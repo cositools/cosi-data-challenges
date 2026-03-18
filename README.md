@@ -363,36 +363,26 @@ Additionally, the G16 model simulates a complex distribution of clumps as detect
 <details>
   <summary>Galactic</summary>
   
-  ## Galactic Data Challenges
+## Galactic Data Challenges
 There is one Key Objective for Galactic science with COSI:
 1. Constrain geometries and emission processes in Galactic black holes <br />
 
-While the main science goals for COSI are not directly related to many Galactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. We start exploring COSI’s Galactic science capabilities in DC3.
+While the main science goals for COSI are not directly related to many Galactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. 
 
 The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.  The [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit)  notebook can be used to analyze the Galactic diffuse continuum extended source.
 
-### DC3 Goals:
-- Perform the image and spectral fit of the Crab
-- Perform the image and spectral fit for GRS 1758-258
-- Test whether COSI would be able to distinguish between the two models of 1E1740.7-2942
-- Measure MeV gamma-ray flux during the Gamma-ray binary flare event from PSR B1259-63 and determine the duration of flare periods
-- Fit for the average Cyg X3 spectrum over the 3 months of observation and attempt to detect the spectral changes on shorter time scales
-- Check the detection sensitivity in the Cyg X1 soft state and hard state
-- Measure the polarization of Cyg X1 in the hard state
-- Measure the spectra and polarization of transient sources MAXI J1820+070 and J1348-063
-- Establish analysis methods for detecting periodic sources like LS 5039
-- Obtain an orbital light curve folded with the binary period for LS 5039
-- Detect the magnetar 1RXS J170849.0-400901, including its pulsation, polariztion, and spectrum
-- Characterize how the the Galactic diffuse continuum emission as a background component impacts the sensitivity for point sources in the Galactic plane
-- Image the Galactic diffuse continuum emission in the COSI energy band
-- Measure the spectrum of the Galactic diffuse continuum emission, extracting it from the rest of the background
-- _Stretch goal:_ Make a time cut for the Cyg X1 soft and hard states and combine the two simulations to create a spectral transition, and determine COSI’s ability to detect this transition.
+### DC4 Goals:
+- Constrain geometries and emission processes in Galactic black holes
+- Perform phase resolved analysis of variable Galactic sources
+- Perform imaging and spectral analysis of Galactic point sources
+- Make measurement of Galactic diffuse continuum
 
-We have simulated 10 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 3 transient/variable sources (PSR B1259-63 has a single flare, Cyg X3 has 6 state transitions,  and LS 5039 is periodic), and 4 sources with polarization (Cyg-X1, MAXI J1820+070, J1348-630, and 1RXS J170849.0-400901). Note that all of the polarized sources are variable as well. We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page.
+**⚠️ Pending:** Need to update info about included sources and models. <br />
+We have simulated 10 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 3 transient/variable sources (PSR B1259-63 has a single flare, Cyg X3 has 6 state transitions,  and LS 5039 is periodic), and 4 sources with polarization (Cyg-X1, MAXI J1820+070, J1348-630, and 1RXS J170849.0-400901). Note that all of the polarized sources are variable as well. We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** <br />
-- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
-- ResponseContinuum.o3.pol.e200_10000.b4.p12.s10396905069491.m441.filtered.nonsparse.binnedpolarization.11D_nside8.area.good_chunks.h5.gz <br />
+- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
+- ResponseContinuum.o3.pol.e200_10000.b4.p12.relx.s10396905069491.m420.filtered.binnedpolarization.11D.h5 <br />
 - extended_source_response_continuum_merged.h5.gz <br />
 
 Note: the second response file is used for polarization analysis and the extended source response should be used to analyze the Galactic diffuse continuum when imaging or performing the spectral fit.
