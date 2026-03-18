@@ -66,7 +66,7 @@ For DC4, we have produced a single mock dataset that mimics three months of real
 
 We have created example Jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md). <br /> 
 
-CK: Update these with latest available and paths once DC4 version of cosipy is ready. <br />
+**⚠️ Pending:** Update these with latest available and paths once DC4 version of cosipy is ready. <br />
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) <br />
 Example 2: [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) <br />
 Example 3: [GRB localization (TS maps)](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) <br />
@@ -113,11 +113,11 @@ The Key Objectives for GRB science with COSI are:
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 ### DC4 Goals:
-- Localize GRBs and fit the spectra
-- Measure polarization (fraction and angle) of GRBs
-- Localize MGFs and fit the spectra
-- Measure the polarization (fraction and angle) of MGFs
-- Check if the magnetar short burst is detectable, and if detectable, localize and fit the spectrum
+- Localize GRBs and fit the spectra.
+- Measure polarization (fraction and angle) of GRBs.
+- Localize MGFs and fit the spectra.
+- Measure the polarization (fraction and angle) of MGFs.
+- Check if the magnetar short burst is detectable, and if detectable, localize and fit the spectrum.
 
 The DC4 mock dataset includes 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.  
 
@@ -192,16 +192,17 @@ The Key Objectives for the COSI positron science goal are:
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/blob/v0.3.x/docs/tutorials/image_deconvolution/511keV/GalacticCDS) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 ### DC4 Goals:
-- Identify individual positron sources 
+- Identify individual positron sources.
 - Determine the scale height of the 511 keV disk, and cross-correlate the measured distribution with 26Al map (1809 keV emission) to constrain propagation distances.
 - Determine line width and relative flux of oPs and 511 keV line for different regions of the Galaxy. 
 - Find detection significance of in-flight annihilation.
   
+**⚠️ Pending:** Need to update info about included sources and models. <br />
 We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum, with three different bulge models that agree with INTEGRAL/SPI measurements. We have also simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum.  Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
 
 **The challenges will use the following detector response files:** 
-- Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz <br />
-- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse_nside8.area.good_chunks.h5.gz <br />
+- Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
+- ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
 - extended_source_response_511_merged.h5.gz (precomputed 511 extended source response file)
 - extended_source_response_continuum_merged.h5.gz (precomputed continuum extended source response file)
 
