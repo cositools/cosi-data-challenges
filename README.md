@@ -113,11 +113,11 @@ The Key Objectives for GRB science with COSI are:
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 ### DC4 Goals:
-- Localize GRBs and fit the spectra.
-- Measure polarization (fraction and angle) of GRBs.
-- Localize MGFs and fit the spectra.
-- Measure the polarization (fraction and angle) of MGFs.
-- Check if the magnetar short burst is detectable, and if detectable, localize and fit the spectrum.
+- Localize GRBs and fit the spectra
+- Measure polarization (fraction and angle) of GRBs
+- Localize MGFs and fit the spectra
+- Measure the polarization (fraction and angle) of MGFs
+- Check if the magnetar short burst is detectable, and if detectable, localize and fit the spectrum
 
 The DC4 mock dataset includes 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.  
 
@@ -192,13 +192,13 @@ The Key Objectives for the COSI positron science goal are:
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/blob/v0.3.x/docs/tutorials/image_deconvolution/511keV/GalacticCDS) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 ### DC4 Goals:
-- Identify individual positron sources.
-- Determine the scale height of the 511 keV disk, and cross-correlate the measured distribution with 26Al map (1809 keV emission) to constrain propagation distances.
-- Determine line width and relative flux of oPs and 511 keV line for different regions of the Galaxy. 
-- Find detection significance of in-flight annihilation.
+- Identify individual positron sources
+- Determine the scale height of the 511 keV disk, and cross-correlate the measured distribution with 26Al map (1809 keV emission) to constrain propagation distances
+- Determine line width and relative flux of oPs and 511 keV line for different regions of the Galaxy 
+- Find detection significance of in-flight annihilation
   
 **⚠️ Pending:** Need to update info about included sources and models. <br />
-We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum, with three different bulge models that agree with INTEGRAL/SPI measurements. We have also simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum.  Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
+We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum, with three different bulge models that agree with INTEGRAL/SPI measurements. We have also simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** 
 - Response511.o4.e509_513.s20881894470591.m2555.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
@@ -302,29 +302,25 @@ The Key Objectives for the COSI nucleosynthesis science goal are:
 3. Detect nuclear line emission from young supernova remnants in the Galaxy
 4. Probe explosion physics in the core of supernovae
 
-The tools needed to complete most of these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. For the <sup>44</sup>Ti data challenge you will need the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks since Cas A is modeled as a point source.
+The tools needed to complete most of these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. For the <sup>44</sup>Ti data challenge you will need the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), and [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) notebooks.
 
-### DC3 Goals:
-- Image the <sup>26</sup>Al (1.8 MeV) diffuse emission
-- Fit the spectral shape of the Galactic 1.8 MeV line and detect the Doppler shift of the line in the disk
-- Image the <sup>60</sup>Fe diffuse emission at 1173 keV and 1332 keV
-- Fit the two <sup>60</sup>Fe decay lines to find the total mass of <sup>60</sup>Fe in the Galaxy
-- Extract the <sup>26</sup>Al/<sup>60</sup>Fe ratio and its uncertainty
-- Detect the <sup>26</sup>Al and <sup>60</sup>Fe emission from the Cygnus region and measure widths of the gamma-ray line emissions
-- Determine the mass of <sup>44</sup>Ti in Cas A from the 1157 keV line emission
-- _Stretch goal:_ Cross-correlate the <sup>26</sup>Al 1.8 MeV spatial distribution with the 511 keV emission from Galactic positron annihilation
-- _Stretch goal:_ Detect and characterize the different non-gaussian line profiles of the <sup>44</sup>Ti 1157 keV line for Cas A
+### DC4 Goals:
+- Estimate the Galactic 60Fe/26Al ratio
+- Determine the mass of 26Al in three massive star groups
+- Sky survey of 44Ti point sources
+- Spectral analysis of 44Ti in Cas A
 
-We have modeled the diffuse emission from <sup>26</sup>Al and <sup>60</sup>Fe in our Galaxy assuming they follow the distribution of massive stars and are in agreement with INTEGRAL/SPI observations. We have also included a model for the <sup>26</sup>Al and <sup>60</sup>Fe emission from the Cygnus region. We have simulated the <sup>44</sup>Ti decay from Cas A with 5 different spectral line profiles to test the resolving power of COSI. Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
+**⚠️ Pending:** Need to update info about included sources and models. <br />
+We have modeled the diffuse emission from <sup>26</sup>Al and <sup>60</sup>Fe in our Galaxy assuming they follow the distribution of massive stars and are in agreement with INTEGRAL/SPI observations. We have also included a model for the <sup>26</sup>Al and <sup>60</sup>Fe emission from the Cygnus region. We have simulated the <sup>44</sup>Ti decay from Cas A with 5 different spectral line profiles to test the resolving power of COSI. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** 
-- Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
+- Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse.h5
 - extended_source_response_Al26_merged.h5.gz
-- Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
-- Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
+- Response60FeHigh.o4.e1329_1336.s10201526728102.m1287.filtered.nonsparse.binnedimaging.imagingresponse.h5
+- Response60FeLow.o4.e1170_1176.s9552269354945.m1188.filtered.nonsparse.binnedimaging.imagingresponse.h5
 - extended_source_response_Fe60_low_merged.h5.gz
 - extended_source_response_Fe60_high_merged.h5.gz
-- Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse_nside16.area.good_chunks.h5.gz
+- Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse.h5
 - extended_source_response_Ti44_merged.h5.gz 
 
 Each gamma-ray line has a different response, and the response files are labeled with each isotope. Note that <sup>60</sup>Fe has two separate response files for the two decay lines at 1173 keV and 1332 keV. Currently, these two line components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. The pre-computed extended source responses should be used for imaging in Galactic coordinates and the spectral fit notebook when analyzing extended sources (i.e. <sup>26</sup>Al or <sup>60</sup>Fe).
