@@ -112,20 +112,41 @@ The Key Objectives for GRB science with COSI are:
 
 The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
-### DC3 Goals:
+### DC4 Goals:
 - Localize GRBs and fit the spectra
 - Measure polarization (fraction and angle) of GRBs
 - Localize MGFs and fit the spectra
 - Measure the polarization (fraction and angle) of MGFs
 - Check if the magnetar short burst is detectable, and if detectable, localize and fit the spectrum
 
-The DC4 mock dataset includes 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time.  
+The DC4 mock dataset includes 12 GRBs, 6 Magnetar Giant Flares (MGFs), and 1 magnetar short burst within the 3 months of observation time. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.  
 
 **The binned analysis will require the following detector response files:** 
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
 - ResponseContinuum.o3.pol.e200_10000.b4.p12.relx.s10396905069491.m420.filtered.binnedpolarization.11D.h5 <br />
   
 Note: the second response file is used for polarization analysis and has fewer energy bins.
+
+ **Data Files:** <br />
+ For reference, below is a list of the individual source simulation files that are included in the mock dataset:
+ GRB_bn081207680_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn090424592_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn100612726_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn110605183_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn131122490_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn140329295_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn161004964_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn170405777_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn180504136_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn180703876_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_bn080802386_flux150_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_MGF051103_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_MGF070201_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_MGF070222_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_MGF180128A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_MGF200415A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ GRB_MGF231115A_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+ MgtBurst_bright_complex_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
  
  **Input Models:** <br />
  All input models can be found [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library/DC3/sources/GRBs).
@@ -168,18 +189,14 @@ The Key Objectives for the COSI positron science goal are:
 3. Study the annihilation mechanism and the differences between the Galactic disk and the Galactic bulge
 4. Investigate the energy at which positrons are created
 
-For DC3, we have challenges associated with **1–3** of the Key Objectives.
-
 The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/blob/v0.3.x/docs/tutorials/image_deconvolution/511keV/GalacticCDS) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
-### DC3 Goals:
-- Image individual positron sources in the Galaxy 
-- Generate a full sky image of the Galactic diffuse 511 keV emission
-- Determine the scale height of the 511 keV disk
-- Compare line width and ortho-Ps fraction in bulge and disk
-- Measure the Doppler shift in the disk
-- _Stretch goal:_ cross-correlate the measured 511 keV emission with <sup>26</sup>Al map (1809 keV emission) to constrain propagation distances
-
+### DC4 Goals:
+- Identify individual positron sources 
+- Determine the scale height of the 511 keV disk, and cross-correlate the measured distribution with 26Al map (1809 keV emission) to constrain propagation distances.
+- Determine line width and relative flux of oPs and 511 keV line for different regions of the Galaxy. 
+- Find detection significance of in-flight annihilation.
+  
 We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum, with three different bulge models that agree with INTEGRAL/SPI measurements. We have also simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum.  Access to the response files and the simulated source and background files, including the full Wasabi path, is detailed in the [data-products](data-products/README.md) page
 
 **The challenges will use the following detector response files:** 
