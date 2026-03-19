@@ -679,16 +679,20 @@ Previous, current, and planned releases are summarized below (click to expand):
   <summary>Data Challenge 4 (current release): May 2026</summary>
  
   - Fist time using a realistic mock dataset:
-    - We use the same source simulations from DC3, i.e., same spacecraft orientation, mass model, MEGALib version (including detector effects engine), MEGALib configuration files, etc.
-    - In addition to the source simulations from DC3, we simulated 25 new sources. 
+    - Includes 64 sources plus total background, distributed in weekly data files.
+    - The DC4 mock dataset is comprised of a combination of simulations from DC3 and new simulations for DC4.
+    - For DC4 we produced 24 new source simulations plus updated simulations for most background components. 
+    - DC4 uses same inputs as DC3, i.e., same mass model, orientation file, detector effects engine, etc.
     - Response files are also the same, but the formatting has been optimized.
   - Substantial changes to COSIPy, including:
-    - Moved to relative coordinate response and interpolation using machine learning.
-    - Unbinned analysis.
-    - Optimization and usability of code.
-    - Improvements to background estimation tools.
-    - Abiity to fit multiple background parameters.
-    - Improved tools to make data selections.       
+    - Refactored the entire library to improve modularity by implementing an interface-based design. As the codebase continues to grow in complexity, this was necessary to ensure long-term maintainability and sustainability.
+    - Optimized many components of the code to improve performance and reduce memory usage. 
+    - Introduced unbinned analysis for the first time, employing a neural network–based response approximation and background estimation. 
+    - Improvements to all background estimation tools (continuum, line, transient).
+    - Added the ability to fit multiple background components.
+    - Introduced more data selection methods.
+    - Introduced initial tools enabling phase-resolved analysis. 
+    - Expanded and enhanced the available toolset.        
 
 </details>
 
