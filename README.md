@@ -595,16 +595,15 @@ We consider cases where two dark matter (DM) particles annihilate into either tw
 
 ## Known Caveats and Limitations
 The items listed here are some of the priorities for DC4 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work on them, with the ultimate goal of implementing the software solutions into cosipy. Also see the bottom of the [cosipy-intro](cosipy-intro) for a related discussion on the next steps of development.
-
-- **Image deconvolution does not consider Earth occultation or SAA passage when computing the point source response on the fly.** To include these effects, use a precomputed point source response file instead. 
+ 
 - **It is not currently possible to simultaneously fit continuum and line components.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
   - Creating a single response for all components
   - Creating a class that automatically matches an input model with the corresponding response
   - Reparameterizing the response in such a way that prevents this issue 
 - **Methods need to be developed to determine the response for broadened and offset line emission.** These methods should utilize the baseline response files (e.g. 511 keV, Aluminum-26, Iron-60, etc.), and allow for analyzing any arbitrary line emission.
 - **The background estimation tools need to be further tested and developed.** With DC4 we have methods for estimating continuum, line, and transient backgrounds. These methods need to be tested, stressed, and further developed. 
-- **The way in which parameters are configured needs to be refined, and callable scripts need to be added.** By callable scripts we are referring to command-line options that will perform common task, such as producing light curves and spectra.  
-- **The tools still need to be stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
+- **The way in which parameters are configured needs to be refined, and more callable scripts need to be added.** By callable scripts we are referring to command-line options that will perform common task, such as producing light curves and spectra.  
+- **The tools still need to be further stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
 
 ## Releases
 Previous, current, and planned releases are summarized below (click to expand):
