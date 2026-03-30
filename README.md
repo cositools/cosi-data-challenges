@@ -467,7 +467,7 @@ The Galactic diffuse continuum emission is modeled using the v57 release of the 
   <summary>Extragalactic</summary>
   
 ## Extragalactic Data Challenges
-There is one Key Objective for Extragalactic science with COSI:
+There is one key objective for extragalactic science with COSI:
 1. Constrain geometries and emission processes in Active Galactic Nuclei (AGN) <br />
 
 While the main science goals for COSI are not directly related to many extragalactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. 
@@ -515,13 +515,15 @@ We have included a simulation of quasar 4C+21.35 which has both a quiescent stat
 ### Polarized sources
 
 **Cen A:**  <br />
-The spectral model for the DC4 simulation of quasar 3C 279 is a power law with a spectral index of 1.732. The total integrated flux between 100 keV to 10 MeV is $1.97 \times 10^{-3} \ \mathrm{ph cm^{-2} s^{-1}}$. We have assumed a polarization fraction of 20%, and a randomly chosen polarization angle of $150^\circ$ (in Galactic coordinates). The source is located at $l = 309.516^{\circ}, b = 19.417^{\circ}$.
+Centaurus A is the nearest radio-loud active galaxy (distance of about 3.8 Mpc) and a well-studied misaligned AGN with prominent jets and lobes. The spectrum is modeled as a power law with photon index $\Gamma = 1.732$. The total integrated flux between 100 keV and 10 MeV is $1.97 \times 10^{-3} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$. A polarization fraction of 20% is assumed, with a polarization angle of $150^\circ$ (Galactic coordinates). The source position is $(l, b) = (309.516^\circ, 19.417^\circ)$.
 
 **4C 71.07:**  <br />
-The spectrum is taken from Model A of [Tavecchio et al. 2025](https://ui.adsabs.harvard.edu/abs/2025A%26A...694L...3T/abstract). The source is located at $l = 143.54^{\circ}, b = 34.43^{\circ}$. The polarization fraction is 75% at an angle of $60^\circ$ (Galactic coordinates). The total integrated flux between 100 keV to 10 MeV is $1.19 \times 10^{-3} \ \mathrm{ph cm^{-2} s^{-1}}$.
+4C +71.07 is a high-redshift ($z \sim 2.2$) flat-spectrum radio quasar (FSRQ), characterized by strong jet emission aligned close to the line of sight. The spectral model is taken from Model A of [Tavecchio et al. 2025](https://ui.adsabs.harvard.edu/abs/2025A%26A...694L...3T/abstract). The integrated flux between 100 keV and 10 MeV is
+$1.19 \times 10^{-3} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$. A polarization fraction of 75% is assumed, with a polarization angle of $60^\circ$ (Galactic coordinates). The source position is $(l, b) = (143.54^\circ, 34.43^\circ)$.
 
 **3C 454.3:**  <br />
-The spectrum is taken from the model of [Bonnoli et al. 2011](https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..368B/abstract). There is both a low and high state. The low state is not polarized. For the high state, the polarization fraction is 50% at and angle of $45^\circ$ (Galactic coordinates). The source is located at $l = 86.11^{\circ}, b = -38.18^{\circ}$.
+3C 454.3 is one of the brightest and most variable gamma-ray blazars, known for dramatic flaring activity. The spectral model is based on [Bonnoli et al. 2011](https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..368B/abstract) and includes both low and high emission states. The low state is assumed to be unpolarized. In the high state, a polarization fraction of 50% is adopted with a polarization angle of $45^\circ$ (Galactic coordinates). The source is located at $(l, b) = (86.11^\circ, -38.18^\circ)$.
+
 </details>
 
 <details>
