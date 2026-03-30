@@ -187,6 +187,9 @@ magnetar2_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 CenA_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Crab_DC4_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
+Unbinned Files (**not included in mock dataset**): <br />
+Decay_gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz
+
 DC3 Sources: <br />
 For DC3 we simulated 45 unique sources, running 75 different simulations in total (using multiple models for some of the sources). 
 
