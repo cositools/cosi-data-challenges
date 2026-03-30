@@ -491,20 +491,16 @@ Note: the second response file is used for polarization analysis.
 ### Steady state sources
 
 **NGC 1068 Input Models:**  <br />
-The baseline model is a cutoff power law (thermal electrons), based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract), plus a powerlaw (non-thermal tail), based on the work in Inoue+2008. The source is located at $(l,b) = (172.10^\circ, -51.93^\circ)$. The integrated flux from 100 keV to 10 MeV is $1.61 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. The input spectral parameters are as follows:
-Thermal: Gamma=1.92, Ecut=200 keV; Norm at 1 keV = 0.308 keV-1 s-1 cm-2
-Non-Thermal: Gamma=3.8; Norm at 1 keV = 91.18 keV-1 s-1 cm-2
+The baseline model is a cutoff power law (thermal electrons), based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract), plus a powerlaw (non-thermal tail), based on the work in Inoue+2008. The source is located at $(l,b) = (172.10^\circ, -51.93^\circ)$. The integrated flux from 100 keV to 10 MeV is $1.61 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. The input spectral parameters are as follows: <br />
+Thermal: Gamma=1.92, Ecut=200 keV; norm at 1 keV = 0.308 $\mathrm{keV^{-1} \  s^{-1} \ cm^{-2}}$ <br />
+Non-Thermal: Gamma=3.8; norm at 1 keV = 91.18 $\mathrm{keV^{-1} \  s^{-1} \ cm^{-2}}$ <br />
 
 **NGC 4151 Input Models:**  <br />
-NGC 4151 is a Seyfert galaxy which hosts one of the brightest AGN. The baseline model is a cutoff power law (thermal electrons) from Lubinski+2010, plus a powerlaw (non-thermal tail) from Inoue+2008. The source is located at $(l,b) = (155.08^\circ, 75.06^\circ)$ and the integrated flux from 100 keV to 10 MeV is $1.88 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. The input spectral parameters are as follows:
-Thermal: Gamma=1.75, Ecut=200 keV; Norm at 1 keV = 0.149 keV-1 s-1 cm-2
-Non-Thermal: Gamma=3.8; Norm at 1 keV = 142.8 keV-1 s-1 cm-2
+NGC 4151 is a Seyfert galaxy which hosts one of the brightest AGN. The baseline model is a cutoff power law (thermal electrons) from Lubinski+2010, plus a powerlaw (non-thermal tail) from Inoue+2008. The source is located at $(l,b) = (155.08^\circ, 75.06^\circ)$ and the integrated flux from 100 keV to 10 MeV is $1.88 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. The input spectral parameters are as follows: <br />
+Thermal: Gamma=1.75, Ecut=200 keV; norm at 1 keV = 0.149 $\mathrm{keV^{-1} \  s^{-1} \ cm^{-2}}$ <br />
+Non-Thermal: Gamma=3.8; norm at 1 keV = 142.8 $\mathrm{keV^{-1} \  s^{-1} \ cm^{-2}}$<br />
 
 ### Transient source
-
-**Data Files:** <br />
-4C21p35_noflare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-4C21p35_flare_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **4C+21.35 Input Models:**  <br />
 We have included a simulation of quasar 4C+21.35 which has both a quiescent state simulation (noflare) and a flaring state in separate files. The lightcurve describing the quiescent flux and the flare is based on Fermi-LAT data, where the flaring state is initiated when the reported flux is 3x greater than the 16-years average flux. The normalization is derived from the integrated flux in the COSI energy band, based on an extrapolation of the Fermi-LAT log parabola function. The two states come with two different spectra: both powerlaws with different indices, where the non-flaring state has and index of 1.6, and the flaring state has an index of 2.5. The flaring state has variable flux between 1838089680 < T < 1840422465, and is zero elsewhere, and the non-flaring state is the opposite, as seen in the light curve below. Combine these files to represent a 4C+21.35 flare with a different spectral model in the flaring state.
@@ -516,13 +512,15 @@ We have included a simulation of quasar 4C+21.35 which has both a quiescent stat
 <div align="left">
 
 
-### Polarized source
+### Polarized sources
 
-**Data Files:** <br />
-3C279_3months_unbinned_data_filtered_with_SAAcut.fits.gz
+**Cen A:**  <br />
+The spectral model for the DC4 simulation of quasar 3C 279 is a power law with a spectral index of 1.732. The total integrated flux between 100 keV to 10 MeV is $1.97 \times 10^{-3} \ \mathrm{ph cm^{-2} s^{-1}}$. We have assumed a polarization fraction of 20%, and a randomly chosen polarization angle of $150^\circ$ (in Galactic coordinates). The source is located at $l = 309.516^{\circ}, b = 19.417^{\circ}$.
 
-**3C 279 Input Models:**  <br />
-The spectral model for the DC3 simulation of quasar 3C 279 represents the high state of the source, where we have used a flux 100x its nominal value. The spectra is described is based on the model in [Zhang+15](https://ui.adsabs.harvard.edu/abs/2015ApJ...804...58Z/abstract), with a total integrated flux of $1.2 \times 10^{-2} \ \mathrm{ph cm^{-2} s^{-1}}$. This is the same model as DC2, but we now include polarization. We have assumed a polarization fraction of 19.62% based on the results from [Zhang+15](https://ui.adsabs.harvard.edu/abs/2015ApJ...804...58Z/abstract), and a randomly chosen polarization angle of 45 degrees (in IAU convention). The source is located at $l = 305.1^{\circ}, b = 57.1^{\circ}$.
+**4C 71.07:**  <br />
+The spectrum is taken from Model A of [Tavecchio et al. 2025](https://ui.adsabs.harvard.edu/abs/2025A%26A...694L...3T/abstract). The source is located at $l = 143.54^{\circ}, b = 34.43^{\circ}$. The polarization fraction is 75% at an angle of $60^\circ$ (Galactic coordinates). The total integrated flux between 100 keV to 10 MeV is $1.19 \times 10^{-3} \ \mathrm{ph cm^{-2} s^{-1}}$.
+
+**3C 454.3:**  <br />
 
 </details>
 
