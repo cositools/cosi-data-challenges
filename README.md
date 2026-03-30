@@ -377,8 +377,7 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 - Perform imaging and spectral analysis of Galactic point sources
 - Make measurement of Galactic diffuse continuum
 
-**⚠️ Pending:** Need to update info about included sources and models. <br />
-We have simulated 10 Galactic point sources: 3 steady-state sources (Crab, GRS 1758-258, 1E1740.7-2942) for spectral analysis, 3 transient/variable sources (PSR B1259-63 has a single flare, Cyg X3 has 6 state transitions,  and LS 5039 is periodic), and 4 sources with polarization (Cyg-X1, MAXI J1820+070, J1348-630, and 1RXS J170849.0-400901). Note that all of the polarized sources are variable as well. We also have a simulation of the Galactic diffuse emission, which can be included as an additional background component, or directly analysed as a source. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
+The DC4 mock dataset includes 12 Galactic point sources: 2 steady-state sources (GRS 1758-258, 1E1740.7-2942) for spectral analysis, 5 transient/variable sources (Crab, PSR B1259-63, PSR J1846−0258, Cyg X3, and LS 5039), and 5 sources with polarization (Cyg-X1, MAXI J1820+070, MAXI J1348-630, 1RXS J170849.0-400901, and genaric magnetar). Note that all of the polarized sources are variable as well, and the Crab is polarized (in addition to being a variable source). The DC4 mock dataset also includes the Galactic diffuse continuum emission. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** <br />
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
