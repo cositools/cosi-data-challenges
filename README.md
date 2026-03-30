@@ -480,8 +480,7 @@ The tools needed to complete the Extragalactic challenges are demonstrated in th
 - Spectral analysis of radio-quiet AGN to constrain the properties of the corona
 - Detection and Characterization of the MeV background
 
-**⚠️ Pending:** Need to update info about included sources and models. <br />
-We have simulated 4 extragalactic sources: 2 are steady state sources (NGC 1068 and NGC 4151), 1 transient source (4C+21.35), and 1 polarized source (3C 279). Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
+We have simulated 6 extragalactic sources: Cen A (steady state, polarized), NGC 1068 (steady state), NGC 4151 (steady state), 4C+21.35 (flare), 4C 71.07 (polarized), and 3C 454.3 (variable, polarized). In addition, we also simulated the extragalactic MeV background, which is part of the standard background model. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **All challenges should use the same detector response files:** <br />
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
@@ -490,13 +489,6 @@ We have simulated 4 extragalactic sources: 2 are steady state sources (NGC 1068 
 Note: the second response file is used for polarization analysis.
 
 ### Steady state sources
-
-**Data Files:** <br />
-NGC_1068_3months_unbinned_data_filtered_with_SAAcut.fits.gz
-NGC_4151_bright_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_4151_EC200_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_4151_EC1000_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-NGC_4151_faint_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **NGC 1068 Input Models:**  <br />
 The simulation for NGC 1068 is based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract). The source is located at $l = 17.2^{\circ}, b = -51.9^{\circ}$, and is modeled as a power law with a photon index of 1.92 and an exponential cut off at 200 keV. The intrinsic flux reported in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract) for the 2-10 keV band is $8.9 \times ^{-10} \ \mathrm{erg \ cm^{-2} \ s^{-1}}$, and we have simulated a total integrated flux of $1.5 \times 10^{-3}\ \mathrm{ ph \ cm^{-2} \ s^{-1}}$ (0.1 – 10 MeV).
