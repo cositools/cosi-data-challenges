@@ -377,7 +377,7 @@ The tools needed to complete the Galactic challenges are demonstrated in the [Cr
 - Perform imaging and spectral analysis of Galactic point sources
 - Make measurement of Galactic diffuse continuum
 
-The DC4 mock dataset includes 12 Galactic point sources: 2 steady-state sources (GRS 1758-258, 1E1740.7-2942) for spectral analysis, 5 transient/variable sources (Crab, PSR B1259-63, PSR J1846−0258, Cyg X3, and LS 5039), and 5 sources with polarization (Cyg-X1, MAXI J1820+070, MAXI J1348-630, 1RXS J170849.0-400901, and genaric magnetar). Note that all of the polarized sources are variable as well, and the Crab is polarized (in addition to being a variable source). The DC4 mock dataset also includes the Galactic diffuse continuum emission. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
+The DC4 mock dataset includes 12 Galactic point sources: 2 steady-state sources (GRS 1758-258, 1E1740.7-2942) for spectral analysis, 5 transient/variable sources (Crab, PSR B1259-63, PSR J1846−0258, Cyg X3, and LS 5039), and 5 sources with polarization (Cyg-X1, MAXI J1820+070, MAXI J1348-630, 1RXS J170849.0-400901, and a genaric magnetar). Note that all of the polarized sources are variable as well, and the Crab is polarized (in addition to being a variable source). The DC4 mock dataset also includes the Galactic diffuse continuum emission. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** <br />
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
@@ -392,21 +392,21 @@ Note: the second response file is used for polarization analysis and the extende
 The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2 and DC3. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. 
 
 **1E1740.7-2942 Input Models:**  <br />
-The spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) is one of the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). Specifically, we use the "compow" model, which is a thermal comptonization + powerlaw model. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$.
+The spectral model for microquasar 1E1740.7-2942 (also known as the Great Annihilator) is one of the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). Specifically, we use the "compow" model, which is a thermal comptonization + powerlaw model. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$.
 
 ### Transient/Variable sources 
 
 **Crab Input Model:**  <br />
-For DC4 we simulated a simplified Crab model with 4 key components: nebula, peak 1, peak 2, and bridge. The nebula is simulated with a steady state and has polarization degree and angle (Galactic coordinates) of 0.40 and 160 deg, respectively. The remaining components are for the pulsar (peak 1, peak 2, and brigde), and they share the same polarization fraction and degree: 0.2 and 145 deg.
+For DC4 we simulated a simplified Crab model with 4 key components: nebula, peak 1, peak 2, and bridge. The nebula is simulated with a steady state and has polarization degree and angle (Galactic coordinates) of 0.40 and 160 deg, respectively. The remaining components are for the pulsar (peak 1, peak 2, and bridge), and they share the same polarization fraction and degree: 0.2 and 145 deg.
 
 **PSR B1259-63 Input Model:**  <br />
-PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0).We use the nominal flux value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11), which is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
+PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0). We use the nominal flux value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11), which is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
 
 **PSR J1846−0258 Input Model:**  <br />
 **⚠️ Pending:** Need information for this model. 
 
 **Cyg X3 Input Models:**  <br />
-For DC4, Cyg X-3 ($l = 79.8^{\circ}, b = 0.7^{\circ}$) is modeled using a single transition-state spectrum based on the best-fit eqpair model from INTEGRAL data from [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf). Unlike DC3, no state evolution is included. The source is simulated at its nominal flux in the transition state for the full 3-month exposure.
+For DC4, Cyg X-3 ($l = 79.8^{\circ}, b = 0.7^{\circ}$) is modeled using a single transition-state spectrum based on the best-fit eqpair model from INTEGRAL data from [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf). The source is simulated at its nominal flux in the transition state for the full 3-month exposure.
 
 **LS 5039 Input Models:**  <br />
 LS 5039 is a TeV gamma-ray binary system with an orbital period of about 3.9 days. MeV gamma-ray emission was reported by COMPTEL ([Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C)). The input spectrum was generated by interpolating the X-ray spectrum ([Yoneda+21](https://iopscience.iop.org/article/10.3847/1538-4357/ac0ae1/meta)) and MeV spectrum ([Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C)), averaged over the orbital period. Orbital modulation is based on the orbital light curve from [Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C). 
@@ -414,13 +414,19 @@ LS 5039 is a TeV gamma-ray binary system with an orbital period of about 3.9 day
 ### Polarized Sources
 
 **Cyg X1 Input Models:**  <br />
-The spectral model for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) is based on best-fit eqpair models of time averaged INTEGRAL data ([Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract)). We assume that the source is in the hard state for the 3 months of exposure. The hard state polarization model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. 
+The spectral model for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) is based on the best-fit eqpair model of time averaged INTEGRAL data ([Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract)). We assume that the source is in the hard state for the 3 months of exposure. The hard state polarization model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. 
 
 **MAXI J1820+070 and J1348-630 Input Models:**  <br />
-The spectral models for two black hole X-ray binaries, MAXI J1820+070 and MAXI J1348-630, are based on INTEGRAL data (Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract)), in the hard state. The polarimetric models corresponds to the measurements shown in Table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXI J1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. Therefore, MAXI J1820+070 has a nominal flux of $1.4 \times 10^{-1}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $6.0 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1840671300, and then drops to zero. MAXI J1348-630 has a flux of $8.6 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $2.3 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1836092100.
+The spectral models for two black hole X-ray binaries, MAXI J1820+070 and MAXI J1348-630, are based on INTEGRAL data (Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract)), in the hard state. The polarimetric models corresponds to the measurements shown in Table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXI J1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC4 we have the sources 'on' for these respective times and off for the rest of the time. Therefore, MAXI J1820+070 has a nominal flux of $1.4 \times 10^{-1}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $6.0 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1840671300, and then drops to zero. MAXI J1348-630 has a flux of $8.6 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $2.3 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1836092100.
 
-**1RXS J170849.0-400901:**  <br />
-The magnetar 1RXS J170849.0-400901 is a bright periodic source, with a spectrum (nuFnu) rising above 10 keV that is well constrained by INTEGRAL-IBIS, and an extreme polarization in soft X-rays with a strong energy dependence ([Zane+23](https://iopscience.iop.org/article/10.3847/2041-8213/acb703)). The models that we use are based on [Hartog+08](https://www.aanda.org/articles/aa/abs/2008/37/aa09772-08/aa09772-08.html).
+**1RXS J170849.0-400901 and a genaric magnetar:**  <br />
+DC4 features two magnetars:
+1. 1RXS J170849.0-400901 
+    * GLON, GLAT: 346.47938142, 0.03838608
+2. A generic magnetar with slightly different parameters than 1RXS J1780849.0-400901
+    * GLON, GLAT: 250, 0.03838608
+    
+The models that we use are based on [Hartog+08](https://www.aanda.org/articles/aa/abs/2008/37/aa09772-08/aa09772-08.html).
 
 The spectrum is a log parabola in the MeV energy range:
 
@@ -429,15 +435,21 @@ spec = norm * var**(-alpha-beta*np.log(var)),
 where var = x/pivot
 ```
 
-The assumed parameters are:
+The assumed parameters for 1RXS are:
 * alpha = 1.637
 * beta = 0.261
 * norm = 1.68e-6 ph/cm2/s/keV
 * pivot = 143.276 keV
 
-The polarization is assumed energy independent in the COSI band with a phase-integrated polarization degree of 80% (PA=30 deg).
+The assumed parameters for the generic magnetar are:
+* alpha = 1.637
+* beta = 0.261 x 2
+* norm = 1.68e-6 ph/cm2/s/keV
+* pivot = 143.276 keV
 
-The Lightcurve is periodic with the following parameters:
+The polarization is assumed energy independent in the COSI band with a phase-integrated polarization degree of 80% (PA=30 deg) for 1RXS and 40% (PA=75 deg) for the genaric magnetar.
+
+The Lightcurves for both 1RXS and the genearic magnetar are periodic with the following parameters:
 * Period: P = 11.00502461 s
 * Period derivative: Pdot = 1.95E-11 s/s
 * Pulsed Fraction: PF = 0.5
