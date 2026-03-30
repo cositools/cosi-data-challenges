@@ -521,7 +521,7 @@ The spectral model for the DC4 simulation of quasar 3C 279 is a power law with a
 The spectrum is taken from Model A of [Tavecchio et al. 2025](https://ui.adsabs.harvard.edu/abs/2025A%26A...694L...3T/abstract). The source is located at $l = 143.54^{\circ}, b = 34.43^{\circ}$. The polarization fraction is 75% at an angle of $60^\circ$ (Galactic coordinates). The total integrated flux between 100 keV to 10 MeV is $1.19 \times 10^{-3} \ \mathrm{ph cm^{-2} s^{-1}}$.
 
 **3C 454.3:**  <br />
-
+The spectrum is taken from the model of [Bonnoli et al. 2011](https://ui.adsabs.harvard.edu/abs/2011MNRAS.410..368B/abstract). There is both a low and high state. The low state is not polarized. For the high state, the polarization fraction is 50% at and angle of $45^\circ$ (Galactic coordinates). The source is located at $l = 86.11^{\circ}, b = -38.18^{\circ}$.
 </details>
 
 <details>
