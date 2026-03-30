@@ -491,19 +491,14 @@ Note: the second response file is used for polarization analysis.
 ### Steady state sources
 
 **NGC 1068 Input Models:**  <br />
-The simulation for NGC 1068 is based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract). The source is located at $l = 17.2^{\circ}, b = -51.9^{\circ}$, and is modeled as a power law with a photon index of 1.92 and an exponential cut off at 200 keV. The intrinsic flux reported in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract) for the 2-10 keV band is $8.9 \times ^{-10} \ \mathrm{erg \ cm^{-2} \ s^{-1}}$, and we have simulated a total integrated flux of $1.5 \times 10^{-3}\ \mathrm{ ph \ cm^{-2} \ s^{-1}}$ (0.1 – 10 MeV).
-
+The baseline model is a cutoff power law (thermal electrons), based on the spectral analysis in [Bauer+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...812..116B/abstract), plus a powerlaw (non-thermal tail), based on the work in Inoue+2008. The source is located at $(l,b) = (172.10^\circ, -51.93^\circ)$. The integrated flux from 100 keV to 10 MeV is $1.61 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. The input spectral parameters are as follows:
+Thermal: Gamma=1.92, Ecut=200 keV; Norm at 1 keV = 0.308 keV-1 s-1 cm-2
+Non-Thermal: Gamma=3.8; Norm at 1 keV = 91.18 keV-1 s-1 cm-2
 
 **NGC 4151 Input Models:**  <br />
-NGC 4151 is a Seyfert galaxy which hosts one of the brightest AGN. For DC3, we have included 4 different spectral models for NGC 4151 which are all defined as a powerlaw with exponential cut-off. From NuSTAR observations, with the flux calibrated in the 20-30 keV range, we have simulated two different cut-off energies based on the analysis presented in [Keck+ 2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...806..149K/abstract): <br />
-- NGC_4151_ec200: Gamma=1.75, Ecut=200 keV <br />
-- NGC_4151_ec1000: Gamma=1.75, Ecut=1000 keV <br />
-
-From INTEGRAL observations there are two cut-off energies and two power-law gamma factors to model two different states as presented in  [Lubinski+ 2010](https://ui.adsabs.harvard.edu/abs/2010MNRAS.408.1851L/abstract):
-- NGC_4151_bright: Gamma=1.71, Ecut=264 keV <br />
-- NGC_4151_faint: Gamma=1.81, Ecut=1000 keV <br />
-
-The source is located at $l = 155.1^{\circ}, b = 75.1^{\circ}$ and has an integrated flux ranging from $6.8 \times 10^{-4}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (NGC_4151_faint) to $3.7 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (NGC_4151_ec1000).
+NGC 4151 is a Seyfert galaxy which hosts one of the brightest AGN. The baseline model is a cutoff power law (thermal electrons) from Lubinski+2010, plus a powerlaw (non-thermal tail) from Inoue+2008. The source is located at $(l,b) = (155.08^\circ, 75.06^\circ)$ and the integrated flux from 100 keV to 10 MeV is $1.88 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. The input spectral parameters are as follows:
+Thermal: Gamma=1.75, Ecut=200 keV; Norm at 1 keV = 0.149 keV-1 s-1 cm-2
+Non-Thermal: Gamma=3.8; Norm at 1 keV = 142.8 keV-1 s-1 cm-2
 
 ### Transient source
 
