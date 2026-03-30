@@ -387,64 +387,34 @@ The DC4 mock dataset includes 12 Galactic point sources: 2 steady-state sources 
 Note: the second response file is used for polarization analysis and the extended source response should be used to analyze the Galactic diffuse continuum when imaging or performing the spectral fit.
 
 ### Steady-state sources
-**Data Files:** <br /> 
-crab_standard_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
-Crab_Flat_Spectrum_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
-GRS175_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
-1E1740_compow_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
-1E1740_twocompt_3months_unbinned_data_filtered_with_SAAcut.fits.gz  <br />
-
-**Crab Input Models:**  <br />
-The standard Crab model is the same as DC1 and DC2. The point source is located at  $l = 184.56^\circ, b = -5.78^\circ$, has a total integrated flux of $4.9 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 10.0 MeV), and is define by spectral model from [Jourdain et al. 2020](https://iopscience.iop.org/article/10.3847/1538-4357/aba8a4). There is also a simpler Crab simulation used mainly for testing purposes with a flat spectrum (“Crab_Flat”) and the same flux.
 
 **GRS 1758-258 Input Models:**  <br />
-The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. 
+The spectral model for the microquasar GRS 1758-258 near the Galactic center is based on the best fit comptonization model of epoch2 from [Pottschmidt+06](https://arxiv.org/pdf/astro-ph/0509006.pdf). This is the same model as used in DC2 and DC3. The source is located at $l = 4.51^{\circ}, b=-1.36^{\circ}$, with a flux of $3.495 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$. 
 
 **1E1740.7-2942 Input Models:**  <br />
-The 2 spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) are the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). The "compow" simulation is a thermal comptonization + powerlaw model, while the "twocompt" simulation has two components of thermal comptonization with different temperatures. Both models represent the INTEGRAL data well but strongly differ at the highest energies. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the compow model and $3.13 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$ for the twocompt model.
+The spectral models for microquasar 1E1740.7-2942 (also known as the Great Annihilator) is one of the best fit models of INTEGRAL data obtained by [Bouchet+09](https://iopscience.iop.org/article/10.1088/0004-637X/693/2/1871/pdf). Specifically, we use the "compow" model, which is a thermal comptonization + powerlaw model. The source is located close to the Galactic center at $l = 359.1^{\circ}, b = -0.1^{\circ}$ with a total integrated flux of $4.23 \times 10^{-3}\ \mathrm{ph \ cm^{-2} s^{-1}}$.
 
 ### Transient/Variable sources 
 
-**Data Files:** <br /> 
-PSRB1259_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-PSRB1259_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-cygX3_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-LS5039_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-LS5039_10x_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+**Crab Input Model:**  <br />
+For DC4 we simulated a simplified Crab model with 4 key components: nebula, peak 1, peak 2, and bridge. The nebula is simulated with a steady state and has polarization degree and angle (Galactic coordinates) of 0.40 and 160 deg, respectively. The remaining components are for the pulsar (peak 1, peak 2, and brigde), and they share the same polarization fraction and degree: 0.2 and 145 deg.
 
-**PSR B1259-63 Input Models:**  <br />
-PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0). We have included two flux scenarios: the nominal value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$, and we have included 10x enhanced flux for easier analysis. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
+**PSR B1259-63 Input Model:**  <br />
+PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0).We use the nominal flux value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11), which is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
+
+**PSR J1846−0258 Input Model:**  <br />
+**⚠️ Pending:** Need information for this model. 
 
 **Cyg X3 Input Models:**  <br />
-In DC3 we have simulated 6 different spectral models for Cyg X3 ($l = 79.8^{\circ}, b= 0.7^{\circ}$) which are combined to create a source which transitions through each state during the 3 months of observation. The spectra are described by best-fit eqpair models of time-averaged INTEGRAL data from  [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf).
-We have assumed a succession of the different states (in this order and for the specified approximate durations):
-
-<pre>
-Percent of time of observed state    ->    time in days (2 year mission)  -> time in days (DC3)
-Quiescent:  6.                                    47                                  5.4
-Transition  46.                                   335                                 41.4
-FHXR:       10.                                   73                                  9.0
-FIM:        22.                                   161                                 19.8 
-FSXR:       5.4                                   28                                  4.8
-Hypersoft:  12.                                   86                                  10.8
-</pre>
-
-Since DC3 simulates 3 months of exposure, we reduced the time spent in each state accordingly and increased the fluxes by a factor of 7.9 to obtain the same total number of photons as we would in 2 yrs of observations. Note: The background rates should also be scaled up in the same way to preserve the expected S/N ratio!
+For DC4, Cyg X-3 ($l = 79.8^{\circ}, b = 0.7^{\circ}$) is modeled using a single transition-state spectrum based on the best-fit eqpair model from INTEGRAL data from [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf). Unlike DC3, no state evolution is included. The source is simulated at its nominal flux in the transition state for the full 3-month exposure.
 
 **LS 5039 Input Models:**  <br />
-LS 5039 is a TeV gamma-ray binary system with an orbital period of about 3.9 days. MeV gamma-ray emission was reported by COMPTEL ([Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C)). The input spectrum was generated by interpolating the X-ray spectrum ([Yoneda+21](https://iopscience.iop.org/article/10.3847/1538-4357/ac0ae1/meta)) and MeV spectrum ([Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C)), averaged over the orbital period. Orbital modulation is based on the orbital light curve from [Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C). We also include a model with 10x the flux to ensure that it can be detected with only 3 months of exposure used for DC3. 
+LS 5039 is a TeV gamma-ray binary system with an orbital period of about 3.9 days. MeV gamma-ray emission was reported by COMPTEL ([Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C)). The input spectrum was generated by interpolating the X-ray spectrum ([Yoneda+21](https://iopscience.iop.org/article/10.3847/1538-4357/ac0ae1/meta)) and MeV spectrum ([Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C)), averaged over the orbital period. Orbital modulation is based on the orbital light curve from [Collmar+14](http://adsabs.harvard.edu/abs/2014A%26A...565A..38C). 
 
 ### Polarized Sources
 
-**Data Files:** <br />
-cygX1_soft_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-cygX1_hard_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MAXIJ1820_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-MAXIJ1348_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-1RXSJ170849_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
 **Cyg X1 Input Models:**  <br />
-The two spectral models for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) are best fit eqpair models of time averaged INTEGRAL data ([Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract))  given for hard and soft states respectively. Both hard and soft states are simulated for the full 3 months, but the user can make a time cut and combine as needed to define a spectral transition. The hard state polarization model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. The soft spectral state assumes an energy-independent polarization of 20%, again at the same 40 degree angle.
+The spectral model for Cyg X1 ($l = 71.3^{\circ}, b = 3.1^{\circ}$) is based on best-fit eqpair models of time averaged INTEGRAL data ([Cangemi+21]( https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..93C/abstract)). We assume that the source is in the hard state for the 3 months of exposure. The hard state polarization model is based on the measurements of [Rodriguez+2015](https://ui.adsabs.harvard.edu/abs/2015ApJ...807...17R/abstract). At low energy (0.1 - 0.4 MeV) the polarization fraction is 5% with an angle of 40 degrees (IAU convention). At high energy (0.4 - 10 MeV) the polarization fraction is 75% with the same angle. 
 
 **MAXI J1820+070 and J1348-630 Input Models:**  <br />
 The spectral models for two black hole X-ray binaries, MAXI J1820+070 and MAXI J1348-630, are based on INTEGRAL data (Fig 3 of [Cangemi+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...669A..65C/abstract)), in the hard state. The polarimetric models corresponds to the measurements shown in Table 3 of the same paper. The input polarization models are divided into a low energy component (0.1 - 0.4 MeV) and a high energy component (0.4 - 10 MeV). MAXI J1820+070 and  MAXI J1348-630 remained in the hard state for 60 days and 7 days, respectively, and for DC3 we have the sources 'on' for these respective times and off for the rest of the time. Therefore, MAXI J1820+070 has a nominal flux of $1.4 \times 10^{-1}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $6.0 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1840671300, and then drops to zero. MAXI J1348-630 has a flux of $8.6 \times 10^{-2}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.1 - 0.4 MeV) and $2.3 \times 10^{-3}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (0.4 - 10 MeV) until T = 1836092100.
@@ -465,7 +435,7 @@ The assumed parameters are:
 * norm = 1.68e-6 ph/cm2/s/keV
 * pivot = 143.276 keV
 
-The polarization is assumed energy independent in the COSI band with a phase-integrated polarization degree of 80% (PA=-60 deg).
+The polarization is assumed energy independent in the COSI band with a phase-integrated polarization degree of 80% (PA=30 deg).
 
 The Lightcurve is periodic with the following parameters:
 * Period: P = 11.00502461 s
