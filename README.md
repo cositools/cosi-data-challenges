@@ -310,8 +310,7 @@ The tools needed to complete most of these challenges are demonstrated in the [5
 - Sky survey of 44Ti point sources
 - Spectral analysis of 44Ti in Cas A
 
-**⚠️ Pending:** Need to update info about included sources and models. <br />
-We have modeled the diffuse emission from <sup>26</sup>Al and <sup>60</sup>Fe in our Galaxy assuming they follow the distribution of massive stars and are in agreement with INTEGRAL/SPI observations. We have also included a model for the <sup>26</sup>Al and <sup>60</sup>Fe emission from the Cygnus region. We have simulated the <sup>44</sup>Ti decay from Cas A with 5 different spectral line profiles to test the resolving power of COSI. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
+We have modeled the diffuse emission from <sup>26</sup>Al and <sup>60</sup>Fe in our Galaxy assuming they follow the distribution of massive stars and are in agreement with INTEGRAL/SPI observations. We have also included a model for the <sup>26</sup>Al and <sup>60</sup>Fe emission from the Cygnus region. Additionally, we simulated extended <sup>26</sup>Al and <sup>60</sup>Fe emissions from the Orion Eridanus superbubble and the Upper Scorpius part of the Scorpius-Centaurus association. Finally, we simulated <sup>44</sup>Ti decay from Tycho, SN1987A, Kepler, G1903, Vela Jr., and Cassiopeia A. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** 
 - Response26Al.o4.e1805_1812.s10036231691364.m1045.filtered.nonsparse.binnedimaging.imagingresponse.h5
@@ -323,41 +322,40 @@ We have modeled the diffuse emission from <sup>26</sup>Al and <sup>60</sup>Fe in
 - Response44Ti.o4.e1154_1160.s9607532021290.m1215.filtered.nonsparse.binnedimaging.imagingresponse.h5
 - extended_source_response_Ti44_merged.h5.gz 
 
-Each gamma-ray line has a different response, and the response files are labeled with each isotope. Note that <sup>60</sup>Fe has two separate response files for the two decay lines at 1173 keV and 1332 keV. Currently, these two line components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. The pre-computed extended source responses should be used for imaging in Galactic coordinates and the spectral fit notebook when analyzing extended sources (i.e. <sup>26</sup>Al or <sup>60</sup>Fe).
+Each gamma-ray line has a different response, and the response files are labeled with each isotope. Note that <sup>60</sup>Fe has two separate response files for the two decay lines at 1173 keV and 1332 keV. Currently, these two line components cannot be analyzed simultaneously using a binned analysis, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. However, an unbinned analysis might be suitable. The pre-computed extended source responses should be used for imaging in Galactic coordinates and the spectral fit notebook when analyzing extended sources (i.e. <sup>26</sup>Al or <sup>60</sup>Fe).
 
-### <sup>26</sup>Al and <sup>60</sup>Fe diffuse emission
+### Input Models
 
-**Data Files:** <br /> 
-26Al_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-60Fe_NE2001_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
+**<sup>26</sup>Al and <sup>60</sup>Fe diffuse emission:**  <br />
 The spatial distribution of the 1809 keV line from <sup>26</sup>Al decay and the 1173 keV and 1332 keV lines from <sup>60</sup>Fe decay in our Galaxy follow the NE2001 model from [Cordes & Lazio 2002](https://arxiv.org/abs/astro-ph/0207156). The model fits the distribution of massive stars in our Galaxy, with an assumed fraction of 2% for both <sup>26</sup>Al and <sup>60</sup>Fe in the Galactic bulge. This value is a compromise between SPI observations and results of studies of star formation rate in this region. The flux of <sup>26</sup>Al is consistent with measurements from SPI with a total mass of 2.7 $M_\odot\$ in our Galaxy ([Diehl et al. 2006](https://ui.adsabs.harvard.edu/abs/2006Natur.439...45D/abstract)). The flux of <sup>60</sup>Fe is computed assuming a total mass of 3.5 $M_\odot\$ (see [Wang+20](https://ui.adsabs.harvard.edu/abs/2020ApJ...889..169W/abstract) and [Siegert+23](https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..54S/abstract)). The shape of the line in each spatial bin takes into account the turbulence of the interstellar medium and the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc.
-
-### Cygnus Region
    
-**Data Files:** <br /> 
-26Al_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-60Fe_Cyg_Region_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-
-**Input Models:**  <br />
+**Cygnus Region:**  <br />
 The characteristics of the <sup>26</sup>Al emission from the Cygnus region are obtained from INTEGRAL/SPI observations described in [Martin+09](https://ui.adsabs.harvard.edu/abs/2009A%26A...506..703M/abstract), while predictions for the <sup>60</sup>Fe lines are derived from the calculation of [Martin+10](https://ui.adsabs.harvard.edu/abs/2010A%26A...511A..86M/abstract). The spatial distribution, for both <sup>26</sup>Al and <sup>60</sup>Fe, is modeled with a $3^\circ$ $\sigma$ Gaussian shape centered at $l = 81^\circ, b = 1^\circ$. The 1.8 MeV line flux is $3.9 \times 10^{-5} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$, and it is centered at 1808.8 keV with a width of 1.6 keV FWHM due to the interstellar turbulence. The flux of <sup>60</sup>Fe is $2.7 \times 10^{−6}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ for the both lines, and centroids are 1173.3 keV and 1332.6 keV with a width of 1.04 keV and 1.18 keV FWHM, respectively.
-
-### <sup>44</sup>Ti line profiles from Cas A
    
-**Data Files:** <br /> 
-CasAsymmetric_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAunresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasApartiallyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAfullyresolved_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
-CasAG16distribution_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
+**Orion Eridanus superbubble:**  <br />
+Extended 26Al and 60Fe source emissions from the Orion Eridanus superbubble. Flux and diffusion on the Myr timescale have been estimated using the age and launch velocities. The distribution is modeled as a FarFieldAssymetricGaussian (2D elliptical projections on the sky) with 0 degree rotation with respect to the latitude. The spectra are modeled as Gaussians with 200 km/s broadening.
 
-**Input Models:**  <br />
-The five Cas A simulations all have slightly different line profiles and are meant to test the spectral features recovery capabilities of COSI with a low-resolution response file. The source is modeled as a point source at $l = 111.7^\circ, b = -2.1^\circ$, and each spectral model has a flux of $3 \times 10^{-4} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$ at 1157 keV, which is 10$\times$ the flux value provided by  [Siegert+15](http://dx.doi.org/10.1051/0004-6361/201525877) and [Weinberger+20](https://doi.org/10.1051/0004-6361/202037536). The symmetric model is a single Gaussian at 1157 keV. The unresolved, partially resolved, and fully resolved simulations assume the emission is from two <sup>44</sup>Ti clumps whose bulk center of motion is at rest, but the doppler shifts of two clumps are at different levels of spectral separation. The blueshifted clump contains 2/3 of the total <sup>44</sup>Ti yield, and the redshifted clump contains the other 1/3. The doppler broadening of each clump is the same across the three models. The goal is to detect a statistically significant deviation from the Gaussian model in each of the three cases. 
+**Scorpius-Centaurus association:**  <br />
+Extended 26Al and 60Fe source emissions from the Upper Scorpius part of the Scorpius-Centaurus association. Flux and diffusion on the Myr timescale have been estimated using the age and launch velocities. The distribution is modeled as a FarFieldAssymetricGaussian (2D elliptical projections on the sky) with 0 degree rotation with respect to the latitude. The spectra are modeled as Gaussians with 200 km/s broadening.
 
-Additionally, the G16 model simulates a complex distribution of clumps as detected in [Grefenstette+16](http://dx.doi.org/10.3847/1538-4357/834/1/19), where 11 spectral features from 11 different clumps are simulated with varying fluxes and doppler shifts. The <sup>44</sup>Ti flux for the G16 is set to 1.66x the measured flux at 68 and 78 keV, matching the SPI observations of Cas A. The goal remains the same: to detect a statistically significant deviation from the Gaussian model.
+**Cas A:**  <br />
+Based on Grefenstette et al. 2017: THE DISTRIBUTION OF RADIOACTIVE 44Ti IN CASSIOPEIA A.
+NuSTAR observed the Cassiopeia A supernova remnant for 2.4 Ms. This model simulates the spectral structure that will be observable by COSI after spatially-integrating the NuSTAR observations. The photopeak and Doppler-shifts have been shifted from 68 keV to 1157 keV. As spatial-spectral mixing effects were not accounted for, the sum of clump fluxes does not match the total flux from the source. The total flux has been scaled to $3 \times 10^{−4}\ \mathrm{ph \ cm^{-2} \ s^{-1}}$ (10x the value reported in Weinberger et al. 2020). The minimum clump broadening is set to 5 keV (1-sigma), or equivalently 1300 km/s to match NuSTAR’s spectral resolving power. 
 
- 
+**Kepler:** <br />
+Point-like 44Ti emissions from a moderate-latitude source. Doppler broadening is set to 4000 km/s or 15.4 keV (1-sigma). Flux is set to 1.6x of the upper limit in Weinberger et al. 2020. The source is located at $l = 4.5^{\circ}, b=6.8^{\circ}$.
+
+**G1903:** <br />
+Point-like 44Ti emissions from the Galactic center. Doppler broadening is set to 4000 km/s or 15.4 keV (1-sigma). Flux is set to 1.6x of the upper limit in Zoglauer et al. 2015. The source is located at $l = 1.9^{\circ}, b=0.3^{\circ}$.
+
+**SN1987A:** <br />
+Point-like 44Ti emissions from a high-latitude source. Doppler broadening is set to 4000 km/s or 15.4 keV (1-sigma). Flux is set to 2x of the upper limit in Boggs et al. 2015. The source is located at $l = 279.7^{\circ}, b=-31.9^{\circ}$.
+
+**Tycho:** <br />
+Point-like 44Ti emissions from an equatorial source away from dust obscuration. Doppler broadening is set to 4000 km/s or 15.4 keV (1-sigma). Flux is set to 1.6x of the upper limit in Lopez et al. 2015. The source is located at $l = 120.1^{\circ}, b=1.4^{\circ}$. 
+
+**Vela Jr.:** <br />
+Point-like 44Ti emissions from an equatorial source away from dust obscuration. Doppler broadening is set to 4000 km/s or 15.4 keV (1-sigma). Flux is set to 1.6x of the upper limit in Weinberger et al. 2020. The source is located at $l = 266.3^{\circ}, b=-1.2^{\circ}$.
 </details>
 
 <details>
