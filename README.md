@@ -438,16 +438,12 @@ where var = x/pivot
 The assumed parameters for 1RXS are:
 * alpha = 1.637
 * beta = 0.261
-* norm = 1.68e-6 ph/cm2/s/keV
+* norm = 1.68e-6 \mathrm{ph \ cm^{-2} \ s^{-1} \ keV^{-1}}$
 * pivot = 143.276 keV
 
-The assumed parameters for the generic magnetar are:
-* alpha = 1.637
-* beta = 0.261 x 2
-* norm = 1.68e-6 ph/cm2/s/keV
-* pivot = 143.276 keV
+The assumed parameters for the generic magnetar are the same, except for beta which is multiplied by 2.
 
-The polarization is assumed energy independent in the COSI band with a phase-integrated polarization degree of 80% (PA=30 deg) for 1RXS and 40% (PA=75 deg) for the genaric magnetar.
+The polarization is assumed energy independent in the COSI band with a phase-integrated polarization degree of 80% (PA$=30^\circ$) for 1RXS and 40% (PA$=75^\circ$) for the genaric magnetar.
 
 The Lightcurves for both 1RXS and the genearic magnetar are periodic with the following parameters:
 * Period: P = 11.00502461 s
