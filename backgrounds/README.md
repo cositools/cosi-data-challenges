@@ -66,7 +66,7 @@ The second step is the event reconstruction done by *revan*. This part still use
 
 ### Mimrec
 
-The last step is the event selection done by *mimrec* using the configuration file **SMEXv12.Continuum.HEALPixO3.binnedimaging.mimrec.cfg**. Here, all the tra files from the individual simulation are collected into a single extracted file that is then converted into a fits file (using cosipy).  
+The last step is the event selection done by *mimrec* using the configuration file **SMEXv12.Continuum.HEALPixO3.binnedimaging.mimrec.cfg**. Here, all the tra files from the individual simulation are collected into a single extracted file that is then converted into a FITS file (using cosipy).  
 
 ## Results
 
