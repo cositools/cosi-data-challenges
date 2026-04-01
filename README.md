@@ -44,7 +44,7 @@ Users are encouraged to post feedback on the [Discussions](https://github.com/co
 In summary, to get started with DC4, install cosipy, familiarize yourself with the [data-products](data-products/README.md), and then start working through the [Data Challenges](#data-challenges), as described below. 
 
 ## System Requirements
-We have made substantial efforts to optimize COSIPy for accessibility and performance. However, due to the high-dimensional instrument response and computational demands of full analyses, running the complete data challenge workflows and achieving COSI’s full analysis potential will typically require access to a computing cluster or a high-performance workstation.
+We have made substantial efforts to optimize cosipy for accessibility and performance. However, due to the high-dimensional instrument response and computational demands of full analyses, running the complete data challenge workflows and achieving COSI’s full analysis potential will typically require access to a computing cluster or a high-performance workstation.
 
 That said, many components of the data challenges can be run on a personal laptop with at least 16 GB of RAM. Users working on laptops may encounter limitations in runtime or memory for more advanced or large-scale analyses.
 
@@ -64,7 +64,7 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 ## Data Challenges
 For DC4, we have produced a single mock dataset that mimics three months of real flight observations. It includes 64 sources along with the total background. Detailed information is available in the [data-products](data-products/README.md) directory. All simulation input models are provided in the source library of the COSI simulation pipeline (available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)), which can be used to verify data challenge results. 
 
-We have created example Jupyter notebooks demonstrating all of the tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md). <br /> 
+We have created example Jupyter notebooks demonstrating some of the basic tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md). <br /> 
 
 **⚠️ Pending:** Update these with latest available and paths once DC4 version of cosipy is ready. <br />
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) <br />
@@ -80,10 +80,12 @@ Example 10: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blo
 Example 11: [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) <br />
 Example 12: [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
 
-As a very first step, try working through some of the example notebooks. It is highly recommended to start with the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook that will demonstrate the basic tools needed to complete the respective challenge. If you have completed the main challenges and are interested in exploring other models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, as well as the bottom of the [cosipy-intro](cosipy-intro/README.md), which outlines some of the priority areas for the next stages of development. 
+As a very first step, try working through some of the example notebooks. It is highly recommended to start with the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook with a simplified data set that will demonstrate the basic tools needed to start on the respective challenge; however, new code and procedures may need to be implented to achieve all goals with the DC4 data. 
+
+If you  and are interested in exploring other science models, you can employ the source injector (see the [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) example). If you are interested in getting more involved in the cosipy development, see the [Known Caveats and Limitations](#known-caveats-and-limitations) section at the bottom of this page, as well as the bottom of the [cosipy-intro](cosipy-intro/README.md), which outlines some of the priority areas for the next stages of development. 
 
 **Binned vs. Unbinned Analyses:** <br />
-DC4 now allows for both binned and unbinned analyses. The choice of which type of analysis to perform will depend on the scientific objectives of the data challenge, and we leave this decision to the user. 
+DC4 now allows for both binned and unbinned analyses. The choice of which type of analysis to perform will depend on the scientific objectives of the data challenge, and we leave this decision to the user. However, the required memory and compute need for these analyses will differ and may be a limitation for some users.
 
 **Configuration Files:** <br />
 For binned analyses, the configuration for the data binning is specified via yaml files, as demonstrated in the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) tutorial (and others). **The data binning must match the response binning, and so the yaml configuration files must be updated accordingly when working with DC4 data.** The [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) tutorial shows how to determine the response binning. The main difference with the DC4 response files is that the phi binning is now 6 degrees compared to 5 degrees for older tutorials. We are currently working on refining how paramaters are configured in cosipy, and this will be updated starting with DC5.  
@@ -97,7 +99,7 @@ The 1 second binning may be optimal for analyzing transients on short time scale
 **Background Modeling:** <br />
 The DC4 mock dataset includes all of the background components. Details of the background models and simulations can be found in the [backgrounds](backgrounds/README.md) directory. The individual background files are listed in the [data-products](data-products/README.md) directory. 
 
-A major challenge in DC4 will be handling the backgrounds. We have methods to estimate the background for transient, line, and continuum sources. Example notebooks for all three cases are provided above. We stress that these background estimation algorithms are still early versions, and further development and testing is still needed. More details are provided in the respective example tutorials. In addition to the background estimation algorithms provided, a major challenge for DC4 is to develop new BG modeling methods/techniques, likely involving a combination of template fitting with other estimation approaches. This is particularly true for the continuum sources.  
+A major challenge in DC4 will be handling the backgrounds. We have methods to estimate the background for transient, line, and continuum sources. Example notebooks for all three cases are provided above. We stress that these background estimation algorithms are still early versions, and further development and testing is still needed. More details are provided in the respective example tutorials. In addition to the background estimation algorithms provided, a major challenge for DC4 is to develop new background modeling methods/techniques, likely involving a combination of template fitting with other estimation approaches. This is particularly true for the continuum sources.  
 
 **Data Challenges for the different science topics can be found below (click to expand):**
 
@@ -541,11 +543,11 @@ We consider cases where two dark matter (DM) particles annihilate into either tw
 ## Known Caveats and Limitations
 The items listed here are some of the priorities for DC5 development. These can be considered as extra/advanced challenges, and anybody is welcomed to work on them, with the ultimate goal of implementing the software solutions into cosipy. Also see the bottom of the [cosipy-intro](cosipy-intro) for a related discussion on the next steps of development.
  
-- **It is not currently possible to simultaneously fit continuum and line components.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
-  - Creating a single response for all components
+- **It is not currently possible to simultaneously fit continuum and line components in binned analyses.** We have separate response files for different emission components (i.e. continuum, 511 keV, Aluminum-26, etc.), and with the current binned analysis setup in cosipy, the data binning needs to match the response binning, and thus only a single component can be analyzed at a time. Possible solutions to this include:
+  - Creating a single response that combines multiple components
   - Creating a class that automatically matches an input model with the corresponding response
   - Reparameterizing the response in such a way that prevents this issue 
-- **Methods need to be developed to determine the response for broadened and offset line emission.** These methods should utilize the baseline response files (e.g. 511 keV, Aluminum-26, Iron-60, etc.), and allow for analyzing any arbitrary line emission.
+- **Methods need to be developed to determine the response for broadened and offset line emission in binned analyses.** These methods should utilize the baseline binned response files (e.g. 511 keV, Aluminum-26, Iron-60, etc.), and allow for analyzing any arbitrary line emission.
 - **The background estimation tools need to be further tested and developed.** With DC4 we have methods for estimating continuum, line, and transient backgrounds. These methods need to be tested, stressed, and further developed. 
 - **The way in which parameters are configured needs to be refined, and more callable scripts need to be added.** By callable scripts we are referring to command-line options that will perform common task, such as producing light curves and spectra.  
 - **The tools still need to be further stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
@@ -628,7 +630,7 @@ Previous, current, and planned releases are summarized below (click to expand):
     - For DC4 we produced 24 new source simulations plus updated simulations for most background components. 
     - DC4 uses same inputs as DC3, i.e., same mass model, orientation file, detector effects engine, etc.
     - Response files are also the same, but the formatting has been optimized.
-  - Substantial changes to COSIPy, including:
+  - Substantial changes to cosipy, including:
     - Refactored the entire library to improve modularity by implementing an interface-based design. As the codebase continues to grow in complexity, this was necessary to ensure long-term maintainability and sustainability.
     - Optimized many components of the code to improve performance and reduce memory usage. 
     - Introduced unbinned analysis for the first time, employing a neural network–based response approximation and background estimation. 
