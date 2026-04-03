@@ -536,7 +536,7 @@ Annihilation_eeg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 Decay_gg_NFW_3months_unbinned_data_filtered_with_SAAcut.fits.gz <br />
 
 **Input Models:**  <br />
-We consider cases where two dark matter (DM) particles annihilate into either two photons (gg) or an e+e− pair with a FSR (final state radiation) photon (eeg). We use profile parameters describing the NFW or Burkert profile taken from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. For each of these models, we assume a DM mass of 3 MeV and an annihilation cross section of $1 \times 10^{-30} \ \mathrm{cm^{3} s^{-1}}$.
+We consider two cases: (i) a dark matter (DM) particle decaying into two photons (gg), and (ii) two DM particles annihilating into an $e^+e^-$ pair with a final-state radiation (FSR) photon (eeg). We adopt NFW profile parameters from [Cirelli+10](https://arxiv.org/abs/1012.4515), and the fragmentation function for the eeg case is from [Coogan+19](https://arxiv.org/abs/1907.11846), assuming a scalar mediator. For these models, we take a DM mass of 3 MeV with a lifetime of $10^{28},\mathrm{s}$ for the decay scenario, and a DM mass of 30 MeV with an annihilation cross section of $10^{-25},\mathrm{cm^{3},s^{-1}}$ for the annihilation scenario.
   
 </details>
 
