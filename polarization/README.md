@@ -1,6 +1,10 @@
 # Polarization       
 
-Polarization, which describes the alignment of photons' electric field vectors, can be used to probe the emission processes of astrophysical sources. As a Compton telescope, COSI is inherently sensitive to gamma-ray linear polarization. Data Challenge 4 includes three approaches of measuring polarization: the maximum likelihood method, azimuthal scattering angle distribution (ASAD) method, and Stokes parameters method. See [Tomsick et al. 2022](https://ui.adsabs.harvard.edu/abs/2022hxga.book...73T/abstract) for a more in-depth overview of polarimetry with COSI.        
+Polarization, which describes the alignment of photons' electric field vectors, can be used to probe the emission processes of astrophysical sources. As a Compton telescope, COSI is inherently sensitive to gamma-ray linear polarization. Data Challenge 4 includes versions of all three approaches of measuring polarization with COSI: the maximum likelihood method, azimuthal scattering angle distribution (ASAD) method, and Stokes parameters method.  
+
+The sensitivity of the ASAD and Stokes parameters methods is limited because only one parameter in the Compton data space is used, the scattered photon direction. However, COSI also measures the energy and Compton scattering angle of each photon, and the scattering direction is dependent on the photon energy and Compton scattering angle. We lose information by only fitting the azimuthal scattering angle, making the fit less sensitive than COSI's measurements allow. The analysis can be made more sensitive by performing a maximum likelihood polarization fit in the Compton data space ([Krawczynski, 2011](https://ui.adsabs.harvard.edu/abs/2011APh....34..784K/abstract), [Lowell et al., 2017](https://ui.adsabs.harvard.edu/abs/2017ApJ...848..120L/abstract)).  
+
+See [Tomsick et al. 2022](https://ui.adsabs.harvard.edu/abs/2022hxga.book...73T/abstract) for a more in-depth overview of polarimetry with COSI.        
 
 ## Compton Polarimetry       
 
@@ -61,8 +65,6 @@ $$\large \Pi = \frac{1}{\mu_{100}} \frac{\hat{B}}{\hat{A}}$$
 and the polarization angle is         
 $$\large \eta_0 = \hat{C}$$       
 where $\large \hat{A}$, $\large \hat{B}$, and $\large \hat{C}$ are the fitted values of the parameters for the measured source ASAD.     
-
-The sensitivity of the ASAD method is limited because only the scattered photon direction is used, and it is projected down onto only one axis, the azimuthal scattering angle. However, COSI also measures the energy and Compton scattering angle of each photon, and the scattered photon direction is described by two parameters, making up the Compton data space. As can be seen in the Klein-Nishina equation above, the scattering direction is dependent on the photon's energy and Compton scattering angle, not only the azimuthal scattering angle. By only fitting the azimuthal scattering angle, we are losing information, making the fit less sensitive than COSI's measurements allow. The analysis can be made more sensitive by performing a maximum likelihood polarization fit in the Compton data space ([Krawczynski, 2011](https://ui.adsabs.harvard.edu/abs/2011APh....34..784K/abstract), [Lowell et al., 2017](https://ui.adsabs.harvard.edu/abs/2017ApJ...848..120L/abstract)), described below. 
 
 ## Stokes Parameters Method      
 
