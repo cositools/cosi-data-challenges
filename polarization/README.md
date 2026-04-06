@@ -1,8 +1,10 @@
 # Polarization       
 
-Polarization, which describes the alignment of photons' electric field vectors, can be used to probe the emission processes of astrophysical sources. As a Compton telescope, COSI is inherently sensitive to gamma-ray linear polarization. Data Challenge 3 includes a first version of COSI's polarization analysis software, including two approaches: the azimuthal scattering angle distribution (ASAD) method and the Stokes parameters method.        
+Polarization, which describes the alignment of photons' electric field vectors, can be used to probe the emission processes of astrophysical sources. As a Compton telescope, COSI is inherently sensitive to gamma-ray linear polarization. Data Challenge 4 includes versions of all three approaches of measuring polarization with COSI: the maximum likelihood method, azimuthal scattering angle distribution (ASAD) method, and Stokes parameters method.  
 
-The polarization analysis tools will be made more sensitive and comprehensive in future Data Challenges, including a maximum likelihood method using forward-folding. See [Tomsick et al. 2022](https://ui.adsabs.harvard.edu/abs/2022hxga.book...73T/abstract) for a more in-depth overview of polarimetry with COSI.        
+The sensitivity of the ASAD and Stokes parameters methods is limited because only one parameter in the Compton data space is used, the scattered photon direction. However, COSI also measures the energy and Compton scattering angle of each photon, and the scattering direction is dependent on the photon energy and Compton scattering angle. We lose information by only fitting the azimuthal scattering angle, making the fit less sensitive than COSI's measurements allow. The analysis can be made more sensitive by performing a maximum likelihood polarization fit in the Compton data space ([Krawczynski, 2011](https://ui.adsabs.harvard.edu/abs/2011APh....34..784K/abstract), [Lowell et al., 2017](https://ui.adsabs.harvard.edu/abs/2017ApJ...848..120L/abstract)).  
+
+See [Tomsick et al. 2022](https://ui.adsabs.harvard.edu/abs/2022hxga.book...73T/abstract) for a more in-depth overview of polarimetry with COSI.        
 
 ## Compton Polarimetry       
 
@@ -16,19 +18,19 @@ where $\large r_0$ is the classical electron radius, $\large E_\gamma$ is the en
 
 This makes it possible to determine the polarization using the measured distribution of azimuthal scattering angles. The probability distribution function that follows from the Klein-Nishina equation is of the form       
 $$\large f(x) = A - B \cos{(2 (\eta - C))}$$         
-where $\large \frac{B}{A}$ is proportional to the polarization fraction and $\large C$ is the polarization angle. When a source is polarized, the distribution of azimuthal scattering angles is expected to be sinusoidal, with the peaks corresponding to directions perpendicular to the incoming photon's electric field vector. For an unpolarized source, the azimuthal scattering directions are random, producing a uniform distribution. This allows the polarization to be determined by fitting $\large A$, $\large B$, and $\large C$ to the distribution of azimuthal scattering angles. However, a realistic detector is not perfectly symmetric, and some scattering directions are suppressed or enhanced due to the instrument geometry. Therefore, the distributions of azimuthal scattering angle for polarized and unpolarized sources will not be perfectly sinusoidal and uniform, respectively. This makes it important to have a very good understanding of the instrument response in order to accurately measure polarization.        
+where $\large \frac{B}{A}$ is proportional to the polarization level and $\large C$ is the polarization angle. When a source is polarized, the distribution of azimuthal scattering angles is expected to be sinusoidal, with the peaks corresponding to directions perpendicular to the incoming photon's electric field vector. For an unpolarized source, the azimuthal scattering directions are random, producing a uniform distribution. This allows the polarization to be determined by fitting $\large A$, $\large B$, and $\large C$ to the distribution of azimuthal scattering angles. However, a realistic detector is not perfectly symmetric, and some scattering directions are suppressed or enhanced due to the instrument geometry. Therefore, the distributions of azimuthal scattering angle for polarized and unpolarized sources will not be perfectly sinusoidal and uniform, respectively. This makes it important to have a very good understanding of the instrument response in order to accurately measure polarization.        
 
-A polarization measurement is defined by the polarization fraction, which is sometimes called polarization level or polarization degree, and the polarization angle. The polarization fraction is the fraction of photons from a source that are polarized, where 100% polarization corresponds to all photons having their electric field vectors aligned in the same direction. The polarization angle describes the direction of the photons' electric field vector, and we typically use the standard [IAU convention](https://lambda.gsfc.nasa.gov/product/about/pol_convention.html) to define this angle. cosipy's polarization tools include [methods for transforming between different conventions](https://cositools.github.io/cosipy/api/polarization.html), including the spacecraft frame conventions used in MEGAlib.         
+A polarization measurement is defined by the polarization level, which is also called polarization degree or polarization fraction, and the polarization angle. The polarization level is the fraction of photons from a source that are polarized, where 100% polarization corresponds to all photons having their electric field vectors aligned in the same direction. The polarization angle describes the direction of the photons' electric field vector, and we typically use the standard [IAU convention](https://lambda.gsfc.nasa.gov/product/about/pol_convention.html) to define this angle. cosipy's polarization tools include [methods for transforming between different conventions](https://cositools.github.io/cosipy/api/polarization.html), including the spacecraft frame conventions used in MEGAlib.         
 
-The minimum detectable polarization (MDP) describes the minimum polarization fraction for which significant detection can be made by a particular instrument for a given source. The 99% confidence MDP is given by       
+The minimum detectable polarization (MDP) describes the minimum polarization level for which significant detection can be made by a particular instrument for a given source. The 99% confidence MDP is given by       
 $$\large \text{MDP} = \frac{4.29}{\mu_{100}} \frac{\sqrt{N_s + N_b}}{N_s}$$      
-where 4.29 is the coefficient corresponding to 99% confidence, and $\large N_s$ and $\large N_b$ are the number of source and background counts, respectively. A source with a fitted polarization fraction greater than its MDP has measurable polarization. However, only an upper limit can be placed on the polarization of a source with a fitted polarization fraction smaller than its MDP, and its polarization angle cannot be constrained. 
+where 4.29 is the coefficient corresponding to 99% confidence, and $\large N_s$ and $\large N_b$ are the number of source and background counts, respectively. A source with a fitted polarization level greater than its MDP has measurable polarization. However, only an upper limit can be placed on the polarization of a source with a fitted polarization level smaller than its MDP, and its polarization angle cannot be constrained.  
 
 ## Azimuthal Scattering Angle Distribution Method       
 
 The simplest, and most intuitive, way to measure polarization is directly through the distribution of azimuthal scattering angles. COSI measures the scattered photon direction of each photon it detects. Because the direction of the incoming photon's electric field vector isn't known, a reference axis that is perpendicular to the incoming photon direction from the source location is chosen, which is in the plane of the photon's electric field vector. The angle between the scattered photon direction and reference axis is calculated for each photon. This measured azimuthal scattering angle ($\large \eta'$) relates to the azmimuthal scattering angle in the Klein-Nishina equation above via $\large \eta' = \eta + D$, where $\large D$, which is unknown, is the angle between the chosen reference axis and the photon's electric field vector. The azimuthal scattering angles of the data are binned to produce a raw azimuthal scattering angle distribution (ASAD).      
 
-To find the polarization fraction and angle, the effects of the background and detector geometry need to be taken into account, and we rely heavily on simulations to do this. We create a background-subtracted ASAD, and then scale the distribution with a simulation of an unpolarized source to correct for detector effects. Then, this corrected ASAD is fit with the probability distribution function above to determine the polarization.           
+To find the polarization level and angle, the effects of the background and detector geometry need to be taken into account, and we rely heavily on simulations to do this. We create a background-subtracted ASAD, and then scale the distribution with a simulation of an unpolarized source to correct for detector effects. Then, this corrected ASAD is fit with the probability distribution function above to determine the polarization.           
 
 To produce the background-subtracted ASAD, an ASAD for a model of the background is created, and subtracted from the total measured ASAD.       
 
@@ -50,25 +52,23 @@ The measured source ASAD and simulated 100% polarized ASAD are both divided by t
 
 <img src="images/corrected-source-asad.png" alt="Corrected source ASAD" width="500"/>
 
-***Figure 5:** The background-subtracted measured ASAD is divided by the ASAD of the simulated unpolarized source to get the final corrected ASAD for the observation. The ASAD is fit with a sinusoid (the probability distribution function above) to determine the polarization angle and fraction.*       
+***Figure 5:** The background-subtracted measured ASAD is divided by the ASAD of the simulated unpolarized source to get the final corrected ASAD for the observation. The ASAD is fit with a sinusoid (the probability distribution function above) to determine the polarization angle and level.*       
 
 <img src="images/corrected-100-percent-polarized-asad.png" alt="Corrected 100% polarized ASAD" width="500"/>
 
 ***Figure 6:** The ASAD of the simulated 100% polarized source is divided by ASAD of the simulated unpolarized source and fit with a sinusoid in order to determine the modulation of the 100% polarized source.*          
 
-Both corrected ASADs are fit with the above probability distribution function. The modulation of the 100% polarized ASAD, which is used to convert the amplitude of the sinusoidal fit of the source's ASAD to a polarization fraction, is given by        
+Both corrected ASADs are fit with the above probability distribution function. The modulation of the 100% polarized ASAD, which is used to convert the amplitude of the sinusoidal fit of the source's ASAD to a polarization level, is given by        
 $$\large \mu_{100} = \frac{\hat{B_{100}}}{\hat{A_{100}}}$$               
-where $\large \hat{A_{100}}$ and $\large \hat{B_{100}}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization fraction of the source is        
+where $\large \hat{A_{100}}$ and $\large \hat{B_{100}}$ are the fitted values of the parameters for the 100% polarized ASAD. Then, the polarization level of the source is        
 $$\large \Pi = \frac{1}{\mu_{100}} \frac{\hat{B}}{\hat{A}}$$        
 and the polarization angle is         
 $$\large \eta_0 = \hat{C}$$       
 where $\large \hat{A}$, $\large \hat{B}$, and $\large \hat{C}$ are the fitted values of the parameters for the measured source ASAD.     
 
-The sensitivity of the ASAD method is limited because only the scattered photon direction is used, and it is projected down onto only one axis, the azimuthal scattering angle. However, COSI also measures the energy and Compton scattering angle of each photon, and the scattered photon direction is described by two parameters, making up the Compton data space. As can be seen in the Klein-Nishina equation above, the scattering direction is dependent on the photon's energy and Compton scattering angle, not only the azimuthal scattering angle. By only fitting the azimuthal scattering angle, we are losing information, making the fit less sensitive than COSI's measurements allow. The analysis can be made more sensitive by performing a maximum likelihood polarization fit in the Compton data space ([Krawczynski, 2011](https://ui.adsabs.harvard.edu/abs/2011APh....34..784K/abstract), [Lowell et al., 2017](https://ui.adsabs.harvard.edu/abs/2017ApJ...848..120L/abstract)). In Data Challenge 4, cosipy will include a forward-folding polarization fitting method, using *threeML*. 
-
 ## Stokes Parameters Method      
 
-The Stokes parameters are a convenient and powerful way to characterize the polarization state of electromagnetic radiation, particularly for linear polarization. By definition, they describe the intensity and polarization of a beam through four quantities: $\large I$, $\large Q$, $\large U$, and $\large V$. For linear polarization, the parameters $\large Q$ and $\large U$ contain the essential information about the polarization direction and fraction, while $\large V$ captures the circular polarization component (which is often negligible in many astrophysical scenarios).
+The Stokes parameters are a convenient and powerful way to characterize the polarization state of electromagnetic radiation, particularly for linear polarization. By definition, they describe the intensity and polarization of a beam through four quantities: $\large I$, $\large Q$, $\large U$, and $\large V$. For linear polarization, the parameters $\large Q$ and $\large U$ contain the essential information about the polarization direction and level, while $\large V$ captures the circular polarization component (which is often negligible in many astrophysical scenarios).
 
 ### Linear Polarization in Terms of Stokes Parameters
 
@@ -78,7 +78,7 @@ The Stokes parameters ($\large I$, $\large Q$, $\large U$, $\large V$) offer a c
 - $\large Q$ and $\large U$ describe linear polarization.
 - $\large V$ describes circular polarization (often negligible in many astrophysical scenarios).
 
-A 100% linearly polarized beam can be visualized as the sum of electric field vectors oscillating in a single plane, and the relevant Stokes parameters for such a beam are $\large I$, $\large Q$, and $\large U$. The polarization fraction ($\large \Pi$) and polarization angle ($\large \eta_0$) (with respect to some reference axis) can be extracted from $\large Q$ and $\large U$ by:
+A 100% linearly polarized beam can be visualized as the sum of electric field vectors oscillating in a single plane, and the relevant Stokes parameters for such a beam are $\large I$, $\large Q$, and $\large U$. The polarization level ($\large \Pi$) and polarization angle ($\large \eta_0$) (with respect to some reference axis) can be extracted from $\large Q$ and $\large U$ by:
 
 $$\large \Pi = \frac{\sqrt{Q^2 + U^2}}{I}, \quad \eta_0 = \frac{1}{2} \tan_2^{-1}\left(\frac{U}{Q}\right)$$
 
@@ -108,8 +108,8 @@ $$\large q_i = 2 cos(2\phi_i) ~~~~~~ u_i = 2 sin(2\phi_i)$$
 
 A useful way to **visualize** the linear polarization state is to plot $\large U$ versus $\large Q$. In such a **Q-U chart**, each point represents a measurement of the Stokes parameters $\large Q/I$ and $\large U/I$ (with $\large -1 \leq Q, U \leq 1$). The distance of the point from the origin gives an indication of the **polarization degree**, while the **angle** it makes with the $\large Q$-axis corresponds to the polarization angle (ranging between 0 and 180 degrees).
 
-- **Radius and Polarization Fraction**  
-  The distance from the origin in the $\large Q-U$ plane is $\large \sqrt{\frac{Q}{I}^2 + \frac{U}{I}^2}$. This quantity yields the polarization fraction $\large \Pi$.
+- **Radius and Polarization Level**  
+  The distance from the origin in the $\large Q-U$ plane is $\large \sqrt{\frac{Q}{I}^2 + \frac{U}{I}^2}$. This quantity yields the polarization level $\large \Pi$.
   
 - **Quadrant location and Polarization Angle**  
   The position angle of the point in $\large Q-U$ space is defined relative to the $\large Q>0$ axis and  chosen reference axis (e.g., the IAU convention).
@@ -118,7 +118,7 @@ A useful way to **visualize** the linear polarization state is to plot $\large U
   When uncertainties in $\large Q$ and $\large U$ are accounted for, they can be displayed as **error ellipses** (specifically circles since $\large Q/I$ and $\large U/I$ uncertainties are equal and Gaussian distributed). The size and shape of these ellipses provide a visual sense of the confidence level for the measured polarization state. 
 
 - **Physical Interpretation**  
-  - A measurement lying far from the origin indicates a high linear polarization fraction.
+  - A measurement lying far from the origin indicates a high linear polarization level.
   - A point lying close to the origin indicates weak (or zero) linear polarization.
   - To consider a measurement a detection, a 99% C.L. (a ($\large Q/I$, $\large U/I$) point ~2.575 sigma distance from (0,0)) is required.
 
@@ -126,4 +126,14 @@ In practice, $\large Q-U$ charts are especially helpful for rapidly assessing th
 
 <img src="images/qu-chart.png" alt="Q-U chart" width="500"/>
 
-***Figure 7:** Polarization analysis in the Q/I - U/I plane: The red dot represents the measured polarization, while the red contours indicate confidence intervals around the measurement. The green marker and contours correspond to the simulated polarization values. The shaded pink region represents the 99% Minimum Detectable Polarization.*          
+***Figure 7:** Polarization analysis in the Q/I - U/I plane: The red dot represents the measured polarization, while the red contours indicate confidence intervals around the measurement. The green marker and contours correspond to the simulated polarization values. The shaded pink region represents the 99% Minimum Detectable Polarization.*       
+
+## Maximum Likelihood Method  
+
+The sensitivity to polarization can be improved by ~20% over the ASAD method by performing a forward-folding maximum likelihood analysis ([Lowell et al., 2017](https://arxiv.org/abs/1709.05352)). A model of the source, including position, spectrum, and polarization, is convolved with the response matrix to produce the expected measured data in the Compton space for a given polarization level and angle. This is combined with a model of the background and compared to the measured data using the Poisson likelihood estimator  
+
+$$\log \mathcal{L}(\mathbf{x}) = \sum_i \log \frac{\lambda_i(\mathbf{x})^{d_i} \exp (-\lambda_i)}{d_i!}$$  
+
+This operation is repeated over various polarization parameter values until the values that maximize the likelihood function are identified. Like for spectral analysis, we do this using *3ML* ([Vianello et al. 2015](https://arxiv.org/abs/1507.08343)). This allows the spectrum and polarization to be fit simultaneously, as well as joint analyses between multiple instruments.  
+
+The analytic function for MDP used in the ASAD and Stokes parameters methods does not work in this case, since there is no $\mu_{100}$ value. Instead, observations of a large number of unpolarized models of the source are simulated and combined with background. The polarization of each is fit, and the MDP at 99% confidence is defined by the 99th percentile of the polarization level distribution.  
