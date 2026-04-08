@@ -40,7 +40,7 @@ With the RL algorithm, usually starting from a flat initial image, each iteratio
 
 ## 2. Module Design
 
-The `cosipy.image_deconvolution` module is organized into some sub-packages plus a top-level orchestration class.
+The `cosipy.image_deconvolution` module is organized into some sub-packages plus a top-level class.
 
 The top-level class `ImageDeconvolution` performs the image deconvolution by coordinating three components: algorithm, model, and data interface.
 Since the three components are separately implemented, `cosipy.image_deconvolution` allows the framework to be extended flexibly.
@@ -125,8 +125,6 @@ Extends `RL` with three optional enhancements:
 | Acceleration | `acceleration` | Speeds convergence by multiplying $\delta\boldsymbol{\lambda}$ by $\alpha > 1$ |
 | Response-weighting | `response_weighting` | Suppresses artifacts in low-exposure regions |
 | Gaussian smoothing | `smoothing` | Damps high-frequency noise in the delta map |
-
-Also implements an **early-stopping** criterion based on the change in log-likelihood between iterations.
 
 ### MAP_RL
 
@@ -282,10 +280,10 @@ For `MAP_RL`, replace the `deconvolution:parameter` block with:
       gamma:
         model:
           theta:
-            value: .inf             # .inf → effectively no upper cut-off
+            value: .inf             
             unit: "cm-2 s-1 sr-1"
           k:
-            value: 0.9              # shape parameter (< 1 → sparsity-promoting)
+            value: 0.9              # when theta is infinitely large, it works a sparseness prior (Ikeda et al. 14)
         background:
           theta:
             value: .inf
