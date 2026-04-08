@@ -7,8 +7,8 @@ This guide describes the image deconvolution framework in COSIpy, including its 
 For the scientific and algorithmic background, please refer to:
 
 - Yoneda et al. 2025a, *A&A*, 697, A117 — MAP-RL algorithm paper: [doi:10.1051/0004-6361/202453528](https://doi.org/10.1051/0004-6361/202453528)
-- Yoneda et al. 2025b, *ICRC2025*, PoS 501, 891 — Application to COSI: [doi:10.22323/1.501.0891](https://doi.org/10.22323/1.501.0891)
-- Yoneda et al. 2025c, *A&A*, 702, A220 — 20-year INTEGRAL/SPI 511 keV all-sky imaging: [10.1051/0004-6361/202555895](https://www.aanda.org/articles/aa/abs/2025/10/aa55895-25/aa55895-25.html)
+- Yoneda et al. 2025b, *ICRC2025*, PoS 501, 891 — Image Deconvolution Module Design for COSI: [doi:10.22323/1.501.0891](https://doi.org/10.22323/1.501.0891)
+- Yoneda et al. 2025c, *A&A*, 702, A220 — 20-year INTEGRAL/SPI 511 keV all-sky imaging: [doi:10.1051/0004-6361/202555895](https://doi.org/10.1051/0004-6361/202555895)
 
 ---
 
@@ -45,8 +45,8 @@ The `cosipy.image_deconvolution` module is organized into some sub-packages plus
 The top-level class `ImageDeconvolution` performs the image deconvolution by coordinating three components: algorithm, model, and data interface.
 Since the three components are separately implemented, `cosipy.image_deconvolution` allows the framework to be extended flexibly.
 For example, adding a new image deconvolution algorithm only requires implementing a new algorithm class — the model and data classes do not need to be modified.
-Also, this module allows using multiple observation dataset and perform joint analysis.
-It should be useful when the response changes during the satellite operation or when we want to analyze several instrument data simultaneously.
+Also, this module allows using multiple observation datasets and performing joint analysis.
+This is particularly useful when the response changes during the satellite operation or when we want to analyze several instrument data simultaneously.
 Finally, it also allows to optimize the normalizations of several background models in the CDS simultaneously.
 
 <img src="images/image_deconvolution_module_design.png" width="100%">
@@ -440,13 +440,13 @@ $$
 If the accelerated step does not improve the log-likelihood, $\alpha$ falls back to 1.
 
 
-The `LineSearchAccelerator` finds the largest scalar $\alpha$ that maximize the log-likelihood.
+The `LineSearchAccelerator` finds the largest scalar $\alpha$ that maximizes the log-likelihood.
 
 $$
 \alpha = \mathrm{arg max}_{\alpha} \sum_i D_i \log \epsilon_i - \sum_i \epsilon_i,~\mathrm{where}~\epsilon_i = \sum_j R_{ij} (\lambda_j + \alpha \delta\tilde\lambda_j) + \sum_k B_{ik} b_k\,
 $$
 
-There are options so that $\alpha$ is applied to the background normalizations or a separated acceleration factor is prepared for the background components.
+There are options so that $\alpha$ is applied to the background normalizations or a separate acceleration factor is prepared for the background components.
 
 ### 5.3 MAP_RichardsonLucy
 
