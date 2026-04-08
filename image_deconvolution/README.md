@@ -47,7 +47,7 @@ Also, this module allows using multiple observation dataset and perform joint an
 It should be useful when the response changes during the satellite operation or when we want to analyze several instrument data simultaneously.
 Finally, it also allows to optimize the normalizations of several background models in the CDS simultaneously.
 
-<img src="image_deconvolution_module_design.png" width="50%">
+<img src="images/image_deconvolution_module_design.png" width="50%">
 
 ```Current structure of the image deconvolution module
 cosipy/image_deconvolution/
@@ -502,7 +502,7 @@ where $m_j$ is a reference (default) map set by `prior:entropy:reference_map`.
 
 **Effect of prior coefficients on the reconstructed 511 keV image:**
  
-<img src="511keV_scan_ver3.png" width="100%">
+<img src="images/511keV_scan_ver3.png" width="100%">
  
 *Figure: Reconstructed 511 keV all-sky images as a function of the TSV smoothness coefficient $c^\mathrm{TSV}$ (vertical axis) and the sparseness coefficient $c^\mathrm{SP}$ (horizontal axis) for MAP-RL, based on simulated three-month COSI observations. Small $c^\mathrm{TSV}$ values produce noisy images dominated by reconstruction artifacts, while large values over-smooth and suppress real extended structure. The solid red box marks a well-balanced reconstruction; the dashed red box indicates the onset of over-smoothing. For a full discussion of how to select optimal prior coefficients, see [Yoneda et al. 2025a](https://doi.org/10.1051/0004-6361/202453528).*
 
