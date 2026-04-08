@@ -60,6 +60,7 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 - **[Summary of background simulations](backgrounds/README.md)**
 - **[Dealing with Earth occultation](earth-occultation/README.md)** 
 - **[Introduction to polarization](polarization/README.md)** 
+- **[Introduction to image deconvolution](image_deconvolution/README.md)** 
 
 ## Data Challenges
 For DC4, we have produced a single mock dataset that mimics three months of real flight observations. It includes 64 sources along with the total background. Detailed information is available in the [data-products](data-products/README.md) directory. All simulation input models are provided in the source library of the COSI simulation pipeline (available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)), which can be used to verify data challenge results. 
