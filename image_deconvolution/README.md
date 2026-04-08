@@ -18,7 +18,7 @@ COSI is a Compton telescope, which measures Compton scattering events in its det
 Each gamma-ray event is characterized not by a single sky direction but by a multi-dimensional vector in **Compton Data Space (CDS)**:
 
 $$
-(E_m,\; \varphi,\; \psi\chi)
+(E_m, \varphi, \psi\chi)
 $$
 
 where $E_m$ is the measured energy, $\varphi$ is the Compton scattering angle, and $\psi\chi$ is the scattered gamma-ray direction.
@@ -27,9 +27,11 @@ Because each CDS bin has contributions from a broad region of the sky (as determ
 **Image deconvolution** recovers the sky image $\boldsymbol{\lambda}$ from the observed CDS histogram $\mathbf{D}$ by maximizing defined statistics.
 The standard algorithm is **Maximum-Likelihood Expectation Maximization (ML-EM)**, also known as the Richardson–Lucy (RL) algorithm. 
 It derives a sky image that maximizes a Poisson log-likelihood:
+
 $$
-\log L = \sum_i D_i \log \epsilon_i - \sum_i \epsilon_i,~\mathrm{where}~\epsilon_i = \sum_j R_{ij}\,\lambda_j + b_i
+\log L = \sum_i D_i \log \epsilon_i - \sum_i \epsilon_i,~\mathrm{where}~\epsilon_i = \sum_j R_{ij}\,\lambda_j + b_i~,
 $$
+
 where $R_{ij}$ is the response matrix, $b_i$ is the background model, and $\epsilon_i$ is the expected count in CDS bin $i$.
 
 With the RL algorithm, usually starting from a flat initial image, each iteration updates the sky model so that the expected counts better match the observed data, according to a Poisson log-likelihood.
@@ -376,7 +378,7 @@ To save results to disk, set `save_results:activate: true` in the YAML. Each ite
 **E-step** — compute expected counts:
 
 $$
-\epsilon_i = \sum_j R_{ij}\,\lambda_j + \sum_k B_{ik} b_k\,
+\epsilon_i = \sum_j R_{ij} \lambda_j + \sum_k B_{ik} b_k~.
 $$
 
 **M-step** — compute the update $\delta\boldsymbol{\lambda}$:
@@ -416,7 +418,7 @@ where $\beta$ is `response_weighting:index` (default 0.5). Pixels with low expos
 After response-weighting, the delta map is convolved with a Gaussian kernel on the sphere:
 
 $$
-\delta\tilde\lambda_j = \left[w_j\,\delta\lambda_j\right]_{\mathrm{Gauss}(\sigma)}
+\delta\tilde\lambda_j = \left[w_j \delta\lambda_j\right]_{\mathrm{Gauss}(\sigma)}
 $$
 
 where $\sigma$ is controlled by `smoothing:FWHM`. This is the primary noise-damping mechanism and is crucial for obtaining smooth, artifact-suppressed images in practice.
@@ -426,13 +428,13 @@ where $\sigma$ is controlled by `smoothing:FWHM`. This is the primary noise-damp
 The `MaxStepAccelerator` finds the largest scalar $\alpha$ such that the updated image remains non-negative:
 
 $$
-\alpha = \min\left(\alpha_{\max},\;\min_{j, \delta\tilde\lambda_j < 0}\left(-\frac{\lambda_j}{\delta\tilde\lambda_j}\right)\right)
+\alpha = \min\left(\alpha_{\max}, \min_{j, \delta\tilde\lambda_j < 0}\left(-\frac{\lambda_j}{\delta\tilde\lambda_j}\right)\right)
 $$
 
 The update is then:
 
 $$
-\lambda_j \leftarrow \lambda_j + \alpha\,\delta\tilde\lambda_j
+\lambda_j \leftarrow \lambda_j + \alpha \delta\tilde\lambda_j
 $$
 
 If the accelerated step does not improve the log-likelihood, $\alpha$ falls back to 1.
@@ -441,7 +443,7 @@ If the accelerated step does not improve the log-likelihood, $\alpha$ falls back
 The `LineSearchAccelerator` finds the largest scalar $\alpha$ that maximize the log-likelihood.
 
 $$
-\alpha = \mathrm{arg max}_{\alpha} \sum_i D_i \log \epsilon_i - \sum_i \epsilon_i,~\mathrm{where}~\epsilon_i = \sum_j R_{ij}\,(\lambda_j + \alpha\,\delta\tilde\lambda_j) + \sum_k B_{ik} b_k\,
+\alpha = \mathrm{arg max}_{\alpha} \sum_i D_i \log \epsilon_i - \sum_i \epsilon_i,~\mathrm{where}~\epsilon_i = \sum_j R_{ij} (\lambda_j + \alpha \delta\tilde\lambda_j) + \sum_k B_{ik} b_k\,
 $$
 
 There are options so that $\alpha$ is applied to the background normalizations or a separated acceleration factor is prepared for the background components.
@@ -482,7 +484,7 @@ $$
 
 $$
 \frac{\partial \log P_{\mathrm{TSV}}}{\partial \lambda_j} =
-  -4\,c_{\mathrm{TSV}} \sum_{j' \in \mathcal{N}(j)} (\lambda_j - \lambda_{j'})
+  -4 c_{\mathrm{TSV}} \sum_{j' \in \mathcal{N}(j)} (\lambda_j - \lambda_{j'})
 $$
 
 **Maximum-Entropy prior:**
