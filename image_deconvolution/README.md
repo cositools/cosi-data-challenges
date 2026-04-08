@@ -47,7 +47,7 @@ Also, this module allows using multiple observation dataset and perform joint an
 It should be useful when the response changes during the satellite operation or when we want to analyze several instrument data simultaneously.
 Finally, it also allows to optimize the normalizations of several background models in the CDS simultaneously.
 
-<img src="images/image_deconvolution_module_design.png" width="50%">
+<img src="images/image_deconvolution_module_design.png" width="100%">
 
 ```Current structure of the image deconvolution module
 cosipy/image_deconvolution/
@@ -426,7 +426,7 @@ where $\sigma$ is controlled by `smoothing:FWHM`. This is the primary noise-damp
 The `MaxStepAccelerator` finds the largest scalar $\alpha$ such that the updated image remains non-negative:
 
 $$
-\alpha = \min\!\left(\alpha_{\max},\;\min_{j, \delta\tilde\lambda_j < 0}\!\left(-\frac{\lambda_j}{\delta\tilde\lambda_j}\right)\right)
+\alpha = \min\left(\alpha_{\max},\;\min_{j, \delta\tilde\lambda_j < 0}\left(-\frac{\lambda_j}{\delta\tilde\lambda_j}\right)\right)
 $$
 
 The update is then:
@@ -463,7 +463,7 @@ where $k_\lambda$ (shape) and $\theta_\lambda$ (scale) are the gamma-prior hyper
 **Prior filter** (for TSV, entropy, and similar priors):
 
 $$
-P_j = \exp\!\left(\frac{\nabla_{\lambda_j} \log \pi(\boldsymbol{\lambda}^{\mathrm{EM}})}
+P_j = \exp\left(\frac{\nabla_{\lambda_j} \log \pi(\boldsymbol{\lambda}^{\mathrm{EM}})}
                               {\displaystyle\sum_i R_{ij} + 1/\theta_{\lambda}}\right)
 $$
 
