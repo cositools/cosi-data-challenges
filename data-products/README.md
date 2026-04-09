@@ -67,13 +67,13 @@ The data analysis also requires spacecraft orientation files and response files.
 <details>
   <summary>Orientation Files</summary>
   
-DC4 uses the same orientation file from DC3.  <br />
+DC4 uses the same orientation files from DC3, with the exception that we have added the keyword "EN" to the bottom of the files, in order to be compatibile with changes to the cosipy spacecraft class.  <br />
   
-wasabi path: COSI-SMEX/DC3/Data/Orientation <br />
+wasabi path: COSI-SMEX/DC4/Data/Orientation <br />
 
 files: <br />
-DC3_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.ori <br />
-DC3_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br /> 
+DC4_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.ori <br />
+DC4_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br /> 
 </details>
 
 <details>
