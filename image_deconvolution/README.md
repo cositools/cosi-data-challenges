@@ -235,7 +235,7 @@ deconvolution:
 
     response_weighting:
       activate: true
-      index: 0.5                 # power-law index β for exposure weighting
+      index: 0.5                 # power-law index l for exposure weighting
 
     smoothing:
       activate: true
@@ -378,6 +378,7 @@ To save results to disk, set `save_results:activate: true` in the YAML. Each ite
 $$
 \epsilon_i = \sum_j R_{ij} \lambda_j + \sum_k B_{ik} b_k~.
 $$
+Here, $k$ is the index for each background component.
 
 **M-step** — compute the update $\delta\boldsymbol{\lambda}$:
 
@@ -406,10 +407,10 @@ $$
 A pixel-dependent weight $w_j$ is applied to the delta map before the update:
 
 $$
-w_j = \left(\frac{T_j}{T_{\max}}\right)^\beta, \qquad T_j = \sum_i R_{ij}
+w_j = \left(\frac{T_j}{T_{\max}}\right)^l, \qquad T_j = \sum_i R_{ij}
 $$
 
-where $\beta$ is `response_weighting:index` (default 0.5). Pixels with low exposure receive a smaller delta, suppressing noise amplification close to the edge of non-zero exposure region.
+where $l$ is `response_weighting:index` (default 0.5). Pixels with low exposure receive a smaller delta, suppressing noise amplification close to the edge of non-zero exposure region.
 
 #### Gaussian smoothing (Knoedlseder+05, Siegert+20)
 
@@ -504,7 +505,7 @@ where $m_j$ is a reference (default) map set by `prior:entropy:reference_map`.
  
 <img src="images/511keV_scan_ver3.png" width="100%">
  
-*Figure: Reconstructed 511 keV all-sky images as a function of the TSV smoothness coefficient $c^\mathrm{TSV}$ (vertical axis) and the sparseness coefficient $c^\mathrm{SP}$ (horizontal axis) for MAP-RL, based on simulated three-month COSI observations. Small $c^\mathrm{TSV}$ values produce noisy images dominated by reconstruction artifacts, while large values over-smooth and suppress real extended structure. The solid red box marks a well-balanced reconstruction; the dashed red box indicates the onset of over-smoothing. For a full discussion of how to select optimal prior coefficients, see [Yoneda et al. 2025a](https://doi.org/10.1051/0004-6361/202453528).*
+*Figure: Reconstructed 511 keV all-sky images as a function of the TSV smoothness coefficient $c^\mathrm{TSV}$ (vertical axis) and the sparseness coefficient $c^\mathrm{SP}$ (horizontal axis) for MAP-RL, based on simulated three-month COSI observations. Small $c^\mathrm{TSV}$ values produce noisy images dominated by reconstruction artifacts, while large values over-smooth and suppress real extended structure. The solid red box marks a well-balanced reconstruction. For a full discussion of how to select optimal prior coefficients, see [Yoneda et al. 2025a](https://doi.org/10.1051/0004-6361/202453528).*
 
 ---
 
@@ -517,7 +518,7 @@ ML-EM is known to overfit at large iteration counts: point sources sharpen and b
 **Practical guidance:**
 
 - Start with `iteration_max: 30–50` and inspect convergence plots.
-- With Gaussian smoothing enabled (`smoothing:activate: true`), the reconstructed image is less sensitive to the number of iterations, so more iterations can be tolerated.
+- With Gaussian smoothing enabled (`smoothing:activate: true`), the reconstructed image is less sensitive to the number of iterations, so more iterations can be tolerated in compensation for smearing spatically fine structures.
 - For `MAP_RL`, the stronger the regularization coefficient, the smoother the final image and the faster the effective convergence; however, point sources may be over-broadened.
 
 ### Smoothing FWHM selection
@@ -527,6 +528,8 @@ There is no universal optimal FWHM. As a starting point, use a value close to th
 ### Response-weighting index
 
 The default `response_weighting:index: 0.5` (square-root weighting) is generally robust. Values closer to 1.0 weight more aggressively toward well-exposed pixels; values closer to 0.0 approach equal weighting.
+
+A praticaly way to find optimal values for the smoothing FWHM and $l$ is presentend in [Yoneda et al. 2025c](https://doi.org/10.1051/0004-6361/202555895).
 
 ### Multiple background components
 
