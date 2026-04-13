@@ -67,19 +67,22 @@ For DC4, we have produced a single mock dataset that mimics three months of real
 
 We have created example Jupyter notebooks demonstrating some of the basic tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md). <br /> 
 
-**⚠️ Pending:** Update these with latest available and paths once DC4 version of cosipy is ready. <br />
-Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) <br />
+Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO/DataIO_example.ipynb) <br />
 Example 2: [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) <br />
-Example 3: [GRB localization (TS maps)](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map) <br />
-Example 4: [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb) <br />
-Example 5: [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) <br />
-Example 6: [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) <br />
-Example 7: [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning) <br />
-Example 8: [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/GalacticCDS) <br />
-Example 9: [Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector) <br />
+Example 3: [GRB localization (TS maps)](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map/TS_map_fitting.ipynb) <br />
+Example 4: [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb/SpectralFit_GRB.ipynb) <br />
+Example 5: [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab/SpectralFit_Crab.ipynb) <br />
+Example 6: [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit/diffuse_511_spectral_fit.ipynb) <br />
+Example 7: [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV-Galactic-ImageDeconvolution.ipynb) <br />
+Example 8: [Point Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector/Point_source_injector.ipynb) <br />
+Example 9: [Extended Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector/Extended_source_injector.ipynb) <br />
 Example 10: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) <br />
-Example 11: [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimation_example.ipynb) <br />
-Example 12: [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
+Example 11: [Polarization (Stockes method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/Stokes_method.ipynb) <br />
+Example 12: [Polarization (Maximum likelihood method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/maximum_likelihood_method.ipynb) <br />
+Example 13: [Light curves](https://github.com/cositools/cosipy/tree/main/docs/tutorials/light_curves/speclc_grbdc3.ipynb) <br />
+Example 14: [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimationNN_example.ipynb) <br />
+Example 15: [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
+Example 16: [Transient background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation//transient_background/Transient_background_example.ipynb) <br />
 
 As a very first step, try working through some of the example notebooks. It is highly recommended to start with the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. Each challenge will refer you to a specific example notebook with a simplified data set that will demonstrate the basic tools needed to start on the respective challenge; however, new code and procedures may need to be implented to achieve all goals with the DC4 data. 
 
@@ -112,8 +115,6 @@ A major challenge in DC4 will be handling the backgrounds. We have methods to es
 The Key Objectives for GRB science with COSI are:
 1. Detect short GRBs following neutron star mergers, which are a known source of gravitational waves
 2. Constrain geometries and emission processes with polarization
-
-The tools needed to complete these challenges are demonstrated in the [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) examples. 
 
 ### DC4 Goals:
 - Localize GRBs and fit the spectra
@@ -191,8 +192,6 @@ The Key Objectives for the COSI positron science goal are:
 2. Determine the scale-height of the Galactic disk
 3. Study the annihilation mechanism and the differences between the Galactic disk and the Galactic bulge
 4. Investigate the energy at which positrons are created
-
-The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/blob/v0.3.x/docs/tutorials/image_deconvolution/511keV/GalacticCDS) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks. 
 
 ### DC4 Goals:
 - Identify individual positron sources
@@ -370,8 +369,6 @@ There is one Key Objective for Galactic science with COSI:
 
 While the main science goals for COSI are not directly related to many Galactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. 
 
-The tools needed to complete the Galactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab), [Crab imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/Crab/ScAttBinning), [GRB localization](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map), and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.  The [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit)  notebook can be used to analyze the Galactic diffuse continuum extended source.
-
 ### DC4 Goals:
 - Constrain geometries and emission processes in Galactic black holes
 - Perform phase resolved analysis of variable Galactic sources
@@ -469,8 +466,6 @@ There is one key objective for extragalactic science with COSI:
 
 While the main science goals for COSI are not directly related to many extragalactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. 
 
-The tools needed to complete the Extragalactic challenges are demonstrated in the [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab) and [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) notebooks.
-
 ### DC4 Goals:
 - Constrain geometries and emission processes in Active Galactic Nuclei (AGN)
 - Spectral, time-resolved analysis of blazar flares
@@ -525,8 +520,6 @@ $1.19 \times 10^{-3} \ \mathrm{ph \ cm^{-2} \ s^{-1}}$. A polarization fraction 
 ## Dark Matter Data Challenges
 
 While the main science goals for COSI are not directly related to dark matter, there is no doubt that COSI’s unique energy range will bring compelling new observations.  
-
-The tools needed to complete these challenges are demonstrated in the [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV/ScAttBinning) and [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit) notebooks.
 
 ### DC4 Goals:
 - Set upper limits on DM signals in the absence of a signal.
