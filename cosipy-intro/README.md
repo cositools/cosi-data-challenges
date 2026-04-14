@@ -136,31 +136,38 @@ All 3ML needs is a plugin for each instrument that accepts a common model in a p
 
 Once you have a global likelihood function, the analysis machinery is the same whether you have one detector or multiple. This is why we reuse directly the 3ML algorithms to perform our spectral analysis!
 
-## Next steps
+## Next steps and challenges
 
 The cosipy library is under active development in preparation for the COSI launch scheduled in 2027. There are currently +70 open issues and/or desired features as of today!
 
 There are three main development frontiers:
 
-### The scalability problem: response re-parametrization and unbinned analysis.
-
-Currently, we have a coarse detector response and the code is still relatively slow. This will not be sustainable when we use a binning appropriate for COSI's capabilities. 
-
-In order to solve this we're exploring a combination of a response re-parametrization and using an unbinned analysis. These also help resolve other limitations, like simultaneously fitting continuum and line components, the search for line sources of unknown energy, and the inclusion or additional event quality information. You can see more details in the presentations posted [here](https://github.com/cositools/cosipy/issues/222). 
-
 ### Background estimation
 
-In Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. For DC3 and DC4, we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likely to require the combination of simulated and measured background templates, as well as dedicated techniques for specific analyses.
+In Data Challenge 2, we assumed that the shape of the background distribution was known. While the background normalization was treated as a free parameter, we used the same background distribution in measured energy and Compton Data Space as in the simulated dataset.
 
-### Improving the code performance, usability and maintenance
+In DC3, we introduced methods to estimate the background directly from the data, but these resulted in large uncertainties.
+
+In DC4, background estimation techniques improved relative to DC3, but they have not yet been tested on the full, realistic DC4 dataset. We expect these methods will need to be refined based on what we observe, and will likely require a combination of simulated and data-driven background templates, as well as dedicated strategies tailored to specific analyses. This is one of the main *challenges* of DC4.
+
+### Improve performance and reduce compute costs
+
+While the current version of `cosipy` can, in principle, extract all scientifically relevant measurements from COSI data, we expect that in practice some analyses will currently turn to be too computationally expensive.
+
+There are several areas where we can likely make substantial improvements, including a number of low-hanging opportunities:
+
+- Identify performance bottlenecks and improve code efficiency.
+- For unbinned analyses, improve event selection so we do not spend time processing low-quality events.
+
+Even with these improvements, some analyses (e.g., imaging the diffuse continuum emission) are expected to remain beyond the capabilities of a typical personal computer and will require execution on a large computing cluster. Setting up and running these analyses on a computing cluster is also one of the key DC4 *challenges*.
+
+### Usability and maintenance
 
 These tasks include:
 
 - Improve parts of the documentation that might not be clear
 - Standardize the API and coding style across all modules
 - Develop yaml-configurable analysis scripts
-- Identify bottlenecks and make the code more efficient
-- Reduce the memory footprint
-- Parallelization
+
 
 
