@@ -8,7 +8,7 @@ Here we explain how cosipy works internally, including the statistical analysis.
 
 For the cosipy installation and usage instructions please refer to the main [cosipy documentation](https://cositools.github.io/cosipy/).
 
-## cosipy and cositools
+## cosipy and COSITools
 
 COSItools is the collection of all COSI data-analysis tools, including raw data formatting, calibration, reconstructions, and simulations. The cosipy library is the final of all the steps in the pipeline, shown in the following diagram as the "High-level Data Analysis" block
 
@@ -150,7 +150,7 @@ In order to solve this we're exploring a combination of a response re-parametriz
 
 ### Background estimation
 
-In Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. In DC3 we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likely to require the combination of simulated and measured background templates, as well as dedicated techniques for specific analyses.
+In Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. For DC3 and DC4, we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likely to require the combination of simulated and measured background templates, as well as dedicated techniques for specific analyses.
 
 ### Improving the code performance, usability and maintenance
 
