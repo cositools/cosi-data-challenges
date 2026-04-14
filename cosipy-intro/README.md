@@ -98,6 +98,36 @@ This allow us to fit the polarization degree and polarization angle. The modulat
 
 For simplicity, we have assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. During this convolution, the algorithm computed the portion of the field of view blocked by the Earth at any given time, and sets to zero the contribution to the signal from sources in that region.
 
+## Unbinned analysis
+
+In version 0.4, cosipy added the ability to perform an unbinned analysis, i.e., using event-by-event information rather than first binning events into a counts histogram. While this method applies to the full Compton data space, we illustrate the key ideas here using a simple toy model: a Gaussian signal on top of a flat background.
+
+<img src="figures/unbinned/toy_model.png" alt="" width="600"/>
+
+The variable x can represent any measured quantity (e.g., energy, time).
+
+The key point is that the unbinned analysis is exactly equivalent to the Poisson-likelihood binned analysis in the limit where the bin size goes to zero. The derivation of the “unbinned likelihood” from a binned Poisson likelihood follows from the observation that the Poisson probability remains valid in the arbitrarily low-count regime, and that infinitesimally small bins can contain either 1 event or 0 events:
+
+<img src="figures/unbinned/binned_to_unbinned.png" alt="" width="600"/>
+  
+Since only likelihood differences matter, the constant term at the end of the equation can be ignored. 
+
+For this to work, we need a way to estimate the expected counts density, which is the total expected number of counts multiplied by the probability density of observing the measurements recorded in a particular event. In other words, this probability term is a probability density function (PDF). There are multiple ways to estimate this PDF, but the simplest (and most intuitive) is to divide the expected-counts histogram by the bin size:
+
+<img src="figures/unbinned/expected_counts_and_density.png" alt="" width="600"/>  
+
+More generally, by “bin size” we mean the phase-space "volume" contained in a bin. For example, if the relevant measured quantity is a direction on the sky, then the corresponding phase space has units of solid angle, and the bin size is an area element in solid angle. The PDF is therefore not unitless. Instead, it is a probability density per unit phase space (e.g., per unit energy, per unit time, per radians, and/or per unit solid angle).
+
+This applies both to the expected counts density from a signal source and from a background source. An “unbinned” response or background model is therefore an estimate of the underlying PDF. Note that the data used to build this estimate does not itself need to be unbinned.
+Some remarks about unbinned analyses that sometimes cause confusion:
+
+* A finely binned analysis is equivalent to an unbinned analysis (and vice versa). It is the same calculation.
+    - Both approaches are equally susceptible to systematics from mismodeling of the response or background.
+* Whether to use a binned or unbinned analysis is a matter of computational resources:
+    - An unbinned analysis can be more computationally efficient than a finely binned analysis when the number of bins is comparable to the number of events.
+    - Our current binned analysis is considerably coarser than it should be --compared to COSI's resolution-- which directly leads to known systematics.
+    - Although the cost of the unbinned analysis is significantly higher than our current coarse analysis, it should be compared to a hypothetical finely binned analysis.
+
 ## The cosipy modules, inputs and outputs
 
 In cosipy, different modules are combined to perform the implementation of the likelihood computation described above.
