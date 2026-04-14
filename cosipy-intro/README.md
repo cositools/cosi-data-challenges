@@ -124,6 +124,12 @@ Internally, all modules handle the data using the objects:
 
 <img src="figures/cosipy_modules.png" alt="" width="750"/>
 
+## Interfaces and protocols
+
+With the intention of allowing developers and users to easily try different versions of every component needed to compute the likelihood, ``cosipy`` defines a series of interfaces. These are protocol classes with well-defined inputs and outputs. A description of each interface is available in the [cosipy documentation](https://cositools-cosipy.readthedocs.io/en/latest/api/interfaces.html).
+
+Many current implementations of these interfaces are wrappers around classes from the modules above, which predate the interfaces refactor. However, any code that accepts an interface is agnostic to the underlying implementation, so you can swap in your own implementation—for testing, experimentation, or extending cosipy—without modifying cosipy itself. That is, at least, the goal. If you find that an interface definition is not sufficient for your needs, please open an issue to discuss it.
+
 ## Integration with 3ML and astromodels
 
 The Multi-Mission Maximum Likelihood framework ([3ML](https://threeml.readthedocs.io/en/stable/)) is a common interface to perform a likelihood-based analysis across multiple instruments. Since all instruments observe the same source, their likelihoods for a common source model can be simply multiplied to obtain the global likelihood:
