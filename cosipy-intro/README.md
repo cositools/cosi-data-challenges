@@ -98,6 +98,36 @@ This allow us to fit the polarization degree and polarization angle. The modulat
 
 For simplicity, we have assumed that the spacecraft is fixed in an inertial reference frame –galactic coordinates, in this case. In reality, the spacecraft is always moving, and the response of the instrument –a function of the local spacecraft coordinates– needs to be convolved with the orientation history of the spacecraft. During this convolution, the algorithm computed the portion of the field of view blocked by the Earth at any given time, and sets to zero the contribution to the signal from sources in that region.
 
+## Unbinned analysis
+
+In version 0.4, cosipy added the ability to perform an unbinned analysis, i.e., using event-by-event information rather than first binning events into a counts histogram. While this method applies to the full Compton data space, we illustrate the key ideas here using a simple toy model: a Gaussian signal on top of a flat background.
+
+<img src="figures/unbinned/toy_model.png" alt="" width="600"/>
+
+The variable x can represent any measured quantity (e.g., energy, time).
+
+The key point is that the unbinned analysis is exactly equivalent to the Poisson-likelihood binned analysis in the limit where the bin size goes to zero. The derivation of the “unbinned likelihood” from a binned Poisson likelihood follows from the observation that the Poisson probability remains valid in the arbitrarily low-count regime, and that infinitesimally small bins can contain either 1 event or 0 events:
+
+<img src="figures/unbinned/binned_to_unbinned.png" alt="" width="600"/>
+  
+Since only likelihood differences matter, the constant term at the end of the equation can be ignored. 
+
+For this to work, we need a way to estimate the expected counts density, which is the total expected number of counts multiplied by the probability density of observing the measurements recorded in a particular event. In other words, this probability term is a probability density function (PDF). There are multiple ways to estimate this PDF, but the simplest (and most intuitive) is to divide the expected-counts histogram by the bin size:
+
+<img src="figures/unbinned/expected_counts_and_density.png" alt="" width="600"/>  
+
+More generally, by “bin size” we mean the phase-space "volume" contained in a bin. For example, if the relevant measured quantity is a direction on the sky, then the corresponding phase space has units of solid angle, and the bin size is an area element in solid angle. The PDF is therefore not unitless. Instead, it is a probability density per unit phase space (e.g., per unit energy, per unit time, per radians, and/or per unit solid angle).
+
+This applies both to the expected counts density from a signal source and from a background source. An “unbinned” response or background model is therefore an estimate of the underlying PDF. Note that the data used to build this estimate does not itself need to be unbinned.
+Some remarks about unbinned analyses that sometimes cause confusion:
+
+* A finely binned analysis is equivalent to an unbinned analysis (and vice versa). It is the same calculation.
+    - Both approaches are equally susceptible to systematics from mismodeling of the response or background.
+* Whether to use a binned or unbinned analysis is a matter of computational resources:
+    - An unbinned analysis can be more computationally efficient than a finely binned analysis when the number of bins is comparable to the number of events.
+    - Our current binned analysis is considerably coarser than it should be --compared to COSI's resolution-- which directly leads to known systematics.
+    - Although the cost of the unbinned analysis is significantly higher than our current coarse analysis, it should be compared to a hypothetical finely binned analysis.
+
 ## The cosipy modules, inputs and outputs
 
 In cosipy, different modules are combined to perform the implementation of the likelihood computation described above.
@@ -124,6 +154,12 @@ Internally, all modules handle the data using the objects:
 
 <img src="figures/cosipy_modules.png" alt="" width="750"/>
 
+## Interfaces and protocols
+
+With the intention of allowing developers and users to easily try different versions of every component needed to compute the likelihood, ``cosipy`` defines a series of interfaces. These are protocol classes with well-defined inputs and outputs. A description of each interface is available in the [cosipy documentation](https://cositools-cosipy.readthedocs.io/en/latest/api/interfaces.html).
+
+Many current implementations of these interfaces are wrappers around classes from the modules above, which predate the interfaces refactor. However, any code that accepts an interface is agnostic to the underlying implementation, so you can swap in your own implementation—for testing, experimentation, or extending cosipy—without modifying cosipy itself. That is, at least, the goal. If you find that an interface definition is not sufficient for your needs, please open an issue to discuss it.
+
 ## Integration with 3ML and astromodels
 
 The Multi-Mission Maximum Likelihood framework ([3ML](https://threeml.readthedocs.io/en/stable/)) is a common interface to perform a likelihood-based analysis across multiple instruments. Since all instruments observe the same source, their likelihoods for a common source model can be simply multiplied to obtain the global likelihood:
@@ -136,31 +172,38 @@ All 3ML needs is a plugin for each instrument that accepts a common model in a p
 
 Once you have a global likelihood function, the analysis machinery is the same whether you have one detector or multiple. This is why we reuse directly the 3ML algorithms to perform our spectral analysis!
 
-## Next steps
+## Next steps and challenges
 
 The cosipy library is under active development in preparation for the COSI launch scheduled in 2027. There are currently +70 open issues and/or desired features as of today!
 
 There are three main development frontiers:
 
-### The scalability problem: response re-parametrization and unbinned analysis.
-
-Currently, we have a coarse detector response and the code is still relatively slow. This will not be sustainable when we use a binning appropriate for COSI's capabilities. 
-
-In order to solve this we're exploring a combination of a response re-parametrization and using an unbinned analysis. These also help resolve other limitations, like simultaneously fitting continuum and line components, the search for line sources of unknown energy, and the inclusion or additional event quality information. You can see more details in the presentations posted [here](https://github.com/cositools/cosipy/issues/222). 
-
 ### Background estimation
 
-In Data Challenge 2 we assumed we knew the shape of the background distribution. While the background normalization is a free parameter, we used the same distribution of background counts --in measured energy and the Compton Data Space-- as the simulated data. For DC3 and DC4, we now provide ways to estimate it based on the data itself, but it currently results in large errors. This is not a straighforward problem to solve, and it's likely to require the combination of simulated and measured background templates, as well as dedicated techniques for specific analyses.
+In Data Challenge 2, we assumed that the shape of the background distribution was known. While the background normalization was treated as a free parameter, we used the same background distribution in measured energy and Compton Data Space as in the simulated dataset.
 
-### Improving the code performance, usability and maintenance
+In DC3, we introduced methods to estimate the background directly from the data, but these resulted in large uncertainties.
+
+In DC4, background estimation techniques improved relative to DC3, but they have not yet been tested on the full, realistic DC4 dataset. We expect these methods will need to be refined based on what we observe, and will likely require a combination of simulated and data-driven background templates, as well as dedicated strategies tailored to specific analyses. This is one of the main *challenges* of DC4.
+
+### Improve performance and reduce compute costs
+
+While the current version of `cosipy` can, in principle, extract all scientifically relevant measurements from COSI data, we expect that in practice some analyses will currently turn to be too computationally expensive.
+
+There are several areas where we can likely make substantial improvements, including a number of low-hanging opportunities:
+
+- Identify performance bottlenecks and improve code efficiency.
+- For unbinned analyses, improve event selection so we do not spend time processing low-quality events.
+
+Even with these improvements, some analyses (e.g., imaging the diffuse continuum emission) are expected to remain beyond the capabilities of a typical personal computer and will require execution on a large computing cluster. Setting up and running these analyses on a computing cluster is also one of the key DC4 *challenges*.
+
+### Usability and maintenance
 
 These tasks include:
 
 - Improve parts of the documentation that might not be clear
 - Standardize the API and coding style across all modules
 - Develop yaml-configurable analysis scripts
-- Identify bottlenecks and make the code more efficient
-- Reduce the memory footprint
-- Parallelization
+
 
 
