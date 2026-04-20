@@ -367,12 +367,12 @@ There is one Key Objective for Galactic science with COSI:
 While the main science goals for COSI are not directly related to many Galactic sources, there is no doubt that COSI’s unique energy range will bring compelling new observations. 
 
 ### DC4 Goals:
-- Constrain geometries and emission processes in Galactic black holes
+- Constrain geometries and emission processes in Galactic black holes through polarization and spectral analyses
 - Perform phase resolved analysis of variable Galactic sources
 - Perform imaging and spectral analysis of Galactic point sources
 - Make measurement of Galactic diffuse continuum
 
-The DC4 mock dataset includes 12 Galactic point sources: 2 steady-state sources (GRS 1758-258, 1E1740.7-2942) for spectral analysis, 5 transient/variable sources (Crab, PSR B1259-63, PSR J1846−0258, Cyg X3, and LS 5039), and 5 sources with polarization (Cyg-X1, MAXI J1820+070, MAXI J1348-630, 1RXS J170849.0-400901, and a genaric magnetar). Note that all of the polarized sources are variable as well, and the Crab is polarized (in addition to being a variable source). The DC4 mock dataset also includes the Galactic diffuse continuum emission. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
+The DC4 mock dataset includes 12 Galactic point sources: 2 steady-state sources (GRS 1758-258, 1E1740.7-2942) for spectral analysis, 5 transient/variable sources (Crab, PSR B1259-63, PSR J1846−0258, Cyg X3, and LS 5039), and 5 sources with polarization (Cyg-X1, MAXI J1820+070, MAXI J1348-630, 1RXS J170849.0-400901, and a genaric magnetar). Note that all of the polarized sources are variable as well, and the Crab is polarized (in addition to being a periodic source). The DC4 mock dataset also includes the Galactic diffuse continuum emission. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** <br />
 - ResponseContinuum.o3.e100_10000.b10log.s10396905069491.m2284.filtered.nonsparse.binnedimaging.imagingresponse.h5 <br />
