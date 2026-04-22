@@ -46,7 +46,7 @@ pip install cosipy
 
 ## Download the notebooks
 
-You can download them using the links [here](https://cositools.github.io/cosipy/tutorials/index.html), or by cloning the whole repository by running `git clone  https://github.com/cositools/cosipy.git` (they are in the docs/tutorials folder)..
+You can download them using the links [here](https://cositools-cosipy.readthedocs.io/en/latest/tutorials/index.html), or by cloning the whole repository by running `git clone  https://github.com/cositools/cosipy.git` (they are in the docs/tutorials folder)..
 
 ## Start a Jupyter session
 
