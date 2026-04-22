@@ -398,7 +398,7 @@ For DC4 we simulated a simplified Crab model with 4 key components: nebula, peak
 PSR B1259-63 is a binary gamma-ray system consisting of a radio pulsar and a massive Be-type star. The next periastron passage will be November 19th, 2027, making this a prime target for COSI. The model for DC3 is based on the work in [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11) (see Model 1 in the bottom of Figure 5). The flare is simulated as a constant emission for 30 days (T > 1839487305.0). We use the nominal flux value from [Abdo+11](https://doi.org/10.1088%2F2041-8205%2F736%2F1%2Fl11), which is $6.13 \times 10^{-4} \ \mathrm{ph \ cm^{-2} s^{-1}}$. The source is located at $l = 304.2^{\circ}, b = -0.99^{\circ}$.
 
 **PSR J1846−0258 Input Model:**  <br />
-**⚠️ Pending:** Need information for this model. 
+PSR J1846-0258 is a bright pulsar with strong magnetic field, located at (l, b)= (29.71195, -0.24012). This pulsar has a rotation period of 0.327 s. The pulse profile and spectrum are taken from [Kuiper+18](https://doi.org/10.1093/mnras/stx3128) (Fig. 3 and Sec. 4.2.2).  
 
 **Cyg X3 Input Models:**  <br />
 For DC4, Cyg X-3 ($l = 79.8^{\circ}, b = 0.7^{\circ}$) is modeled using a single transition-state spectrum based on the best-fit eqpair model from INTEGRAL data from [Cangemi+21](https://www.aanda.org/articles/aa/pdf/2021/01/aa37951-20.pdf). The source is simulated at its nominal flux in the transition state for the full 3-month exposure.
