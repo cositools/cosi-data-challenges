@@ -72,8 +72,8 @@ DC4 uses the same orientation files from DC3, with the exception that we have ad
 wasabi path: COSI-SMEX/DC4/Data/Orientation <br />
 
 files: <br />
-DC4_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.ori <br />
-DC4_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.ori <br /> 
+DC4_final_530km_3_month_with_slew_1sbins_GalacticEarth_SAA.fits <br />
+DC4_final_530km_3_month_with_slew_15sbins_GalacticEarth_SAA.fits <br /> 
 </details>
 
 <details>
