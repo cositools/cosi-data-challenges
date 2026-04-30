@@ -8,7 +8,7 @@
 
 <div align="left">
 
-![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-466%20days-blue)
+![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-458%20days-blue)
 
 ## Table of Contents
 
@@ -540,6 +540,7 @@ The items listed here are some of the priorities for DC5 development. These can 
   - Reparameterizing the response in such a way that prevents this issue 
 - **Methods need to be developed to determine the response for broadened and offset line emission in binned analyses.** These methods should utilize the baseline binned response files (e.g. 511 keV, Aluminum-26, Iron-60, etc.), and allow for analyzing any arbitrary line emission.
 - **The background estimation tools need to be further tested and developed.** With DC4 we have methods for estimating continuum, line, and transient backgrounds. These methods need to be tested, stressed, and further developed. 
+- **The polarization degrees measured using the maximum likelihood method are underestimated due to the coarse response bins.** The ASAD and Stokes parameters methods are currently the most accurate and should be used to make science predictions. The maximum likelihood method is expected to be the most sensitive with an unbinned response, which will be available for DC5.
 - **The way in which parameters are configured needs to be refined, and more callable scripts need to be added.** By callable scripts we are referring to command-line options that will perform common task, such as producing light curves and spectra.  
 - **The tools still need to be further stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
 
