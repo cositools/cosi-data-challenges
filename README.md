@@ -195,11 +195,10 @@ The Key Objectives for the COSI positron science goal are:
 
 ### DC4 Goals:
 - Identify individual positron sources
-- Determine the scale height of the 511 keV disk, and cross-correlate the measured distribution with 26Al map (1809 keV emission) to constrain propagation distances
-- Determine line width and relative flux of oPs and 511 keV line for different regions of the Galaxy 
+- Determine the scale height of the 511 keV disk, and cross-correlate the measured distribution with the <sup>26</sup>Al map (1809 keV emission) to constrain propagation distances
+- Determine line width and relative flux of the ortho-positronium and 511 keV line for different regions of the Galaxy 
 - Find detection significance of in-flight annihilation
-  
-**⚠️ Pending:** Need to update info about included sources and models. <br />
+
 We have developed models for the 511 keV and ortho-positronium emission from <sup>26</sup>Al and <sup>44</sup>Ti $\beta$+ decay in our Galaxy, which includes the propagation of positrons and Galactic rotation to give a spatially-dependent annihilation spectrum. However, since the flux from nucleosynthesis alone does not agree with INTEGRAL/SPI measurements, we have also included a thin disk model to enhance 511 keV flux, with a bulge model and Galactic center source that agrees with SPI measurements. We have simulated 3 extragalactic sources, 4 globular clusters, and the Vela supernova remnant, as detailed below. Note, these individual sources only have the 511 keV line emission and no contribution from the ortho-positronium continuum. New in DC4 is also the simulation of in-flight annihilation <511 keV. Information for how to access the mock dataset and all other needed files is provided in the [data-products](data-products/README.md) page.
 
 **The challenges will use the following detector response files:** 
@@ -208,7 +207,7 @@ We have developed models for the 511 keV and ortho-positronium emission from <su
 - extended_source_response_511_merged.h5.gz (precomputed 511 extended source response file)
 - extended_source_response_continuum_merged.h5.gz (precomputed continuum extended source response file)
 
-The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the orthopositronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. The pre-computed extended source responses should be used for imaging in Galactic coordinates and the 511 spectral fit notebook when analyzing extended sources (i.e. positrons from <sup>26</sup>Al or <sup>44</sup>Ti).
+The line response is for analyzing the 511 keV line emission, and the continuum response is for analyzing the ortho-positronium continuum. Currently, these two components cannot be analyzed simultaneously, as desribed in the [Known Caveats and Limitations](#known-caveats-and-limitations) section. The pre-computed extended source responses should be used for imaging in Galactic coordinates and the 511 spectral fit notebook when analyzing extended sources (i.e. positrons from <sup>26</sup>Al or <sup>44</sup>Ti).
 
 ### Galactic Sources
 **Disk Models:**  <br />
@@ -216,42 +215,45 @@ The spatial distribution of positrons from <sup>26</sup>Al and <sup>44</sup>Ti d
 
 However, since the flux from nucleosynthesis sources alone cannot explain the measured 511 keV emission in the Galaxy (hence the puzzle!), we have included a 2D gaussian thin disk model based on [Skinner et al. 2014](https://pos.sissa.it/228/054/) that, in addition with the photons from the <sup>26</sup>Al and <sup>44</sup>Ti, gives a flux consistent with measurements from SPI with a full-Galaxy 511 keV flux of $1.66 \times 10^{-4} \mathrm{ph \ cm^{-2} \ s^{-1}}$ ([Siegert et al. 2016](https://ui.adsabs.harvard.edu/abs/2016A%26A...586A..84S/abstract)). The <sup>26</sup>Al and <sup>44</sup>Ti contribute to 19\% and 22\% of the total 511 keV flux of the disk, respectively.
 
-The spectrum for these diffuse models have two separate components: the 511 keV annihilation line and the ortho-positronium continuum (i.e. files containing “cont”). These were obtained from the model of [Guessoum et al 2005](https://ui.adsabs.harvard.edu/abs/2005A%26A...436..171G/abstract) with a computed spectrum for each phase of the interstellar medium, based on the spatial distribution described above. The nucleosynthesis spectral model was corrected by the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc. Note, however, the thin disk model is only a 2D model without knowledge of the positron energetics, therefore the thin disk model spectra assumes a 50\% warm neutral and a 50\% warm ionized medium, consistent with [Jean et al 2006](https://ui.adsabs.harvard.edu/abs/2006A%26A...445..579J/abstract), and without doppler broadening.
+The spectrum for these diffuse models have two separate components: the 511 keV annihilation line and the ortho-positronium continuum. The spectra for the nucleosynthesis models were obtained from [Guessoum et al 2005](https://ui.adsabs.harvard.edu/abs/2005A%26A...436..171G/abstract) with a computed spectrum for each phase of the interstellar medium (ISM), based on the spatial distribution after positron propagation. The nucleosynthesis spectral models were corrected by the Galactic rotation using the model of [Fich, Blitz and Stark 1989](https://ui.adsabs.harvard.edu/abs/1989ApJ...342..272F/abstract) for R > 3 kpc and a solid rotation model for R < 3 kpc. Note, however, the thin disk is only a 2D model without knowledge of the ISM phase or positron energetics, therefore the thin disk spectra assumes a 50\% warm neutral and a 50\% warm ionized medium, consistent with [Jean et al 2006](https://ui.adsabs.harvard.edu/abs/2006A%26A...445..579J/abstract), and without doppler shifts.
 
 **Bulge Models:**  <br />
-To better match the SPI measurements, we've simulated the enhanced flux measured in the Galactic bulge. There are two bulge components modeled off of the Boxy bulge ([Freudenreich 1998](https://ui.adsabs.harvard.edu/abs/1998ApJ...492..495F/abstract)) and nuclear bulge ([Launhardt et al. 2002](https://ui.adsabs.harvard.edu/abs/2002A%26A...384..112L/abstract)). These are consistent with the INTEGRAL/SPI spatial model components referred to as the broad and narrow bulge in ([Skinner et al. 2014](https://pos.sissa.it/228/054/) and [Siegert et al. 2016](https://ui.adsabs.harvard.edu/abs/2016A%26A...586A..84S/abstract)). Each bulge model has a 511 keV component and ortho-Ps continuum, as expected from low-energy positron annihilation ($f_{Ps}$ ~ 1). 
+To better match the SPI measurements, we've simulated the enhanced flux measured in the Galactic bulge. There are two bulge components modeled off of the Boxy bulge ([Freudenreich 1998](https://ui.adsabs.harvard.edu/abs/1998ApJ...492..495F/abstract)) and nuclear bulge ([Launhardt et al. 2002](https://ui.adsabs.harvard.edu/abs/2002A%26A...384..112L/abstract)). These are consistent with the INTEGRAL/SPI spatial model components referred to as the broad and narrow bulge in [Skinner et al. 2014](https://pos.sissa.it/228/054/) and [Siegert et al. 2016](https://ui.adsabs.harvard.edu/abs/2016A%26A...586A..84S/abstract). Each bulge model has a 511 keV component and ortho-positronium continuum, as expected from low-energy positron annihilation ($f_{Ps}$ ~ 1). 
+
+**In-flight Annihiliation:** <br />
+The spectral and spatial characteristics of the diffuse emission from the annihilation of positrons in flight is based on recent analysis of COMPTEL/CGRO data described in [Knödlseder et al 2025](https://ui.adsabs.harvard.edu/abs/2025A%26A...700A.257K/abstract). The source is modeled with a $3.3^{\circ}~\sigma$ width 2D Gaussian centered at $l = -1.4^{\circ},$ $b = -0.2^{\circ}$. The spectral distribution is from Fig.~4c of [Knödlseder et al 2025](https://ui.adsabs.harvard.edu/abs/2025A%26A...700A.257K/abstract), and the total flux in the 100 keV-10 MeV band is $3.1 \times 10^{-4} \mathrm{ph \ cm^{-2} \ s^{-1}}$. 
 
 **Vela:**  <br />
 The 511 keV photon flux from the Vela SNR is estimated assuming that all positrons from $1 \times 10^{-4}$ $M_\odot\$ of <sup>44</sup>Ti decay are trapped within the remnant by magnetic fields. We assume a 511 keV flux of $3.5 \times 10^{-4} \mathrm{ph \ cm^{-2} \ s^{-1}}$ and a spatial distribution the follows total ROSAT all-sky survey X-ray emission. This is NOT a point source, but ~8 deg in extent.
 
 ### Globular Clusters
-The 511 keV photon flux for the brightest 4 globular clusters is estimated based on the 0.1 - 100 GeV luminosity from the Globular clusters, and the nuclear bulge and boxy bulge emission in the Milky Way [Bartels et al 2018a](https://ui.adsabs.harvard.edu/abs/2018NatAs...2..819B/abstract). The GeV luminosity of the Bulge is compared to the 511 keV luminosity of the bulge [Bartels et al 2018b](https://ui.adsabs.harvard.edu/abs/2018MNRAS.480.3826B/abstract). This GeV luminosity vs 511 keV luminosity correlation is applied to the GeV excess observed from globular clusters [Zhang et al 2016](https://ui.adsabs.harvard.edu/abs/2016MNRAS.459...99Z/abstract) in the Galaxy to estimate the 511 keV flux of the globular clusters. The flux values used here are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit within the 3 month observation period.
+The 511 keV photon flux for the brightest 4 globular clusters is estimated based on the 0.1 - 100 GeV luminosity from the globular clusters, and the nuclear bulge and boxy bulge emission in the Milky Way [Bartels et al 2018a](https://ui.adsabs.harvard.edu/abs/2018NatAs...2..819B/abstract). The GeV luminosity of the bulge is compared to the 511 keV luminosity of the bulge [Bartels et al 2018b](https://ui.adsabs.harvard.edu/abs/2018MNRAS.480.3826B/abstract). This GeV luminosity vs 511 keV luminosity correlation is applied to the GeV excess observed from globular clusters [Zhang et al 2016](https://ui.adsabs.harvard.edu/abs/2016MNRAS.459...99Z/abstract) in the Galaxy to estimate the 511 keV flux of the globular clusters. The flux values used here are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit within the 3 month observation period.
 
 **Tuc 47:**  <br />
-Point-like 511 keV emission from Tuc 47, with an assumed flux of $4.17 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. <br />
+Point-like 511 keV emission from Tuc 47, with an assumed flux of $4.17 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. The source is located at $l=305.9^{\circ}$, $b =-44.9^{\circ}$. <br />
 
 **Omega Cen:**  <br />
-Point-like 511 keV emission from Omega Cen, with an assumed flux of$5.01 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. <br />
+Point-like 511 keV emission from Omega Cen, with an assumed flux of $5.01 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. The source is located at $l=309.1^{\circ}$, $b =15.0^{\circ}$. <br />
 
 **NGC 6397:**  <br />
-Point-like 511 keV emission from NGC 6397, with an assumed flux of$4.02 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. <br />
+Point-like 511 keV emission from NGC 6397, with an assumed flux of $4.02 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. The source is located at $l=-21.8^{\circ}$, $b =-12.0^{\circ}$. <br />
 
 **NGC 6121:**  <br />
-Point-like 511 keV emission from NGC 6121, with an assumed flux of$6.96 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. <br />
+Point-like 511 keV emission from NGC 6121, with an assumed flux of $6.96 \times 10^{-5} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$. The source is located at $l=351.0^{\circ}$, $b =16.0^{\circ}$. <br />
 
 ### Extragalactic Sources
 The fluxes for extragalactic sources (LMC, M31, Virgo) are estimated by assuming that the 511 keV photon flux is proportional to the stellar mass of the source. Using a Milky Way 511 keV flux of $2.8 \times 10^{-3} \  \mathrm{ph \ cm^{-2} \ s^{-1}}$ ([Siegert+16](https://www.aanda.org/articles/aa/full_html/2016/02/aa27510-15/aa27510-15.html)) and total stellar mass of $5.4 \times 10^{10} \  M_\odot$ ([McMillan+16](https://academic.oup.com/mnras/article/465/1/76/2417479)), we assume the 511 keV flux of each extragalactic source follows the same ratio. The flux values used are 3x the values estimated from the correlation in order to make them within COSI's sensitivity limit within the 3 month observation period.
 
 **LMC:**  <br />
-Point-like 511 keV emission from the LMC. The stellar mass for LMC is $1 \times 10^{10} \ M_\odot\$ ([Erkal+19](https://academic.oup.com/mnras/article/487/2/2685/5491315)), 
+The LMC is modeled as an extended source with $3.3^{\circ}~\sigma$ Gaussian width. The stellar mass for LMC is $1 \times 10^{10} \ M_\odot\$ ([Erkal+19](https://academic.oup.com/mnras/article/487/2/2685/5491315)), and the flux is assumed to be $1.3 \times 10^{-5} \mathrm{ph \ cm^{-2} \ s^{-1}}$. <br />
 
 **M31:**  <br />
-M31: $1.25 \times 10^{11} \ M_\odot\$ ([Tamm+12](https://www.aanda.org/articles/aa/full_html/2012/10/aa20065-12/aa20065-12.html))
+M31 is modeled as an extended source with $1.0^{\circ}~\sigma$ Gaussian width. The stellar mass for M31 is $1.25 \times 10^{11} \ M_\odot\$ ([Tamm+12](https://www.aanda.org/articles/aa/full_html/2012/10/aa20065-12/aa20065-12.html)), and the flux is assumed to be $6.4 \times 10^{-7} \mathrm{ph \ cm^{-2} \ s^{-1}}$. <br />
 
 **Virgo:**  <br />
-Virgo: $1.2 \times 10^{14} \ M_\odot\$ ([Fouque+01](https://www.aanda.org/articles/aa/abs/2001/33/aa1326/aa1326.html)) <br />
+Virgo is modeled as an extended source with $2.7^{\circ}~\sigma$ Gaussian width. The stellar mass for Virgo is $1.2 \times 10^{14} \ M_\odot\$ ([Fouque+01](https://www.aanda.org/articles/aa/abs/2001/33/aa1326/aa1326.html)), and the flux is assumed to be $1.4 \times 10^{-6} \mathrm{ph \ cm^{-2} \ s^{-1}}$. <br />
 
-  
+
 </details>
 
 <details>
