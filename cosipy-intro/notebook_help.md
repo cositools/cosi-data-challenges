@@ -1,6 +1,6 @@
 # Running the tutorial notebooks
 
-The cosipy library can be installed from source or using `pip`, as described in the [main installation instructions](https://cositools.github.io/cosipy/install.html).
+The cosipy library can be installed from source or using `pip`, as described in the [main installation instructions](https://cositools.github.io/cosipy/en/latest/install.html).
 
 There are multiple ways to build a setup that will allow you to run the Jupyter notebooks shipped with this data challenge. Advanced users can pick their favorite methods. Here we described one simple way that works for beginners:
 
