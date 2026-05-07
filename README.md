@@ -65,7 +65,7 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 ## Data Challenges
 For DC4, we have produced a single mock dataset that mimics three months of real flight observations. It includes 64 sources along with the total background. Detailed information is available in the [data-products](data-products/README.md) directory. All simulation input models are provided in the source library of the COSI simulation pipeline (available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)), which can be used to verify data challenge results. 
 
-We have created example Jupyter notebooks demonstrating some of the basic tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md). <br /> 
+We have created example Jupyter notebooks demonstrating some of the basic tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here]([https://github.com/cositools/cosi-data-challenge-4/tree/main/cosipy-intro/notebook_help.md](https://github.com/cositools/cosi-data-challenges/blob/main/cosipy-intro/notebook_help.md)). <br /> 
 
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO/DataIO_example.ipynb) <br />
 Example 2: [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) <br />
