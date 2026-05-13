@@ -8,7 +8,7 @@
 
 <div align="left">
 
-![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-458%20days-blue)
+![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-445%20days-blue)
 
 ## Table of Contents
 
@@ -33,7 +33,7 @@ Welcome to the fourth COSI Data Challenge (DC4)! The COSI Data Challenges are re
    - Public releases help with community building before COSI data is released
 
 ## Getting Started 
-The only software requirement for DC4 is [cosipy](https://github.com/cositools/cosipy). A general introduction into cosipy, including installation instructions, can be found in the [cosipy-intro](cosipy-intro/README.md) directory. For a general introduction into analyzing data from Compton telescopes see [Compton-telescope-data-analysis-intro](Compton-telescope-data-analysis-intro/README.md). Note that cosipy is part of the larger COSITools, which is a broad collection of COSI data analysis tools, documentation, and verification data sets. COSITools can be installed by following the installation instructions [here](https://github.com/cositools/cosi-setup). This also includes MEGAlib, which is the main software program used for running simulations. However, unless you need MEGAlib and/or COSITools for other reasons, it's highly recommended to just install cosipy.    
+The only software requirement for DC4 is [cosipy](https://github.com/cositools/cosipy/tree/main). A general introduction into cosipy, including installation instructions, can be found in the [cosipy-intro](cosipy-intro/README.md) directory. For a general introduction into analyzing data from Compton telescopes see [Compton-telescope-data-analysis-intro](Compton-telescope-data-analysis-intro/README.md). Note that cosipy is part of the larger COSITools, which is a broad collection of COSI data analysis tools, documentation, and verification data sets. COSITools can be installed by following the installation instructions [here](https://github.com/cositools/cosi-setup). This also includes MEGAlib, which is the main software program used for running simulations. However, unless you need MEGAlib and/or COSITools for other reasons, it's highly recommended to just install cosipy.    
 
 This year's Data Challenge is based on a single mock dataset intended to mimic the real flight data. The mock dataset is simulated using 3 months of exposure time, for an equatorial orbit at an altitude of 530 km, with a pointing that rocks between $\pm 22^\circ$ from the Earth zenith. The simulated data products are provided in FITS file format, and are hosted on Wasabi. Details of the simulations, simulated data, and information for accessing the data products can be found in the [data-products](data-products/README.md) directory. 
 
@@ -51,7 +51,7 @@ That said, many components of the data challenges can be run on a personal lapto
 If you experience performance or memory issues, please let us know — we are continuously working to improve efficiency and usability.
 
 ## Getting Help
-Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) git repository if you have issues with the code. If you have general feedback, or need further assistance, please reach out to the COSI Data Challenges team lead, Chris Karwin ([ckarwin@clemson.edu](mailto:ckarwin@clemson.edu)), the cosipy implementation lead, Israel Martinez-Castellanos ([israel.martinezcastellanos@nasa.gov](israel.martinezcastellanos@nasa.gov)), and the pipeline development lead Carolyn Kierans ([carolyn.a.kierans@nasa.gov](carolyn.a.kierans@nasa.gov)).
+Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy/tree/main) git repository if you have issues with the code. If you have general feedback, or need further assistance, please reach out to the COSI Data Challenges team lead, Chris Karwin ([ckarwin@clemson.edu](mailto:ckarwin@clemson.edu)), the cosipy implementation lead, Israel Martinez-Castellanos ([israel.martinezcastellanos@nasa.gov](israel.martinezcastellanos@nasa.gov)), and the pipeline development lead Carolyn Kierans ([carolyn.a.kierans@nasa.gov](carolyn.a.kierans@nasa.gov)).
 
 ## Reference Guides
 - **[Introduction to Compton telescope data analysis](Compton-telescope-data-analysis-intro/README.md)**
@@ -65,24 +65,26 @@ Please submit a new issue in the [cosipy](https://github.com/cositools/cosipy) g
 ## Data Challenges
 For DC4, we have produced a single mock dataset that mimics three months of real flight observations. It includes 64 sources along with the total background. Detailed information is available in the [data-products](data-products/README.md) directory. All simulation input models are provided in the source library of the COSI simulation pipeline (available [here](https://github.com/cositools/cosi-sim/tree/main/cosi_sim/Source_Library)), which can be used to verify data challenge results. 
 
-We have created example Jupyter notebooks demonstrating some of the basic tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenge-2/tree/main/cosipy-intro/notebook_help.md). <br /> 
+We have created example Jupyter notebooks demonstrating some of the basic tools that will be needed to complete this year's data challenges. They are available as part of the cosipy release, and listed below. If you haven't worked with Jupyter before, you can find some help [here](https://github.com/cositools/cosi-data-challenges/blob/main/cosipy-intro/notebook_help.md). <br /> 
 
 Example 1: [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO/DataIO_example.ipynb) <br />
-Example 2: [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) <br />
+Example 2: [detector response](https://github.com/cositools/cosipy/blob/main/docs/tutorials/response/DetectorResponse.ipynb) <br />
 Example 3: [GRB localization (TS maps)](https://github.com/cositools/cosipy/tree/main/docs/tutorials/ts_map/TS_map_fitting.ipynb) <br />
 Example 4: [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb/SpectralFit_GRB.ipynb) <br />
 Example 5: [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab/SpectralFit_Crab.ipynb) <br />
 Example 6: [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit/diffuse_511_spectral_fit.ipynb) <br />
-Example 7: [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV-Galactic-ImageDeconvolution.ipynb) <br />
-Example 8: [Point Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector/Point_source_injector.ipynb) <br />
-Example 9: [Extended Source injector](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/source_injector/Extended_source_injector.ipynb) <br />
-Example 10: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/ASAD_method.ipynb) <br />
-Example 11: [Polarization (Stockes method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/Stokes_method.ipynb) <br />
-Example 12: [Polarization (Maximum likelihood method)](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/polarization/maximum_likelihood_method.ipynb) <br />
-Example 13: [Light curves](https://github.com/cositools/cosipy/tree/main/docs/tutorials/light_curves/speclc_grbdc3.ipynb) <br />
-Example 14: [Continuum background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/continuum_estimation/BG_estimationNN_example.ipynb) <br />
-Example 15: [Line background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
-Example 16: [Transient background estimation](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/background_estimation//transient_background/Transient_background_example.ipynb) <br />
+Example 7: [GRB spectral fit (unbinned analysis)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/spectral_fits/continuum_fit/grb/example_grb_fit_normalizing_flows.ipynb) <br />
+Example 8: [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV-Galactic-ImageDeconvolution.ipynb) <br />
+Example 9: [Point Source injector](https://github.com/cositools/cosipy/tree/main/docs/tutorials/source_injector/Point_source_injector.ipynb) <br />
+Example 10: [Extended Source injector](https://github.com/cositools/cosipy/tree/main/docs/tutorials/source_injector/Extended_source_injector.ipynb) <br />
+Example 11: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/ASAD_method.ipynb) <br />
+Example 12: [Polarization (Stockes method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/Stokes_method.ipynb) <br />
+Example 13: [Polarization (Maximum likelihood method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/maximum_likelihood_method.ipynb) <br />
+Example 14: [Light curves](https://github.com/cositools/cosipy/tree/main/docs/tutorials/light_curves/speclc_grbdc3.ipynb) <br />
+Example 15: [Continuum background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation/continuum_estimation/BG_estimationNN_example.ipynb) <br />
+Example 16: [Line background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
+Example 17: [Transient background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation//transient_background/Transient_background_example.ipynb) <br />
+Example 18: [Sensitivity calculator](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/spectral_fits/Sensitivity_calculator)
 
 As a very first step, try working through some of the example notebooks. It is highly recommended to start with the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. The example notebooks will demonstrate the basic tools needed to start on the respective challenges; however, new code and procedures may need to be implented to achieve all goals with the DC4 data. 
 
@@ -92,7 +94,7 @@ If you  and are interested in exploring other science models, you can employ the
 DC4 now allows for both binned and unbinned analyses. The choice of which type of analysis to perform will depend on the scientific objectives of the data challenge, and we leave this decision to the user. However, the required memory and compute need for these analyses will differ and may be a limitation for some users.
 
 **Configuration Files:** <br />
-For binned analyses, the configuration for the data binning is specified via yaml files, as demonstrated in the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) tutorial (and others). **The data binning must match the response binning, and so the yaml configuration files must be updated accordingly when working with DC4 data.** The [detector response](https://github.com/cositools/cosipy/blob/develop/docs/tutorials/response/DetectorResponse.ipynb) tutorial shows how to determine the response binning. The main difference with the DC4 response files is that the phi binning is now 6 degrees compared to 5 degrees for older tutorials. We are currently working on refining how paramaters are configured in cosipy, and this will be updated starting with DC5.  
+For binned analyses, the configuration for the data binning is specified via yaml files, as demonstrated in the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) tutorial (and others). **The data binning must match the response binning, and so the yaml configuration files must be updated accordingly when working with DC4 data.** The [detector response](https://github.com/cositools/cosipy/blob/main/docs/tutorials/response/DetectorResponse.ipynb) tutorial shows how to determine the response binning. The main difference with the DC4 response files is that the phi binning is now 6 degrees compared to 5 degrees for older tutorials. We are currently working on refining how paramaters are configured in cosipy, and this will be updated starting with DC5.  
 
 **Orientation Files:** <br />
 Two orientation files are available: <br />
