@@ -73,16 +73,18 @@ Example 3: [GRB localization (TS maps)](https://github.com/cositools/cosipy/tree
 Example 4: [GRB spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/grb/SpectralFit_GRB.ipynb) <br />
 Example 5: [Crab spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/continuum_fit/crab/SpectralFit_Crab.ipynb) <br />
 Example 6: [511 spectral fit](https://github.com/cositools/cosipy/tree/main/docs/tutorials/spectral_fits/extended_source_fit/diffuse_511_spectral_fit.ipynb) <br />
-Example 7: [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV-Galactic-ImageDeconvolution.ipynb) <br />
-Example 8: [Point Source injector](https://github.com/cositools/cosipy/tree/main/docs/tutorials/source_injector/Point_source_injector.ipynb) <br />
-Example 9: [Extended Source injector](https://github.com/cositools/cosipy/tree/main/docs/tutorials/source_injector/Extended_source_injector.ipynb) <br />
-Example 10: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/ASAD_method.ipynb) <br />
-Example 11: [Polarization (Stockes method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/Stokes_method.ipynb) <br />
-Example 12: [Polarization (Maximum likelihood method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/maximum_likelihood_method.ipynb) <br />
-Example 13: [Light curves](https://github.com/cositools/cosipy/tree/main/docs/tutorials/light_curves/speclc_grbdc3.ipynb) <br />
-Example 14: [Continuum background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation/continuum_estimation/BG_estimationNN_example.ipynb) <br />
-Example 15: [Line background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
-Example 16: [Transient background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation//transient_background/Transient_background_example.ipynb) <br />
+Example 7: [GRB spectral fit (unbinned analysis)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/spectral_fits/continuum_fit/grb/example_grb_fit_normalizing_flows.ipynb) <br />
+Example 8: [511 imaging](https://github.com/cositools/cosipy/tree/main/docs/tutorials/image_deconvolution/511keV-Galactic-ImageDeconvolution.ipynb) <br />
+Example 9: [Point Source injector](https://github.com/cositools/cosipy/tree/main/docs/tutorials/source_injector/Point_source_injector.ipynb) <br />
+Example 10: [Extended Source injector](https://github.com/cositools/cosipy/tree/main/docs/tutorials/source_injector/Extended_source_injector.ipynb) <br />
+Example 11: [Polarization (ASAD method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/ASAD_method.ipynb) <br />
+Example 12: [Polarization (Stockes method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/Stokes_method.ipynb) <br />
+Example 13: [Polarization (Maximum likelihood method)](https://github.com/cositools/cosipy/blob/main/docs/tutorials/polarization/maximum_likelihood_method.ipynb) <br />
+Example 14: [Light curves](https://github.com/cositools/cosipy/tree/main/docs/tutorials/light_curves/speclc_grbdc3.ipynb) <br />
+Example 15: [Continuum background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation/continuum_estimation/BG_estimationNN_example.ipynb) <br />
+Example 16: [Line background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation/line_background/line_background_estimation_example_notebook.ipynb) <br />
+Example 17: [Transient background estimation](https://github.com/cositools/cosipy/blob/main/docs/tutorials/background_estimation//transient_background/Transient_background_example.ipynb) <br />
+Example 18: [Sensitivity calculator](https://github.com/cositools/cosipy/tree/develop/docs/tutorials/spectral_fits/Sensitivity_calculator)
 
 As a very first step, try working through some of the example notebooks. It is highly recommended to start with the [dataIO](https://github.com/cositools/cosipy/tree/main/docs/tutorials/DataIO) notebook, as this describes the general handling of COSI data, and it is needed for almost all other notebooks. Specific challenges for the different science topics are described below. You can start with whichever topic you are most interested in. The example notebooks will demonstrate the basic tools needed to start on the respective challenges; however, new code and procedures may need to be implented to achieve all goals with the DC4 data. 
 
