@@ -8,7 +8,7 @@
 
 <div align="left">
 
-![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-396%20days-blue)
+![Countdown](https://img.shields.io/badge/%20Anticipated%20Launch%20-355%20days-blue)
 
 ## Table of Contents
 
@@ -607,4 +607,4 @@ Previous, current, and planned releases are summarized below (click to expand):
 </details>
 
 ## Citing 
-If you make use of any of the data products from the COSI Data Challenges in a publication, please provide a link to this page and cite [Zoglauer+23](https://arxiv.org/abs/2102.13158), [Martinez-Castellanos+23](https://pos.sissa.it/444/858), and the zenodo release: https://doi.org/10.5281/zenodo.15126187. 
+If you make use of any of the data products from the COSI Data Challenges in a publication, please provide a link to this page and cite [Martinez-Castellanos+23](https://pos.sissa.it/444/858) and the zenodo release: https://doi.org/10.5281/zenodo.15126187. 
