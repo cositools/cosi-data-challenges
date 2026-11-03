@@ -523,7 +523,7 @@ For sources with a light curve that were simulated by splitting the three-month 
 - MAXIJ1820
 - MAXIJ1348
 
-The Crab components (nebula, peak 1, peak 2, and bridge), 1RXSJ170849, and magnetar2 were simulated by splitting the flux rather than the observation time, so the normalization bug does not apply to them.
+The Crab components (nebula, peak 1, peak 2, and bridge), 1RXSJ170849, magnetar2, LS5039, and PSRJ1846 were simulated by splitting the flux rather than the observation time, so the normalization bug does not apply to them.
 
 A separate issue affects 1RXSJ170849 and magnetar2: their light curves were repeated after each period, but each repeated segment did not contain a whole number of revolutions. This caused a shift in the repeated light curves.
 
