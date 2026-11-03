@@ -508,6 +508,20 @@ The items listed here are some of the priorities for DC5 development. These can 
 - **The way in which parameters are configured needs to be refined, and more callable scripts need to be added.** By callable scripts we are referring to command-line options that will perform common task, such as producing light curves and spectra.  
 - **The tools still need to be further stressed to find limitations.** The COSI pipeline team has been rapidly developing the cosipy library in preparation for the satellite mission. Our aim is to make this library robust, sustainable, and highly user-friendly. Through more and more user interactions and feedback, we can better learn where the code is working well, and where it breaks down.
 
+## Bug Report
+
+### Orientation File
+A bug in the spacecraft orientation file omitted the effects of Earth's rotation. Consequently, the SAA was effectively excluded at the same location relative to the simulated pointing pattern on each orbit, reducing the exposure toward the Galactic center compared with that expected in flight. Although this issue does not prevent the DC4 dataset from supporting analysis development and validation, it limits the realism of the simulated exposure.
+
+### Sources with a Light Curve
+For sources with a light curve that were simulated by splitting the three-month observation period into smaller time intervals, a normalization bug caused the simulated time-averaged flux to differ from the intended flux specified in the MEGAlib source file. The affected sources are: nova_co (all three components), 3C454p3 (low/high), 4C21p35 (flare/no flare), PSRB1259, MAXIJ1820, MAXIJ1348.
+
+The Crab components (nebula, peak 1, peak 2, and bridge), 1RXSJ170849, magnetar2, LS5039, and PSRJ1846 were simulated by splitting the flux rather than the observation time, so the normalization bug does not apply to them. Likewise, the bug does not apply to any GRBs, since they were simulated without any splitting in time nor flux. 
+
+A separate issue affects 1RXSJ170849 and magnetar2: their light curves were repeated after each period, but each repeated segment did not contain a whole number of revolutions. This caused a shift in the repeated light curves.
+
+More generally, when simulating a source with a light curve, the flux keyword in the MEGALib source file should specify the time-averaged flux, where the total time is determined by the time range defined in the light curve file. If users encounter unexpected results with time-dependent sources, they should first verify that the simulation inputs were properly defined.  
+
 ## Releases
 Previous, current, and planned releases are summarized below (click to expand):
 
